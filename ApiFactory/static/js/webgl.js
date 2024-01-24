@@ -15,7 +15,7 @@ perlin = new Perlin()
 
 function init() {
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(50, 1, 0.01, 10000);
+    camera = new THREE.PerspectiveCamera(50, width/height, 0.01, 10000);
     camera.position.z = size;
 
     renderer = new THREE.WebGLRenderer({antialias: true, depth: false});
@@ -46,7 +46,7 @@ function createGeometry() {
     wireframe = new THREE.WireframeGeometry(geometry);
     lineMaterial = new THREE.LineBasicMaterial({color: 0x82CDE2});
     line = new THREE.LineSegments(wireframe, lineMaterial);
-    line.rotation.x = -85 * (Math.PI / 180) // deg to rad: `degrees * (PI / 180)`;
+    line.rotation.x = -88 * (Math.PI / 180) // deg to rad: `degrees * (PI / 180)`;
     scene.add(line);
 }
 
@@ -72,6 +72,10 @@ animate();
 
 
 window.addEventListener('scroll', () => {
-    waveHeight = window.scrollY < 50 ? 50 : window.scrollY / 2
-    console.log(waveHeight)
+    waveHeight = document.documentElement.scrollTop < 50 ? 50 : document.documentElement.scrollTop / 2
+})
+
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    renderer.setSize(window.innerWidth, window.innerHeight);
 })

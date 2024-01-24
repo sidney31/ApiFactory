@@ -19,6 +19,13 @@ body {
     transition: all .3s ease;
 }
 
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
+}
+
 .navbar-brand {
     min-width: 100px !important;
     padding: 0 !important;
