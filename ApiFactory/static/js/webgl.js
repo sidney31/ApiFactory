@@ -22,7 +22,7 @@ function init() {
     renderer.setClearColor(0xffffff);
     renderer.setSize(width, height);
 
-    waveHeight = 50
+    waveHeight = 30
 
     target.appendChild(renderer.domElement)
 
@@ -60,10 +60,10 @@ function updateVertices(geom) {
 }
 
 function animate() {
+    requestAnimationFrame(animate);
     t += 0.001;
     updateVertices(line)
     renderer.render(scene, camera);
-    requestAnimationFrame(animate);
 }
 
 init();
@@ -72,7 +72,7 @@ animate();
 
 
 window.addEventListener('scroll', () => {
-    waveHeight = document.documentElement.scrollTop < 50 ? 50 : document.documentElement.scrollTop / 2
+    waveHeight = window.scrollY <= 60 ? 30 : window.scrollY/2
 })
 
 window.addEventListener('resize', () => {
