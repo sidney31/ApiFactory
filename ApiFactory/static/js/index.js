@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > lastScrollTop) {
-            $('.navbar').css( 'transform', 'translateY(-100px)')
+            $('.navbar').css('transform', 'translateY(-100px)')
         } else {
             $('.navbar').css('transform', 'translateY(0)')
         }
@@ -21,5 +21,10 @@ $(document).ready(function () {
     $(window).resize(function () {
         updateLogosState()
     })
+
+    const carousel = new bootstrap.Carousel($('#carousel'), {
+        interval: 2000,
+    })
+
 })
 
