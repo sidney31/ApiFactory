@@ -29,6 +29,10 @@ body {
     font-family: 'Montserrat Variable', serif;
 }
 
+#navbar{
+    height: 100px;
+}
+
 .navbar {
     height: 100px;
     background-color: white !important;

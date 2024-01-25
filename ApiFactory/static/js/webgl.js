@@ -19,7 +19,7 @@ function init() {
     camera.position.z = size;
 
     renderer = new THREE.WebGLRenderer({antialias: true, depth: false});
-    renderer.setClearColor(0xffffff);
+    renderer.setClearColor(0xf5f5f5);
     renderer.setSize(width, height);
 
     waveHeight = 30
