@@ -31,17 +31,17 @@ body {
     font-family: 'Montserrat Variable', serif;
 }
 
-.container {
-    opacity: 0;
-    animation: appear 1s forwards;
+.animate-appear {
+    filter: blur(10px);
+    animation: appear 3s forwards;
 }
 
 @keyframes appear {
     0% {
-        opacity: 0;
+        filter: blur(10px);
     }
     100% {
-        opacity: 100;
+        filter: blur(0px);
     }
 }
 
@@ -198,9 +198,11 @@ li {
 
 .section > .icon {
     margin-bottom: 20px;
+    user-select: none;
 }
 
 .section > .icon > img {
+    margin-top: 30px;
     height: auto;
     width: 150px;
 }
@@ -209,6 +211,9 @@ li {
     font-size: 28px;
     word-break: break-word;
     text-wrap: wrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .section > .subtitle {
@@ -216,6 +221,7 @@ li {
     text-wrap: wrap;
     width: 300px;
     text-align: center;
+    vertical-align: center;
 }
 
 .nav-link:after {
@@ -240,16 +246,12 @@ li {
     transition: all .25s ease;
 }
 
-.hide-scroll-bar::-webkit-scrollbar {
-    display: none;
-}
-
-.js-marquee{
+.js-marquee {
     display: flex;
     flex-direction: row;
 }
 
-.js-marquee-wrapper{
+.js-marquee-wrapper {
     display: flex;
     flex-direction: row;
 }

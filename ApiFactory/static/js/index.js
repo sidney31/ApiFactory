@@ -32,7 +32,7 @@ $(document).ready(function () {
         delayBeforeStart: 0,
         direction: 'left',
         duplicated: true,
-        pauseOnHover: true,
+        // pauseOnHover: true,
         startVisible: true,
     });
 })
