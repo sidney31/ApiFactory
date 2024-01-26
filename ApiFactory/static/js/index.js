@@ -26,8 +26,8 @@ $(document).ready(function () {
         interval: 2000,
     })
 
-    const mq = $('#marquee').marquee({
-        duration: 15000,
+    const $mq = $('#marquee').marquee({
+        duration: 25000,
         gap: 10,
         delayBeforeStart: 0,
         direction: 'left',
