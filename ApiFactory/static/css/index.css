@@ -196,10 +196,26 @@ li {
     border-bottom: solid var(--main-dark-color) 2px;
 }
 
+.section > .icon {
+    margin-bottom: 20px;
+}
+
+.section > .icon > img {
+    height: auto;
+    width: 150px;
+}
+
 .section > .text {
     font-size: 28px;
     word-break: break-word;
     text-wrap: wrap;
+}
+
+.section > .subtitle {
+    font-size: 28px;
+    text-wrap: wrap;
+    width: 300px;
+    text-align: center;
 }
 
 .nav-link:after {
@@ -222,6 +238,20 @@ li {
 
 .carousel-inner > .carousel-item {
     transition: all .25s ease;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.js-marquee{
+    display: flex;
+    flex-direction: row;
+}
+
+.js-marquee-wrapper{
+    display: flex;
+    flex-direction: row;
 }
 
 @media (max-width: 1400px) {
