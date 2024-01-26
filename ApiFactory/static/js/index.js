@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > lastScrollTop) {
-            $('.navbar').css( 'transform', 'translateY(-100px)')
+            $('.navbar').css('transform', 'translateY(-100px)')
         } else {
             $('.navbar').css('transform', 'translateY(0)')
         }
@@ -21,5 +21,19 @@ $(document).ready(function () {
     $(window).resize(function () {
         updateLogosState()
     })
+
+    const carousel = new bootstrap.Carousel($('#carousel'), {
+        interval: 2000,
+    })
+
+    const mq = $('#marquee').marquee({
+        duration: 15000,
+        gap: 10,
+        delayBeforeStart: 0,
+        direction: 'left',
+        duplicated: true,
+        pauseOnHover: true,
+        startVisible: true,
+    });
 })
 
