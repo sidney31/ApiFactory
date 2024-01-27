@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    updateLogosState()
     let lastScrollTop = 0;
 
     $(window).scroll(function () {
@@ -16,23 +17,21 @@ $(document).ready(function () {
         $('.navbar-brand:even').css('display', navbarState === 'block' ? 'block' : 'none')
     }
 
-    updateLogosState()
-
-    $(window).resize(function () {
+    window.onresize = () => {
         updateLogosState()
-    })
+    }
 
     const carousel = new bootstrap.Carousel($('#carousel'), {
         interval: 2000,
     })
 
-    const mq = $('#marquee').marquee({
-        duration: 15000,
+    const $mq = $('#marquee').marquee({
+        duration: 25000,
         gap: 10,
         delayBeforeStart: 0,
         direction: 'left',
         duplicated: true,
-        pauseOnHover: true,
+        // pauseOnHover: true,
         startVisible: true,
     });
 })

@@ -15,7 +15,7 @@ perlin = new Perlin()
 
 function init() {
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(50, width/height, 0.01, 10000);
+    camera = new THREE.PerspectiveCamera(50, width / height, 0.01, 10000);
     camera.position.z = size;
 
     renderer = new THREE.WebGLRenderer({antialias: true, depth: false});
@@ -70,12 +70,8 @@ init();
 createGeometry();
 animate();
 
-
-window.addEventListener('scroll', () => {
-    waveHeight = window.scrollY <= 60 ? 30 : window.scrollY/2
-})
-
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    renderer.setSize(window.innerWidth, window.innerHeight);
+$(document).ready(function () {
+    window.addEventListener('scroll', () => {
+        waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 2
+    })
 })
