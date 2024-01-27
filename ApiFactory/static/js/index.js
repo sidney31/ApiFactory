@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    updateLogosState()
     let lastScrollTop = 0;
 
     $(window).scroll(function () {
@@ -16,11 +17,9 @@ $(document).ready(function () {
         $('.navbar-brand:even').css('display', navbarState === 'block' ? 'block' : 'none')
     }
 
-    updateLogosState()
-
-    $(window).resize(function () {
+    window.onresize = () => {
         updateLogosState()
-    })
+    }
 
     const carousel = new bootstrap.Carousel($('#carousel'), {
         interval: 2000,

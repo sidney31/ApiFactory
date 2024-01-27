@@ -5,7 +5,7 @@
     <nav class="navbar navbar-expand-xl fixed-top">
         <div class="container align-items-center">
             <a class="navbar-brand" style="display: none" href="#">
-                <img src="{% static 'svg/logo.svg'%}" alt="" class="h-100 py-2">
+                <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
                     aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" id="navbutton">
@@ -13,7 +13,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between h-100" id="navbar">
                 <a class="navbar-brand" style="display: none" href="#">
-                    <img src="{% static 'svg/logo.svg'%}" alt="" class="h-100 py-2">
+                    <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2">
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
@@ -49,21 +49,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid w-100 h-100svh m-0 p-0">
+    <div class="container-fluid w-100 min-h-100svh m-0 p-0">
         {#        <video autoplay muted loop preload="auto"#}
         {#               poster="{% static 'img/main-video-poster.jpg' %}"#}
         {#               width="100%" height="100%" class="object-fit-cover">#}
         {#            <source src="{% static 'img/wave.mp4' %}" type="video/mp4"/>#}
         {#        </video>#}
-        <div class="wave d-flex justify-content-center overflow-hidden"></div>
+        <div class="wave d-flex justify-content-center min-h-100svh overflow-hidden"></div>
     </div>
-    <div class="position-absolute min-h-100svh top-100px left-50 translate-middle-x
+    <div class="position-absolute h-100svh top-100px left-50 translate-middle-x
                 container d-flex justify-content-around align-items-center
                 flex-column text-wrap z-3">
         <p class="max-w-1000px fs-xxl bold text-lg-center text-md-start ">
             Мы создаем пространство эффективности вашего бизнеса
         </p>
-        <ul class="fs-4 list-style-none text-center p-0 bg-blur" id="changed-text">
+        <ul class="fs-4 list-style-none text-center p-0" id="changed-text">
             <li>Автоматизация бизнес-процессов</li>
             <li>Интеграция инфраструктурных решений с учетными системами</li>
             <li>Трансформация критически важных ИТ-системы без риска для бизнеса</li>
@@ -71,7 +71,7 @@
     </div>
     <div class="container-fluid pt-5 bg-white ">
         <div class="container">
-            <p class="fs-2 text-wrap col-lg-8 col-l-12 my-5">
+            <p class="fs-2 text-wrap col-lg-8 col-l-12 mb-5">
                 <b>АПИ-ФАКТОРИ</b>
                 — команда профессионалов, способная реализовать
                 самые сложные проекты корпоративного уровня.
@@ -153,9 +153,9 @@
             </div>
         </div>
     </div>
-    <div class="container py-0">
+    <div class="container py-5">
         <div class="container">
-            <p class="fs-1 text-wrap col-lg-8 col-l-12 my-5">
+            <p class="fs-1 mb-5">
                 <b>Отраслевые решения</b>
             </p>
         </div>
@@ -193,7 +193,103 @@
                 </div>
             </div>
         </div>
-
-        <div style="height: 1000px; width: 100%"></div>
     </div>
+    <div class="container-fluid bg-white py-5">
+        <div class="container">
+            <p class="fs-1 mb-5">
+                <b>Услуги</b>
+            </p>
+            <div class="d-flex align-items-center flex-xl-row flex-column">
+                <div class="d-flex flex-wrap flex-row flex-xl-column nav-pills me-xl-3 align-items-start mb-5 col-md-12 col-xl-4"
+                     id="v-pills-tab" role="tablist"
+                     aria-orientation="vertical">
+                    <button class="btn active fs-4 text-start text-wrap mb-1" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Автоматизация производства
+                    </button>
+                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Бухгалтерия и кадры
+
+                    </button>
+                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                            aria-selected="false">Документооборот
+                    </button>
+                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">Компьютеры и сети
+                    </button>
+                </div>
+                <div class="tab-content fs-5" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active text-wrap" id="v-pills-home" role="tabpanel"
+                         aria-labelledby="v-pills-home-tab">
+                        <ul>
+                            <li>
+                                Внедрение систем управления производством (ERP и планирование)
+                            </li>
+                            <li>
+                                Внедрение систем управления складом и запасами
+                            </li>
+                            <li>
+                                Внедрение систем управления затратами и учетом себестоимости
+                            </li>
+                            <li>
+                                Проектные работы
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade text-wrap" id="v-pills-profile" role="tabpanel"
+                         aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                            <li>
+                                Автоматизация управленческих и учетных задач в сфере бухгалтерского учета
+                            </li>
+                            <li>
+                                Автоматизация управленческих и учетных задач в сфере кадрового делопроизводства
+                            </li>
+                            <li>
+                                Консалтинг в сфере бухгалтерского и налогового учета, кадрового делопроизводства
+                            </li>
+                            <li>
+                                Проектные работы
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade text-wrap" id="v-pills-messages" role="tabpanel"
+                         aria-labelledby="v-pills-messages-tab">
+                        <ul>
+                            <li>
+                                Автоматизация документооборота и архива документов
+                            </li>
+                            <li>
+                                Автоматизация управленческих процессов
+                            </li>
+                            <li>
+                                Проектные работы
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade text-wrap" id="v-pills-settings" role="tabpanel"
+                         aria-labelledby="v-pills-settings-tab">
+                        <ul>
+                            <li>
+                                Проектирование инфраструктуры и каналов связи
+                            </li>
+                            <li>
+                                Интеграция инфраструктурных решений с учетными системами
+                            </li>
+                            <li>
+                                Видеонаблюдение, IP-телефония
+                            </li>
+                            <li>
+                                Услуги по защите информации
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="height: 1000px; width: 100%"></div>
 {% endblock %}

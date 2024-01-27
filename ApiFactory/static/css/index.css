@@ -36,12 +36,17 @@ body {
     animation: appear 3s forwards;
 }
 
+.animate__text__appear * {
+    color: rgba(0, 0, 0, 0);
+    animation: appear 2s forwards;
+}
+
 @keyframes appear {
     0% {
-        filter: blur(10px);
+        color: rgba(0, 0, 0, 0);
     }
     100% {
-        filter: blur(0px);
+        color: var(--main-dark-color);
     }
 }
 
@@ -68,7 +73,6 @@ body {
 }
 
 .btn-outline {
-    border: var(--main-dark-color) 1px solid !important;
     border-radius: 7px;
     transition: all .15s ease-in;
 }
@@ -95,11 +99,11 @@ body {
 }
 
 .h-100svh {
-    height: 100svh;
+    height: calc(100svh - 100px);
 }
 
 .min-h-100svh {
-    min-height: calc(100svh - 100px);
+    min-height: calc(100svh);
 }
 
 .bold {
@@ -206,8 +210,6 @@ li {
     font-size: 28px;
     word-break: break-word;
     text-wrap: wrap;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     overflow: hidden;
 }
 
@@ -235,10 +237,6 @@ li {
 .nav-link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
-
-.carousel-inner > .carousel-item {
-    transition: all .25s ease;
 }
 
 .js-marquee {
@@ -271,6 +269,24 @@ li {
     background: linear-gradient(-90deg, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.transparent {
+    visibility: hidden;
+}
+
+.bg-blur {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#changed-text {
+    height: 100px;
+}
+
+.btn.active{
+    color: var(--main-dark-color) !important;
+    border-color: var(--main-dark-color) !important;
+}
+
 @media (max-width: 1400px) {
     .fs-xxl {
         font-size: 54px;
@@ -293,7 +309,6 @@ li {
     .fs-xxl {
         font-size: 32px;
     }
-
 }
 
 @media (max-width: 576px) {
@@ -310,4 +325,5 @@ li {
         -ms-hyphens: auto;
         hyphens: auto; /* значение auto не поддерживается Chrome */
     }
+
 }
