@@ -290,9 +290,9 @@ li {
 }
 
 .separator {
-    height: 1px;
+    min-height: 1px;
     width: 100%;
-    border-bottom: #d5d5d5 1px solid;
+    border-top: #d5d5d5 1px solid;
     padding: 15px 0;
 }
 
