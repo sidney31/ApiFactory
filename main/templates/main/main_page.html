@@ -60,9 +60,9 @@
     <div class="position-absolute h-100svh top-100px left-50 translate-middle-x
                 container d-flex justify-content-around align-items-center
                 flex-column text-wrap z-3">
-        <p class="max-w-1000px fs-xxl bold text-lg-center text-md-start ">
+        <div class="max-w-1000px fs-xxl bold text-lg-center text-md-start ">
             Мы создаем пространство эффективности вашего бизнеса
-        </p>
+        </div>
         <ul class="fs-4 list-style-none text-center p-0" id="changed-text">
             <li>Автоматизация бизнес-процессов</li>
             <li>Интеграция инфраструктурных решений с учетными системами</li>
@@ -297,30 +297,77 @@
         <div class="container">
             <p class="fs-title mb-5 pt-5">
                 <b>Цены</b>
-                <b class="fs-5 fw-light">wip</b>
             </p>
-            <table>
-                <tr>
-                    <td>Проектные работы, консалтинг и корпоративное сопровождение</td>
-                    <td>1600 руб./час</td>
-                </tr>
-                <tr>
-                    <td>Внедрение и модификация программных продуктов «1С Предприятие»</td>
-                    <td>1600 руб./час</td>
-                </tr>
-                <tr>
-                    <td>Внедрение и модификация программных продуктов «ERP система Олимп»</td>
-                    <td>1600 руб./час</td>
-                </tr>
-                <tr>
-                    <td>Проектирование инфраструктуры и каналов связи</td>
-                    <td>по запросу</td>
-                </tr>
-                <tr>
-                    <td>Индивидуальное обучение пользователей, корпоративных групп</td>
-                    <td>по запросу</td>
-                </tr>
-            </table>
+            <div id="price-wrapper">
+                <div class="row col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>
+                            Проектные работы, консалтинг и корпоративное сопровождение
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>
+                            1600₽/час
+                        </p>
+                    </div>
+                </div>
+                <div class="row col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>
+                            Внедрение и модификация программных продуктов «1С Предприятие»
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>
+                            1600₽/час
+                        </p>
+                    </div>
+                </div>
+                <div class="row col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>
+                            Внедрение и модификация программных продуктов «ERP система Олимп»
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>
+                            1600₽/час
+                        </p>
+                    </div>
+                </div>
+                <div class="row col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>
+                            Проектирование инфраструктуры и каналов связи
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>
+                            по запросу
+                        </p>
+                    </div>
+                </div>
+                <div class="row col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>
+                            Индивидуальное обучение пользователей, корпоративных групп
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>
+                            по запросу
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container separator"></div>
+        <div class="container">
+            <p class="text-muted text-wrap d-sm-none d-lg-block col-8 mt-3">
+                Мы работаем на базе программных продуктов «1С Предприятие» и «ERP система
+                Олимп», которые включены в единый реестр российских программ для электронных
+                вычислительных машин и баз данных.
+            </p>
         </div>
     </div>
     <div class="container-fluid">
@@ -348,7 +395,6 @@
                     <img src="{% static 'img/eA1FcU9.png' %}" alt="">
                 </div>
             </div>
-
         </div>
     </div>
     <div class="container-fluid" style="height: 1000px; width: 100%"></div>
