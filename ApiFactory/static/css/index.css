@@ -310,10 +310,9 @@ li {
     opacity: 1;
 }
 
-.fs-title{
+.fs-title {
     font-size: 64px;
 }
-
 
 @media (max-width: 1400px) {
     .fs-xxl {
@@ -330,6 +329,11 @@ li {
 @media (max-width: 992px) {
     .fs-xxl {
         font-size: 40px;
+    }
+
+    .fs-title {
+        font-size: 52px;
+        text-wrap: wrap;
     }
 }
 
@@ -352,6 +356,11 @@ li {
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
         hyphens: auto; /* значение auto не поддерживается Chrome */
+    }
+
+    .fs-title {
+        font-size: 42px;
+        text-wrap: wrap;
     }
 
 }
