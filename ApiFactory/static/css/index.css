@@ -184,15 +184,17 @@ li {
     flex-direction: column;
 }
 
+
 .section > * {
     margin: 0 0;
 }
 
 .section > .title {
+    transition: all .3s ease-in-out;
     margin-bottom: 20px;
-    font-size: 82px;
+    font-size: 72px;
     font-weight: 700;
-    border-bottom: solid var(--main-dark-color) 2px;
+    border-bottom: solid #e5e5e5 2px;
 }
 
 .section > .icon {
@@ -282,10 +284,36 @@ li {
     height: 100px;
 }
 
-.btn.active{
+.btn.active {
     color: var(--main-dark-color) !important;
     border-color: var(--main-dark-color) !important;
 }
+
+.separator {
+    height: 1px;
+    width: 100%;
+    border-bottom: #d5d5d5 1px solid;
+}
+
+.w__100 * {
+    width: 100%;
+}
+
+#customers img {
+    filter: grayscale(100%);
+    opacity: 0.66;
+    transition: all 0.3s ease-out;
+}
+
+#customers img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.fs-title{
+    font-size: 64px;
+}
+
 
 @media (max-width: 1400px) {
     .fs-xxl {
