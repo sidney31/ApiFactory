@@ -323,6 +323,9 @@ li {
     font-weight: 500;
 }
 
+.vertical-center{
+    vertical-align: baseline;
+}
 
 @media (max-width: 1400px) {
     .fs-xxl {
