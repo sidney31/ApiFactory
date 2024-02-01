@@ -324,6 +324,7 @@ li {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    user-select: none;
 }
 
 #customers > a > img:hover {
@@ -343,13 +344,96 @@ li {
     font-weight: 500;
 }
 
+.fw-600 {
+    font-weight: 500;
+}
+
+.fw-700 {
+    font-weight: 500;
+}
+
+.fw-800 {
+    font-weight: 500;
+}
+
+.section2 {
+    width: 500px;
+    padding: 10px 5px;
+    margin: 10px;
+}
+
+.section2 > .title {
+    font-size: 22px;
+    color: var(--main-dark-color);
+    text-wrap: wrap;
+    height: 100px;
+}
+
+.section2 > .content {
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--main-dark-color);
+}
+
+.section2 > .content > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section2 > .content > * {
+    margin: 20px 0;
+}
+
+.section2 .form-range {
+    width: 75%;
+}
+
+small {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.form-range {
+    height: 15px;
+}
+
 .vertical-center {
     vertical-align: baseline;
 }
 
-.anchor{
+.anchor {
     position: relative;
     top: -100px;
+}
+
+.form-check-input:checked {
+    background-color: #e9ecef;
+    border-color: rgba(1, 1, 1, 10%);
+}
+
+.form-switch .form-check-input {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='37332E'/%3e%3c/svg%3e");
+}
+
+.form-switch .form-check-input:focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='37332E'/%3e%3c/svg%3e");
+}
+
+.form-range {
+    height: 100%;
+    -webkit-appearance: none;
+    border-radius: 9px;
+}
+
+.form-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: var(--main-dark-color);
+    overflow: visible;
+    cursor: pointer;
 }
 
 @media (max-width: 1400px) {
@@ -392,7 +476,17 @@ li {
         width: calc(100% / 2)
     }
 
+    .section2 > .title {
+        height: auto;
+    }
 
+    .section2 > .content {
+        font-size: 18px;
+    }
+
+    .section2 .form-range {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
