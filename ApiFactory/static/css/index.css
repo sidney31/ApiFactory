@@ -374,6 +374,7 @@ li {
     font-weight: 600;
     text-decoration: none;
     color: var(--main-dark-color);
+    transition: all .3s ease;
 }
 
 .section2 > .content > a {
@@ -440,7 +441,7 @@ small {
     cursor: pointer;
 }
 
-*:focus, input {
+input:focus {
     border: none !important;
     box-shadow: none !important;
     outline: none !important;
