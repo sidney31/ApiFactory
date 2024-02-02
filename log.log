@@ -10344,3 +10344,51 @@ Fri Feb  2 14:36:37 2024 - uwsgi_response_writev_headers_and_body_do(): Broken p
 OSError: write error
 [pid: 29421|app: 0|req: 1/1] 10.212.38.16 () {46 vars in 910 bytes} [Fri Feb  2 14:36:36 2024] GET / => generated 0 bytes in 536 msecs (HTTP/1.1 200) 6 headers in 0 bytes (0 switches on core 0)
 [pid: 29423|app: 0|req: 1/2] 10.212.38.16 () {46 vars in 910 bytes} [Fri Feb  2 14:36:37 2024] GET / => generated 19978 bytes in 598 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 09:46:35 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x555629724e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x555629724e90 pid: 30063 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 30063)
+spawned uWSGI worker 1 (pid: 30064, cores: 1)
+spawned uWSGI worker 2 (pid: 30066, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 30067, cores: 1)
+spawned uWSGI worker 4 (pid: 30069, cores: 1)
+spawned uWSGI worker 5 (pid: 30071, cores: 1)
+spawned uWSGI worker 6 (pid: 30072, cores: 1)
+spawned uWSGI worker 7 (pid: 30076, cores: 1)
+spawned uWSGI worker 8 (pid: 30077, cores: 1)
+spawned uWSGI worker 9 (pid: 30080, cores: 1)
+spawned uWSGI worker 10 (pid: 30081, cores: 1)
