@@ -60,7 +60,7 @@
     <div class="position-absolute h-100svh top-100px left-50 translate-middle-x
                 container d-flex justify-content-around align-items-center
                 flex-column text-wrap z-3">
-        <div class="max-w-1000px fs-xxl bold text-lg-center text-md-start ">
+        <div class="max-w-1000px fs-xxl bold text-lg-center text-md-start ms-3">
             Мы создаем пространство эффективности вашего бизнеса
         </div>
         <ul class="fs-4 list-style-none text-center p-0" id="changed-text">
@@ -156,44 +156,44 @@
             </div>
         </div>
     </div>
-    <div class="container py-5">
+    <div class="container-fluid py-5">
         <div class="container">
             <p class="fs-title mb-5">
                 <a class="anchor" name="solutions"></a>
                 <b>Отраслевые решения</b>
             </p>
-        </div>
-        <div class="d-flex flex-row gap-lg-5 gap-sm-2 mt-2 overflow-x-hidden w-100 position-relative" id="marquee">
-            <div class="section align-items-center">
-                <div class="icon">
-                    <img src="{% static 'svg/tower.svg' %}" alt=""/>
+            <div class="d-flex flex-row gap-lg-5 gap-sm-2 mt-2 overflow-x-hidden w-100 position-relative" id="marquee">
+                <div class="section align-items-center">
+                    <div class="icon">
+                        <img src="{% static 'svg/tower.svg' %}" alt=""/>
+                    </div>
+                    <div class="subtitle">
+                        Нефтегазовое машиностроение
+                    </div>
                 </div>
-                <div class="subtitle">
-                    Нефтегазовое машиностроение
+                <div class="section align-items-center">
+                    <div class="icon">
+                        <img src="{% static 'svg/oil.svg' %}" alt=""/>
+                    </div>
+                    <div class="subtitle">
+                        Нефтесервис
+                    </div>
                 </div>
-            </div>
-            <div class="section align-items-center">
-                <div class="icon">
-                    <img src="{% static 'svg/oil.svg' %}" alt=""/>
+                <div class="section align-items-center">
+                    <div class="icon">
+                        <img src="{% static 'svg/mine.svg' %}" alt=""/>
+                    </div>
+                    <div class="subtitle">
+                        Горнорудная отрасль
+                    </div>
                 </div>
-                <div class="subtitle">
-                    Нефтесервис
-                </div>
-            </div>
-            <div class="section align-items-center">
-                <div class="icon">
-                    <img src="{% static 'svg/mine.svg' %}" alt=""/>
-                </div>
-                <div class="subtitle">
-                    Горнорудная отрасль
-                </div>
-            </div>
-            <div class="section align-items-center">
-                <div class="icon">
-                    <img src="{% static 'svg/pipe.svg' %}" alt=""/>
-                </div>
-                <div class="subtitle">
-                    Трубная отрасль
+                <div class="section align-items-center">
+                    <div class="icon">
+                        <img src="{% static 'svg/pipe.svg' %}" alt=""/>
+                    </div>
+                    <div class="subtitle">
+                        Трубная отрасль
+                    </div>
                 </div>
             </div>
         </div>
@@ -302,7 +302,7 @@
                 <b>Цены</b>
             </p>
             <div id="price-wrapper">
-                <div class="row col-md mb-2 text-wrap">
+                <div class="row px-2 col-md mb-2 text-wrap">
                     <div class="col-md-10 fs-5 ps-3 fw-400">
                         <p>
                             Проектные работы, консалтинг и корпоративное сопровождение
@@ -314,7 +314,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row col-md mb-2 text-wrap">
+                <div class="row px-2 col-md mb-2 text-wrap">
                     <div class="col-md-10 fs-5 ps-3 fw-400">
                         <p>
                             Внедрение и модификация программных продуктов «1С Предприятие»
@@ -326,7 +326,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row col-md mb-2 text-wrap">
+                <div class="row px-2 col-md mb-2 text-wrap">
                     <div class="col-md-10 fs-5 ps-3 fw-400">
                         <p>
                             Внедрение и модификация программных продуктов «ERP система Олимп»
@@ -338,7 +338,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row col-md mb-2 text-wrap">
+                <div class="row px-2 col-md mb-2 text-wrap">
                     <div class="col-md-10 fs-5 ps-3 fw-400">
                         <p>
                             Проектирование инфраструктуры и каналов связи
@@ -350,7 +350,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row col-md mb-2 text-wrap">
+                <div class="row px-2 col-md mb-2 text-wrap">
                     <div class="col-md-10 fs-5 ps-3 fw-400">
                         <p>
                             Индивидуальное обучение пользователей, корпоративных групп
@@ -379,18 +379,22 @@
                 <b>Расчёт стоимости</b>
                 <small class="text-muted">(wip)</small>
             </p>
-            <div class="mx-auto d-flex flex-wrap gap-5 ">
+            <div class="d-flex flex-wrap justify-content-between gap-3">
                 <div class="section2">
                     <div class="title">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch">
-                            <p>Проектирование инфраструктуры и каналов связи</p>
+                                   id="switch1">
+                            <label for="switch1">Проектирование инфраструктуры и каналов связи</label>
                         </div>
                     </div>
                     <div class="content">
-                        <input type="range" class="form-range" min="1" max="48" step="1" id="range1">
-                        <a class="float-end m-2">24 <small>часов</small></a>
+                        <input name="range1" onchange="rangevalue1.value = range1.value" type="range" class="form-range"
+                               min="1" max="48" step="1" id="range1">
+                        <output name="rangevalue1" class="float-end m-2" for="range1">
+                            24
+                            <small>часов</small>
+                        </output>
                         <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
                     </div>
                 </div>
@@ -398,13 +402,18 @@
                     <div class="title">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch">
-                            <p>Внедрение и модификация программных продуктов «ERP система Олимп»</p>
+                                   id="switch2">
+                            <label for="switch2">Внедрение и модификация программных продуктов «ERP система
+                                Олимп»</label>
                         </div>
                     </div>
                     <div class="content">
-                        <input type="range" class="form-range" min="1" max="48" step="1" id="range1">
-                        <a class="float-end m-2">24 <small>часов</small></a>
+                        <input name="range2" onchange="rangevalue2.value = range2.value" type="range" class="form-range"
+                               min="1" max="48" step="1" id="range2">
+                        <output name="rangevalue2" class="float-end m-2" for="range2">
+                            24
+                            <small>часов</small>
+                        </output>
                         <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
                     </div>
                 </div>
@@ -412,13 +421,18 @@
                     <div class="title">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch">
-                            <p>Внедрение и модификация программных продуктов «ERP система Олимп»</p>
+                                   id="switch3">
+                            <label for="switch3">Внедрение и модификация программных продуктов «ERP система
+                                Олимп»</label>
                         </div>
                     </div>
                     <div class="content">
-                        <input type="range" class="form-range" min="1" max="48" step="1" id="range1">
-                        <a class="float-end m-2">24 <small>часов</small></a>
+                        <input name="range3" onchange="rangevalue3.value = range3.value" type="range" class="form-range"
+                               min="1" max="48" step="1" id="range3">
+                        <output name="rangevalue3" class="float-end m-2" for="range3">
+                            24
+                            <small>часов</small>
+                        </output>
                         <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
                     </div>
                 </div>
@@ -426,13 +440,17 @@
                     <div class="title">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch">
-                            <p>Проектирование инфраструктуры и каналов связи</p>
+                                   id="switch4">
+                            <label for="switch4">Проектирование инфраструктуры и каналов связи</label>
                         </div>
                     </div>
                     <div class="content">
-                        <input type="range" class="form-range" min="1" max="48" step="1" id="range1">
-                        <a class="float-end m-2">24 <small>часов</small></a>
+                        <input name="range4" onchange="rangevalue4.value = range4.value" type="range" class="form-range"
+                               min="1" max="48" step="1" id="range4">
+                        <output name="rangevalue4" class="float-end m-2" for="range4">
+                            24
+                            <small>часов</small>
+                        </output>
                         <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
                     </div>
                 </div>
@@ -440,13 +458,17 @@
                     <div class="title">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch">
-                            <p>Индивидуальное обучение пользователей, корпоративных групп</p>
+                                   id="switch5">
+                            <label for="switch5">Индивидуальное обучение пользователей, корпоративных групп</label>
                         </div>
                     </div>
                     <div class="content">
-                        <input type="range" class="form-range" min="1" max="48" step="1" id="range1">
-                        <a class="float-end m-2">24 <small>часов</small></a>
+                        <input name="range5" onchange="rangevalue5.value = range5.value" type="range" class="form-range"
+                               min="1" max="48" step="1" id="range5">
+                        <output name="rangevalue5" class="float-end m-2" for="range5">
+                            24
+                            <small>часов</small>
+                        </output>
                         <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
                     </div>
                 </div>

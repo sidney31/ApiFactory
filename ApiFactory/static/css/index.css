@@ -357,7 +357,7 @@ li {
 }
 
 .section2 {
-    width: 500px;
+    width: 45%;
     padding: 10px 5px;
     margin: 10px;
 }
@@ -370,10 +370,11 @@ li {
 }
 
 .section2 > .content {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
     text-decoration: none;
     color: var(--main-dark-color);
+    transition: all .3s ease;
 }
 
 .section2 > .content > a {
@@ -390,7 +391,7 @@ li {
 }
 
 small {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -407,9 +408,13 @@ small {
     top: -100px;
 }
 
+.form-check-input {
+    background-color: #e9ecef;
+}
+
 .form-check-input:checked {
     background-color: #e9ecef;
-    border-color: rgba(1, 1, 1, 10%);
+    border: none;
 }
 
 .form-switch .form-check-input {
@@ -436,6 +441,12 @@ small {
     cursor: pointer;
 }
 
+input:focus {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 @media (max-width: 1400px) {
     .fs-xxl {
         font-size: 54px;
@@ -445,6 +456,10 @@ small {
 @media (max-width: 1200px) {
     .fs-xxl {
         font-size: 48px;
+    }
+
+    .section2 {
+        width: 100%;
     }
 }
 
@@ -457,9 +472,15 @@ small {
         font-size: 52px;
         text-wrap: wrap;
     }
+
 }
 
 @media (max-width: 768px) {
+
+    .container {
+        padding: 0;
+    }
+
     .fs-xxl {
         font-size: 32px;
     }
@@ -476,12 +497,17 @@ small {
         width: calc(100% / 2)
     }
 
+    .section2 {
+        margin: 0;
+    }
+
     .section2 > .title {
         height: auto;
     }
 
     .section2 > .content {
         font-size: 18px;
+        width: 100%;
     }
 
     .section2 .form-range {

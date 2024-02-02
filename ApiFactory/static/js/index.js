@@ -34,5 +34,15 @@ $(document).ready(function () {
         // pauseOnHover: true,
         startVisible: true,
     });
+    const $swithes = $('[id^=switch]')
+
+    $swithes.on('change', function () {
+        const $root = $(this).closest('.section2');
+        $root.children('.content').css(
+            'opacity', ($(this).is(':checked') ? '100%' : '30%'),
+            'pointer-events', ($(this).is(':checked') ? 'auto' : 'none')
+        );
+        // $root.children('.content').css('pointer-events', ($(this).is(':checked') ? 'auto' : 'none'));
+    });
 })
 
