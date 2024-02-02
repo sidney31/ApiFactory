@@ -8932,3 +8932,1362 @@ spawned uWSGI worker 7 (pid: 6411, cores: 1)
 spawned uWSGI worker 8 (pid: 6415, cores: 1)
 spawned uWSGI worker 9 (pid: 6416, cores: 1)
 spawned uWSGI worker 10 (pid: 6418, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 06:26:47 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55e06592de90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55e06592de90 pid: 6795 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6795)
+spawned uWSGI worker 1 (pid: 6796, cores: 1)
+spawned uWSGI worker 2 (pid: 6798, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 6799, cores: 1)
+spawned uWSGI worker 4 (pid: 6801, cores: 1)
+spawned uWSGI worker 5 (pid: 6802, cores: 1)
+spawned uWSGI worker 6 (pid: 6804, cores: 1)
+spawned uWSGI worker 7 (pid: 6808, cores: 1)
+spawned uWSGI worker 8 (pid: 6809, cores: 1)
+spawned uWSGI worker 9 (pid: 6810, cores: 1)
+spawned uWSGI worker 10 (pid: 6813, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 06:36:47 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55a4ded9ce90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x55a4ded9ce90 pid: 6825 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6825)
+spawned uWSGI worker 1 (pid: 6826, cores: 1)
+spawned uWSGI worker 2 (pid: 6828, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 6829, cores: 1)
+spawned uWSGI worker 4 (pid: 6831, cores: 1)
+spawned uWSGI worker 5 (pid: 6832, cores: 1)
+spawned uWSGI worker 6 (pid: 6835, cores: 1)
+spawned uWSGI worker 7 (pid: 6836, cores: 1)
+spawned uWSGI worker 8 (pid: 6840, cores: 1)
+spawned uWSGI worker 9 (pid: 6841, cores: 1)
+spawned uWSGI worker 10 (pid: 6844, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 06:46:48 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55c7a46a9e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55c7a46a9e90 pid: 6856 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6856)
+spawned uWSGI worker 1 (pid: 6857, cores: 1)
+spawned uWSGI worker 2 (pid: 6859, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 6860, cores: 1)
+spawned uWSGI worker 4 (pid: 6862, cores: 1)
+spawned uWSGI worker 5 (pid: 6864, cores: 1)
+spawned uWSGI worker 6 (pid: 6866, cores: 1)
+spawned uWSGI worker 7 (pid: 6868, cores: 1)
+spawned uWSGI worker 8 (pid: 6870, cores: 1)
+spawned uWSGI worker 9 (pid: 6872, cores: 1)
+spawned uWSGI worker 10 (pid: 6874, cores: 1)
+[pid: 6874|app: 0|req: 1/1] 10.220.24.70 () {42 vars in 780 bytes} [Fri Feb  2 11:47:36 2024] GET / => generated 26218 bytes in 1231 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 06:56:48 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55dfc4673e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55dfc4673e90 pid: 6886 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6886)
+spawned uWSGI worker 1 (pid: 6887, cores: 1)
+spawned uWSGI worker 2 (pid: 6888, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 6890, cores: 1)
+spawned uWSGI worker 4 (pid: 6892, cores: 1)
+spawned uWSGI worker 5 (pid: 6893, cores: 1)
+spawned uWSGI worker 6 (pid: 6896, cores: 1)
+spawned uWSGI worker 7 (pid: 6898, cores: 1)
+spawned uWSGI worker 8 (pid: 6899, cores: 1)
+spawned uWSGI worker 9 (pid: 6901, cores: 1)
+spawned uWSGI worker 10 (pid: 6903, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 07:06:49 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55c33ef9ee90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55c33ef9ee90 pid: 6922 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6922)
+spawned uWSGI worker 1 (pid: 6923, cores: 1)
+spawned uWSGI worker 2 (pid: 6925, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 6926, cores: 1)
+spawned uWSGI worker 4 (pid: 6928, cores: 1)
+spawned uWSGI worker 5 (pid: 6930, cores: 1)
+spawned uWSGI worker 6 (pid: 6931, cores: 1)
+spawned uWSGI worker 7 (pid: 6933, cores: 1)
+spawned uWSGI worker 8 (pid: 6935, cores: 1)
+spawned uWSGI worker 9 (pid: 6939, cores: 1)
+spawned uWSGI worker 10 (pid: 6940, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 07:16:49 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x5605f25d2e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x5605f25d2e90 pid: 10994 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10994)
+spawned uWSGI worker 1 (pid: 10998, cores: 1)
+spawned uWSGI worker 2 (pid: 11000, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 11001, cores: 1)
+spawned uWSGI worker 4 (pid: 11003, cores: 1)
+spawned uWSGI worker 5 (pid: 11005, cores: 1)
+spawned uWSGI worker 6 (pid: 11006, cores: 1)
+spawned uWSGI worker 7 (pid: 11008, cores: 1)
+spawned uWSGI worker 8 (pid: 11012, cores: 1)
+spawned uWSGI worker 9 (pid: 11014, cores: 1)
+spawned uWSGI worker 10 (pid: 11016, cores: 1)
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 3 (pid: 11001)...
+Gracefully killing worker 4 (pid: 11003)...
+Gracefully killing worker 2 (pid: 11000)...
+Gracefully killing worker 1 (pid: 10998)...
+Gracefully killing worker 5 (pid: 11005)...
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+Gracefully killing worker 6 (pid: 11006)...
+Gracefully killing worker 7 (pid: 11008)...
+Gracefully killing worker 8 (pid: 11012)...
+Gracefully killing worker 9 (pid: 11014)...
+Gracefully killing worker 10 (pid: 11016)...
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+worker 5 buried after 2 seconds
+worker 6 buried after 2 seconds
+worker 7 buried after 2 seconds
+worker 8 buried after 2 seconds
+worker 9 buried after 2 seconds
+worker 10 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /home/user/ApiFactory
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/user/ApiFactory/ApiFactory.sock)
+running /home/user/ApiFactory/venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 12:18:44 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55e510bdae70
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/./ApiFactory/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/conf/__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/user/.python3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/ApiFactory/./ApiFactory/settings/dev.py", line 1, in <module>
+    from .base import *
+  File "/home/user/ApiFactory/./ApiFactory/settings/base.py", line 88
+    DATABASES = {
+                ^
+SyntaxError: '{' was never closed
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 10994)
+spawned uWSGI worker 1 (pid: 11058, cores: 1)
+spawned uWSGI worker 2 (pid: 11059, cores: 1)
+spawned uWSGI worker 3 (pid: 11061, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 4 (pid: 11062, cores: 1)
+spawned uWSGI worker 5 (pid: 11064, cores: 1)
+spawned uWSGI worker 6 (pid: 11066, cores: 1)
+spawned uWSGI worker 7 (pid: 11069, cores: 1)
+spawned uWSGI worker 8 (pid: 11070, cores: 1)
+spawned uWSGI worker 9 (pid: 11072, cores: 1)
+spawned uWSGI worker 10 (pid: 11075, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 07:26:50 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x558397825e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 27, in <module>
+    import psycopg2 as Database
+ModuleNotFoundError: No module named 'psycopg2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/./ApiFactory/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.import_models()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/apps/config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/home/user/.python3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/ApiFactory/./main/models.py", line 2, in <module>
+    from wagtail.admin.panels import FieldPanel
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/panels/__init__.py", line 4, in <module>
+    from wagtail.admin.forms.models import (  # NOQA: F401
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/forms/__init__.py", line 2, in <module>
+    from .models import (  # NOQA: F401
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/forms/models.py", line 9, in <module>
+    from modelcluster.forms import ClusterForm, ClusterFormMetaclass, ClusterFormOptions
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/modelcluster/forms.py", line 14, in <module>
+    from modelcluster.models import get_all_child_relations
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/modelcluster/models.py", line 152, in <module>
+    class ClusterableModel(models.Model):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/options.py", line 243, in contribute_to_class
+    self.db_table, connection.ops.max_name_length()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/utils/connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/utils/connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "/home/user/.python3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 or psycopg module")
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 or psycopg module
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12114)
+spawned uWSGI worker 1 (pid: 12115, cores: 1)
+spawned uWSGI worker 2 (pid: 12116, cores: 1)
+spawned uWSGI worker 3 (pid: 12118, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 4 (pid: 12119, cores: 1)
+spawned uWSGI worker 5 (pid: 12121, cores: 1)
+spawned uWSGI worker 6 (pid: 12125, cores: 1)
+spawned uWSGI worker 7 (pid: 12126, cores: 1)
+spawned uWSGI worker 8 (pid: 12128, cores: 1)
+spawned uWSGI worker 9 (pid: 12129, cores: 1)
+spawned uWSGI worker 10 (pid: 12131, cores: 1)
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 12116)...
+Gracefully killing worker 1 (pid: 12115)...
+Gracefully killing worker 3 (pid: 12118)...
+Gracefully killing worker 4 (pid: 12119)...
+Gracefully killing worker 8 (pid: 12128)...
+Gracefully killing worker 5 (pid: 12121)...
+Gracefully killing worker 6 (pid: 12125)...
+Gracefully killing worker 7 (pid: 12126)...
+Gracefully killing worker 9 (pid: 12129)...
+Gracefully killing worker 10 (pid: 12131)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+worker 6 buried after 1 seconds
+worker 7 buried after 1 seconds
+worker 8 buried after 1 seconds
+worker 9 buried after 1 seconds
+worker 10 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/user/ApiFactory
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/user/ApiFactory/ApiFactory.sock)
+running /home/user/ApiFactory/venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 12:27:57 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55b0a4085e70
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 27, in <module>
+    import psycopg2 as Database
+ModuleNotFoundError: No module named 'psycopg2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/./ApiFactory/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.import_models()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/apps/config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/home/user/.python3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/ApiFactory/./main/models.py", line 2, in <module>
+    from wagtail.admin.panels import FieldPanel
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/panels/__init__.py", line 4, in <module>
+    from wagtail.admin.forms.models import (  # NOQA: F401
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/forms/__init__.py", line 2, in <module>
+    from .models import (  # NOQA: F401
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/forms/models.py", line 9, in <module>
+    from modelcluster.forms import ClusterForm, ClusterFormMetaclass, ClusterFormOptions
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/modelcluster/forms.py", line 14, in <module>
+    from modelcluster.models import get_all_child_relations
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/modelcluster/models.py", line 152, in <module>
+    class ClusterableModel(models.Model):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/options.py", line 243, in contribute_to_class
+    self.db_table, connection.ops.max_name_length()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/utils/connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/utils/connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "/home/user/.python3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 or psycopg module")
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 or psycopg module
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 12114)
+spawned uWSGI worker 1 (pid: 12290, cores: 1)
+spawned uWSGI worker 2 (pid: 12291, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 12293, cores: 1)
+spawned uWSGI worker 4 (pid: 12294, cores: 1)
+spawned uWSGI worker 5 (pid: 12296, cores: 1)
+spawned uWSGI worker 6 (pid: 12298, cores: 1)
+spawned uWSGI worker 7 (pid: 12299, cores: 1)
+spawned uWSGI worker 8 (pid: 12301, cores: 1)
+spawned uWSGI worker 9 (pid: 12303, cores: 1)
+spawned uWSGI worker 10 (pid: 12305, cores: 1)
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 12290)...
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+Gracefully killing worker 3 (pid: 12293)...
+Gracefully killing worker 2 (pid: 12291)...
+Gracefully killing worker 4 (pid: 12294)...
+Gracefully killing worker 5 (pid: 12296)...
+Gracefully killing worker 6 (pid: 12298)...
+Gracefully killing worker 7 (pid: 12299)...
+Gracefully killing worker 8 (pid: 12301)...
+Gracefully killing worker 9 (pid: 12303)...
+Gracefully killing worker 10 (pid: 12305)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+worker 6 buried after 1 seconds
+worker 7 buried after 1 seconds
+worker 8 buried after 1 seconds
+worker 9 buried after 1 seconds
+worker 10 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/user/ApiFactory
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/user/ApiFactory/ApiFactory.sock)
+running /home/user/ApiFactory/venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 12:28:11 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55691d409e70
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 27, in <module>
+    import psycopg2 as Database
+ModuleNotFoundError: No module named 'psycopg2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/ApiFactory/./ApiFactory/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.import_models()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/apps/config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/home/user/.python3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/ApiFactory/./main/models.py", line 2, in <module>
+    from wagtail.admin.panels import FieldPanel
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/panels/__init__.py", line 4, in <module>
+    from wagtail.admin.forms.models import (  # NOQA: F401
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/forms/__init__.py", line 2, in <module>
+    from .models import (  # NOQA: F401
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/wagtail/admin/forms/models.py", line 9, in <module>
+    from modelcluster.forms import ClusterForm, ClusterFormMetaclass, ClusterFormOptions
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/modelcluster/forms.py", line 14, in <module>
+    from modelcluster.models import get_all_child_relations
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/modelcluster/models.py", line 152, in <module>
+    class ClusterableModel(models.Model):
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/models/options.py", line 243, in contribute_to_class
+    self.db_table, connection.ops.max_name_length()
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/utils/connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/utils/connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "/home/user/.python3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/ApiFactory/venv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 or psycopg module")
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 or psycopg module
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 12114)
+spawned uWSGI worker 1 (pid: 12313, cores: 1)
+spawned uWSGI worker 2 (pid: 12314, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 12316, cores: 1)
+spawned uWSGI worker 4 (pid: 12318, cores: 1)
+spawned uWSGI worker 5 (pid: 12319, cores: 1)
+spawned uWSGI worker 6 (pid: 12321, cores: 1)
+spawned uWSGI worker 7 (pid: 12325, cores: 1)
+spawned uWSGI worker 8 (pid: 12326, cores: 1)
+spawned uWSGI worker 9 (pid: 12328, cores: 1)
+spawned uWSGI worker 10 (pid: 12331, cores: 1)
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 4 (pid: 12318)...
+Gracefully killing worker 1 (pid: 12313)...
+Gracefully killing worker 2 (pid: 12314)...
+Gracefully killing worker 3 (pid: 12316)...
+Gracefully killing worker 5 (pid: 12319)...
+Gracefully killing worker 6 (pid: 12321)...
+Gracefully killing worker 7 (pid: 12325)...
+Gracefully killing worker 8 (pid: 12326)...
+Gracefully killing worker 9 (pid: 12328)...
+Gracefully killing worker 10 (pid: 12331)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+worker 6 buried after 1 seconds
+worker 7 buried after 1 seconds
+worker 8 buried after 1 seconds
+worker 9 buried after 1 seconds
+worker 10 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/user/ApiFactory
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/user/ApiFactory/ApiFactory.sock)
+running /home/user/ApiFactory/venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 12:35:14 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55ef280a9e70
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55ef280a9e70 pid: 12114 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 12114)
+spawned uWSGI worker 1 (pid: 14136, cores: 1)
+spawned uWSGI worker 2 (pid: 14138, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 14139, cores: 1)
+spawned uWSGI worker 4 (pid: 14141, cores: 1)
+spawned uWSGI worker 5 (pid: 14143, cores: 1)
+spawned uWSGI worker 6 (pid: 14145, cores: 1)
+spawned uWSGI worker 7 (pid: 14147, cores: 1)
+spawned uWSGI worker 8 (pid: 14149, cores: 1)
+spawned uWSGI worker 9 (pid: 14150, cores: 1)
+spawned uWSGI worker 10 (pid: 14153, cores: 1)
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 14136)...
+Gracefully killing worker 8 (pid: 14149)...
+Gracefully killing worker 2 (pid: 14138)...
+[uwsgi-python-reloader] module/file /home/user/ApiFactory/./ApiFactory/settings/base.py has been modified
+Gracefully killing worker 3 (pid: 14139)...
+Gracefully killing worker 4 (pid: 14141)...
+Gracefully killing worker 5 (pid: 14143)...
+Gracefully killing worker 6 (pid: 14145)...
+Gracefully killing worker 7 (pid: 14147)...
+Gracefully killing worker 9 (pid: 14150)...
+Gracefully killing worker 10 (pid: 14153)...
+worker 8 buried after 1 seconds
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+worker 5 buried after 2 seconds
+worker 6 buried after 2 seconds
+worker 7 buried after 2 seconds
+worker 9 buried after 2 seconds
+worker 10 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /home/user/ApiFactory
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/user/ApiFactory/ApiFactory.sock)
+running /home/user/ApiFactory/venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 12:35:50 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x560771ee4e70
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x560771ee4e70 pid: 12114 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 12114)
+spawned uWSGI worker 1 (pid: 14268, cores: 1)
+spawned uWSGI worker 2 (pid: 14270, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 14271, cores: 1)
+spawned uWSGI worker 4 (pid: 14273, cores: 1)
+spawned uWSGI worker 5 (pid: 14275, cores: 1)
+spawned uWSGI worker 6 (pid: 14277, cores: 1)
+spawned uWSGI worker 7 (pid: 14279, cores: 1)
+spawned uWSGI worker 8 (pid: 14281, cores: 1)
+spawned uWSGI worker 9 (pid: 14283, cores: 1)
+spawned uWSGI worker 10 (pid: 14284, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 07:36:50 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x558d96ffbe90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x558d96ffbe90 pid: 14518 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14518)
+spawned uWSGI worker 1 (pid: 14528, cores: 1)
+spawned uWSGI worker 2 (pid: 14530, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 14531, cores: 1)
+spawned uWSGI worker 4 (pid: 14533, cores: 1)
+spawned uWSGI worker 5 (pid: 14535, cores: 1)
+spawned uWSGI worker 6 (pid: 14536, cores: 1)
+spawned uWSGI worker 7 (pid: 14539, cores: 1)
+spawned uWSGI worker 8 (pid: 14540, cores: 1)
+spawned uWSGI worker 9 (pid: 14544, cores: 1)
+spawned uWSGI worker 10 (pid: 14545, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 07:46:51 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55617d3eee90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55617d3eee90 pid: 28614 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28614)
+spawned uWSGI worker 1 (pid: 28615, cores: 1)
+spawned uWSGI worker 2 (pid: 28617, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 28618, cores: 1)
+spawned uWSGI worker 4 (pid: 28620, cores: 1)
+spawned uWSGI worker 5 (pid: 28622, cores: 1)
+spawned uWSGI worker 6 (pid: 28624, cores: 1)
+spawned uWSGI worker 7 (pid: 28625, cores: 1)
+spawned uWSGI worker 8 (pid: 28628, cores: 1)
+spawned uWSGI worker 9 (pid: 28629, cores: 1)
+spawned uWSGI worker 10 (pid: 28631, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 07:56:51 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x559dfbac8e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x559dfbac8e90 pid: 911 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 911)
+spawned uWSGI worker 1 (pid: 912, cores: 1)
+spawned uWSGI worker 2 (pid: 914, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 915, cores: 1)
+spawned uWSGI worker 4 (pid: 917, cores: 1)
+spawned uWSGI worker 5 (pid: 919, cores: 1)
+spawned uWSGI worker 6 (pid: 921, cores: 1)
+spawned uWSGI worker 7 (pid: 922, cores: 1)
+spawned uWSGI worker 8 (pid: 925, cores: 1)
+spawned uWSGI worker 9 (pid: 928, cores: 1)
+spawned uWSGI worker 10 (pid: 929, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 08:06:52 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x562f6ceb8e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x562f6ceb8e90 pid: 1066 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1066)
+spawned uWSGI worker 1 (pid: 1070, cores: 1)
+spawned uWSGI worker 2 (pid: 1072, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 1073, cores: 1)
+spawned uWSGI worker 4 (pid: 1075, cores: 1)
+spawned uWSGI worker 5 (pid: 1077, cores: 1)
+spawned uWSGI worker 6 (pid: 1079, cores: 1)
+spawned uWSGI worker 7 (pid: 1080, cores: 1)
+spawned uWSGI worker 8 (pid: 1081, cores: 1)
+spawned uWSGI worker 9 (pid: 1085, cores: 1)
+spawned uWSGI worker 10 (pid: 1086, cores: 1)
+[pid: 1086|app: 0|req: 1/1] 10.212.38.16 () {46 vars in 860 bytes} [Fri Feb  2 13:09:07 2024] GET / => generated 26218 bytes in 561 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+[pid: 1080|app: 0|req: 1/2] 10.212.38.16 () {40 vars in 756 bytes} [Fri Feb  2 13:09:22 2024] GET / => generated 26218 bytes in 598 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+[pid: 1086|app: 0|req: 2/3] 10.212.38.16 () {40 vars in 756 bytes} [Fri Feb  2 13:09:40 2024] GET / => generated 26218 bytes in 2 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 08:17:10 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55cd7c718e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x55cd7c718e90 pid: 485 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 485)
+spawned uWSGI worker 1 (pid: 486, cores: 1)
+spawned uWSGI worker 2 (pid: 488, cores: 1)
+spawned uWSGI worker 3 (pid: 489, cores: 1)
+spawned uWSGI worker 4 (pid: 490, cores: 1)
+spawned uWSGI worker 5 (pid: 491, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 6 (pid: 492, cores: 1)
+spawned uWSGI worker 7 (pid: 494, cores: 1)
+spawned uWSGI worker 8 (pid: 500, cores: 1)
+spawned uWSGI worker 9 (pid: 501, cores: 1)
+spawned uWSGI worker 10 (pid: 502, cores: 1)
+[pid: 486|app: 0|req: 1/1] 10.212.38.16 () {42 vars in 787 bytes} [Fri Feb  2 13:17:12 2024] GET / => generated 26218 bytes in 760 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+[pid: 501|app: 0|req: 1/2] 10.212.38.16 () {44 vars in 809 bytes} [Fri Feb  2 13:18:09 2024] GET / => generated 26218 bytes in 825 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+[pid: 501|app: 0|req: 2/3] 10.212.38.16 () {44 vars in 809 bytes} [Fri Feb  2 13:18:19 2024] GET / => generated 26218 bytes in 5 msecs (HTTP/1.1 200) 6 headers in 209 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 08:27:11 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x5557121cee90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5557121cee90 pid: 1026 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1026)
+spawned uWSGI worker 1 (pid: 1030, cores: 1)
+spawned uWSGI worker 2 (pid: 1032, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 1033, cores: 1)
+spawned uWSGI worker 4 (pid: 1035, cores: 1)
+spawned uWSGI worker 5 (pid: 1037, cores: 1)
+spawned uWSGI worker 6 (pid: 1038, cores: 1)
+spawned uWSGI worker 7 (pid: 1040, cores: 1)
+spawned uWSGI worker 8 (pid: 1044, cores: 1)
+spawned uWSGI worker 9 (pid: 1045, cores: 1)
+spawned uWSGI worker 10 (pid: 1047, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 08:37:11 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x557d8fee0e90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x557d8fee0e90 pid: 1505 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1505)
+spawned uWSGI worker 1 (pid: 1506, cores: 1)
+spawned uWSGI worker 2 (pid: 1508, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 1509, cores: 1)
+spawned uWSGI worker 4 (pid: 1511, cores: 1)
+spawned uWSGI worker 5 (pid: 1513, cores: 1)
+spawned uWSGI worker 6 (pid: 1514, cores: 1)
+spawned uWSGI worker 7 (pid: 1517, cores: 1)
+spawned uWSGI worker 8 (pid: 1519, cores: 1)
+spawned uWSGI worker 9 (pid: 1520, cores: 1)
+spawned uWSGI worker 10 (pid: 1524, cores: 1)
+[pid: 1524|app: 0|req: 1/1] 10.220.24.70 () {42 vars in 780 bytes} [Fri Feb  2 13:41:27 2024] GET / => generated 26218 bytes in 1095 msecs (HTTP/1.1 200) 6 headers in 209 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 08:47:12 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x5562a01ece90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5562a01ece90 pid: 20130 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20130)
+spawned uWSGI worker 1 (pid: 20134, cores: 1)
+spawned uWSGI worker 2 (pid: 20135, cores: 1)
+spawned uWSGI worker 3 (pid: 20136, cores: 1)
+spawned uWSGI worker 4 (pid: 20137, cores: 1)
+spawned uWSGI worker 5 (pid: 20138, cores: 1)
+spawned uWSGI worker 6 (pid: 20142, cores: 1)
+spawned uWSGI worker 7 (pid: 20143, cores: 1)
+spawned uWSGI worker 8 (pid: 20146, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 9 (pid: 20151, cores: 1)
+spawned uWSGI worker 10 (pid: 20153, cores: 1)
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Feb  2 08:57:12 2024] ***
+compiled with version: 8.3.0 on 31 January 2024 14:36:45
+os: Linux-4.19.0-26-amd64 #1 SMP Debian 4.19.304-1 (2024-01-09)
+nodename: dch-chl-web
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/user/ApiFactory
+detected binary path: /home/user/ApiFactory/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/user/ApiFactory/
+your processes number limit is 7860
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/user/ApiFactory/ApiFactory.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.5 (main, Jan 31 2024, 09:24:01) [GCC 8.3.0]
+PEP 405 virtualenv detected: /home/user/ApiFactory/venv
+Set PythonHome to /home/user/ApiFactory/venv
+Python main interpreter initialized at 0x55b147e1fe90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 802120 bytes (783 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55b147e1fe90 pid: 25934 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25934)
+spawned uWSGI worker 1 (pid: 25935, cores: 1)
+spawned uWSGI worker 2 (pid: 25937, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 25938, cores: 1)
+spawned uWSGI worker 4 (pid: 25940, cores: 1)
+spawned uWSGI worker 5 (pid: 25942, cores: 1)
+spawned uWSGI worker 6 (pid: 25943, cores: 1)
+spawned uWSGI worker 7 (pid: 25945, cores: 1)
+spawned uWSGI worker 8 (pid: 25949, cores: 1)
+spawned uWSGI worker 9 (pid: 25950, cores: 1)
+spawned uWSGI worker 10 (pid: 25953, cores: 1)
