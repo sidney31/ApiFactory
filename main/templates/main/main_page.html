@@ -1,19 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block header %}
+
     <nav class="navbar navbar-expand-xl fixed-top">
         <div class="container align-items-center">
             <a class="navbar-brand" style="display: none" href="#">
-                <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2">
+                <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" id="navbutton">
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    id="navbutton"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between h-100" id="navbar">
+            <div
+                    class="collapse navbar-collapse justify-content-between h-100"
+                    id="navbar"
+            >
                 <a class="navbar-brand" style="display: none" href="#">
-                    <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2">
+                    <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/>
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
@@ -33,33 +44,28 @@
                     </li>
                 </ul>
                 <div class="navbar-nav" style="gap: 30px">
-                    {#                    <button class="btn btn-outline">#}
-                    {#                        Вход#}
-                    {#                    </button>#}
-                    {#                    <button class="btn btn-fill">#}
-                    {#                        Регистрация#}
-                    {#                    </button>#}
-                    <button class="btn btn-fill">
-                        Aутентификация
-                    </button>
+                    {# <button class="btn btn-outline">#}
+                    {# Вход#}
+                    {#</button>#}
+                    {#<button class="btn btn-fill">#}
+                    {# Регистрация#}
+                    {#</button>#}
+                    <button class="btn btn-fill">Aутентификация</button>
                 </div>
             </div>
         </div>
     </nav>
-{% endblock %}
-
+{% endblock %} 
 {% block content %}
     <div class="container-fluid w-100 min-h-100svh m-0 p-0">
-        {#        <video autoplay muted loop preload="auto"#}
-        {#               poster="{% static 'img/main-video-poster.jpg' %}"#}
-        {#               width="100%" height="100%" class="object-fit-cover">#}
-        {#            <source src="{% static 'img/wave.mp4' %}" type="video/mp4"/>#}
-        {#        </video>#}
+        {# <video autoplay muted loop preload="auto" #}
+        {# poster="{% static 'img/main-video-poster.jpg' %}"#}
+        {# width="100%" height="100%" class="object-fit-cover">#}
+        {#        <source src="{% static 'img/wave.mp4' %}" type="video/mp4"/>#}
+        {#</video>#}
         <div class="wave d-flex justify-content-center min-h-100svh overflow-hidden"></div>
     </div>
-    <div class="position-absolute h-100svh top-100px left-50 translate-middle-x
-                container d-flex justify-content-around align-items-center
-                flex-column text-wrap z-3">
+    <div class="position-absolute h-100svh top-100px left-50 translate-middle-x container d-flex justify-content-around align-items-center flex-column text-wrap z-3">
         <div class="max-w-1000px fs-xxl bold text-lg-center text-md-start ms-3">
             Мы создаем пространство эффективности вашего бизнеса
         </div>
@@ -69,14 +75,14 @@
             <li>Трансформация критически важных ИТ-системы без риска для бизнеса</li>
         </ul>
     </div>
-    <div class="container-fluid pt-5 bg-white ">
+    <div class="container-fluid pt-5 bg-white">
         <div class="container">
             <a class="anchor" name="about"></a>
             <div class="fs-3 text-wrap col-lg-8 col-l-12 mb-5">
                 <b class="fs-title">АПИ-ФАКТОРИ</b>
                 <p>
-                    — команда профессионалов, способная реализовать
-                    самые сложные проекты корпоративного уровня.
+                    — команда профессионалов, способная реализовать самые сложные проекты
+                    корпоративного уровня.
                 </p>
             </div>
             <div class="d-md-block d-lg-none">
@@ -85,72 +91,56 @@
                         <div class="carousel-item active">
                             <div class="section">
                                 <p class="title">2</p>
-                                <p class="text">
-                                    номинации на премию “Проект года”
-                                </p>
+                                <p class="text">номинации на премию “Проект года”</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="section">
                                 <p class="title">40+</p>
-                                <p class="text">
-                                    высококвалифицированных специалистов
-                                </p>
+                                <p class="text">высококвалифицированных специалистов</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="section">
                                 <p class="title">10+</p>
-                                <p class="text">
-                                    среднего опыта сотрудников в IT-сфере
-                                </p>
+                                <p class="text">среднего опыта сотрудников в IT-сфере</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="section">
                                 <p class="title">20+</p>
-                                <p class="text">
-                                    успешно реализованных проектов
-                                </p>
+                                <p class="text">успешно реализованных проектов</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        {#        #}
+        {# #}
         <div class="container d-lg-block d-none">
             <div class="row">
                 <div class="col-xxl-6 col-lg-6 col-md-12">
                     <div class="section">
                         <p class="title">2</p>
-                        <p class="text">
-                            номинации на премию “Проект года”
-                        </p>
+                        <p class="text">номинации на премию “Проект года”</p>
                     </div>
                 </div>
                 <div class="col-xxl-6 col-lg-6 col-md-12">
                     <div class="section">
                         <p class="title">40+</p>
-                        <p class="text">
-                            высококвалифицированных специалистов
-                        </p>
+                        <p class="text">высококвалифицированных специалистов</p>
                     </div>
                 </div>
                 <div class="col-xxl-6 col-lg-6 col-md-12">
                     <div class="section">
                         <p class="title">10+</p>
-                        <p class="text">
-                            среднего опыта сотрудников в IT-сфере
-                        </p>
+                        <p class="text">среднего опыта сотрудников в IT-сфере</p>
                     </div>
                 </div>
                 <div class="col-xxl-6 col-lg-6 col-md-12">
                     <div class="section">
                         <p class="title">20+</p>
-                        <p class="text">
-                            успешно реализованных проектов
-                        </p>
+                        <p class="text">успешно реализованных проектов</p>
                     </div>
                 </div>
             </div>
@@ -162,353 +152,498 @@
                 <a class="anchor" name="solutions"></a>
                 <b>Отраслевые решения</b>
             </p>
-            <div class="d-flex flex-row gap-lg-5 gap-sm-2 mt-2 overflow-x-hidden w-100 position-relative" id="marquee">
+            <div
+                    class="d-flex flex-row gap-lg-5 gap-sm-2 mt-2 overflow-x-hidden w-100 position-relative"
+                    id="marquee"
+            >
                 <div class="section align-items-center">
                     <div class="icon">
                         <img src="{% static 'svg/tower.svg' %}" alt=""/>
                     </div>
-                    <div class="subtitle">
-                        Нефтегазовое машиностроение
-                    </div>
+                    <div class="subtitle">Нефтегазовое машиностроение</div>
                 </div>
                 <div class="section align-items-center">
                     <div class="icon">
                         <img src="{% static 'svg/oil.svg' %}" alt=""/>
                     </div>
-                    <div class="subtitle">
-                        Нефтесервис
-                    </div>
+                    <div class="subtitle">Нефтесервис</div>
                 </div>
                 <div class="section align-items-center">
                     <div class="icon">
                         <img src="{% static 'svg/mine.svg' %}" alt=""/>
                     </div>
-                    <div class="subtitle">
-                        Горнорудная отрасль
-                    </div>
+                    <div class="subtitle">Горнорудная отрасль</div>
                 </div>
                 <div class="section align-items-center">
                     <div class="icon">
                         <img src="{% static 'svg/pipe.svg' %}" alt=""/>
                     </div>
-                    <div class="subtitle">
-                        Трубная отрасль
-                    </div>
+                    <div class="subtitle">Трубная отрасль</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid bg-white py-5">
-        <div class="container">
-            <p class="fs-title mb-5">
-                <a class="anchor" name="services"></a>
-                <b>Услуги</b>
-            </p>
-            <div class="d-flex align-items-center flex-xl-row flex-column">
-                <div class="d-flex flex-wrap flex-row flex-xl-column nav-pills me-xl-3 align-items-start mb-5 col-md-12 col-xl-4"
-                     id="v-pills-tab" role="tablist"
-                     aria-orientation="vertical">
-                    <button class="btn active fs-4 text-start text-wrap mb-1" id="v-pills-home-tab"
-                            data-bs-toggle="pill"
-                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                            aria-selected="true">Автоматизация производства
-                    </button>
-                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                            aria-selected="false">Бухгалтерия и кадры
-
-                    </button>
-                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                            aria-selected="false">Документооборот
-                    </button>
-                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                            aria-selected="false">Компьютеры и сети
-                    </button>
-                </div>
-                <div class="tab-content fs-5" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active text-wrap" id="v-pills-home" role="tabpanel"
-                         aria-labelledby="v-pills-home-tab">
-                        <ul>
-                            <li>
-                                Внедрение систем управления производством (ERP и планирование)
-                            </li>
-                            <li>
-                                Внедрение систем управления складом и запасами
-                            </li>
-                            <li>
-                                Внедрение систем управления затратами и учетом себестоимости
-                            </li>
-                            <li>
-                                Проектные работы
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane fade text-wrap" id="v-pills-profile" role="tabpanel"
-                         aria-labelledby="v-pills-profile-tab">
-                        <ul>
-                            <li>
-                                Автоматизация управленческих и учетных задач в сфере бухгалтерского учета
-                            </li>
-                            <li>
-                                Автоматизация управленческих и учетных задач в сфере кадрового делопроизводства
-                            </li>
-                            <li>
-                                Консалтинг в сфере бухгалтерского и налогового учета, кадрового делопроизводства
-                            </li>
-                            <li>
-                                Проектные работы
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane fade text-wrap" id="v-pills-messages" role="tabpanel"
-                         aria-labelledby="v-pills-messages-tab">
-                        <ul>
-                            <li>
-                                Автоматизация документооборота и архива документов
-                            </li>
-                            <li>
-                                Автоматизация управленческих процессов
-                            </li>
-                            <li>
-                                Проектные работы
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane fade text-wrap" id="v-pills-settings" role="tabpanel"
-                         aria-labelledby="v-pills-settings-tab">
-                        <ul>
-                            <li>
-                                Проектирование инфраструктуры и каналов связи
-                            </li>
-                            <li>
-                                Интеграция инфраструктурных решений с учетными системами
-                            </li>
-                            <li>
-                                Видеонаблюдение, IP-телефония
-                            </li>
-                            <li>
-                                Услуги по защите информации
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container separator"></div>
-        <div class="container">
-            <p class="fs-title mb-5 pt-5">
-                <b>Цены</b>
-            </p>
-            <div id="price-wrapper">
-                <div class="row px-2 col-md mb-2 text-wrap">
-                    <div class="col-md-10 fs-5 ps-3 fw-400">
-                        <p>
-                            Проектные работы, консалтинг и корпоративное сопровождение
-                        </p>
-                    </div>
-                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                        <p>
-                            1600₽/час
-                        </p>
-                    </div>
-                </div>
-                <div class="row px-2 col-md mb-2 text-wrap">
-                    <div class="col-md-10 fs-5 ps-3 fw-400">
-                        <p>
-                            Внедрение и модификация программных продуктов «1С Предприятие»
-                        </p>
-                    </div>
-                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                        <p>
-                            1600₽/час
-                        </p>
-                    </div>
-                </div>
-                <div class="row px-2 col-md mb-2 text-wrap">
-                    <div class="col-md-10 fs-5 ps-3 fw-400">
-                        <p>
-                            Внедрение и модификация программных продуктов «ERP система Олимп»
-                        </p>
-                    </div>
-                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                        <p>
-                            1600₽/час
-                        </p>
-                    </div>
-                </div>
-                <div class="row px-2 col-md mb-2 text-wrap">
-                    <div class="col-md-10 fs-5 ps-3 fw-400">
-                        <p>
-                            Проектирование инфраструктуры и каналов связи
-                        </p>
-                    </div>
-                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                        <p>
-                            по запросу
-                        </p>
-                    </div>
-                </div>
-                <div class="row px-2 col-md mb-2 text-wrap">
-                    <div class="col-md-10 fs-5 ps-3 fw-400">
-                        <p>
-                            Индивидуальное обучение пользователей, корпоративных групп
-                        </p>
-                    </div>
-                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                        <p>
-                            по запросу
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container separator d-none d-lg-block ">
-            <p class="text-muted text-wrap col-8 mt-3 ps-3">
-                Мы работаем на базе программных продуктов «1С Предприятие» и «ERP система
-                Олимп», которые включены в единый реестр российских программ для электронных
-                вычислительных машин и баз данных.
-            </p>
-        </div>
-        <div class="container separator"></div>
-        <div class="container">
-            <p class="fs-title mb-5 pt-5">
-                <b>Расчёт стоимости</b>
-                <small class="text-muted">(wip)</small>
-            </p>
-            <div class="d-flex flex-wrap justify-content-between gap-3">
-                <div class="section2">
-                    <div class="title">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch1">
-                            <label for="switch1">Проектирование инфраструктуры и каналов связи</label>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <input name="range1" onchange="rangevalue1.value = range1.value" type="range" class="form-range"
-                               min="1" max="48" step="1" id="range1">
-                        <output name="rangevalue1" class="float-end m-2" for="range1">
-                            24
-                            <small>часов</small>
-                        </output>
-                        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-                    </div>
-                </div>
-                <div class="section2">
-                    <div class="title">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch2">
-                            <label for="switch2">Внедрение и модификация программных продуктов «ERP система
-                                Олимп»</label>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <input name="range2" onchange="rangevalue2.value = range2.value" type="range" class="form-range"
-                               min="1" max="48" step="1" id="range2">
-                        <output name="rangevalue2" class="float-end m-2" for="range2">
-                            24
-                            <small>часов</small>
-                        </output>
-                        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-                    </div>
-                </div>
-                <div class="section2">
-                    <div class="title">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch3">
-                            <label for="switch3">Внедрение и модификация программных продуктов «ERP система
-                                Олимп»</label>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <input name="range3" onchange="rangevalue3.value = range3.value" type="range" class="form-range"
-                               min="1" max="48" step="1" id="range3">
-                        <output name="rangevalue3" class="float-end m-2" for="range3">
-                            24
-                            <small>часов</small>
-                        </output>
-                        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-                    </div>
-                </div>
-                <div class="section2">
-                    <div class="title">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch4">
-                            <label for="switch4">Проектирование инфраструктуры и каналов связи</label>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <input name="range4" onchange="rangevalue4.value = range4.value" type="range" class="form-range"
-                               min="1" max="48" step="1" id="range4">
-                        <output name="rangevalue4" class="float-end m-2" for="range4">
-                            24
-                            <small>часов</small>
-                        </output>
-                        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-                    </div>
-                </div>
-                <div class="section2">
-                    <div class="title">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" checked
-                                   id="switch5">
-                            <label for="switch5">Индивидуальное обучение пользователей, корпоративных групп</label>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <input name="range5" onchange="rangevalue5.value = range5.value" type="range" class="form-range"
-                               min="1" max="48" step="1" id="range5">
-                        <output name="rangevalue5" class="float-end m-2" for="range5">
-                            24
-                            <small>часов</small>
-                        </output>
-                        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-                    </div>
-                </div>
-            </div>
-            <div class="container separator"></div>
-            <p class="fs-1 my-3 bold">Итог: 336.000₽</p>
-            <div class="container">
-                <button class="btn btn-fill position-relative translate-middle-x start-50 fs-4 col-12 col-sm-3">
-                    Заказать
+    <div class="container">
+        <p class="fs-title mb-5">
+            <a class="anchor" name="services"></a>
+            <b>Услуги</b>
+        </p>
+        <div class="d-flex align-items-center flex-xl-row flex-column">
+            <div
+                    class="d-flex flex-wrap flex-row flex-xl-column nav-pills me-xl-3 align-items-start mb-5 col-md-12 col-xl-4"
+                    id="v-pills-tab"
+                    role="tablist"
+                    aria-orientation="vertical"
+            >
+                <button
+                        class="btn active fs-4 text-start text-wrap mb-1"
+                        id="v-pills-home-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#v-pills-home"
+                        type="button"
+                        role="tab"
+                        aria-controls="v-pills-home"
+                        aria-selected="true"
+                >
+                    Автоматизация производства
+                </button>
+                <button
+                        class="btn fs-4 text-start text-wrap mb-1"
+                        id="v-pills-profile-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#v-pills-profile"
+                        type="button"
+                        role="tab"
+                        aria-controls="v-pills-profile"
+                        aria-selected="false"
+                >
+                    Бухгалтерия и кадры
+                </button>
+                <button
+                        class="btn fs-4 text-start text-wrap mb-1"
+                        id="v-pills-messages-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#v-pills-messages"
+                        type="button"
+                        role="tab"
+                        aria-controls="v-pills-messages"
+                        aria-selected="false"
+                >
+                    Документооборот
+                </button>
+                <button
+                        class="btn fs-4 text-start text-wrap mb-1"
+                        id="v-pills-settings-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#v-pills-settings"
+                        type="button"
+                        role="tab"
+                        aria-controls="v-pills-settings"
+                        aria-selected="false"
+                >
+                    Компьютеры и сети
                 </button>
             </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="container">
-            <p class="fs-title mb-5 py-5">
-                <a class="anchor" name="customers"></a>
-                <b>Наши заказчики</b>
-            </p>
-            <div class="container mx-auto d-flex flex-wrap justify-content-center" id="customers">
-                <a>
-                    <img src="{% static 'img/jiu3AQz.png' %}" alt="Customer logo">
-                </a>
-                <a>
-                    <img src="{% static 'img/JjvK1bZ.png' %}" alt="Customer logo">
-                </a>
-                <a>
-                    <img src="{% static 'img/kjLJ31b.png' %}" alt="Customer logo">
-                </a>
-                <a>
-                    <img src="{% static 'img/nQggP2T.png' %}" alt="Customer logo">
-                </a>
-                <a>
-                    <img src="{% static 'img/Wmo23Qv.png' %}" alt="Customer logo">
-                </a>
-                <a>
-                    <img src="{% static 'img/eA1FcU9.png' %}" alt="Customer logo">
-                </a>
-                <a>
-                    <img src="{% static 'img/rtbKJ73d.png' %}" alt="Customer logo">
-                </a>
+            <div class="tab-content fs-5" id="v-pills-tabContent">
+                <div
+                        class="tab-pane fade show active text-wrap"
+                        id="v-pills-home"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-home-tab"
+                >
+                    <ul>
+                        <li>
+                            Внедрение систем управления производством (ERP и планирование)
+                        </li>
+                        <li>Внедрение систем управления складом и запасами</li>
+                        <li>
+                            Внедрение систем управления затратами и учетом себестоимости
+                        </li>
+                        <li>Проектные работы</li>
+                    </ul>
+                </div>
+                <div
+                        class="tab-pane fade text-wrap"
+                        id="v-pills-profile"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab"
+                >
+                    <ul>
+                        <li>
+                            Автоматизация управленческих и учетных задач в сфере
+                            бухгалтерского учета
+                        </li>
+                        <li>
+                            Автоматизация управленческих и учетных задач в сфере кадрового
+                            делопроизводства
+                        </li>
+                        <li>
+                            Консалтинг в сфере бухгалтерского и налогового учета, кадрового
+                            делопроизводства
+                        </li>
+                        <li>Проектные работы</li>
+                    </ul>
+                </div>
+                <div
+                        class="tab-pane fade text-wrap"
+                        id="v-pills-messages"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab"
+                >
+                    <ul>
+                        <li>Автоматизация документооборота и архива документов</li>
+                        <li>Автоматизация управленческих процессов</li>
+                        <li>Проектные работы</li>
+                    </ul>
+                </div>
+                <div
+                        class="tab-pane fade text-wrap"
+                        id="v-pills-settings"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab"
+                >
+                    <ul>
+                        <li>Проектирование инфраструктуры и каналов связи</li>
+                        <li>Интеграция инфраструктурных решений с учетными системами</li>
+                        <li>Видеонаблюдение, IP-телефония</li>
+                        <li>Услуги по защите информации</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    <div class="container separator"></div>
+    <div class="container">
+        <p class="fs-title mb-5 pt-5">
+            <b>Цены</b>
+        </p>
+        <div id="price-wrapper">
+            <div class="row px-2 col-md mb-2 text-wrap">
+                <div class="col-md-10 fs-5 ps-3 fw-400">
+                    <p>Проектные работы, консалтинг и корпоративное сопровождение</p>
+                </div>
+                <div
+                        class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4"
+                >
+                    <p>1600₽/час</p>
+                </div>
+            </div>
+            <div class="row px-2 col-md mb-2 text-wrap">
+                <div class="col-md-10 fs-5 ps-3 fw-400">
+                    <p>Внедрение и модификация программных продуктов «1С Предприятие»</p>
+                </div>
+                <div
+                        class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4"
+                >
+                    <p>1600₽/час</p>
+                </div>
+            </div>
+            <div class="row px-2 col-md mb-2 text-wrap">
+                <div class="col-md-10 fs-5 ps-3 fw-400">
+                    <p>
+                        Внедрение и модификация программных продуктов «ERP система Олимп»
+                    </p>
+                </div>
+                <div
+                        class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4"
+                >
+                    <p>1600₽/час</p>
+                </div>
+            </div>
+            <div class="row px-2 col-md mb-2 text-wrap">
+                <div class="col-md-10 fs-5 ps-3 fw-400">
+                    <p>Проектирование инфраструктуры и каналов связи</p>
+                </div>
+                <div
+                        class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4"
+                >
+                    <p>по запросу</p>
+                </div>
+            </div>
+            <div class="row px-2 col-md mb-2 text-wrap">
+                <div class="col-md-10 fs-5 ps-3 fw-400">
+                    <p>Индивидуальное обучение пользователей, корпоративных групп</p>
+                </div>
+                <div
+                        class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4"
+                >
+                    <p>по запросу</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container separator d-none d-lg-block">
+        <p class="text-muted text-wrap col-8 mt-3 ps-3">
+            Мы работаем на базе программных продуктов «1С Предприятие» и «ERP система
+            Олимп», которые включены в единый реестр российских программ для
+            электронных вычислительных машин и баз данных.
+        </p>
+    </div>
+    {% comment %} Ждёт своего часа
+	<div class="container separator"></div>
+	<div class="container">
+		<p class="fs-title mb-5 pt-5">
+			<b>Расчёт стоимости</b>
+			<small class="text-muted">(wip)</small>
+		</p>
+		<div class="d-flex flex-wrap justify-content-between gap-3">
+			<div class="section2">
+				<div class="title">
+					<div class="form-check form-switch">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							role="switch"
+							checked
+							id="switch1"
+						/>
+						<label for="switch1"
+							>Проектирование инфраструктуры и каналов связи</label
+						>
+					</div>
+				</div>
+				<div class="content">
+					<input
+						name="range1"
+						onchange="rangevalue1.value = range1.value"
+						type="range"
+						class="form-range"
+						min="1"
+						max="48"
+						step="1"
+						id="range1"
+					/>
+					<output name="rangevalue1" class="float-end m-2" for="range1">
+						24
+						<small>часов</small>
+					</output>
+					<a class="float-start"
+						>Итог: 84.000₽ <small class="text-muted">24×3.500</small></a
+					>
+				</div>
+			</div>
+			<div class="section2">
+				<div class="title">
+					<div class="form-check form-switch">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							role="switch"
+							checked
+							id="switch2"
+						/>
+						<label for="switch2"
+							>Внедрение и модификация программных продуктов «ERP система
+							Олимп»</label
+						>
+					</div>
+				</div>
+				<div class="content">
+					<input
+						name="range2"
+						onchange="rangevalue2.value = range2.value"
+						type="range"
+						class="form-range"
+						min="1"
+						max="48"
+						step="1"
+						id="range2"
+					/>
+					<output name="rangevalue2" class="float-end m-2" for="range2">
+						24
+						<small>часов</small>
+					</output>
+					<a class="float-start"
+						>Итог: 84.000₽ <small class="text-muted">24×3.500</small></a
+					>
+				</div>
+			</div>
+			<div class="section2">
+				<div class="title">
+					<div class="form-check form-switch">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							role="switch"
+							checked
+							id="switch3"
+						/>
+						<label for="switch3"
+							>Внедрение и модификация программных продуктов «ERP система
+							Олимп»</label
+						>
+					</div>
+				</div>
+				<div class="content">
+					<input
+						name="range3"
+						onchange="rangevalue3.value = range3.value"
+						type="range"
+						class="form-range"
+						min="1"
+						max="48"
+						step="1"
+						id="range3"
+					/>
+					<output name="rangevalue3" class="float-end m-2" for="range3">
+						24
+						<small>часов</small>
+					</output>
+					<a class="float-start"
+						>Итог: 84.000₽ <small class="text-muted">24×3.500</small></a
+					>
+				</div>
+			</div>
+			<div class="section2">
+				<div class="title">
+					<div class="form-check form-switch">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							role="switch"
+							checked
+							id="switch4"
+						/>
+						<label for="switch4"
+							>Проектирование инфраструктуры и каналов связи</label
+						>
+					</div>
+				</div>
+				<div class="content">
+					<input
+						name="range4"
+						onchange="rangevalue4.value = range4.value"
+						type="range"
+						class="form-range"
+						min="1"
+						max="48"
+						step="1"
+						id="range4"
+					/>
+					<output name="rangevalue4" class="float-end m-2" for="range4">
+						24
+						<small>часов</small>
+					</output>
+					<a class="float-start"
+						>Итог: 84.000₽ <small class="text-muted">24×3.500</small></a
+					>
+				</div>
+			</div>
+			<div class="section2">
+				<div class="title">
+					<div class="form-check form-switch">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							role="switch"
+							checked
+							id="switch5"
+						/>
+						<label for="switch5"
+							>Индивидуальное обучение пользователей, корпоративных групп</label
+						>
+					</div>
+				</div>
+				<div class="content">
+					<input
+						name="range5"
+						onchange="rangevalue5.value = range5.value"
+						type="range"
+						class="form-range"
+						min="1"
+						max="48"
+						step="1"
+						id="range5"
+					/>
+					<output name="rangevalue5" class="float-end m-2" for="range5">
+						24
+						<small>часов</small>
+					</output>
+					<a class="float-start"
+						>Итог: 84.000₽ <small class="text-muted">24×3.500</small></a
+					>
+				</div>
+			</div>
+		</div>
+		<div class="container separator"></div>
+		<p class="fs-1 my-3 bold">Итог: 336.000₽</p>
+		<div class="container">
+			<button
+				class="btn btn-fill position-relative translate-middle-x start-50 fs-4 col-12 col-sm-3"
+			>
+				Заказать
+			</button>
+		</div>
+	</div>
+</div>
+{% endcomment %}
+</div>
+<div class="container-fluid">
+    <div class="container">
+        <p class="fs-title mb-5 py-5">
+            <a class="anchor" name="customers"></a>
+            <b>Наши заказчики</b>
+        </p>
+        <div
+                class="container mx-auto d-flex flex-wrap justify-content-center"
+                id="customers"
+        >
+            <a>
+                <img src="{% static 'img/jiu3AQz.png' %}" alt="Customer logo"/>
+            </a>
+            <a>
+                <img src="{% static 'img/JjvK1bZ.png' %}" alt="Customer logo"/>
+            </a>
+            <a>
+                <img src="{% static 'img/kjLJ31b.png' %}" alt="Customer logo"/>
+            </a>
+            <a>
+                <img src="{% static 'img/nQggP2T.png' %}" alt="Customer logo"/>
+            </a>
+            <a>
+                <img src="{% static 'img/Wmo23Qv.png' %}" alt="Customer logo"/>
+            </a>
+            <a>
+                <img src="{% static 'img/eA1FcU9.png' %}" alt="Customer logo"/>
+            </a>
+            <a>
+                <img src="{% static 'img/rtbKJ73d.png' %}" alt="Customer logo"/>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-white">
+    <div class="container">
+        <p class="fs-title py-3">
+            <a class="anchor" name="contacts"></a>
+            <b>Контакты</b>
+        </p>
+        <p>
+            <a class="fs-3 text-decoration-none text-color-main hover-opacity" href="tel:+7 987 291-19-19">
+                <i class="bi bi-telephone"></i>
+                +7 987 291-19-19
+            </a>
+        </p>
+        <p>
+            <a class="fs-3 text-decoration-none text-color-main hover-opacity" href="mailto:customer@api-factory.tech">
+                <i class="bi bi-envelope-at"></i>
+                customer@api-factory.tech
+            </a>
+        </p>
+
+        <div class="d-flex bg-gray w-75 lg-w-75 md-w-100 p-2 rounded gap-3 mt-5">
+            <select class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
+                <option selected value="1">Россия</option>
+            </select>
+            <select class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
+                <option selected value="1">Москва</option>
+                <option value="2">Пермь</option>
+                <option value="3">Ижевск</option>
+                <option value="4">Альметьевск</option>
+            </select>
+        </div>
+    </div>
+    <div style="height: 1000px; width: 100px;"></div>
+</div>
 {% endblock %}
