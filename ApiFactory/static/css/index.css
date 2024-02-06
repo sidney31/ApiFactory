@@ -2,6 +2,7 @@
     --main-dark-color: #37332E;
     --main-light-color: #F5F5F5;
     --blue-color: #81CCE1;
+    --gray-color: #F6F6F6;
 }
 
 @font-face {
@@ -48,6 +49,10 @@ body {
     100% {
         color: var(--main-dark-color);
     }
+}
+
+.container-fluid {
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -211,13 +216,13 @@ li {
 .section > .text {
     font-size: 28px;
     word-break: break-word;
-    text-wrap: wrap;
+    white-space: normal;
     overflow: hidden;
 }
 
 .section > .subtitle {
     font-size: 28px;
-    text-wrap: wrap;
+    white-space: normal;
     width: 300px;
     text-align: center;
     vertical-align: center;
@@ -287,6 +292,10 @@ li {
 .btn.active {
     color: var(--main-dark-color) !important;
     border-color: var(--main-dark-color) !important;
+}
+
+.btn:hover {
+    background: var(--gray-color);
 }
 
 .separator {
@@ -427,7 +436,7 @@ small {
 
 .form-range {
     height: 100%;
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     border-radius: 9px;
 }
 
@@ -445,6 +454,56 @@ input:focus {
     border: none !important;
     box-shadow: none !important;
     outline: none !important;
+}
+
+.text-color-main {
+    color: var(--main-dark-color);
+}
+
+.hover-opacity {
+    transition: opacity .2s ease;
+}
+
+.hover-opacity:hover {
+    opacity: 70%;
+}
+
+.btn-none {
+    border: none !important;
+    outline: none !important;
+}
+
+.bg-gray {
+    background-color: var(--gray-color);
+}
+
+
+.md-w-100 {
+    width: auto;
+}
+
+.rounded {
+    border-radius: 7px !important;
+}
+
+.text-black {
+    color: var(--main-dark-color) !important;
+}
+
+.text-white {
+    color: var(--main-light-color) !important;
+}
+
+.hover-white {
+    color: var(--main-light-color) !important;
+}
+
+.bg-dark {
+    background-color: var(--main-dark-color);
+}
+
+.h-lg-min {
+    height: auto !important;
 }
 
 @media (max-width: 1400px) {
@@ -473,6 +532,13 @@ input:focus {
         text-wrap: wrap;
     }
 
+    .fs-3 {
+        font-size: 1.7rem !important;
+    }
+
+    .h-lg-min {
+        height: 2rem !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -513,6 +579,10 @@ input:focus {
     .section2 .form-range {
         width: 100%;
     }
+
+    .md-w-100 {
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -521,18 +591,22 @@ input:focus {
     }
 
     .section > .text {
-        overflow-wrap: break-word; /* не поддерживает IE, Firefox; является копией word-wrap */
+        overflow-wrap: break-word;
         word-wrap: break-word;
-        word-break: keep-all; /* не поддерживает Opera12.14, значение keep-all не поддерживается IE, Chrome */
-        line-break: strict; /* нет поддержки для русского языка */
+        word-break: keep-all;
+        line-break: strict;
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
-        hyphens: auto; /* значение auto не поддерживается Chrome */
+        hyphens: auto;
     }
 
     .fs-title {
         font-size: 38px;
         text-wrap: wrap;
+    }
+
+    .fs-3 {
+        font-size: 5vw !important;
     }
 
 }
