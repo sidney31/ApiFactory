@@ -3,39 +3,44 @@
 
 {% block header %}
     <nav class="navbar navbar-expand-xl fixed-top">
-        <div class="container align-items-center">
-            <a class="navbar-brand" style="display: none" href="#"><img src="{% static 'svg/logo.svg' %}" alt=""
-                                                                        class="h-100 py-2"/></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" id="navbutton"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse justify-content-between h-100" id="navbar">
-                <a class="navbar-brand" style="display: none" href="#"><img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/></a>
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" aria-current="page" href="#about">О компании</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#solutions">Отраслевые решения</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#services">Услуги и цены</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#customers">Заказчики</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#contacts">Контакты</a>
-                    </li>
-                </ul>
-                <div class="navbar-nav" style="gap: 30px">
-                    {# <button class="btn btn-outline"> #}
-                    {# Вход #}
-                    {# </button> #}
-                    {# <button class="btn btn-fill"> #}
-                    {# Регистрация #}
-                    {# </button> #}
-                    <button class="btn btn-fill">Aутентификация</button>
+        <div class="container align-items-center px-2">
+            <a class="navbar-brand" style="display: none" href="#">
+                <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-top flex-row" data-bs-backdrop="false" id="offcanvasDarkNavbar"
+                 aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-body justify-content-evenly w-100">
+                    <a class="navbar-brand" style="display: none" href="#"><img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/></a>
+                    <ul class="navbar-nav justify-content-center">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" aria-current="page" href="#about">О компании</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#solutions">Отраслевые решения</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#services">Услуги и цены</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#customers">Заказчики</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#contacts">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-nav align-items-center" style="gap: 30px">
+                        {# <button class="btn btn-outline"> #}
+                        {# Вход #}
+                        {# </button> #}
+                        {# <button class="btn btn-fill"> #}
+                        {# Регистрация #}
+                        {# </button> #}
+                        <button class="btn btn-fill">Aутентификация</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,7 +56,8 @@
         {# </video> #}
         <div class="wave d-flex justify-content-center min-h-100svh overflow-hidden"></div>
     </div>
-    <div class="position-absolute h-100svh top-100px left-50 translate-middle-x container d-flex justify-content-around align-items-center flex-column text-wrap z-3">
+    <div class="position-absolute z-1 h-100svh top-100px left-50 translate-middle-x
+    container d-flex justify-content-around align-items-center flex-column text-wrap">
         <div class="max-w-1000px fs-xxl bold text-lg-center text-md-start ms-3">Мы создаем пространство эффективности
             вашего бизнеса
         </div>
@@ -133,7 +139,7 @@
         <div class="container">
             <p class="fs-title text-wrap mb-5">
                 <a class="anchor" name="solutions"></a>
-                <b>Отраслевые  my-0решения</b>
+                <b>Отраслевые решения</b>
             </p>
             <div class="d-flex flex-row gap-lg-5 gap-sm-2 mt-2 overflow-x-hidden w-100 position-relative" id="marquee">
                 <div class="section align-items-center">
@@ -164,124 +170,125 @@
         </div>
     </div>
     <div class="container-fluid bg-white py-5">
-    <div class="container">
-        <p class="fs-title text-wrap mb-5">
-            <a class="anchor" name="services"></a>
-            <b>Услуги</b>
-        </p>
-        <div class="d-flex align-items-center flex-xl-row flex-column">
-            <div class="d-flex flex-wrap flex-row flex-xl-column nav-pills me-xl-3 align-items-start mb-5 col-md-12 col-xl-4"
-                 id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="btn active fs-4 text-start text-wrap mb-1" id="v-pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                        aria-selected="true">Автоматизация производства
-                </button>
-                <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">Бухгалтерия и кадры
-                </button>
-                <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false">Документооборот
-                </button>
-                <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false">Компьютеры и сети
-                </button>
-            </div>
-            <div class="tab-content fs-5" id="v-pills-tabContent">
-                <div class="tab-pane fade show active text-wrap" id="v-pills-home" role="tabpanel"
-                     aria-labelledby="v-pills-home-tab">
-                    <ul>
-                        <li>Внедрение систем управления производством (ERP и планирование)</li>
-                        <li>Внедрение систем управления складом и запасами</li>
-                        <li>Внедрение систем управления затратами и учетом себестоимости</li>
-                        <li>Проектные работы</li>
-                    </ul>
+        <div class="container">
+            <p class="fs-title text-wrap mb-5">
+                <a class="anchor" name="services"></a>
+                <b>Услуги</b>
+            </p>
+            <div class="d-flex align-items-center flex-xl-row flex-column">
+                <div class="d-flex flex-wrap flex-row flex-xl-column nav-pills me-xl-3 align-items-start mb-5 col-md-12 col-xl-4"
+                     id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="btn active fs-4 text-start text-wrap mb-1" id="v-pills-home-tab"
+                            data-bs-toggle="pill"
+                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Автоматизация производства
+                    </button>
+                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Бухгалтерия и кадры
+                    </button>
+                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                            aria-selected="false">Документооборот
+                    </button>
+                    <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">Компьютеры и сети
+                    </button>
                 </div>
-                <div class="tab-pane fade text-wrap" id="v-pills-profile" role="tabpanel"
-                     aria-labelledby="v-pills-profile-tab">
-                    <ul>
-                        <li>Автоматизация управленческих и учетных задач в сфере бухгалтерского учета</li>
-                        <li>Автоматизация управленческих и учетных задач в сфере кадрового делопроизводства</li>
-                        <li>Консалтинг в сфере бухгалтерского и налогового учета, кадрового делопроизводства</li>
-                        <li>Проектные работы</li>
-                    </ul>
-                </div>
-                <div class="tab-pane fade text-wrap" id="v-pills-messages" role="tabpanel"
-                     aria-labelledby="v-pills-messages-tab">
-                    <ul>
-                        <li>Автоматизация документооборота и архива документов</li>
-                        <li>Автоматизация управленческих процессов</li>
-                        <li>Проектные работы</li>
-                    </ul>
-                </div>
-                <div class="tab-pane fade text-wrap" id="v-pills-settings" role="tabpanel"
-                     aria-labelledby="v-pills-settings-tab">
-                    <ul>
-                        <li>Проектирование инфраструктуры и каналов связи</li>
-                        <li>Интеграция инфраструктурных решений с учетными системами</li>
-                        <li>Видеонаблюдение, IP-телефония</li>
-                        <li>Услуги по защите информации</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container separator"></div>
-    <div class="container">
-        <p class="fs-title text-wrap mb-5 pt-5">
-            <b>Цены</b>
-        </p>
-        <div id="price-wrapper">
-            <div class="row px-2 col-md mb-2 text-wrap">
-                <div class="col-md-10 fs-5 ps-3 fw-400">
-                    <p>Проектные работы, консалтинг и корпоративное сопровождение</p>
-                </div>
-                <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                    <p>1600₽/час</p>
-                </div>
-            </div>
-            <div class="row px-2 col-md mb-2 text-wrap">
-                <div class="col-md-10 fs-5 ps-3 fw-400">
-                    <p>Внедрение и модификация программных продуктов «1С Предприятие»</p>
-                </div>
-                <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                    <p>1600₽/час</p>
-                </div>
-            </div>
-            <div class="row px-2 col-md mb-2 text-wrap">
-                <div class="col-md-10 fs-5 ps-3 fw-400">
-                    <p>Внедрение и модификация программных продуктов «ERP система Олимп»</p>
-                </div>
-                <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                    <p>1600₽/час</p>
-                </div>
-            </div>
-            <div class="row px-2 col-md mb-2 text-wrap">
-                <div class="col-md-10 fs-5 ps-3 fw-400">
-                    <p>Проектирование инфраструктуры и каналов связи</p>
-                </div>
-                <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                    <p>по запросу</p>
-                </div>
-            </div>
-            <div class="row px-2 col-md mb-2 text-wrap">
-                <div class="col-md-10 fs-5 ps-3 fw-400">
-                    <p>Индивидуальное обучение пользователей, корпоративных групп</p>
-                </div>
-                <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-                    <p>по запросу</p>
+                <div class="tab-content fs-5" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active text-wrap" id="v-pills-home" role="tabpanel"
+                         aria-labelledby="v-pills-home-tab">
+                        <ul>
+                            <li>Внедрение систем управления производством (ERP и планирование)</li>
+                            <li>Внедрение систем управления складом и запасами</li>
+                            <li>Внедрение систем управления затратами и учетом себестоимости</li>
+                            <li>Проектные работы</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade text-wrap" id="v-pills-profile" role="tabpanel"
+                         aria-labelledby="v-pills-profile-tab">
+                        <ul>
+                            <li>Автоматизация управленческих и учетных задач в сфере бухгалтерского учета</li>
+                            <li>Автоматизация управленческих и учетных задач в сфере кадрового делопроизводства</li>
+                            <li>Консалтинг в сфере бухгалтерского и налогового учета, кадрового делопроизводства</li>
+                            <li>Проектные работы</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade text-wrap" id="v-pills-messages" role="tabpanel"
+                         aria-labelledby="v-pills-messages-tab">
+                        <ul>
+                            <li>Автоматизация документооборота и архива документов</li>
+                            <li>Автоматизация управленческих процессов</li>
+                            <li>Проектные работы</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade text-wrap" id="v-pills-settings" role="tabpanel"
+                         aria-labelledby="v-pills-settings-tab">
+                        <ul>
+                            <li>Проектирование инфраструктуры и каналов связи</li>
+                            <li>Интеграция инфраструктурных решений с учетными системами</li>
+                            <li>Видеонаблюдение, IP-телефония</li>
+                            <li>Услуги по защите информации</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="container separator"></div>
+        <div class="container">
+            <p class="fs-title text-wrap mb-5 pt-5">
+                <b>Цены</b>
+            </p>
+            <div id="price-wrapper">
+                <div class="row px-2 col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>Проектные работы, консалтинг и корпоративное сопровождение</p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>1600₽/час</p>
+                    </div>
+                </div>
+                <div class="row px-2 col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>Внедрение и модификация программных продуктов «1С Предприятие»</p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>1600₽/час</p>
+                    </div>
+                </div>
+                <div class="row px-2 col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>Внедрение и модификация программных продуктов «ERP система Олимп»</p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>1600₽/час</p>
+                    </div>
+                </div>
+                <div class="row px-2 col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>Проектирование инфраструктуры и каналов связи</p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>по запросу</p>
+                    </div>
+                </div>
+                <div class="row px-2 col-md mb-2 text-wrap">
+                    <div class="col-md-10 fs-5 ps-3 fw-400">
+                        <p>Индивидуальное обучение пользователей, корпоративных групп</p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
+                        <p>по запросу</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container separator d-none d-lg-block">
+            <p class="text-muted text-wrap col-8 mt-3 ps-3">Мы работаем на базе программных продуктов «1С Предприятие» и
+                «ERP система Олимп», которые включены в единый реестр российских программ для электронных вычислительных
+                машин и баз данных.</p>
+        </div>
     </div>
-    <div class="container separator d-none d-lg-block">
-        <p class="text-muted text-wrap col-8 mt-3 ps-3">Мы работаем на базе программных продуктов «1С Предприятие» и
-            «ERP система Олимп», которые включены в единый реестр российских программ для электронных вычислительных
-            машин и баз данных.</p>
-    </div>
-</div>
     {% comment %}Ждёт своего часа<div class="container separator"></div>
     <div class="container">
       <p class="fs-title text-wrap mb-5 pt-5">
@@ -378,81 +385,99 @@
     </div>
   </div>
   {% endcomment %}
-<div class="container-fluid">
-    <div class="container">
-        <p class="fs-title text-wrap mb-5 py-5">
-            <a class="anchor" name="customers"></a>
-            <b>Наши заказчики</b>
-        </p>
-        <div class="container mx-auto d-flex flex-wrap justify-content-center" id="customers">
-            <a><img src="{% static 'img/jiu3AQz.png' %}" alt="Customer logo"/></a>
-            <a><img src="{% static 'img/JjvK1bZ.png' %}" alt="Customer logo"/></a>
-            <a><img src="{% static 'img/kjLJ31b.png' %}" alt="Customer logo"/></a>
-            <a><img src="{% static 'img/nQggP2T.png' %}" alt="Customer logo"/></a>
-            <a><img src="{% static 'img/Wmo23Qv.png' %}" alt="Customer logo"/></a>
-            <a><img src="{% static 'img/eA1FcU9.png' %}" alt="Customer logo"/></a>
-            <a><img src="{% static 'img/rtbKJ73d.png' %}" alt="Customer logo"/></a>
+    <div class="container-fluid">
+        <div class="container">
+            <p class="fs-title text-wrap mb-5 py-5">
+                <a class="anchor" name="customers"></a>
+                <b>Наши заказчики</b>
+            </p>
+            <div class="container mx-auto d-flex flex-wrap justify-content-center" id="customers">
+                <a><img src="{% static 'img/jiu3AQz.png' %}" alt="Customer logo"/></a>
+                <a><img src="{% static 'img/JjvK1bZ.png' %}" alt="Customer logo"/></a>
+                <a><img src="{% static 'img/kjLJ31b.png' %}" alt="Customer logo"/></a>
+                <a><img src="{% static 'img/nQggP2T.png' %}" alt="Customer logo"/></a>
+                <a><img src="{% static 'img/Wmo23Qv.png' %}" alt="Customer logo"/></a>
+                <a><img src="{% static 'img/eA1FcU9.png' %}" alt="Customer logo"/></a>
+                <a><img src="{% static 'img/rtbKJ73d.png' %}" alt="Customer logo"/></a>
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid bg-white pb-5">
-    <div class="container">
-        <p class="fs-title text-wrap py-3">
-            <a class="anchor" name="contacts"></a>
-            <b>Контакты</b>
-        </p>
-        <div class="d-flex flex-column">
-            <a class="fs-3 text-decoration-none text-color-main hover-opacity" href="tel:+7 987 291-19-19">
-                <i class="bi bi-telephone"></i>
-                +7 987 291-19-19
-            </a>
-            <a class="fs-3 text-decoration-none text-color-main hover-opacity"
-               href="mailto:customer@api-factory.tech">
-                <i class="bi bi-envelope-at"></i>
-                customer@api-factory.tech
-            </a>
-        </div>
+    <div class="container-fluid bg-white pb-5">
+        <div class="container">
+            <p class="fs-title text-wrap py-3">
+                <a class="anchor" name="contacts"></a>
+                <b>Контакты</b>
+            </p>
+            <p class="">
+                <a class="row fs-3 text-decoration-none text-color-main hover-opacity" href="tel:+7 987 291-19-19">
+                    <i class="bi bi-telephone w-auto"></i>
+                    +7 987 291-19-19
+                </a>
+                <a class="row fs-3 text-decoration-none text-color-main hover-opacity"
+                   href="mailto:customer@api-factory.tech">
+                    <i class="bi bi-envelope-at w-auto"></i>
+                    customer@api-factory.tech
+                </a>
+            </p>
+            <div class="d-flex bg-gray w-75 lg-w-75 md-w-100 p-2 rounded gap-3 mt-5">
+                <select class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
+                    <option selected value="1">Россия</option>
+                </select>
+                <select class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
+                    <option selected value="1">Москва</option>
+                    <option value="2">Пермь</option>
+                    <option value="3">Ижевск</option>
+                    <option value="4">Альметьевск</option>
+                </select>
+            </div>
 
-        <div class="d-flex bg-gray w-75 lg-w-75 md-w-100 p-2 rounded gap-3 mt-5">
-            <select class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
-                <option selected value="1">Россия</option>
-            </select>
-            <select class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
-                <option selected value="1">Москва</option>
-                <option value="2">Пермь</option>
-                <option value="3">Ижевск</option>
-                <option value="4">Альметьевск</option>
-            </select>
-        </div>
-        <div class="fs-4 mt-3 ms-1 text-wrap">
-            <p class="fw-500 mb-0">Инновационный центр Сколково</p>
-            <p>1121205, Россия, г. Москва, Большой бульвар, д. 40</p>
-            <button class="btn bg-gray fs-4 fw-200 text-black border-0 hover-opacity">Показать на карте</button>
+            <div class="fs-4 mt-3 ms-1 text-wrap">
+                <p class="fw-500 mb-0">Инновационный центр Сколково</p>
+                <p>1121205, Россия, г. Москва, Большой бульвар, д. 40</p>
+                <button class="btn bg-gray fs-4 fw-200 text-black border-0 hover-opacity">Показать на карте</button>
+            </div>
+
+            <div class="fs-4 mt-3 ms-1 text-wrap">
+                <p class="fw-500 mb-0">Инновационный центр Сколково</p>
+                <p>1121205, Россия, г. Пермь, Большой бульвар, д. 40</p>
+                <button class="btn bg-gray fs-4 fw-200 text-black border-0 hover-opacity">Показать на карте</button>
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid m-0 text-white bg-dark my-0 py-3">
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
-            <p class="col-12 col-lg-3 mb-3 mb-lg-0 text-white">© 2024 ApiFactory</p>
-            <ul class="col-12 col-lg nav justify-content-end">
-                <li class="nav-item mx-2 my-0">
-                    <a class="text-decoration-none hover-white hover-opacity" href="#about">О компании</a>
-                </li>
-                <li class="nav-item mx-2 my-0">
-                    <a class="text-decoration-none hover-white hover-opacity" href="#solutions">Отраслевые решения</a>
-                </li>
-                <li class="nav-item mx-2 my-0">
-                    <a class="text-decoration-none hover-white hover-opacity" href="#services">Услуги и цены</a>
-                </li>
-                <li class="nav-item mx-2 my-0">
-                    <a class="text-decoration-none hover-white hover-opacity" href="#customers">Заказчики</a>
-                </li>
-                <li class="nav-item mx-2 my-0">
-                    <a class="text-decoration-none hover-white hover-opacity" href="#contacts">Контакты</a>
-                </li>
-            </ul>
-        </footer>
+    <div class="container-fluid m-0 text-white bg-dark my-0 py-3">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                <p class="col-12 col-lg-3 mb-3 mb-lg-0 text-white">
+                    © 2024 ApiFactory
+                </p>
+                <ul class="col-12 col-lg nav justify-content-end">
+                    <li class="nav-item mx-2 my-0">
+                        <a class="text-decoration-none hover-white hover-opacity" href="#about">
+                            О компании
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2 my-0">
+                        <a class="text-decoration-none hover-white hover-opacity" href="#solutions">
+                            Отраслевые решения
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2 my-0">
+                        <a class="text-decoration-none hover-white hover-opacity" href="#services">
+                            Услуги и цены
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2 my-0">
+                        <a class="text-decoration-none hover-white hover-opacity" href="#customers">
+                            Заказчики
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2 my-0">
+                        <a class="text-decoration-none hover-white hover-opacity" href="#contacts">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
     </div>
-</div>
 {% endblock %}

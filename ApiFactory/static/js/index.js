@@ -2,7 +2,7 @@ $(document).ready(function () {
     updateLogosState()
     let lastScrollTop = 0;
 
-    $(window).scroll(function () {
+    $(window).scroll(() => {
         if ($(this).scrollTop() > lastScrollTop) {
             $('.navbar').css('transform', 'translateY(-100px)')
         } else {
