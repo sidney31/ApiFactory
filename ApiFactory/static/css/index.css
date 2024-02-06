@@ -51,6 +51,10 @@ body {
     }
 }
 
+.container-fluid {
+    overflow-x: hidden;
+}
+
 .navbar {
     height: 100px;
     background: white;
@@ -212,13 +216,13 @@ li {
 .section > .text {
     font-size: 28px;
     word-break: break-word;
-    text-wrap: wrap;
+    white-space: normal;
     overflow: hidden;
 }
 
 .section > .subtitle {
     font-size: 28px;
-    text-wrap: wrap;
+    white-space: normal;
     width: 300px;
     text-align: center;
     vertical-align: center;
@@ -288,6 +292,10 @@ li {
 .btn.active {
     color: var(--main-dark-color) !important;
     border-color: var(--main-dark-color) !important;
+}
+
+.btn:hover {
+    background: var(--gray-color);
 }
 
 .separator {
@@ -448,33 +456,54 @@ input:focus {
     outline: none !important;
 }
 
-.text-color-main{
+.text-color-main {
     color: var(--main-dark-color);
 }
 
-.hover-opacity{
+.hover-opacity {
     transition: opacity .2s ease;
 }
 
-.hover-opacity:hover{
+.hover-opacity:hover {
     opacity: 70%;
 }
 
-.btn-none{
-    border: none!important;
-    outline: none!important;
+.btn-none {
+    border: none !important;
+    outline: none !important;
 }
 
-.bg-gray{
+.bg-gray {
     background-color: var(--gray-color);
 }
 
-.md-w-100{
+
+.md-w-100 {
     width: auto;
 }
 
 .rounded {
-    border-radius: 7px!important;
+    border-radius: 7px !important;
+}
+
+.text-black {
+    color: var(--main-dark-color) !important;
+}
+
+.text-white {
+    color: var(--main-light-color) !important;
+}
+
+.hover-white {
+    color: var(--main-light-color) !important;
+}
+
+.bg-dark {
+    background-color: var(--main-dark-color);
+}
+
+.h-lg-min {
+    height: auto !important;
 }
 
 @media (max-width: 1400px) {
@@ -504,7 +533,11 @@ input:focus {
     }
 
     .fs-3 {
-        font-size: 1.5rem!important;
+        font-size: 1.7rem !important;
+    }
+
+    .h-lg-min {
+        height: 2rem !important;
     }
 }
 
@@ -546,13 +579,9 @@ input:focus {
     .section2 .form-range {
         width: 100%;
     }
-    
-    .fs-3 {
-        font-size: 1.2rem!important;
-    }
 
-    .md-w-100{
-        width: 100%!important;
+    .md-w-100 {
+        width: 100% !important;
     }
 }
 
@@ -577,7 +606,7 @@ input:focus {
     }
 
     .fs-3 {
-        font-size: 1rem!important;
+        font-size: 5vw !important;
     }
 
 }
