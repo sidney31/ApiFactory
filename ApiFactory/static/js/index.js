@@ -1,8 +1,7 @@
 $(document).ready(function () {
-    updateLogosState()
     let lastScrollTop = 0;
 
-    $(window).scroll(function () {
+    $(window).scroll(() => {
         if ($(this).scrollTop() > lastScrollTop) {
             $('.navbar').css('transform', 'translateY(-100px)')
         } else {
@@ -10,16 +9,6 @@ $(document).ready(function () {
         }
         lastScrollTop = $(this).scrollTop();
     });
-
-    function updateLogosState() {
-        let navbarState = $('.navbar-toggler').css('display')
-        $('.navbar-brand:odd').css('display', navbarState === 'block' ? 'none' : 'block')
-        $('.navbar-brand:even').css('display', navbarState === 'block' ? 'block' : 'none')
-    }
-
-    window.onresize = () => {
-        updateLogosState()
-    }
 
     const carousel = new bootstrap.Carousel($('#carousel'), {
         interval: 2000,
@@ -44,5 +33,17 @@ $(document).ready(function () {
         );
         // $root.children('.content').css('pointer-events', ($(this).is(':checked') ? 'auto' : 'none'));
     });
+
+
+    const myOffcanvas = document.querySelector('#offcanvas')
+    const navLinks = document.querySelectorAll('.nav-link')
+    const offcanvas = new bootstrap.Offcanvas(myOffcanvas)
+
+    navLinks.forEach(e => {
+        e.addEventListener('click', () => {
+            offcanvas.hide();
+        })
+    })
+
 })
 
