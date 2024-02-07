@@ -44,5 +44,17 @@ $(document).ready(function () {
         );
         // $root.children('.content').css('pointer-events', ($(this).is(':checked') ? 'auto' : 'none'));
     });
+
+
+    const myOffcanvas = document.querySelector('#offcanvas')
+    const navLinks = document.querySelectorAll('.nav-link')
+    const offcanvas = new bootstrap.Offcanvas(myOffcanvas)
+
+    navLinks.forEach(e => {
+        e.addEventListener('click', () => {
+            offcanvas.hide();
+        })
+    })
+
 })
 
