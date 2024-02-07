@@ -3,29 +3,33 @@
 
 {% block header %}
   <nav class="navbar navbar-expand-xl fixed-top">
-    <div class="container align-items-center px-2">
-      <a class="navbar-brand" style="display: none" href="#"><img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2" /></a>
+    <div class="container-fluid bg-white z-3">
+      <div id="collapsed-header" class="container-lg d-flex flex-row justify-content-between align-items-center">
+        <a class="navbar-brand nav-link hover-none d-xl-none" href="#"><img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2" /></a>
+        <i class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </i>
+      </div>
+    </div>
       
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-top" data-bs-backdrop="false" id="offcanvas" aria-labelledby="offcanvasLabel">
-        <div class="offcanvas-body justify-content-evenly w-100">
-          <a class="navbar-brand" style="display: none" href="#"><img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2" /></a>
-          <ul class="navbar-nav justisfy-content-center">
-            <li class="nav-item mx-2">
+    <div class="container-lg">
+      <div class="offcanvas offcanvas-top z-1" tabindex="-1" data-bs-backdrop="false" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-body justify-content-between w-100 z-1">
+          <a class="navbar-brand nav-link hover-none d-none d-xl-block" href="#"><img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2" /></a>
+          <ul class="navbar-nav" id="nav-items">
+            <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#about">О компании</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
               <a class="nav-link" href="#solutions">Отраслевые решения</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
               <a class="nav-link" href="#services">Услуги и цены</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
               <a class="nav-link" href="#customers">Заказчики</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
               <a class="nav-link" href="#contacts">Контакты</a>
             </li>
           </ul>
@@ -53,7 +57,7 @@
     {# </video> #}
     <div class="wave d-flex justify-content-center min-h-100svh overflow-hidden"></div>
   </div>
-  <div class="position-absolute z-1 h-100svh top-100px left-50 translate-middle-x container d-flex justify-content-around align-items-center flex-column text-wrap">
+  <div class="position-absolute z-1 h-100svh top-100px left-50 translate-middle-x container-lg d-flex justify-content-around align-items-center flex-column text-wrap">
     <div class="max-w-1000px fs-xxl bold text-lg-center text-md-start ms-3">Мы создаем пространство эффективности вашего бизнеса</div>
     <ul class="fs-4 list-style-none text-center p-0" id="changed-text">
       <li>Автоматизация бизнес-процессов</li>
@@ -62,7 +66,7 @@
     </ul>
   </div>
   <div class="container-fluid pt-5 bg-white">
-    <div class="container">
+    <div class="container-lg">
       <a class="anchor" name="about"></a>
       <div class="fs-3 text-wrap col-lg-8 col-l-12 mb-5">
         <b class="fs-title text-wrap">АПИ-ФАКТОРИ</b>
@@ -100,7 +104,7 @@
       </div>
     </div>
     {#  #}
-    <div class="container d-lg-block d-none">
+    <div class="container-lg d-lg-block d-none">
       <div class="row">
         <div class="col-xxl-6 col-lg-6 col-md-12">
           <div class="section">
@@ -130,7 +134,7 @@
     </div>
   </div>
   <div class="container-fluid py-5">
-    <div class="container">
+    <div class="container-lg">
       <p class="fs-title text-wrap mb-5">
         <a class="anchor" name="solutions"></a>
         <b>Отраслевые решения</b>
@@ -164,7 +168,7 @@
     </div>
   </div>
   <div class="container-fluid bg-white py-5">
-    <div class="container">
+    <div class="container-lg">
       <p class="fs-title text-wrap mb-5">
         <a class="anchor" name="services"></a>
         <b>Услуги</b>
@@ -211,8 +215,8 @@
         </div>
       </div>
     </div>
-    <div class="container separator"></div>
-    <div class="container">
+    <div class="container-lg separator"></div>
+    <div class="container-lg">
       <p class="fs-title text-wrap mb-5 pt-5">
         <b>Цены</b>
       </p>
@@ -259,12 +263,12 @@
         </div>
       </div>
     </div>
-    <div class="container separator d-none d-lg-block">
+    <div class="container-lg separator d-none d-lg-block">
       <p class="text-muted text-wrap col-8 mt-3 ps-3">Мы работаем на базе программных продуктов «1С Предприятие» и «ERP система Олимп», которые включены в единый реестр российских программ для электронных вычислительных машин и баз данных.</p>
     </div>
   </div>
-  {% comment %}Ждёт своего часа<div class="container separator"></div>
-  <div class="container">
+  {% comment %}Ждёт своего часа<div class="container-lg separator"></div>
+  <div class="container-lg">
     <p class="fs-title text-wrap mb-5 pt-5">
       <b>Расчёт стоимости</b>
       <small class="text-muted">(wip)</small>
@@ -351,21 +355,21 @@
         </div>
       </div>
     </div>
-    <div class="container separator"></div>
+    <div class="container-lg separator"></div>
     <p class="fs-1 my-3 bold">Итог: 336.000₽</p>
-    <div class="container">
+    <div class="container-lg">
       <button class="btn btn-fill position-relative translate-middle-x start-50 fs-4 col-12 col-sm-3">Заказать</button>
     </div>
   </div>
 
   {% endcomment %}
   <div class="container-fluid">
-    <div class="container">
+    <div class="container-lg">
       <p class="fs-title text-wrap mb-5 py-5">
         <a class="anchor" name="customers"></a>
         <b>Наши заказчики</b>
       </p>
-      <div class="container mx-auto d-flex flex-wrap justify-content-center" id="customers">
+      <div class="container-lg mx-auto d-flex flex-wrap justify-content-center" id="customers">
         <a><img src="{% static 'img/jiu3AQz.png' %}" alt="Customer logo" /></a>
         <a><img src="{% static 'img/JjvK1bZ.png' %}" alt="Customer logo" /></a>
         <a><img src="{% static 'img/kjLJ31b.png' %}" alt="Customer logo" /></a>
@@ -377,7 +381,7 @@
     </div>
   </div>
   <div class="container-fluid bg-white pb-5">
-    <div class="container">
+    <div class="container-lg">
       <p class="fs-title text-wrap py-3">
         <a class="anchor" name="contacts"></a>
         <b>Контакты</b>
@@ -418,7 +422,7 @@
     </div>
   </div>
   <div class="container-fluid m-0 text-white bg-dark my-0 py-3">
-    <div class="container">
+    <div class="container-lg">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
         <p class="col-12 col-lg-3 mb-3 mb-lg-0 text-white">© 2024 ApiFactory</p>
         <ul class="col-12 col-lg nav justify-content-end">

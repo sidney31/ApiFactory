@@ -32,6 +32,10 @@ body {
     font-family: 'Montserrat Variable', serif;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .animate-appear {
     filter: blur(10px);
     animation: appear 3s forwards;
@@ -58,9 +62,11 @@ body {
 
 .navbar {
     height: 100px;
-    background: white;
+    background-color: white !important;
     padding: 0 !important;
     transition: all .3s ease;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navbar-brand,
@@ -72,7 +78,8 @@ body {
 }
 
 .navbar-brand {
-    min-width: 100px !important;
+    height: 100px !important;
+    width: auto !important;
     padding: 0 !important;
     margin: 0 !important;
     fill: var(--main-dark-color);
@@ -93,16 +100,12 @@ body {
     background-color: var(--main-dark-color);
     border-radius: 7px;
     color: var(--main-light-color);
-    transition: all .15s ease-in;
+    transition: background .15s ease-in;
     height: min-content;
 }
 
 .btn-fill:hover {
     background-color: white;
-}
-
-.nav-link {
-    vertical-align: center;
 }
 
 .nav-link:hover {
@@ -247,7 +250,7 @@ li {
     transition: transform .3s;
 }
 
-.nav-link:hover:after {
+.nav-link:not(.hover-none):hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
@@ -512,11 +515,24 @@ input:focus {
     height: auto !important;
 }
 
-.offcanvas.show,
-.offcanvas.showing {
-    top: 100px;
-    min-height: calc(100svh - 100px);
+.nav-item {
+    margin: 0 10px !important;
 }
+
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    height: 50px;
+}
+
+/* $grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+); */
 
 @media (max-width: 1400px) {
     .fs-xxl {
@@ -531,6 +547,46 @@ input:focus {
 
     .section2 {
         width: 100%;
+    }
+
+    .nav-link:after {
+        display: none !important;
+    }
+
+    #nav-items {
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .navbar-nav li a {
+        line-height: normal !important;
+        height: auto;
+        border-top: 1px color-mix(in srgb, var(--main-dark-color) 10%, #ffffff00 90%) solid;
+        font-size: 22px;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-nav li:nth-child(1) a {
+        border: none !important;
+    }
+
+    .offcanvas {
+        top: 100px !important;
+        min-height: calc(100svh - 100px);
+    }
+
+    .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .offcanvas-body .btn {
+        width: 100%;
+        height: 3rem;
+        font-size: 22px;
     }
 }
 
@@ -551,17 +607,9 @@ input:focus {
     .h-lg-min {
         height: 2rem !important;
     }
-
-    .nav-link:after {
-        display: none !important;
-    }
 }
 
 @media (max-width: 768px) {
-
-    .container {
-        padding: 0;
-    }
 
     .fs-xxl {
         font-size: 32px;

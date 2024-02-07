@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    updateLogosState()
     let lastScrollTop = 0;
 
     $(window).scroll(() => {
@@ -10,16 +9,6 @@ $(document).ready(function () {
         }
         lastScrollTop = $(this).scrollTop();
     });
-
-    function updateLogosState() {
-        let navbarState = $('.navbar-toggler').css('display')
-        $('.navbar-brand:odd').css('display', navbarState === 'block' ? 'none' : 'block')
-        $('.navbar-brand:even').css('display', navbarState === 'block' ? 'block' : 'none')
-    }
-
-    window.onresize = () => {
-        updateLogosState()
-    }
 
     const carousel = new bootstrap.Carousel($('#carousel'), {
         interval: 2000,
