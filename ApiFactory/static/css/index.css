@@ -573,14 +573,20 @@ input:focus {
     }
 
     .offcanvas {
+        height: 100%!important;
+        visibility: visible;
         top: 100px !important;
-        min-height: calc(100svh - 100px);
+        max-height: 0!important;
+        transform: translateY(0)!important;
+        transition: max-height .3s ease-in-out;
+        border: none!important;
     }
 
     .offcanvas-body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: inherit;
     }
 
     .offcanvas-body .btn {

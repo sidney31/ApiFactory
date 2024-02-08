@@ -45,5 +45,13 @@ $(document).ready(function () {
         })
     })
 
+    myOffcanvas.addEventListener('show.bs.offcanvas', e => {
+        myOffcanvas.setAttribute("style", "max-height: calc(100vh - 100px)!important;");
+    })
+
+    myOffcanvas.addEventListener('hide.bs.offcanvas', e => {
+        myOffcanvas.setAttribute("style", "max-height: 0!important;");
+    })
+
 })
 
