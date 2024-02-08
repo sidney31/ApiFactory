@@ -63,4 +63,32 @@ $(document).ready(function () {
 		myOffcanvas.setAttribute("style", "max-height: 0!important;");
 		$(".navbar-toggler").toggleClass('open')
 	});
-});
+
+	const $subtitle = $('#subtitle')
+	const $listOfSubtitle = $subtitle.children()
+	$subtitle.html($listOfSubtitle[0]).css('opacity', '100');
+
+	let i = 1;
+	foo
+	setInterval(foo, 5000)
+
+	async function foo() {
+		i = (i == 2) ? 0 : i + 1
+		await setOpacity($subtitle, 0)
+		$subtitle.html($listOfSubtitle[i])
+		await setOpacity($subtitle, 100)
+	}
+
+	function setOpacity(el, val) {
+		return new Promise((resolve) => {
+			jQuery.easing.def = 'ease';
+			$(el).animate({
+				opacity: val
+			}, {
+				duration: 400,
+			});
+			setTimeout(() => { resolve('success') }, 500)
+		})
+	}
+
+})

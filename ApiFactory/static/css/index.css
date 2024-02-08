@@ -545,7 +545,6 @@ input:focus {
     transition: .25s ease-in-out;
 }
 
-
 .navbar-toggler.open > span:nth-child(1){
     transform: translateY(10px) rotateZ(-45deg);
 }
@@ -554,6 +553,12 @@ input:focus {
 }
 .navbar-toggler.open > span:nth-child(3){
     transform: translateY(-10px) rotateZ(45deg);
+}
+
+#subtitle{
+    height: 150px;
+    overflow: hidden;
+    opacity: 0;
 }
 
 /* $grid-breakpoints: (
