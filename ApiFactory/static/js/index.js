@@ -56,13 +56,11 @@ $(document).ready(function () {
 			"style",
 			"max-height: calc(100svh - 100px)!important;"
 		);
+		$(".navbar-toggler").toggleClass('open')
 	});
 
 	myOffcanvas.addEventListener("hide.bs.offcanvas", () => {
 		myOffcanvas.setAttribute("style", "max-height: 0!important;");
+		$(".navbar-toggler").toggleClass('open')
 	});
-
-	$(".navbar-toggler").click(function () {
-		$(this).toggleClass('open')
-	})
 });
