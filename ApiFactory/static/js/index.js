@@ -2,9 +2,9 @@ $(document).ready(function () {
     let lastScrollTop = 0;
 
     $(window).scroll(() => {
-        if ($(this).scrollTop() > lastScrollTop) {
+        if ($(this).scrollTop() > lastScrollTop + 10) {
             $('.navbar').css('transform', 'translateY(-100px)')
-        } else {
+        } else if ($(this).scrollTop() < lastScrollTop - 10) {
             $('.navbar').css('transform', 'translateY(0)')
         }
         lastScrollTop = $(this).scrollTop();
@@ -23,6 +23,7 @@ $(document).ready(function () {
         // pauseOnHover: true,
         startVisible: true,
     });
+
     const $swithes = $('[id^=switch]')
 
     $swithes.on('change', function () {
@@ -45,11 +46,11 @@ $(document).ready(function () {
         })
     })
 
-    myOffcanvas.addEventListener('show.bs.offcanvas', e => {
+    myOffcanvas.addEventListener('show.bs.offcanvas', () => {
         myOffcanvas.setAttribute("style", "max-height: calc(100vh - 100px)!important;");
     })
 
-    myOffcanvas.addEventListener('hide.bs.offcanvas', e => {
+    myOffcanvas.addEventListener('hide.bs.offcanvas', () => {
         myOffcanvas.setAttribute("style", "max-height: 0!important;");
     })
 

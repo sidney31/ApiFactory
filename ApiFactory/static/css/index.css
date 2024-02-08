@@ -573,7 +573,7 @@ input:focus {
     }
 
     .offcanvas {
-        height: 100%!important;
+        height: calc(100vh - 100px)!important;
         visibility: visible;
         top: 100px !important;
         max-height: 0!important;
