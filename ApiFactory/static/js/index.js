@@ -2,9 +2,11 @@ $(document).ready(function () {
 	let lastScrollTop = 0;
 
 	$(window).scroll(() => {
-		if ($(this).scrollTop() > lastScrollTop + 10) {
+		if ($(this).scrollTop() < 50) return;
+
+		if ($(this).scrollTop() > lastScrollTop + 5) {
 			$(".navbar").css("transform", "translateY(-100px)");
-		} else if ($(this).scrollTop() < lastScrollTop - 10) {
+		} else if ($(this).scrollTop() < lastScrollTop - 5) {
 			$(".navbar").css("transform", "translateY(0)");
 		}
 		lastScrollTop = $(this).scrollTop();
@@ -52,11 +54,15 @@ $(document).ready(function () {
 	myOffcanvas.addEventListener("show.bs.offcanvas", () => {
 		myOffcanvas.setAttribute(
 			"style",
-			"max-height: calc(100vh - 100px)!important;"
+			"max-height: calc(100svh - 100px)!important;"
 		);
 	});
 
 	myOffcanvas.addEventListener("hide.bs.offcanvas", () => {
 		myOffcanvas.setAttribute("style", "max-height: 0!important;");
 	});
+
+	$(".navbar-toggler").click(function () {
+		$(this).toggleClass('open')
+	})
 });
