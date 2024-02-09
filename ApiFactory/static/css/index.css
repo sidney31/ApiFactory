@@ -565,6 +565,17 @@ input:focus {
     opacity: 0;
 }
 
+.appear-down{
+    opacity: 0;
+	transform: translateY(300px);
+    transition: transform 1.5s, opacity .7s ease;
+}
+
+.animate-number{
+    opacity: 0;
+    transition: transform .1s  ease;
+}
+
 /* $grid-breakpoints: (
     xs: 0,
     sm: 576px,
