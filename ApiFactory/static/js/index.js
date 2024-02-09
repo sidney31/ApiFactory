@@ -87,6 +87,8 @@ $(document).ready(function () {
 
 
 	async function switchSubtitleElements() {
+		if (!window.matchMedia('(max-width: 576px)').matches)
+			return false
 		it = (it == 2) ? 0 : it + 1
 		await setOpacity($subtitle, 0)
 		$subtitle.html($listOfSubtitle[it])
@@ -94,11 +96,12 @@ $(document).ready(function () {
 	}
 
 	function setOpacity(el, val) {
-		return new Promise((resolve, reject) => {
+		return new Promise((resolve) => {
+
 			$(el).animate({
 				opacity: val
 			}, {
-				duration: 400,
+				duration: 500,
 				easing: 'ease'
 			});
 
