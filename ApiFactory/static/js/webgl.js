@@ -6,14 +6,14 @@ let target, width, height, size, waveHeight;
 let t;
 let perlin;
 
-target = document.querySelector(".wave");
-width = target.offsetWidth;
-height = target.offsetHeight;
-size = width < height ? width : height;
-t = 0;
-perlin = new Perlin();
-
 function init() {
+	target = document.querySelector(".wave");
+	width = target.offsetWidth;
+	height = target.offsetHeight;
+	size = width < height ? width : height;
+	t = 0;
+	perlin = new Perlin();
+
 	scene = new THREE.Scene();
 	camera = new THREE.PerspectiveCamera(50, width / height, 0.01, 10000);
 	camera.position.z = size;
@@ -24,6 +24,7 @@ function init() {
 
 	waveHeight = 30;
 
+	target.replaceChildren();
 	target.appendChild(renderer.domElement);
 
 	// const composer = new THREE.EffectComposer(renderer);
@@ -75,8 +76,13 @@ init();
 createGeometry();
 animate();
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener("scroll", () => {
 		waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 2;
 	});
 });
+
+window.addEventListener('resize', () => {
+	init();
+	createGeometry();
+})

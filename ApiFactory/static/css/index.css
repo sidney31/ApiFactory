@@ -555,6 +555,10 @@ input:focus {
     transform: translateY(-10px) rotateZ(45deg);
 }
 
+.navbar-toggler.open .offcanvas{
+    visibility: visible;
+}
+
 #subtitle{
     height: 150px;
     overflow: hidden;
@@ -612,7 +616,7 @@ input:focus {
     .offcanvas {
         overflow: hidden;
         height: calc(100svh - 100px)!important;
-        visibility: visible;
+        visibility: hidden;
         top: 100px !important;
         max-height: 0!important;
         transform: translateY(0)!important;
