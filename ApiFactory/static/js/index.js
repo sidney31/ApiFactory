@@ -108,5 +108,47 @@ $(document).ready(function () {
 			setTimeout(() => { resolve('success') }, 500)
 		})
 	}
-})
 
+	startAnimate()
+
+	$(window).scroll(() => {
+		startAnimate()
+	})
+
+	function startAnimate() {
+		$(".appear-down").each((i, e) => {
+			if (window.scrollY = window.innerHeight > $(e).get(0).getBoundingClientRect().top) {
+				$(e).css('opacity', '100')
+				$(e).css('transform', 'translateY(0)')
+			}
+		})
+
+		$(".appear-right, .appear-left").each((i, e) => {
+			if (window.scrollY = window.innerHeight > $(e).get(0).getBoundingClientRect().top) {
+				$(e).css('transform', 'translateX(0)')
+			}
+		})
+	}
+
+	$(".animate-number").each((i, e) => animateNumber(e))
+
+	async function animateNumber(el) {
+		let initialValue = $(el).text()
+		let num = initialValue.match(/\d+/)[0]
+		$(el).text('0')
+		$(el).css('opacity', '100')
+
+		for (let i = 1; i <= num; i++) {
+			await new Promise((resolve) => {
+				setTimeout(() => {
+					$(el).text(i)
+					if (i == num)
+						$(el).text(initialValue.replace(/\d+/, num))
+
+					resolve('success')
+				}, 100 / num * 15)
+			})
+		}
+	}
+
+})
