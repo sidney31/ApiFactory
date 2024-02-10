@@ -117,14 +117,14 @@ $(document).ready(function () {
 
 	function startAnimate() {
 		$(".appear-down").each((i, e) => {
-			if (window.scrollY = window.innerHeight > $(e).get(0).getBoundingClientRect().top) {
+			if (window.innerHeight > $(e).get(0).getBoundingClientRect().top) {
 				$(e).css('opacity', '100')
 				$(e).css('transform', 'translateY(0)')
 			}
 		})
 
 		$(".appear-right, .appear-left").each((i, e) => {
-			if (window.scrollY = window.innerHeight > $(e).get(0).getBoundingClientRect().top) {
+			if (window.innerHeight > $(e).get(0).getBoundingClientRect().top) {
 				$(e).css('transform', 'translateX(0)')
 			}
 		})
