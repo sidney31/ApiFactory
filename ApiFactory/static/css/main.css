@@ -1,0 +1,17 @@
+.nav-link:after {
+    display: block;
+    content: '';
+    position: relative;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    top: -40px;
+    background-color: var(--main-dark-color);
+    transform-origin: bottom right;
+    transition: transform .3s;
+}
+
+.nav-link:not(.hover-none):hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

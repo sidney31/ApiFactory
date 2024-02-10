@@ -1,0 +1,45 @@
+.dropdown-menu::before,
+.dropdown-menu::after {
+    border: none;
+    content: none;
+}
+
+#profile-menu{
+    top: calc(100% + 22px)!important;
+    left: auto!important;
+    right: 0;
+    border: none !important;
+    border-radius: 0 0 9px 9px!important;
+    padding: 30px;
+}
+
+#profile-menu .title{
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#profile-menu .subtitle{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#profile-menu ul{
+    padding: 0;
+}
+
+#profile-menu ul li {
+    list-style: none;
+    font-size: 16px;
+}
+
+#profile-menu a {
+    font-style: normal;
+    text-decoration: none;
+    color: var(--main-dark-color);
+    transition: all .1s ease;
+}
+
+#profile-menu a:hover {
+    color: color-mix(in srgb, var(--main-dark-color), white);
+}

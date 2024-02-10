@@ -56,10 +56,6 @@ body {
     }
 }
 
-.container-fluid {
-    overflow-x: hidden;
-}
-
 .navbar {
     height: 100px;
     background-color: white !important;
@@ -198,7 +194,6 @@ li {
     flex-direction: column;
 }
 
-
 .section>* {
     margin: 0 0;
 }
@@ -235,24 +230,6 @@ li {
     width: 300px;
     text-align: center;
     vertical-align: center;
-}
-
-.nav-link:after {
-    display: block;
-    content: '';
-    position: relative;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    top: -40px;
-    background-color: var(--main-dark-color);
-    transform-origin: bottom right;
-    transition: transform .3s;
-}
-
-.nav-link:not(.hover-none):hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
 }
 
 .js-marquee {
@@ -519,7 +496,7 @@ input:focus {
     margin: 0 10px !important;
 }
 
-.navbar-toggler{
+.menu-toggler{
     border: none !important;
     outline: none !important;
     height: 50px;
@@ -533,7 +510,7 @@ input:focus {
     justify-content: space-around;
 }
     
-.navbar-toggler > span{
+.menu-toggler > span{
     display: block;
     position: relative;
     height: 2px;
@@ -545,17 +522,17 @@ input:focus {
     transition: .25s ease-in-out;
 }
 
-.navbar-toggler.open > span:nth-child(1){
+.menu-toggler.open > span:nth-child(1){
     transform: translateY(10px) rotateZ(-45deg);
 }
-.navbar-toggler.open > span:nth-child(2){
+.menu-toggler.open > span:nth-child(2){
     transform: scaleX(10%);
 }
-.navbar-toggler.open > span:nth-child(3){
+.menu-toggler.open > span:nth-child(3){
     transform: translateY(-10px) rotateZ(45deg);
 }
 
-.navbar-toggler.open .offcanvas{
+.menu-toggler.open .offcanvas{
     visibility: visible;
 }
 
@@ -579,6 +556,11 @@ input:focus {
     max-height: 100px!important;
     margin-top: 0;
 }
+
+.dropdown-toggle:after {
+    display: none;
+}
+
 
 
 /* $grid-breakpoints: (
