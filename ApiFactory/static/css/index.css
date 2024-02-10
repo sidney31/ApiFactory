@@ -575,6 +575,12 @@ input:focus {
     opacity: 0;
 }
 
+.offcanvas{
+    max-height: 100px!important;
+    margin-top: 0;
+}
+
+
 /* $grid-breakpoints: (
     xs: 0,
     sm: 576px,
@@ -623,11 +629,15 @@ input:focus {
         border: none !important;
     }
 
+    .navbar-nav .btn {
+        max-width: 960px;
+    }
+
     .offcanvas {
         overflow: hidden;
         height: calc(100svh - 100px)!important;
         visibility: hidden;
-        top: 100px !important;
+        margin-top: 100px;
         max-height: 0!important;
         transform: translateY(0)!important;
         transition: max-height .3s ease-in-out;

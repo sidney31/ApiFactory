@@ -60,7 +60,7 @@ $(document).ready(function () {
 	});
 
 	myOffcanvas.addEventListener("hide.bs.offcanvas", () => {
-		myOffcanvas.setAttribute("style", "max-height: 0!important;");
+		myOffcanvas.setAttribute("style", "max-height: 0;");
 		$(".navbar-toggler").toggleClass('open')
 	});
 
@@ -83,6 +83,7 @@ $(document).ready(function () {
 
 	$(window).resize(() => {
 		init()
+		$(".navbar-toggler").removeClass('open')
 	})
 
 
@@ -128,9 +129,15 @@ $(document).ready(function () {
 				$(e).css('transform', 'translateX(0)')
 			}
 		})
+
+		$(".animate-number").each((i, e) => {
+			if (window.innerHeight > $(e).get(0).getBoundingClientRect().top) {
+				animateNumber(e)
+				$(e).removeClass("animate-number")
+			}
+		})
 	}
 
-	$(".animate-number").each((i, e) => animateNumber(e))
 
 	async function animateNumber(el) {
 		let initialValue = $(el).text()

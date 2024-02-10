@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('resize', () => {
 		init();
 		createGeometry();
-		animate();
 	})
 
 });
