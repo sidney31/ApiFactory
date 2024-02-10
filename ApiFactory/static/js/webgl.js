@@ -80,9 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener("scroll", () => {
 		waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 2;
 	});
-});
 
-window.addEventListener('resize', () => {
-	init();
-	createGeometry();
-})
+	window.addEventListener('resize', () => {
+		init();
+		createGeometry();
+		animate();
+	})
+
+});

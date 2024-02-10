@@ -573,7 +573,6 @@ input:focus {
 
 .animate-number{
     opacity: 0;
-    transition: transform .1s  ease;
 }
 
 /* $grid-breakpoints: (
