@@ -60,7 +60,7 @@ $(document).ready(function () {
 	});
 
 	myOffcanvas.addEventListener("hide.bs.offcanvas", () => {
-		myOffcanvas.setAttribute("style", "max-height: 0!important;");
+		myOffcanvas.setAttribute("style", "max-height: 0;");
 		$(".navbar-toggler").toggleClass('open')
 	});
 
@@ -83,6 +83,7 @@ $(document).ready(function () {
 
 	$(window).resize(() => {
 		init()
+		$(".navbar-toggler").removeClass('open')
 	})
 
 
