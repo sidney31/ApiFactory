@@ -43,3 +43,35 @@
 #profile-menu a:hover {
     color: color-mix(in srgb, var(--main-dark-color), white);
 }
+
+.card{
+    border: none!important;
+    height: 300px!important;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img{
+    height: 80%;
+    width: auto;
+    padding: 10px;
+}
+
+.card-body{
+    flex: 0 1 auto;
+}
+
+.card-title, .card-subtitle{
+    margin: 0;
+}
+
+.card-title{
+    font-size: 18px;
+}
+
+.card-subtitle{
+    font-size: 16px;
+    font-weight: 300!important;
+}
