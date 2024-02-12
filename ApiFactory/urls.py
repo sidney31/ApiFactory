@@ -5,11 +5,13 @@ from django.contrib import admin
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
 from main import urls as main_urls
+from user import urls as user_urls
 
 from search import views as search_views
 
 urlpatterns = [
-    path('', include(main_urls)),
+    path('', include(main_urls), name="main"),
+    path('user/', include(user_urls), name="user"),
     path("admin/", include(wagtailadmin_urls)),
     path("search/", search_views.search, name="search"),
 ]
