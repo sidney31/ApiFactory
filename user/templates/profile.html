@@ -11,7 +11,7 @@
     <div class="container-fluid bg-white z-3">
       <div class="container-lg d-flex flex-row justify-content-between align-items-center">
         
-        <a class="navbar-brand nav-link hover-none" href="#">
+        <a class="navbar-brand nav-link hover-none" href="{% url 'main:home' %}">
           <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/>
         </a>
 
@@ -25,9 +25,9 @@
             <p class="title">Имя Ф.</p>
             <p class="subtitle">Компания</p>
             <ul>
-              <li><a href="">Оплата</a></li>
-              <li><a href="">Помощь</a></li>
-              <li><a href="">Выход из аккаунта</a></li>
+              <li><a href="{% url 'user:payment' %}">Оплата</a></li>
+              <li><a href="{% url 'user:help' %}">Помощь</a></li>
+              <li><a href="{% url 'main:home' %}">Выход из аккаунта</a></li>
             </ul>
           </ul>
         </div>
@@ -39,40 +39,33 @@
 
 {% block content %}
 <div class="container-lg" style="padding: 30px">
-  <div class="d-flex justify-content-between flex-wrap ">
+  <div class="d-flex flex-wrap" style="gap: 30px">
     <div class="card" style="width: 18rem;">
       <img src="{% static '/svg/eyefactory.svg' %}" class="card-img-top" alt="...">
       <div class="card-body p-0">
-        <p class="card-title">EyeFactory</h5>
+        <p class="card-title">EyeFactory</p>
         <p class="card-subtitle">Система мониторинга</p>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
       <img src="{% static '/svg/librenms.svg' %}" class="card-img-top" alt="...">
       <div class="card-body p-0">
-        <p class="card-title">LibreNMS</h5>
+        <p class="card-title">LibreNMS</p>
         <p class="card-subtitle">Система мониторинга</p>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
       <img src="{% static '/svg/aicensus.svg' %}" class="card-img-top" alt="...">
       <div class="card-body p-0">
-        <p class="card-title">AiCensus</h5>
+        <p class="card-title">AiCensus</p>
         <p class="card-subtitle">Система учета</p>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
       <img src="{% static '/svg/rimeracloud.svg' %}" class="card-img-top" alt="...">
       <div class="card-body p-0">
-        <p class="card-title">Rimera Cloud</h5>
+        <p class="card-title">Rimera Cloud</p>
         <p class="card-subtitle">Облачное хранилище</p>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="{% static '/svg/eyefactory.svg' %}" class="card-img-top" alt="...">
-      <div class="card-body p-0">
-        <p class="card-title">EyeFactory</h5>
-        <p class="card-subtitle">Система мониторинга</p>
       </div>
     </div>
   </div>
