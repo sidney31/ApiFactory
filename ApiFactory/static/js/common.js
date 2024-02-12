@@ -1,17 +1,4 @@
 $(document).ready(function () {
-  let lastScrollTop = 0;
-
-  $(window).scroll(() => {
-    if ($(this).scrollTop() < 50) return;
-
-    if ($(this).scrollTop() > lastScrollTop + 5) {
-      $(".navbar").css("transform", "translateY(-100px)");
-    } else if ($(this).scrollTop() < lastScrollTop - 5) {
-      $(".navbar").css("transform", "translateY(0)");
-    }
-    lastScrollTop = $(this).scrollTop();
-  });
-
   $(".menu-toggler").click(() => { $(".menu-toggler").toggleClass('open') })
 
   startAnimate()
