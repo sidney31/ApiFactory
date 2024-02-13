@@ -1,8 +1,8 @@
 :root {
-    --main-dark-color: #37332E;
-    --main-light-color: #F5F5F5;
+    --main-dark-color: #36332f;
+    --main-light-color: #F6F6F6;
     --blue-color: #81CCE1;
-    --gray-color: #F6F6F6;
+    --gray-color: #E7E7E7;
 }
 
 @font-face {
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: 'Montserrat Variable';
+    font-family: 'Montserrat Variable'; 
     font-style: normal;
     font-display: auto;
     font-weight: 100 900;
@@ -55,9 +55,8 @@ body {
         color: var(--main-dark-color);
     }
 }
-
-.navbar {
-    height: 100px;
+.navbar { 
+  height: 100px;
     background-color: white !important;
     padding: 0 !important;
     transition: all .3s ease;
