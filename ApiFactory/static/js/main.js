@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     let lastScrollTop = 0;
 
     $(window).scroll(() => {
@@ -110,5 +109,46 @@ $(document).ready(function () {
             }, 500)
         })
     }
+
+
+    let addresses = {
+        'Moscow': {
+            'title': 'Инновационный центр Сколково',
+            'address': '1121205, г. Москва, Большой бульвар, д. 40',
+            'mapURL': 'https://yandex.ru/maps/-/CDBzaC4N',
+        },
+        'Perm': {
+            'title': 'шоссе Космонавтов, д. 111 е',
+            'address': '614982, г. Пермь, шоссе Космонавтов, д. 111 е',
+            'mapURL': 'https://yandex.ru/maps/-/CDBziA47',
+        },
+        'Izhevsk': {
+            'title': 'ул. Орджоникидзе, д. 2',
+            'address': '426063, г. Ижевск, ул. Орджоникидзе, д. 2',
+            'mapURL': 'https://yandex.ru/maps/-/CDBzmZKr',
+        },
+        'Almetyevsk': {
+            'title': 'ул. Сургутская, д. 2',
+            'address': '423458, г. Альметьевск, ул. Сургутская, д. 2, офис 301',
+            'mapURL': 'https://yandex.ru/maps/-/CDBzmJ14',
+        }
+    }
+
+    function defineContacts(city) {
+        const address = addresses[city]
+        $('#results').html(`
+                  <div class="fs-4 mt-3 ms-1 text-wrap">
+                    <p class="fw-500 mb-0">${address['title']}</p>
+                    <p> ${address['address']} </p>
+                    <a href="${address['mapURL']}" class="btn bg-gray fs-4 fw-200 text-black border-0 hover-opacity">Показать на карте</a>
+                  </div>
+                `)
+    }
+
+    defineContacts(city.value)
+
+    $('#city').change(() => {
+        defineContacts(city.value)
+    })
 
 })
