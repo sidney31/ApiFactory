@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   let lastScrollTop = 0;
 
   $(window).scroll(() => {
@@ -132,7 +133,7 @@ $(document).ready(function () {
       'address': '423458, г. Альметьевск, ул. Сургутская, д. 2, офис 301',
       'mapURL': 'https://yandex.ru/maps/-/CDBzmJ14',
     }
-  } 
+  }
 
   function defineContacts(city) {
     const address = addresses[city]
@@ -151,26 +152,42 @@ $(document).ready(function () {
     defineContacts(city.value)
   })
 
-  $('.callbackModalbtn').click( (e) => {
+  $('.callbackModalbtn').click((e) => {
     const modalState = $('#callbackModal').is(':visible')
     $('body').css('overflowY', !modalState ? 'hidden' : 'visible')
     modalState ? $('#callbackModal')[0].close() : $('#callbackModal')[0].showModal()
   })
 
-  $(document).keydown(function(e) {
+  $(document).keydown(function (e) {
     if (e.keyCode == 27 && $('#callbackModal').is(':visible'))
-      e.preventDefault()  
+      e.preventDefault()
   });
 
   $('input[type=tel]').mask('+7 (999) 999-99-99');
-  
-  $('#callbackModal form').submit(function(e) {
-    e.preventDefault();
-    showAlert('<strong>Спасибо!</strong> В близжайшее время с Вами свяжется менеджер.', 3000)
+
+  $('#callbackModal form').submit(function (e) {
+    e.preventDefault()
+
+    $.ajax({
+      url: 'send_callback/',
+      method: 'POST',
+      data: $(this).serialize(),
+      processData: false,
+      success: (data) => {
+        if (data.valid == true) {
+          showAlert('<strong>Спасибо!</strong> В близжайшее время с Вами свяжется менеджер.', 3000)
+          $('body').css('overflowY', 'visible')
+          $('#callbackModal')[0].close()
+          $(this)[0].reset()
+        } else {
+          showAlert(JSON.stringify(data.errors), 3000)
+        }
+      }
+    });
     return false;
   });
 
-  function showAlert(html, ms){
+  function showAlert(html, ms) {
     const $alert = $("#alert")
     $alert.html(html)
     $alert.addClass('show')

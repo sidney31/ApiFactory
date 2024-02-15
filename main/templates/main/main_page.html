@@ -5,6 +5,13 @@
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
 <script type='module' src="{% static 'js/webgl.js' %}"></script>
+<script>
+  $.ajaxSetup({
+    headers: {
+      'X-CSRFToken': '{{ csrf_token }}'
+    }
+  });
+</script>
 <script type="module" src="{% static 'js/main.js' %}"></script>
 {% endblock %}
 
@@ -311,24 +318,25 @@
         <i class="bi bi-x-lg callbackModalbtn"></i>
       </div>
       <form>
+        {% csrf_token %}
         <div class="title">
           Запросить консультацию
         </div>
         <div class="field">
-          <input type="text" class="form-control" id="nameInput" placeholder="Имя">
+          {{ form.name }}
         </div>
         <div class="field">
-          <input type="tel" class="form-control" id="phoneInput" placeholder="Номер телефона">
+          {{ form.number }}
         </div>
         <div class="field text-small form-check">
-          <input type="checkbox" class="form-check-input" id="personalDataCheck">
-          <label class="form-check-label" for="personalDataCheck">
+          {{ form.agreement }}
+          <label class="form-check-label" for="{{ form.agreement.id_for_label}}">
             Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
           </label>
         </div>
         <div class="w-100 w-md-75">
-          <div class="mx-auto" style="width: max-content">
-            <button class="w-100 btn btn-fill callbackModalbtn" type="submit"> 
+          <div class="mx-auto" style="w-75">
+            <button class="w-100 btn btn-fill" type="submit"> 
               Отправить
             </button>
           </div>
