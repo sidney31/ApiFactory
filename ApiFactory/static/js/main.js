@@ -159,7 +159,9 @@ $(document).ready(function () {
 
   $(document).keydown(function(e) {
     if (e.keyCode == 27 && $('#callbackModal').is(':visible'))
-      e.preventDefault()
+      e.preventDefault()  
   });
+
+  $('input[type=tel]').mask('+7 (999) 999-99-99');
 
 })
