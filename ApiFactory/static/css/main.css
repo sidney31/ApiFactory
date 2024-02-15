@@ -87,6 +87,32 @@
   cursor: pointer;
 }
 
+#alert{
+  position: fixed;
+  background-color: #f9da74;
+  height: auto;
+  text-wrap: wrap;
+  white-space: normal;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 9px;
+  padding: 15px;
+  transition: all .3s ease-out;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+}
+
+#alert:not(.show){
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+#alert.show{
+  opacity: 100%;
+  transform: translateY(0);
+}
+
 @media (max-width: 768px){
   #callbackModal{
     min-height: 100dvh!important;
@@ -99,5 +125,8 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    max-width: 440px;
+    width: 100%;
+    margin: auto;
   }
 }

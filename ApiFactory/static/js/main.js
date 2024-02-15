@@ -163,5 +163,21 @@ $(document).ready(function () {
   });
 
   $('input[type=tel]').mask('+7 (999) 999-99-99');
+  
+  $('#callbackModal form').submit(function(e) {
+    e.preventDefault();
+    showAlert('<strong>Спасибо!</strong> В близжайшее время с Вами свяжется менеджер.', 3000)
+    return false;
+  });
+
+  function showAlert(html, ms){
+    const $alert = $("#alert")
+    $alert.html(html)
+    $alert.addClass('show')
+    setTimeout(() => {
+      $alert.removeClass('show')
+    }, ms)
+
+  }
 
 })
