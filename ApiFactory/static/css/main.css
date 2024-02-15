@@ -25,6 +25,7 @@
   font-size: 20px;
   border-radius: 9px;
   padding: 30px;
+  transition: opacity .3s;
 }
 
 #callbackModal .title{
@@ -63,6 +64,19 @@
 
 #callbackModal .form-check label{
   margin-left: 10px;
+}
+
+#callbackModal[open]{
+  animation: fade .2s ease forwards;
+}
+
+@keyframes fade{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 100%;
+  }
 }
 
 .form-check-input:checked[type=checkbox]{
