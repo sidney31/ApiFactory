@@ -19,6 +19,83 @@
 #callbackModal{
   border: none;
   outline: none;
-  height: 50%;
-  width: 700px;
+  height: min-content;
+  max-width: 500px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 9px;
+  padding: 30px;
+}
+
+#callbackModal .title{
+  font-size: 22px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-wrap: wrap;
+}
+
+#callbackModal .field{
+  margin-bottom: 30px;
+  font-size: 16px;  
+  text-wrap: wrap;
+  text-align: justify;
+  line-height: 1rem;
+}
+
+#callbackModal input[type="text"],
+#callbackModal input[type="tel"]{
+  border: none;
+  border-bottom: 1px color-mix(in srgb, var(--main-dark-color), #ffffff00) solid!important;
+  border-radius: 0!important;
+  padding: 0!important;
+}
+
+#callbackModal input[type="checkbox"]{
+  height: 15px!important;
+  width: 15px!important;
+  border: 1px color-mix(in srgb, var(--main-dark-color), #ffffff00) solid!important;
+  color: var(--main-dark-color);
+}
+
+#callbackModal .form-check label{
+  margin-left: 10px;
+}
+
+.form-check-input:checked[type=checkbox]{
+  background-color: var(--main-dark-color)!important;
+}
+
+#callbackModal .field.text-small{
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#callbackModal .btn{
+  width: 70%;
+  margin: 0 auto;
+}
+
+#callbackModal #closeBtn{
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  color: var(--main-dark-color);
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+  #callbackModal{
+    min-height: 100svh!important;
+    height: 100%;
+    max-width: 100vw!important;
+    margin: 0!important;
+  }
+
+  #callbackModal form{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

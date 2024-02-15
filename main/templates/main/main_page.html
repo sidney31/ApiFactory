@@ -301,27 +301,38 @@
     <p class="text-muted text-wrap col-8 mt-3 ps-3">Мы работаем на базе программных продуктов «1С Предприятие» и
     «ERP система Олимп», которые включены в единый реестр российских программ для электронных вычислительных
     машин и баз данных.</p>
-  </div>
+  </div>  
   <div class="container-lg">
-    <a onclick="window.callbackModal.showModal()" class="btn btn-fill">
+    <a class="btn btn-fill callbackModalbtn">
       Подробнее
     </a>
     <dialog id="callbackModal">
+      <div id="closeBtn">
+        <i class="bi bi-x-lg callbackModalbtn"></i>
+      </div>
       <form>
-        <h3 class="text-wrap">
-          Укажите контакт, для связи с Вами
-        </h3>
-        <div class="mb-3">
-          <label for="#nameInput">Фамилия Имя Отчество</label>
-          <input type="text" class="form-control" id="nameInput">
+        <div class="title">
+          Запросить консультацию
         </div>
-        <div class="mb-3">
-          <label for="#phoneInput">Номер телефона</label>
-          <input type="tel" class="form-control" id="phoneInput">
+        <div class="field">
+          <input type="text" class="form-control" id="nameInput" placeholder="Имя">
         </div>
-        <button onclick="window.callbackModal.close()" class="btn btn-fill">
-          Отправить
-        </button>
+        <div class="field">
+          <input type="tel" class="form-control" id="phoneInput" placeholder="Номер телефона">
+        </div>
+        <div class="field text-small form-check">
+          <input type="checkbox" class="form-check-input" id="personalDataCheck">
+          <label class="form-check-label" for="personalDataCheck">
+            Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+          </label>
+        </div>
+        <div class="w-100 w-md-75">
+          <div class="mx-auto" style="width: max-content">
+            <button class="w-100 btn btn-fill callbackModalbtn"> 
+              Отправить
+            </button>
+          </div>
+        </div>
       </form>
     </dialog>
   </div>

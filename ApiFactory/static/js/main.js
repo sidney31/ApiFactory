@@ -150,4 +150,16 @@ $(document).ready(function () {
   $('#city').change(() => {
     defineContacts(city.value)
   })
+
+  $('.callbackModalbtn').click( (e) => {
+    const modalState = $('#callbackModal').is(':visible')
+    $('body').css('overflowY', !modalState ? 'hidden' : 'visible')
+    modalState ? $('#callbackModal')[0].close() : $('#callbackModal')[0].showModal()
+  })
+
+  $(document).keydown(function(e) {
+    if (e.keyCode == 27 && $('#callbackModal').is(':visible'))
+      e.preventDefault()
+  });
+
 })
