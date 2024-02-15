@@ -23,22 +23,23 @@
             }
         }
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.animate@1.8.9/jquery.animate.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.animate@1.8.9/jquery.animate.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
     <script type="module" src="{% static 'js/common.js' %}"></script>
     {% block head %} {% endblock %}
     <title>
-        {% if self.title %}
-            {{ self.title }}
-        {% else %}
-            Главная страница
-        {% endif %}
+      {% if self.title %}
+      {{ self.title }}
+      {% else %}
+      Главная страница
+      {% endif %}
     </title>
 </head>
 <body>
-{% block header %} {% endblock %}
+  {% block header %} {% endblock %}
 
-<div class="content position-relative top-100px min-h-100svh">
+  <div class="content position-relative top-100px min-h-100svh">
     {% block content %} {% endblock %}
-</div>
+  </div>
 </body>
 </html>
