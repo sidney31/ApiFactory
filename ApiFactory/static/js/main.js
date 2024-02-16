@@ -189,10 +189,14 @@ $(document).ready(function () {
 
   function showAlert(html, type = 'info', ms) {
     const $alert = $("#alert")
+    if (window.matchMedia('(max-width: 768px)').matches && $('#callbackModal').is(':visible')) {
+      $('#callbackModal').append($alert)
+    }
     $alert.html(html)
     $alert.addClass(`show ${type}`)
     setTimeout(() => {
       $alert.removeClass(`show ${type}`)
+      $('#callbackModal').remove($alert)
     }, ms)
 
   }
