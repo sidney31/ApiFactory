@@ -174,3 +174,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     )
 }
+
+PHONENUMBER_DEFAULT_REGION = 'RU'

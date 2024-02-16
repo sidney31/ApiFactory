@@ -175,24 +175,24 @@ $(document).ready(function () {
       processData: false,
       success: (data) => {
         if (data.valid == true) {
-          showAlert('<strong>Спасибо!</strong> В близжайшее время с Вами свяжется менеджер.', 3000)
+          showAlert('<strong>Заявление зарегистрировано!</strong> <br> В близжайшее время с Вами свяжется менеджер.', 'success', 3000)
           $('body').css('overflowY', 'visible')
           $('#callbackModal')[0].close()
           $(this)[0].reset()
         } else {
-          showAlert(JSON.stringify(data.errors), 3000)
+          showAlert(data.errors, 'error', 3000)
         }
       }
     });
     return false;
   });
 
-  function showAlert(html, ms) {
+  function showAlert(html, type = 'info', ms) {
     const $alert = $("#alert")
     $alert.html(html)
-    $alert.addClass('show')
+    $alert.addClass(`show ${type}`)
     setTimeout(() => {
-      $alert.removeClass('show')
+      $alert.removeClass(`show ${type}`)
     }, ms)
 
   }
