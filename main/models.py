@@ -12,6 +12,7 @@ class MainPage(Page):
     ]
 
 class CallbackApplication(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
     name = models.CharField(blank=False, null=False, max_length=100)
     phone = PhoneNumberField(blank=False, null=False)
     agreement = models.BooleanField(blank=False, null=False)

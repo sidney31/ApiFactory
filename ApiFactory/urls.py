@@ -13,7 +13,7 @@ from search import views as search_views
 urlpatterns = [
     path('', include(main_urls), name="main"),
     path('user/', include(user_urls), name="user"),
-    path('api/v1/callback', CallbackAPI.as_view()),
+    path('api/v1/callback/', CallbackAPI.as_view()),
     path("admin/", include(wagtailadmin_urls)),
     path("search/", search_views.search, name="search"),
 ]

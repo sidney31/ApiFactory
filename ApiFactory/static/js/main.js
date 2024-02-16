@@ -176,7 +176,7 @@ $(document).ready(function () {
       processData: false,
       success: (data) => {
         if (data.valid == true) {
-          showAlert('<strong>Заявление зарегистрировано!</strong> <br> В близжайшее время с Вами свяжется менеджер.', 'success', 3000)
+          showAlert('<strong>Заявление зарегистрировано!</strong> <br> В ближайшее время с Вами свяжется менеджер.', 'success', 3000)
           $('body').css('overflowY', 'visible')
           $('#callbackModal')[0].close()
           $(this)[0].reset()
