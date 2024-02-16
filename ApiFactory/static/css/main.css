@@ -103,7 +103,6 @@
 
 #alert{
   position: fixed;
-  background-color: #f9da74;
   height: auto;
   text-wrap: wrap;
   white-space: normal;
@@ -116,6 +115,19 @@
   bottom: 0;
   right: 0;
 }
+
+#alert.info{
+  background-color: #f9da74;
+}
+
+#alert.success{
+  background-color: #d5f974;
+}
+
+#alert.error{
+  background-color:  #f99774;
+}
+
 
 #alert:not(.show){
   opacity: 0;
