@@ -3,6 +3,8 @@ from django.http.response import JsonResponse
 from .forms import CallbackForm
 from rest_framework import generics
 from .models import CallbackApplication
+from .serializers import CallbackSerializer
+
 
 def index(request):
     context = {'form': CallbackForm()}
@@ -31,3 +33,7 @@ def send_callback(request):
                 'errors': str(errors)
             }
     return JsonResponse(context)
+
+class CallbackAPI(generics.ListAPIView):
+    queryset = CallbackApplication.objects.all()
+    serializer_class = CallbackSerializer

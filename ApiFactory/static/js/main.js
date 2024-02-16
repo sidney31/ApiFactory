@@ -49,6 +49,7 @@ $(document).ready(function () {
   navLinks.forEach((e) => {
     e.addEventListener("click", () => {
       offcanvas.hide();
+      $(".navbar-toggler").removeClass('open')
     });
   });
 
