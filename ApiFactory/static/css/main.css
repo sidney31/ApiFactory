@@ -109,6 +109,8 @@
   max-width: 500px;
   width: 100%;
   border-radius: 9px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding: 15px;
   transition: all .3s ease-out;
   z-index: 99;
@@ -154,5 +156,8 @@
     max-width: 440px;
     width: 100%;
     margin: auto;
+  }
+  #alert{
+    font-size: 12px;
   }
 }
