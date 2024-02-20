@@ -70,32 +70,6 @@ $(document).ready(function () {
   })
 
 
-  async function switchSubtitleElements() {
-    if (!window.matchMedia('(max-width: 576px)').matches)
-      return false
-    it = (it == 2) ? 0 : it + 1
-    await setOpacity($subtitle, 0)
-    $subtitle.html($listOfSubtitle[it])
-    await setOpacity($subtitle, 100)
-  }
-
-  function setOpacity(el, val) {
-    return new Promise((resolve) => {
-
-      $(el).animate({
-        opacity: val
-      }, {
-        duration: 500,
-        easing: 'ease'
-      });
-
-      setTimeout(() => {
-        resolve('success')
-      }, 500)
-    })
-  }
-
-
   let addresses = {
     'Moscow': {
       'title': 'Инновационный центр Сколково',
@@ -136,17 +110,6 @@ $(document).ready(function () {
     defineContacts(city.value)
   })
 
-  $('.callbackModalbtn').click((e) => {
-    const modalState = $('#callbackModal').is(':visible')
-    $('body').css('overflowY', !modalState ? 'hidden' : 'visible')
-    modalState ? $('#callbackModal')[0].close() : $('#callbackModal')[0].showModal()
-  })
-
-  $(document).keydown(function (e) {
-    if (e.keyCode == 27 && $('#callbackModal').is(':visible'))
-      e.preventDefault()
-  });
-
   $('input[type=tel]').mask('+7 (999) 999-99-99');
 
   $('#callbackModal form').submit(function (e) {
@@ -160,8 +123,6 @@ $(document).ready(function () {
       success: (data) => {
         if (data.valid == true) {
           showAlert('<strong>Заявление зарегистрировано!</strong> <br> В ближайшее время с Вами свяжется менеджер.', 'success', 3000)
-          $('body').css('overflowY', 'visible')
-          $('#callbackModal')[0].close()
           $(this)[0].reset()
         } else {
           showAlert(data.errors, 'error', 3000)
@@ -173,14 +134,10 @@ $(document).ready(function () {
 
   function showAlert(html, type = 'info', ms) {
     const $alert = $("#alert")
-    if (window.matchMedia('(max-width: 768px)').matches && $('#callbackModal').is(':visible')) {
-      $('#callbackModal').append($alert)
-    }
     $alert.html(html)
     $alert.addClass(`show ${type}`)
     setTimeout(() => {
       $alert.removeClass(`show ${type}`)
-      $('#callbackModal').remove($alert)
     }, ms)
 
   }

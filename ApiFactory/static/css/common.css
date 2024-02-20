@@ -2,6 +2,9 @@
   --main-dark-color: #36332f;
   --main-light-color: #F6F6F6;
   --blue-color: #81CCE1;
+  --purple-color: #BFB4D5;
+  --dark-yellow-color: #BFB6A8;
+  --yellow-color: #F9DA74;
   --gray-color: #E7E7E7;
 }
 
@@ -89,6 +92,8 @@ button{
   transition: all .1s ease-in;
   -webkit-transition: all .1s ease-in;
   -ms-transition: all .1s ease-in;
+  font-size: 16px!important;
+  line-height: normal!important;
 }
 
 .btn:hover, .btn:hover{
@@ -136,6 +141,10 @@ strong{
 #main-block #title{
   font-size: 48px!important;
   width: 15em
+}
+
+#main-block .btn{
+  font-size: 20px!important;
 }
 
 h1, h2, h3, h4, h5{
@@ -193,7 +202,6 @@ h1, h2, h3, h4, h5{
 
 #services-block > #v-pills-tab{
   gap: 20px;
-  font-size: 22px;
   margin-right: 20px;
 }
 
@@ -205,6 +213,7 @@ h1, h2, h3, h4, h5{
 }
 
 #services-block > #v-pills-tab > button{
+  font-size: 22px!important;
   padding: 30px 20px;
   border: none!important;
   color: color-mix(in srgb, var(--main-dark-color), #ffffff50);
@@ -214,6 +223,7 @@ h1, h2, h3, h4, h5{
 }
 
 #services-block > #v-pills-tabContent{
+  font-size: 22px!important;
   padding: 30px 20px;
   margin: 0;
   font-size: 22px;
@@ -262,7 +272,9 @@ light{
 
 #price .row{
   padding: 20px 0;
-  border-image: linear-gradient(to right, #8FC5D9, #BFB4D5, #F9DA74) 1;
+  border-image: linear-gradient(to right, color-mix(in srgb, var(--blue-color), #ffffff00), 
+                                          color-mix(in srgb, var(--purple-color), #ffffff00), 
+                                          color-mix(in srgb, var(--yellow-color), #ffffff00)) 1;
   border-top: #fff 2px solid;
   margin: auto 0!important;
 }
@@ -271,9 +283,28 @@ light{
   padding: 0;
 }
 
-#price .row:nth-child(1){
+#price .row:first-child{
   padding-top: 0;
   border: none;
+}
+
+#price .row:last-child{
+  padding-bottom: 0;
+}
+
+.customers{
+
+}
+
+.customers .field{
+
+}
+
+.customers .field-md{
+
+}
+.customers .field-lg{
+
 }
 
 .nav-link:hover {
