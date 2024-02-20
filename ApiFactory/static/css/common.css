@@ -44,7 +44,7 @@ body {
   justify-content: center;
   padding: 0!important;
   margin: 0!important;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(3px);
 }
 
 .navbar-brand,
@@ -78,44 +78,40 @@ body {
   background-position: center;
 }
 
-.navbar-nav > form > button{
-  font-weight: bold;
-}
-
 button{
   min-height: 40px;
   border-radius: 9px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border: var(--main-dark-color) 1px solid; 
-  background-color: #ffffff00;
+  border: var(--main-dark-color) 1px solid!important; 
+  background-color: #ffffff00!important;
   transition: all .1s ease-in;
   -webkit-transition: all .1s ease-in;
   -ms-transition: all .1s ease-in;
 }
 
-.btn-md:hover, .btn-lg:hover{
-  background-color: var(--main-dark-color);
-  border-color: var(--main-light-color);
+.btn:hover, .btn:hover{
+  background-color: var(--main-dark-color)!important;
+  border-color: var(--main-light-color)!important;
   color: var(--main-light-color)!important;
 }
-.btn-md:hover *, .btn-lg:hover *{
+
+.btn:hover *, .btn:hover *{
   color: var(--main-light-color)!important;
+}
+
+.btn-lg{
+  padding: 10px 50px!important;
+}
+
+.btn-md{
+  padding: 10px 25px!important;
 }
 
 strong{
   color: var(--main-dark-color);
   font-weight: 600;
-}
-
-.btn-md{
-  padding: 0 20px;
-}
-
-.btn-lg{
-  padding: 20px 40px;
-  font-size: 18px;
 }
 
 .container-lg{
@@ -130,6 +126,7 @@ strong{
   padding: 0!important;
   padding-top: 40px!important;
   margin: 0!important;
+  border-radius: 9px;
 }
 
 .content .container-lg{
@@ -202,16 +199,16 @@ h1, h2, h3, h4, h5{
 
 #services-block > #v-pills-tab > button.active{
   color: var(--main-dark-color);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--main-dark-color) 10%, #ffffff00);
-  -webkit-box-shadow: 0 0 20px color-mix(in srgb, var(--main-dark-color) 10%, #ffffff00); 
-	-moz-box-shadow: 0 0 7px color-mix(in srgb, var(--main-dark-color) 10%, #ffffff00); 
+  box-shadow: 0 0 20px color-mix(in srgb, var(--main-dark-color) 10%, #ffffff00)!important;
+  -webkit-box-shadow: 0 0 20px color-mix(in srgb, var(--main-dark-color) 10%, #ffffff00)!important; 
+	-moz-box-shadow: 0 0 7px color-mix(in srgb, var(--main-dark-color) 10%, #ffffff00)!important; 
 }
 
 #services-block > #v-pills-tab > button{
-  padding: 20px;
-  border: none;
+  padding: 30px 20px;
+  border: none!important;
   color: color-mix(in srgb, var(--main-dark-color), #ffffff50);
-  background-color: white;
+  background-color: white!important;
   width: 100%;
   text-align: start;
 }
@@ -239,6 +236,7 @@ h1, h2, h3, h4, h5{
   margin: 0;
   height: 100%;
 }
+
 #services-block > #v-pills-tabContent > .tab-pane > ul > li::before {
   display: block;
   height: 5px;
@@ -250,6 +248,32 @@ h1, h2, h3, h4, h5{
   top: 22px;
   left: -22px;
   transform: translate(50%, -50%);
+}
+
+light{
+  color: #BFB6A8;
+}
+
+#price{
+  font-size: 22px;
+  white-space: normal;
+  margin: 40px auto;
+}
+
+#price .row{
+  padding: 20px 0;
+  border-image: linear-gradient(to right, #8FC5D9, #BFB4D5, #F9DA74) 1;
+  border-top: #fff 2px solid;
+  margin: auto 0!important;
+}
+
+#price .row *{
+  padding: 0;
+}
+
+#price .row:nth-child(1){
+  padding-top: 0;
+  border: none;
 }
 
 .nav-link:hover {

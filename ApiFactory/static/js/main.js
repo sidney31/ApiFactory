@@ -1,37 +1,15 @@
 $(document).ready(function () {
 
-  let lastScrollTop = 0;
+  calculateNavbarBackground()
 
-  $(window).scroll(() => {
-    if ($(this).scrollTop() > $('#main-block').height() / 3)
+  $(window).scroll(calculateNavbarBackground);
+
+  function calculateNavbarBackground() {
+    if ($(window).scrollTop() > $('#main-block').height() / 2)
       $(".navbar").attr('style', 'background-color: #fffffff6!important')
     else
       $(".navbar").attr('style', 'background-color: none!important')
-
-
-    // if ($(this).scrollTop() < 50) return;
-
-    // if ($(this).scrollTop() > lastScrollTop + 5) {
-    //   $(".navbar").css("transform", "translateY(-100px)");
-    // } else if ($(this).scrollTop() < lastScrollTop - 5) {
-    //   $(".navbar").css("transform", "translateY(0)");
-    // }
-    // lastScrollTop = $(this).scrollTop();
-  });
-
-  const carousel = new bootstrap.Carousel($("#carousel"), {
-    interval: 2000,
-  });
-
-  let $mq = $("#marquee").marquee({
-    duration: window.matchMedia("(max-width: 1200px)").matches ? 5000 : 25000,
-    gap: 0,
-    delayBeforeStart: 0,
-    direction: "left",
-    duplicated: true,
-    // pauseOnHover: true,
-    startVisible: true,
-  });
+  }
 
   const $swithes = $("[id^=switch]");
 
@@ -45,7 +23,6 @@ $(document).ready(function () {
         "pointer-events",
         $(this).is(":checked") ? "auto" : "none"
       );
-    // $root.children('.content').css('pointer-events', ($(this).is(':checked') ? 'auto' : 'none'));
   });
 
   const myOffcanvas = document.querySelector("#offcanvas");

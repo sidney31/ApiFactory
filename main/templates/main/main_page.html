@@ -20,8 +20,7 @@
   <div class="w-100 z-3">
     <div id="collapsed-header" class="container-lg d-flex flex-row justify-content-between align-items-center">
       <a class="navbar-brand nav-link hover-none d-xl-none" href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
-      <i class="menu-toggler navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                                                           data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+      <i class="menu-toggler navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
         <span></span>
         <span></span>
         <span></span>
@@ -30,8 +29,7 @@
   </div>
 
   <div class="container-lg w-100">
-    <div class="offcanvas offcanvas-top z-2" tabindex="-1" data-bs-backdrop="false" id="offcanvas"
-                                                                                    aria-labelledby="offcanvasLabel">
+    <div class="offcanvas offcanvas-top z-2" tabindex="-1" data-bs-backdrop="false" id="offcanvas" aria-labelledby="offcanvasLabel">
       <div class="offcanvas-body justify-content-between w-100 z-2">
         <a class="navbar-brand nav-link hover-none d-none d-xl-block" href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
         <ul class="navbar-nav" id="nav-items">
@@ -53,8 +51,8 @@
         </ul>
         <div class="navbar-nav align-items-center">
           <form action="{% url 'user:profile' %}">
-            <button type="submit" class="btn-md">
-              <strong>Aутентификация</strong>
+            <button type="submit" class="btn btn-md">
+              Aутентификация
             </button>
           </form>
         </div>
@@ -66,11 +64,6 @@
 
 {% block content %}
 <div class="container-fluid w-100 min-h-100svh m-0 p-0">
-  {# <video autoplay muted loop preload="auto" #}
-    {# poster="{% static 'img/main-video-poster.jpg' %}" #}
-    {# width="100%" height="100%" class="object-fit-cover"> #}
-    {# <source src="{% static 'img/wave.mp4' %}" type="video/mp4"/> #}
-    {# </video> #}
   <div class="wave d-flex justify-content-center min-h-100svh overflow-hidden"></div>
 </div>
 <div class="container-lg position-absolute z-1 h-100svh left-50 top-0 translate-middle-x d-flex justify-content-evenly align-items-center flex-column text-wrap" id='main-block'>
@@ -78,7 +71,7 @@
     Cоздаем <strong>пространство эффективности</strong> вашего бизнеса
   </div>
 
-  <button class="btn-lg">
+  <button class="btn btn-lg">
     Обсудить услугу
   </button>
 </div>
@@ -194,14 +187,13 @@
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active text-wrap" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
           <ul>
-            <li>Внедрение систем управления производством (ERP и планирование)</li>
+            <li>Внедрение систем управления производством <light>(ERP и планирование)</light></li>
             <li>Внедрение систем управления складом и запасами</li>
             <li>Внедрение систем управления затратами и учетом себестоимости</li>
             <li>Проектные работы</li>
           </ul>
         </div>
-        <div class="tab-pane fade text-wrap" id="v-pills-2" role="tabpanel"
-                                                                  aria-labelledby="v-pills-2-tab">
+        <div class="tab-pane fade text-wrap" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
           <ul>
             <li>Автоматизация управленческих и учетных задач в сфере бухгалтерского учета</li>
             <li>Автоматизация управленческих и учетных задач в сфере кадрового делопроизводства</li>
@@ -228,66 +220,64 @@
     </div>
   </div>
 </div>
-  
 
 <div class="container-fluid bg-white">
-  <div class="container-lg separator"></div>
-  <div class="container-lg ">
-    <p class="fs-1 text-wrap mb-5 pt-5">
-    <b>Цены</b>
-    </p>
-    <div id="price-wrapper">
-      <div class="row col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 fw-400">
-          <p>Проектные работы, консалтинг и корпоративное сопровождение</p>
+  <div class="container-lg">
+    <h1 class="title p-0">
+      <a class="anchor" name="price"></a>
+      <strong>Цены</strong>
+    </h1>
+
+    <div id="price">
+      <div class="row">
+        <div class="col-12 col-md-9">
+          Проектные работы, консалтинг и корпоративное сопровождение
         </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 fs-5 fw-500 md-fs-4">
-          <p>1600₽/час</p>
-        </div>
-      </div>
-      <div class="row col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 fw-400">
-          <p>Внедрение и модификация программных продуктов «1С Предприятие»</p>
-        </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 fs-5 fw-500 md-fs-4">
-          <p>1600₽/час</p>
+        <div class="col-12 col-md-3 text-end">
+          от 1600 &#8381; в час
         </div>
       </div>
-      <div class="row col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 fw-400">
-          <p>Внедрение и модификация программных продуктов «ERP система Олимп»</p>
+
+      <div class="row">
+        <div class="col-12 col-md-9">
+          Внедрение и модификация программных продуктов «1С Предприятие»
         </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 fs-5 fw-500 md-fs-4">
-          <p>1600₽/час</p>
-        </div>
-      </div>
-      <div class="row col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 fw-400">
-          <p>Проектирование инфраструктуры и каналов связи</p>
-        </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 fs-5 fw-500 md-fs-4">
-          <p>по запросу</p>
+        <div class="col-12 col-md-3 text-end">
+          от 1600 &#8381; в час
         </div>
       </div>
-      <div class="row col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 fw-400">
-          <p>Индивидуальное обучение пользователей, корпоративных групп</p>
+
+      <div class="row">
+        <div class="col-12 col-md-9">
+          Внедрение и модификация программных продуктов «ERP система Олимп»
         </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 fs-5 fw-500 md-fs-4">
-          <p>по запросу</p>
+        <div class="col-12 col-md-3 text-end">
+          от 1600 &#8381; в час
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-9">
+          Проектирование инфраструктуры и каналов связи
+        </div>
+        <div class="col-12 col-md-3 text-end">
+          по запросу
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-9">
+          Индивидуальное обучение пользователей, корпоративных групп
+        </div>
+        <div class="col-12 col-md-3 text-end">
+          по запросу
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-lg separator d-none d-lg-block ">
-    <p class="text-muted text-wrap col-8 mt-3 ps-3">Мы работаем на базе программных продуктов «1С Предприятие» и
-    «ERP система Олимп», которые включены в единый реестр российских программ для электронных вычислительных
-    машин и баз данных.</p>
-  </div>  
-  <div class="container-lg">
-    <a class="btn btn-fill callbackModalbtn">
+      
+    <button class="btn btn-lg callbackModalbtn">
       Подробнее
-    </a>
+    </button>
     <dialog id="callbackModal">
       <div id="closeBtn">
         <i class="bi bi-x-lg callbackModalbtn"></i>
@@ -311,14 +301,14 @@
         </div>
         <div class="w-100 w-md-75">
           <div class="mx-auto" style="w-75">
-            <button class="w-100 btn btn-fill" type="submit"> 
+            <button class="w-100 btn" type="submit"> 
               Отправить
             </button>
           </div>
         </div>
       </form>
     </dialog>
-  </div>
+  </div>  
 </div>
 {% comment %}Ждёт своего часа<div class="container-lg separator"></div>
 <div class="container-lg">
