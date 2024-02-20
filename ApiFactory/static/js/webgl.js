@@ -49,7 +49,7 @@ function createGeometry() {
 	);
 
 	wireframe = new THREE.WireframeGeometry(geometry);
-	lineMaterial = new THREE.LineBasicMaterial({ color: 0x82cde2 });
+	lineMaterial = new THREE.LineBasicMaterial({ color: 0x73d2e6 });
 	line = new THREE.LineSegments(wireframe, lineMaterial);
 	line.rotation.x = -88 * (Math.PI / 180); // deg to rad: `degrees * (PI / 180)`;
 	scene.add(line);

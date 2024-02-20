@@ -332,10 +332,6 @@ li {
   opacity: 1;
 }
 
-.fs-title {
-  font-size: 64px;
-}
-
 .fw-400 {
   font-weight: 400;
 }
@@ -570,6 +566,7 @@ input:focus {
   text-wrap: balance!important;
 }
 
+
 /* $grid-breakpoints: (
 xs: 0,
 sm: 576px,
@@ -652,11 +649,6 @@ xxl: 1400px
       font-size: 40px;
     }
 
-    .fs-title {
-      font-size: 52px;
-      white-space: normal !important;
-    }
-
     .fs-3 {
       font-size: 1.7rem !important;
     }
@@ -703,6 +695,11 @@ xxl: 1400px
   }
 
   @media (max-width: 576px) {
+    #subtitle li{
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
     .fs-xxl {
       font-size: 34px;
     }
@@ -715,12 +712,6 @@ xxl: 1400px
       -webkit-hyphens: auto;
       -ms-hyphens: auto;
       hyphens: auto;
-    }
-
-    .fs-title {
-      font-size: 38px;
-      white-space: normal !important;
-      ;
     }
 
     .fs-3 {
