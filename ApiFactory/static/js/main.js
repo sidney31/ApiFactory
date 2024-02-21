@@ -96,10 +96,10 @@ $(document).ready(function () {
   function defineContacts(city) {
     const address = addresses[city]
     $('#results').html(`
-                  <div class="fs-4 mt-3 ms-1 text-wrap">
-                    <p class="fw-500 mb-0">${address['title']}</p>
+                  <div class="result-address">
+                    <p> <strong> ${address['title']} </strong> </p>
                     <p> ${address['address']} </p>
-                    <a href="${address['mapURL']}" class="btn bg-gray fs-4 fw-200 text-black border-0 hover-opacity">Показать на карте</a>
+                    <a href="${address['mapURL']}" class="btn btn-md">Показать на карте</a>
                   </div>
                 `)
   }

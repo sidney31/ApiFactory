@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block head %}
-<link rel='stylesheet' href='{% static 'css/main.css' %}'>
+<link rel='stylesheet' href="{% static 'css/main.css' %}">
 
-<script type='module' src='{% static 'js/webgl.js' %}'></script>
+<script type='module' src="{% static 'js/webgl.js' %}"></script>
 <script>
   $.ajaxSetup({
     headers: {
@@ -12,14 +12,14 @@
     }
   });
 </script>
-<script type='module' src='{% static 'js/main.js' %}'></script>
+<script type='module' src="{% static 'js/main.js' %}"></script>
 {% endblock %}
 
 {% block header %}
 <nav class='navbar navbar-expand-xl fixed-top'>
   <div class='w-100 z-3'>
     <div id='collapsed-header' class='container-lg d-flex flex-row justify-content-between align-items-center'>
-      <a class='navbar-brand nav-link hover-none d-xl-none' href='{% url 'main:home' %}' style='background-image: url({% static 'svg/logo.svg' %})'></a>
+      <a class='navbar-brand nav-link hover-none d-xl-none' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
       <i class='menu-toggler navbar-toggler' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvas' aria-controls='offcanvas' aria-label='Toggle navigation'>
         <span></span>
         <span></span>
@@ -31,7 +31,7 @@
   <div class='container-lg w-100'>
     <div class='offcanvas offcanvas-top z-2' tabindex='-1' data-bs-backdrop='false' id='offcanvas' aria-labelledby='offcanvasLabel'>
       <div class='offcanvas-body justify-content-between w-100 z-2'>
-        <a class='navbar-brand nav-link hover-none d-none d-xl-block' href='{% url 'main:home' %}' style='background-image: url({% static 'svg/logo.svg' %})'></a>
+        <a class='navbar-brand nav-link hover-none d-none d-xl-block' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
         <ul class='navbar-nav' id='nav-items'>
           <li class='nav-item'>
             <a class='nav-link' aria-current='page' href='#about'>О компании</a>
@@ -53,7 +53,7 @@
           </li>
         </ul>
         <div class='navbar-nav align-items-center'>
-          <form action='{% url 'user:profile' %}'>
+          <form action="{% url 'user:profile' %}">
             <button type='submit' class='btn btn-md'>
               Aутентификация
             </button>
@@ -66,11 +66,11 @@
 {% endblock %}
 
 {% block content %}
-<div class='container-fluid w-100 min-h-100svh m-0 p-0'>
-  <div class='wave d-flex justify-content-center min-h-100svh overflow-hidden'></div>
+<div class='container-fluid' id='wave-wrapper'>
+  <div id='wave'></div>
 </div>
-<div class='container-lg position-absolute z-1 h-100svh left-50 top-0 translate-middle-x d-flex justify-content-evenly align-items-center flex-column text-wrap' id='main-block'>
-  <div class='text-lg-center text-md-start fs-1 text-wrap' id='title'>
+<div class='container-lg' id='main-block'>
+  <div class='text-lg-center text-md-start' id='title'>
     Cоздаем <strong>пространство эффективности</strong> вашего бизнеса
   </div>
 
@@ -81,7 +81,7 @@
 <div class='container-fluid bg-white'>
   <div class='container-lg '>
     <a class='anchor' name='about'></a>
-    <div class='text-wrap col-lg-8 col-12 fs-3 w-75'>
+    <div id='description'>
       <h1>АПИ-ФАКТОРИ</h1>
       <h3>— команда профессионалов, способная реализовать самые сложные проекты корпоративного уровня.</h3>
     </div>
@@ -133,28 +133,28 @@
     <div class='container-lg d-flex flex-row justify-content-between pb-0' id='solutions-block'>
 
       <div class='section solutions' style='border-color: #BFB6A8'>
-        <img src='{% static '/svg/driller.svg' %}' alt='driller icon'>
+        <img src="{% static '/svg/driller.svg' %}" alt='driller icon'>
         <div class='content'>
           Нефтегазовое машиностроение
         </div>
       </div>
 
       <div class='section solutions' style='border-color: #BFB6A8'>
-        <img src='{% static '/svg/oilbarrel.svg' %}' alt='oilbarrel icon'>
+        <img src="{% static '/svg/oilbarrel.svg' %}" alt='oilbarrel icon'>
         <div class='content'>
           Нефтесервис
         </div>
       </div>
 
       <div class='section solutions' style='border-color: #BFB6A8'>
-        <img src='{% static '/svg/minemachine.svg' %}' alt='minemachine icon'>
+        <img src="{% static '/svg/minemachine.svg' %}" alt='minemachine icon'>
         <div class='content'>
           Горнорудная отрасль
         </div>
       </div>
 
       <div class='section solutions' style='border-color: #BFB6A8'>
-        <img src='{% static '/svg/pipe.svg' %}' alt='pipe icon'>
+        <img src="{% static '/svg/pipe.svg' %}" alt='pipe icon'>
         <div class='content'>
           Трубная отрасль
         </div>
@@ -313,102 +313,6 @@
     </dialog> {% endcomment %}
   </div>  
 </div>
-{% comment %}Ждёт своего часа<div class='container-lg separator'></div>
-<div class='container-lg'>
-  <p class='fs-1 text-wrap mb-5 pt-5'>
-  <b>Расчёт стоимости</b>
-  <small class='text-muted'>(wip)</small>
-  </p>
-  <div class='d-flex flex-wrap justify-content-between gap-3'>
-    <div class='section2'>
-      <div class='title'>
-        <div class='form-check form-switch'>
-          <input class='form-check-input' type='checkbox' role='switch' checked id='switch1' />
-          <label for='switch1'>Проектирование инфраструктуры и каналов связи</label>
-        </div>
-      </div>
-      <div class='content'>
-        <input name='range1' onchange='rangevalue1.value = range1.value' type='range' class='form-range' min='1' max='48' step='1' id='range1' />
-        <output name='rangevalue1' class='float-end m-2' for='range1'>
-          24
-          <small>часов</small>
-        </output>
-        <a class='float-start'>Итог: 84.000₽ <small class='text-muted'>24×3.500</small></a>
-      </div>
-    </div>
-    <div class='section2'>
-      <div class='title'>
-        <div class='form-check form-switch'>
-          <input class='form-check-input' type='checkbox' role='switch' checked id='switch2' />
-          <label for='switch2'>Внедрение и модификация программных продуктов «ERP система Олимп»</label>
-        </div>
-      </div>
-      <div class='content'>
-        <input name='range2' onchange='rangevalue2.value = range2.value' type='range' class='form-range' min='1' max='48' step='1' id='range2' />
-        <output name='rangevalue2' class='float-end m-2' for='range2'>
-          24
-          <small>часов</small>
-        </output>
-        <a class='float-start'>Итог: 84.000₽ <small class='text-muted'>24×3.500</small></a>
-      </div>
-    </div>
-    <div class='section2'>
-      <div class='title'>
-        <div class='form-check form-switch'>
-          <input class='form-check-input' type='checkbox' role='switch' checked id='switch3' />
-          <label for='switch3'>Внедрение и модификация программных продуктов «ERP система Олимп»</label>
-        </div>
-      </div>
-      <div class='content'>
-        <input name='range3' onchange='rangevalue3.value = range3.value' type='range' class='form-range' min='1' max='48' step='1' id='range3' />
-        <output name='rangevalue3' class='float-end m-2' for='range3'>
-          24
-          <small>часов</small>
-        </output>
-        <a class='float-start'>Итог: 84.000₽ <small class='text-muted'>24×3.500</small></a>
-      </div>
-    </div>
-    <div class='section2'>
-      <div class='title'>
-        <div class='form-check form-switch'>
-          <input class='form-check-input' type='checkbox' role='switch' checked id='switch4' />
-          <label for='switch4'>Проектирование инфраструктуры и каналов связи</label>
-        </div>
-      </div>
-      <div class='content'>
-        <input name='range4' onchange='rangevalue4.value = range4.value' type='range' class='form-range' min='1' max='48' step='1' id='range4' />
-        <output name='rangevalue4' class='float-end m-2' for='range4'>
-          24
-          <small>часов</small>
-        </output>
-        <a class='float-start'>Итог: 84.000₽ <small class='text-muted'>24×3.500</small></a>
-      </div>
-    </div>
-    <div class='section2'>
-      <div class='title'>
-        <div class='form-check form-switch'>
-          <input class='form-check-input' type='checkbox' role='switch' checked id='switch5' />
-          <label for='switch5'>Индивидуальное обучение пользователей, корпоративных групп</label>
-        </div>
-      </div>
-      <div class='content'>
-        <input name='range5' onchange='rangevalue5.value = range5.value' type='range' class='form-range' min='1' max='48' step='1' id='range5' />
-        <output name='rangevalue5' class='float-end m-2' for='range5'>
-          24
-          <small>часов</small>
-        </output>
-        <a class='float-start'>Итог: 84.000₽ <small class='text-muted'>24×3.500</small></a>
-      </div>
-    </div>
-  </div>
-  <div class='container-lg separator'></div>
-  <p class='fs-1 my-3 bold'>Итог: 336.000₽</p>
-  <div class='container-lg'>
-    <button class='btn btn-fill position-relative translate-middle-x start-50 fs-4 col-12 col-sm-3'>Заказать</button>
-  </div>
-</div>
-
-{% endcomment %}
 
 <div class='container-fluid'>
   <div class='container-lg'>
@@ -445,56 +349,38 @@
   </div>
 </div>
 
-{% comment %} <div class='container-fluid appear-down'>
+<div class='container-fluid bg-white'>
   <div class='container-lg'>
-    <p class='fs-1 text-wrap mb-5 py-5'>
-    <a class='anchor' name='customers'></a>
-    <b>Наши заказчики</b>
-    </p>
-    <div class='container-lg mx-auto d-flex flex-wrap justify-content-center' id='customers'>
-      <a><img src='{% static 'img/jiu3AQz.png' %}' alt='Customer logo'/></a>
-      <a><img src='{% static 'img/JjvK1bZ.png' %}' alt='Customer logo'/></a>
-      <a><img src='{% static 'img/kjLJ31b.png' %}' alt='Customer logo'/></a>
-      <a><img src='{% static 'img/nQggP2T.png' %}' alt='Customer logo'/></a>
-      <a><img src='{% static 'img/Wmo23Qv.png' %}' alt='Customer logo'/></a>
-      <a><img src='{% static 'img/eA1FcU9.png' %}' alt='Customer logo'/></a>
-      <a><img src='{% static 'img/rtbKJ73d.png' %}' alt='Customer logo'/></a>
-    </div>
+    <h1 class='title p-0'>
+      <a class='anchor' name='contacts'></a>
+      <strong>Контакты</strong>
+    </h1>
   </div>
-</div> {% endcomment %}
 
-<div class='container-fluid appear-down bg-white pb-5'>
-  <div class='container-lg'>
-    <p class='fs-1 text-wrap py-3'>
-    <a class='anchor' name='contacts'></a>
-    <b>Контакты</b>
-    </p>
-    <p class=''>
-    <a class='row fs-3 text-decoration-none text-color-main hover-opacity' href='tel:+7 987 291-19-19'>
-      <i class='bi bi-telephone w-auto'></i>
+  <div class='container-lg' id='contacts'>
+    <a class='text-decoration-none mt-0' href='tel:+7 987 291-19-19'>
       +7 987 291-19-19
     </a>
-    <a class='row fs-3 text-decoration-none text-color-main hover-opacity' href='mailto:customer@api-factory.tech'>
-      <i class='bi bi-envelope-at w-auto'></i>
+    <a class='text-decoration-none' href='mailto:customer@api-factory.tech'>
       customer@api-factory.tech
     </a>
-    </p>
-    <form class='d-flex bg-gray w-75 lg-w-75 md-w-100 p-2 rounded gap-3 mt-5'>
-      <select class='bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity'>
+  </div>
+  <div class='container-lg'>
+    <form id='address'>
+      <select id='country'>
         <option selected value='1'>Россия</option>
       </select>
-      <select id='city' class='bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity'>
+      <select id='city'>
         <option value='Moscow' selected>Москва</option>
         <option value='Perm'>Пермь</option>
         <option value='Izhevsk'>Ижевск</option>
         <option value='Almetyevsk'>Альметьевск</option>
       </select>
     </form>
-
-    <div id='results'></div>
-
+      <div id='results'></div>
   </div>
 </div>
+
 <div class='container-fluid m-0 text-white bg-dark my-0 py-3 appear-down'>
   <div class='container-lg'>
     <footer class='d-flex flex-wrap justify-content-between align-items-center py-3'>

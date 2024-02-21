@@ -7,7 +7,7 @@ let t;
 let perlin;
 
 function init() {
-	target = document.querySelector(".wave");
+	target = document.querySelector("#wave");
 	width = target.offsetWidth;
 	height = target.offsetHeight;
 	size = (width + height) / 2;
