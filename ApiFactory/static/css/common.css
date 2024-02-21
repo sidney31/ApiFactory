@@ -30,7 +30,6 @@ body {
   font-size: 16px!important;
   white-space: nowrap!important;
   background-color: var(--main-light-color)!important;
-  letter-spacing: 1px!important;
   line-height: normal!important;
   font-weight: 400!important;
   font-family: 'Montserrat Variable', serif!important;
@@ -82,9 +81,9 @@ body {
   background-position: center;
 }
 
-.btn{
+button{
   min-height: 40px;
-  border-radius: 9px;
+  border-radius: 9px!important;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -142,10 +141,11 @@ strong{
 #main-block{
   position: absolute;
   width: 100%;
-  height: 75svh;
+  height: 100svh;
   white-space: normal;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0 20px;
 }
 
@@ -382,31 +382,30 @@ light{
   font-size: 20px!important;
 }
 
-
 .nav-link:hover {
   color: black;
 }
 
 ::selection {
-  background: var(--main-dark-color);
+  background-color: var(--main-dark-color);
   color: var(--main-light-color);
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: var(--main-dark-color);
+  background-color: var(--main-dark-color);
   color: var(--main-light-color);
   text-shadow: none;
 }
 
 #wave-wrapper{
-  min-height: 75svh;
+  min-height: 100svh;
   margin: 0!important;
   padding: 0!important;
 }
 
 #wave {
-  height: 75svh;
+  height: 100svh;
   width: 100%;
   filter: blur(1px);
   position: absolute;
@@ -417,48 +416,103 @@ light{
   top: -100px;
 }
 
-.text-color-main {
-  color: var(--main-dark-color);
+footer {
+  background-color: var(--main-dark-color)!important;
+  border-radius: 0!important;
+  height: 500px;
 }
 
-.hover-opacity {
-  transition: opacity .2s ease;
+footer > *{
+  user-select: none;
 }
 
-.hover-opacity:hover {
-  opacity: 70%;
-}
-
-.bg-gray {
-  background-color: var(--gray-color);
-}
-
-.md-w-100 {
+#footer-form-wrapper{
+  height: 100%;
+  border-bottom: color-mix(in srgb, var(--gray-color), #ffffff00) 1px solid;
   width: auto;
+  vertical-align: middle;
 }
 
-.rounded {
-  border-radius: 7px !important;
+#footer-form-title{
+  font-size: 40px;
+  width: 500px;
+  white-space: normal;
+  color: var(--gray-color);
+  float: left;
+  margin: 0;
 }
 
-.text-black {
-  color: var(--main-dark-color) !important;
+footer form{
+  float: right;
+  width: 440px;
+  height: 100%;
 }
 
-.text-white {
-  color: var(--main-light-color) !important;
+footer form .field{
+  margin-bottom: 40px;
+  font-size: 16px;  
+  line-height: 1em;
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
-.hover-white {
-  color: var(--main-light-color) !important;
+footer form .field *{
+  letter-spacing: 1px!important;
 }
 
-.bg-dark {
-  background-color: var(--main-dark-color);
+footer form label{
+  color: var(--gray-color)!important;
+  font-weight: 200;
+  font-size: 12px;
 }
 
-.h-lg-min {
-  height: auto !important;
+footer form input[type='checkbox'] {
+  background-color: #ffffff00!important;
+  border: var(--gray-color) 1px solid!important;
+}
+
+footer form input:not([type='checkbox']){
+  background: none!important;
+  border: none!important;
+  border-bottom: var(--gray-color) 1px solid!important;
+  border-radius: 0!important;
+  padding: 0!important;
+  color: var(--gray-color)!important;
+  font-weight: 300;
+  height: 40px;
+}
+
+footer form input:not([type='checkbox'])::placeholder{
+  color: var(--gray-color);
+  font-weight: 300;
+}
+
+footer form .btn{
+  border-color: var(--gray-color)!important;
+  color: var(--gray-color)!important;
+  font-size: 18px;
+}
+
+footer form .btn:hover{
+  background-color: var(--gray-color)!important;
+  color: var(--main-dark-color)!important;
+}
+
+footer form .btn-wrapper{
+  margin: 0 auto;
+  width: min-content;
+}
+
+#footer-nav{
+  border-radius: 0!important;
+}
+
+
+input:focus{
+  border: none!important;
+  outline: 0!important;
+  box-shadow: none!important;
 }
 
 .menu-toggler{
@@ -525,11 +579,6 @@ light{
 .dropdown-toggle:after {
   display: none;
 }
-
-.text-balance{
-  text-wrap: balance!important;
-}
-
 
 /* $grid-breakpoints: (
 xs: 0,

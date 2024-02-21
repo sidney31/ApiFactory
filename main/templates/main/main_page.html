@@ -43,7 +43,7 @@
             <a class='nav-link' href='#services'>Услуги</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='#prices'>Цены</a>
+            <a class='nav-link' href='#prices'>Стоимость</a>
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='#customers'>Заказчики</a>
@@ -228,7 +228,7 @@
   <div class='container-lg'>
     <h1 class='title p-0'>
       <a class='anchor' name='prices'></a>
-      <strong>Цены</strong>
+      <strong>Стоимость</strong>
     </h1>
 
     <div id='price'>
@@ -281,36 +281,6 @@
     <button href='#callback' class='btn btn-lg'>
       <strong>Подробнее</strong>
     </button>
-    {% comment %} <dialog id='callbackModal'>
-      <div id='closeBtn'>
-        <i class='bi bi-x-lg callbackModalbtn'></i>
-      </div>
-      <form>
-        {% csrf_token %}
-        <div class='title'>
-          Запросить консультацию
-        </div>
-        <div class='field'>
-          {{ form.name }}
-        </div>
-        <div class='field'>
-          {{ form.phone }}
-        </div>
-        <div class='field text-small form-check'>
-          {{ form.agreement }}
-          <label class='form-check-label' for='{{ form.agreement.id_for_label}}'>
-            Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
-          </label>
-        </div>
-        <div class='w-100 w-md-75'>
-          <div class='mx-auto' style='w-75'>
-            <button class='w-100 btn' type='submit'> 
-              Отправить
-            </button>
-          </div>
-        </div>
-      </form>
-    </dialog> {% endcomment %}
   </div>  
 </div>
 
@@ -381,31 +351,35 @@
   </div>
 </div>
 
-<div class='container-fluid m-0 text-white bg-dark my-0 py-3 appear-down'>
-  <div class='container-lg'>
-    <footer class='d-flex flex-wrap justify-content-between align-items-center py-3'>
-      <p class='col-12 col-lg-3 mb-3 mb-lg-0 text-white'>© 2024 ApiFactory</p>
-      <ul class='col-12 col-lg nav justify-content-end'>
-        <li class='nav-item mx-2 my-0'>
-          <a class='text-decoration-none hover-white hover-opacity' href='#about'>О компании</a>
-        </li>
-        <li class='nav-item mx-2 my-0'>
-          <a class='text-decoration-none hover-white hover-opacity' href='#solutions'>Отраслевые
-            решения</a>
-        </li>
-        <li class='nav-item mx-2 my-0'>
-          <a class='text-decoration-none hover-white hover-opacity' href='#services'>Услуги и цены</a>
-        </li>
-        <li class='nav-item mx-2 my-0'>
-          <a class='text-decoration-none hover-white hover-opacity' href='#customers'>Заказчики</a>
-        </li>
-        <li class='nav-item mx-2 my-0'>
-          <a class='text-decoration-none hover-white hover-opacity' href='#contacts'>Контакты</a>
-        </li>
-      </ul>
-    </footer>
+<footer class='container-fluid'>
+  <div class='container-lg' id='footer-form-wrapper'>
+    <p id='footer-form-title'>
+      Отправьте заявление, и с Вами обязательно свяжутся
+    </p>
+    <form>
+      {% csrf_token %}
+      <div class='field'>
+        {{ form.name }}
+      </div>
+      <div class='field'>
+        {{ form.phone }}
+      </div>
+      <div class='field form-check'>
+        {{ form.agreement }}
+        <label class='form-check-label' for='{{ form.agreement.id_for_label}}'>
+          Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+        </label>
+      </div>
+      <div class='btn-wrapper'>
+        <button class='btn btn-md' type='submit'> 
+          Отправить
+        </button>
+      </div>
+    </form>
   </div>
-</div>
+  <div class='container-lg' id="footer-nav">
+  </div>
+</footer>
 
 <div id='alert' role='alert'>Уведомление</div>
 {% endblock %}

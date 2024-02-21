@@ -40,7 +40,7 @@ function createGeometry() {
 	wireframe = new THREE.WireframeGeometry(geometry);
 	lineMaterial = new THREE.LineBasicMaterial({ color: 0x73d2e6 });
 	line = new THREE.LineSegments(wireframe, lineMaterial);
-	line.rotation.x = -85 * (Math.PI / 180); // deg to rad: `degrees * (PI / 180)`;
+	line.rotation.x = -86 * (Math.PI / 180); // deg to rad: `degrees * (PI / 180)`;
 	scene.add(line);
 }
 
@@ -56,7 +56,7 @@ function updateVertices(geom) {
 
 function animate() {
 	requestAnimationFrame(animate);
-	t += 0.001;
+	t += 0.0015;
 	updateVertices(line);
 	renderer.render(scene, camera);
 }
@@ -67,7 +67,7 @@ animate();
 
 document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener("scroll", () => {
-		waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 2;
+		waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 1.5;
 	});
 
 	window.addEventListener('resize', () => {

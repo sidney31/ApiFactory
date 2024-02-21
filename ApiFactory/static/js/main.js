@@ -99,7 +99,7 @@ $(document).ready(function () {
                   <div class="result-address">
                     <p> <strong> ${address['title']} </strong> </p>
                     <p> ${address['address']} </p>
-                    <a href="${address['mapURL']}" class="btn btn-md">Показать на карте</a>
+                    <button href="${address['mapURL']}" class="btn btn-md">Показать на карте</button>
                   </div>
                 `)
   }
