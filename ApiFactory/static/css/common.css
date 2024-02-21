@@ -231,6 +231,7 @@ h1, h2, h3, h4, h5{
   background-color: white;
   border-radius: 9px;
   align-self: stretch;
+  width: 100%;
 }
 
 #services-block > #v-pills-tabContent > .tab-pane {
@@ -293,18 +294,34 @@ light{
 }
 
 .customers{
-
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .customers .field{
+  background-color: #fff;
+  border-radius: 9px;
+  padding: 20px;
+  height: 190px;
+  text-align: center;
+  width: auto;
+}
 
+.customers .field img{
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .customers .field-md{
-
+  width: calc((1240px - 4 * 20px) / 5);
 }
-.customers .field-lg{
 
+.customers .field-lg{
+  width: calc((1240px - 4 * 20px) / 5 * 2 + 20px);
 }
 
 .nav-link:hover {
@@ -548,7 +565,6 @@ input:focus {
 .bg-gray {
   background-color: var(--gray-color);
 }
-
 
 .md-w-100 {
   width: auto;
