@@ -19,7 +19,7 @@
 <nav class='navbar navbar-expand-xl fixed-top'>
   <div class='w-100 z-3'>
     <div id='collapsed-header' class='container-lg d-flex flex-row justify-content-between align-items-center'>
-      <a class='navbar-brand nav-link hover-none d-xl-none' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
+      <a class='navbar-brand nav-link d-xl-none' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
       <i class='menu-toggler navbar-toggler' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvas' aria-controls='offcanvas' aria-label='Toggle navigation'>
         <span></span>
         <span></span>
@@ -377,7 +377,31 @@
       </div>
     </form>
   </div>
-  <div class='container-lg' id="footer-nav">
+  <div class='container-lg' id='footer-nav'>
+    <a class='navbar-brand nav-link' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo2.svg' %})"></a>
+    <ul class='navbar-nav' id='nav-items'>
+      <li class='nav-item'>
+        <a class='nav-link' aria-current='page' href='#about'>О компании</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#solutions'>Отраслевые решения</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#services'>Услуги</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#prices'>Стоимость</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#customers'>Заказчики</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#contacts'>Контакты</a>
+      </li>
+    </ul>
+    <div id='copyright'>
+      © 2024 АПИ-ФАКТОРИ
+    </div>
   </div>
 </footer>
 

@@ -419,7 +419,6 @@ light{
 footer {
   background-color: var(--main-dark-color)!important;
   border-radius: 0!important;
-  height: 500px;
 }
 
 footer > *{
@@ -427,10 +426,12 @@ footer > *{
 }
 
 #footer-form-wrapper{
-  height: 100%;
   border-bottom: color-mix(in srgb, var(--gray-color), #ffffff00) 1px solid;
   width: auto;
-  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #footer-form-title{
@@ -438,14 +439,11 @@ footer > *{
   width: 500px;
   white-space: normal;
   color: var(--gray-color);
-  float: left;
   margin: 0;
 }
 
 footer form{
-  float: right;
   width: 440px;
-  height: 100%;
 }
 
 footer form .field{
@@ -506,8 +504,35 @@ footer form .btn-wrapper{
 
 #footer-nav{
   border-radius: 0!important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
 }
 
+#footer-nav * {
+  color: var(--gray-color)!important;
+  line-height: 40px;
+}
+
+#footer-nav #nav-items {
+  display: flex;
+  flex-direction: row;
+}
+
+#footer-nav #nav-items .nav-item,
+#footer-nav #nav-items .nav-item .nav-link{
+  height: 40px;
+}
+
+#footer-nav #nav-items .nav-item .nav-link:hover{
+  color: color-mix(in srgb, var(--gray-color), #ffffff00)!important;
+}
+
+#footer-nav .navbar-brand {
+  width: 200px;
+  height: 40px!important;
+}
 
 input:focus{
   border: none!important;
