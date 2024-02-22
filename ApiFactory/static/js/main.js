@@ -47,28 +47,10 @@ $(document).ready(function () {
     myOffcanvas.setAttribute("style", "max-height: 0;");
   });
 
-  const $subtitle = $('#subtitle')
-  const $listOfSubtitle = $subtitle.children()
-
-  let it = 1;
-
-  init()
-
-  function init() {
-    if (window.matchMedia('(max-width: 576px)').matches) {
-      $subtitle.html($listOfSubtitle[0]).css('opacity', '100');
-      switchSubtitleElements
-      setInterval(switchSubtitleElements, 5000)
-    } else {
-      $subtitle.html($listOfSubtitle).css('opacity', '100')
-    }
-  }
 
   $(window).resize(() => {
-    init()
     $(".navbar-toggler").removeClass('open')
   })
-
 
   let addresses = {
     'Moscow': {
@@ -99,7 +81,7 @@ $(document).ready(function () {
                   <div class="result-address">
                     <p> <strong> ${address['title']} </strong> </p>
                     <p> ${address['address']} </p>
-                    <button href="${address['mapURL']}" class="btn btn-md">Показать на карте</button>
+                    <button onclick="window.open('${address['mapURL']}', '_blank').focus()" class="btn btn-md">Показать на карте</button>
                   </div>
                 `)
   }

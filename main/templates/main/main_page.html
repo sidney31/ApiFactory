@@ -54,6 +54,7 @@
         </ul>
         <div class='navbar-nav align-items-center'>
           <form action="{% url 'user:profile' %}">
+            {% comment %} <form action="{% url 'oidc_authentication_init' %}"> {% endcomment %}
             <button type='submit' class='btn btn-md'>
               Aутентификация
             </button>
@@ -74,7 +75,7 @@
     Cоздаем <strong>пространство эффективности</strong> вашего бизнеса
   </div>
 
-  <button class='btn btn-lg'>
+  <button onclick="location.href='#callback'" class='btn btn-lg'>
     Обсудить услугу
   </button>
 </div>
@@ -277,8 +278,8 @@
         </div>
       </div>
     </div>
-      
-    <button href='#callback' class='btn btn-lg'>
+    
+    <button onclick="location.href='#callback'" class='btn btn-lg'>
       <strong>Подробнее</strong>
     </button>
   </div>  
@@ -352,6 +353,7 @@
 </div>
 
 <footer class='container-fluid'>
+  <a class='anchor' name='callback'></a>
   <div class='container-lg' id='footer-form-wrapper'>
     <p id='footer-form-title'>
       Отправьте заявление, и с Вами обязательно свяжутся

@@ -151,7 +151,7 @@ strong{
 
 #main-block > #title{
   position: relative;
-  font-size: 48px!important;
+  font-size: 56px!important;
   width: 15em;
   margin: 0 auto;
   top: 50%;
@@ -329,6 +329,11 @@ light{
   height: 190px;
   text-align: center;
   width: auto;
+  transition: box-shadow .3s ease;
+}
+
+.customers .field:hover{
+  box-shadow: color-mix(in srgb, var(--main-dark-color) 20%, #ffffff00) 0 0 25px;
 }
 
 .customers .field img{

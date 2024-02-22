@@ -16,8 +16,8 @@ urlpatterns = [
     path('api/v1/callback/', CallbackAPI.as_view()),
     path("admin/", include(wagtailadmin_urls)),
     path("search/", search_views.search, name="search"),
+    path('oidc/', include('mozilla_django_oidc.urls')),
 ]
-
 
 if settings.DEBUG:
     from django.conf.urls.static import static
@@ -35,4 +35,8 @@ urlpatterns = urlpatterns + [
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
     #    path("pages/", include(wagtail_urls)),
+]
+
+urlpatterns = urlpatterns + [
+    path('oidc/', include('mozilla_django_oidc.urls')),
 ]

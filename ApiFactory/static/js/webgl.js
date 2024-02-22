@@ -56,7 +56,7 @@ function updateVertices(geom) {
 
 function animate() {
 	requestAnimationFrame(animate);
-	t += 0.0015;
+	t += 0.001;
 	updateVertices(line);
 	renderer.render(scene, camera);
 }
