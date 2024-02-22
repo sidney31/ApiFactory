@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views import View
+from rest_framework.views import APIView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class profile(View):
-  def get(self, request):
-    print('yes')
-    return render(request, 'profile.html')
+class profile(LoginRequiredMixin, APIView):
+  def get(self, request, verify=False):
+    return render(request, 'profile.html', )

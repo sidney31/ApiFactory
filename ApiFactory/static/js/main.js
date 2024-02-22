@@ -1,31 +1,15 @@
 $(document).ready(function () {
 
-  let lastScrollTop = 0;
+  calculateNavbarBackground()
 
-  $(window).scroll(() => {
-    if ($(this).scrollTop() < 50) return;
+  $(window).scroll(calculateNavbarBackground);
 
-    if ($(this).scrollTop() > lastScrollTop + 5) {
-      $(".navbar").css("transform", "translateY(-100px)");
-    } else if ($(this).scrollTop() < lastScrollTop - 5) {
-      $(".navbar").css("transform", "translateY(0)");
-    }
-    lastScrollTop = $(this).scrollTop();
-  });
-
-  const carousel = new bootstrap.Carousel($("#carousel"), {
-    interval: 2000,
-  });
-
-  let $mq = $("#marquee").marquee({
-    duration: window.matchMedia("(max-width: 1200px)").matches ? 5000 : 25000,
-    gap: 0,
-    delayBeforeStart: 0,
-    direction: "left",
-    duplicated: true,
-    // pauseOnHover: true,
-    startVisible: true,
-  });
+  function calculateNavbarBackground() {
+    if ($(window).scrollTop() > $('#main-block').height() / 2)
+      $(".navbar").attr('style', 'background-color: #fffffff6!important')
+    else
+      $(".navbar").attr('style', 'background-color: none!important')
+  }
 
   const $swithes = $("[id^=switch]");
 
@@ -39,7 +23,6 @@ $(document).ready(function () {
         "pointer-events",
         $(this).is(":checked") ? "auto" : "none"
       );
-    // $root.children('.content').css('pointer-events', ($(this).is(':checked') ? 'auto' : 'none'));
   });
 
   const myOffcanvas = document.querySelector("#offcanvas");
@@ -64,54 +47,10 @@ $(document).ready(function () {
     myOffcanvas.setAttribute("style", "max-height: 0;");
   });
 
-  const $subtitle = $('#subtitle')
-  const $listOfSubtitle = $subtitle.children()
-
-  let it = 1;
-
-  init()
-
-  function init() {
-    if (window.matchMedia('(max-width: 576px)').matches) {
-      $subtitle.html($listOfSubtitle[0]).css('opacity', '100');
-      switchSubtitleElements
-      setInterval(switchSubtitleElements, 5000)
-    } else {
-      $subtitle.html($listOfSubtitle).css('opacity', '100')
-    }
-  }
 
   $(window).resize(() => {
-    init()
     $(".navbar-toggler").removeClass('open')
   })
-
-
-  async function switchSubtitleElements() {
-    if (!window.matchMedia('(max-width: 576px)').matches)
-      return false
-    it = (it == 2) ? 0 : it + 1
-    await setOpacity($subtitle, 0)
-    $subtitle.html($listOfSubtitle[it])
-    await setOpacity($subtitle, 100)
-  }
-
-  function setOpacity(el, val) {
-    return new Promise((resolve) => {
-
-      $(el).animate({
-        opacity: val
-      }, {
-        duration: 500,
-        easing: 'ease'
-      });
-
-      setTimeout(() => {
-        resolve('success')
-      }, 500)
-    })
-  }
-
 
   let addresses = {
     'Moscow': {
@@ -139,10 +78,10 @@ $(document).ready(function () {
   function defineContacts(city) {
     const address = addresses[city]
     $('#results').html(`
-                  <div class="fs-4 mt-3 ms-1 text-wrap">
-                    <p class="fw-500 mb-0">${address['title']}</p>
+                  <div class="result-address">
+                    <p> <strong> ${address['title']} </strong> </p>
                     <p> ${address['address']} </p>
-                    <a href="${address['mapURL']}" class="btn bg-gray fs-4 fw-200 text-black border-0 hover-opacity">Показать на карте</a>
+                    <button onclick="window.open('${address['mapURL']}', '_blank').focus()" class="btn btn-md">Показать на карте</button>
                   </div>
                 `)
   }
@@ -152,17 +91,6 @@ $(document).ready(function () {
   $('#city').change(() => {
     defineContacts(city.value)
   })
-
-  $('.callbackModalbtn').click((e) => {
-    const modalState = $('#callbackModal').is(':visible')
-    $('body').css('overflowY', !modalState ? 'hidden' : 'visible')
-    modalState ? $('#callbackModal')[0].close() : $('#callbackModal')[0].showModal()
-  })
-
-  $(document).keydown(function (e) {
-    if (e.keyCode == 27 && $('#callbackModal').is(':visible'))
-      e.preventDefault()
-  });
 
   $('input[type=tel]').mask('+7 (999) 999-99-99');
 
@@ -176,9 +104,7 @@ $(document).ready(function () {
       processData: false,
       success: (data) => {
         if (data.valid == true) {
-          showAlert('<strong>Заявление зарегистрировано!</strong> <br> В близжайшее время с Вами свяжется менеджер.', 'success', 3000)
-          $('body').css('overflowY', 'visible')
-          $('#callbackModal')[0].close()
+          showAlert('<strong>Заявление зарегистрировано!</strong> <br> В ближайшее время с Вами свяжется менеджер.', 'success', 3000)
           $(this)[0].reset()
         } else {
           showAlert(data.errors, 'error', 3000)
@@ -190,14 +116,10 @@ $(document).ready(function () {
 
   function showAlert(html, type = 'info', ms) {
     const $alert = $("#alert")
-    if (window.matchMedia('(max-width: 768px)').matches && $('#callbackModal').is(':visible')) {
-      $('#callbackModal').append($alert)
-    }
     $alert.html(html)
     $alert.addClass(`show ${type}`)
     setTimeout(() => {
       $alert.removeClass(`show ${type}`)
-      $('#callbackModal').remove($alert)
     }, ms)
 
   }

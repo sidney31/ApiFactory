@@ -7,10 +7,10 @@ let t;
 let perlin;
 
 function init() {
-	target = document.querySelector(".wave");
+	target = document.querySelector("#wave");
 	width = target.offsetWidth;
 	height = target.offsetHeight;
-	size = width < height ? width : height;
+	size = (width + height) / 2;
 	t = 0;
 	perlin = new Perlin();
 
@@ -21,23 +21,12 @@ function init() {
 	renderer = new THREE.WebGLRenderer({ antialias: true, depth: false });
 	renderer.setClearColor(0xf5f5f5);
 	renderer.setSize(width, height);
+	renderer.setPixelRatio(window.devicePixelRatio);
 
 	waveHeight = 30;
 
 	target.replaceChildren();
 	target.appendChild(renderer.domElement);
-
-	// const composer = new THREE.EffectComposer(renderer);
-	// const renderPass = new THREE.RenderPass(scene, camera)
-	// const bokehPass = new THREE.BokehPass(scene, camera, {
-	//     focus: 1.0,
-	//     aperture: 0.025,
-	//     maxblur: 0.01,
-	//     width: width,
-	//     height: height,
-	// });
-	// composer.addPass(renderPass);
-	// composer.addPass(bokehPass);
 }
 
 function createGeometry() {
@@ -49,9 +38,9 @@ function createGeometry() {
 	);
 
 	wireframe = new THREE.WireframeGeometry(geometry);
-	lineMaterial = new THREE.LineBasicMaterial({ color: 0x82cde2 });
+	lineMaterial = new THREE.LineBasicMaterial({ color: 0x73d2e6 });
 	line = new THREE.LineSegments(wireframe, lineMaterial);
-	line.rotation.x = -88 * (Math.PI / 180); // deg to rad: `degrees * (PI / 180)`;
+	line.rotation.x = -86 * (Math.PI / 180); // deg to rad: `degrees * (PI / 180)`;
 	scene.add(line);
 }
 
@@ -78,7 +67,7 @@ animate();
 
 document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener("scroll", () => {
-		waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 2;
+		waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 1.5;
 	});
 
 	window.addEventListener('resize', () => {

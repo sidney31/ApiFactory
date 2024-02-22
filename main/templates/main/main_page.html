@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel='stylesheet' href="{% static 'css/main.css' %}">
 
 <script type='module' src="{% static 'js/webgl.js' %}"></script>
 <script>
@@ -12,17 +12,15 @@
     }
   });
 </script>
-<script type="module" src="{% static 'js/main.js' %}"></script>
+<script type='module' src="{% static 'js/main.js' %}"></script>
 {% endblock %}
 
 {% block header %}
-<nav class="navbar navbar-expand-xl fixed-top">
-  <div class="container-fluid bg-white z-3">
-    <div id="collapsed-header" class="container-lg d-flex flex-row justify-content-between align-items-center">
-      <a class="navbar-brand nav-link hover-none d-xl-none" href="{% url 'main:home' %}">
-        <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/></a>
-      <i class="menu-toggler navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                                                           data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+<nav class='navbar navbar-expand-xl fixed-top'>
+  <div class='w-100 z-3'>
+    <div id='collapsed-header' class='container-lg d-flex flex-row justify-content-between align-items-center'>
+      <a class='navbar-brand nav-link d-xl-none' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
+      <i class='menu-toggler navbar-toggler' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvas' aria-controls='offcanvas' aria-label='Toggle navigation'>
         <span></span>
         <span></span>
         <span></span>
@@ -30,39 +28,36 @@
     </div>
   </div>
 
-  <div class="container-lg">
-    <div class="offcanvas offcanvas-top z-2" tabindex="-1" data-bs-backdrop="false" id="offcanvas"
-                                                                                    aria-labelledby="offcanvasLabel">
-      <div class="offcanvas-body justify-content-between w-100 z-2">
-        <a class="navbar-brand nav-link hover-none d-none d-xl-block" href="{% url 'main:home' %}">
-          <img src="{% static 'svg/logo.svg' %}" alt="" class="h-100 py-2"/>
-        </a>
-        <ul class="navbar-nav" id="nav-items">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#about">О компании</a>
+  <div class='container-lg w-100'>
+    <div class='offcanvas offcanvas-top z-2' tabindex='-1' data-bs-backdrop='false' id='offcanvas' aria-labelledby='offcanvasLabel'>
+      <div class='offcanvas-body justify-content-between w-100 z-2'>
+        <a class='navbar-brand nav-link hover-none d-none d-xl-block' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
+        <ul class='navbar-nav' id='nav-items'>
+          <li class='nav-item'>
+            <a class='nav-link' aria-current='page' href='#about'>О компании</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#solutions">Отраслевые решения</a>
+          <li class='nav-item'>
+            <a class='nav-link' href='#solutions'>Отраслевые решения</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">Услуги и цены</a>
+          <li class='nav-item'>
+            <a class='nav-link' href='#services'>Услуги</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#customers">Заказчики</a>
+          <li class='nav-item'>
+            <a class='nav-link' href='#prices'>Стоимость</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacts">Контакты</a>
+          <li class='nav-item'>
+            <a class='nav-link' href='#customers'>Заказчики</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='#contacts'>Контакты</a>
           </li>
         </ul>
-        <div class="navbar-nav align-items-center" style="gap: 30px">
-          {# <button class="btn btn-outline"> #}
-            {# Вход #}
-            {# </button> #}
-          {# <button class="btn btn-fill"> #}
-            {# Регистрация #}
-            {# </button> #}
+        <div class='navbar-nav align-items-center'>
           <form action="{% url 'user:profile' %}">
-            <button type="submit" class="btn btn-fill">Aутентификация</button>
+            {% comment %} <form action="{% url 'oidc_authentication_init' %}"> {% endcomment %}
+            <button type='submit' class='btn btn-md'>
+              Aутентификация
+            </button>
           </form>
         </div>
       </div>
@@ -72,163 +67,137 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid w-100 min-h-100svh m-0 p-0">
-  {# <video autoplay muted loop preload="auto" #}
-    {# poster="{% static 'img/main-video-poster.jpg' %}" #}
-    {# width="100%" height="100%" class="object-fit-cover"> #}
-    {# <source src="{% static 'img/wave.mp4' %}" type="video/mp4"/> #}
-    {# </video> #}
-  <div class="wave d-flex justify-content-center min-h-100svh overflow-hidden"></div>
+<div class='container-fluid' id='wave-wrapper'>
+  <div id='wave'></div>
 </div>
-<div class="position-absolute z-1 h-100svh left-50 top-0 translate-middle-x container-lg d-flex justify-content-around align-items-center flex-column text-wrap">
-  <div class="max-w-1000px fs-xxl bold text-lg-center text-md-start ms-3">Мы создаем пространство эффективности
-    вашего бизнеса
+<div class='container-lg' id='main-block'>
+  <div class='text-lg-center text-md-start' id='title'>
+    Cоздаем <strong>пространство эффективности</strong> вашего бизнеса
   </div>
-  <ul class="fs-4 list-style-none text-center p-0" id="subtitle">
-    <li>Автоматизация бизнес-процессов</li>
-    <li>Интеграция инфраструктурных решений с учетными системами</li>
-    <li>Трансформация критически важных ИТ-системы без риска для бизнеса</li>
-  </ul>
+
+  <button onclick="location.href='#callback'" class='btn btn-lg'>
+    Обсудить услугу
+  </button>
 </div>
-<div class="container-fluid pt-5 bg-white appear-down">
-  <div class="container-lg ">
-    <a class="anchor" name="about"></a>
-    <div class="fs-3 text-wrap col-lg-8 col-l-12 mb-5">
-      <b class="fs-title text-wrap">АПИ-ФАКТОРИ</b>
-      <p>— команда профессионалов, способная реализовать самые сложные проекты корпоративного уровня.</p>
-    </div>
-    <div class="d-md-block d-lg-none">
-      <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="section">
-              <p class="title">2</p>
-              <p class="text">номинации на премию “Проект года”</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="section">
-              <p class="title">40+</p>
-              <p class="text">высококвалифицированных специалистов</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="section">
-              <p class="title">10+</p>
-              <p class="text">среднего опыта сотрудников в IT-сфере</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="section">
-              <p class="title">20+</p>
-              <p class="text">успешно реализованных проектов</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class='container-fluid bg-white'>
+  <div class='container-lg '>
+    <a class='anchor' name='about'></a>
+    <div id='description'>
+      <h1>АПИ-ФАКТОРИ</h1>
+      <h3>— команда профессионалов, способная реализовать самые сложные проекты корпоративного уровня.</h3>
     </div>
   </div>
-  <div class="container-lg d-lg-block d-none">
-    <div class="row">
-      <div class="col-xxl-6 col-lg-6 col-md-12">
-        <div class="section">
-          <p class="title animate-number">2</p>
-          <p class="text">номинации на премию “Проект года”</p>
-        </div>
+
+  <div class='container-lg d-flex flex-row justify-content-between' id='achievements-block'>
+    <div class='section achievement' style='border-color: #8FC5D9'>
+      <div class='title'>
+        40+
       </div>
-      <div class="col-xxl-6 col-lg-6 col-md-12">
-        <div class="section">
-          <p class="title animate-number">40+</p>
-          <p class="text">высококвалифицированных специалистов</p>
-        </div>
+      <div class='content'>
+        высококвалифицированных специалистов
       </div>
-      <div class="col-xxl-6 col-lg-6 col-md-12">
-        <div class="section">
-          <p class="title animate-number">10+</p>
-          <p class="text">среднего опыта сотрудников в IT-сфере</p>
-        </div>
+    </div>
+    
+    <div class='section achievement' style='border-color: #BFB4D5'>
+      <div class='title'>
+        2
       </div>
-      <div class="col-xxl-6 col-lg-6 col-md-12">
-        <div class="section">
-          <p class="title animate-number">20+</p>
-          <p class="text">успешно реализованных проектов</p>
-        </div>
+      <div class='content'>
+        номинации на премию “Проект года”
+      </div>
+    </div>
+
+    <div class='section achievement' style='border-color: #F9DA74'>
+      <div class='title'>
+        10+
+      </div>
+      <div class='content'>
+        среднего опыта сотрудников в IT-сфере
+      </div>
+    </div>
+
+    <div class='section achievement' style='border-color: #BFB6A8'>
+      <div class='title'>
+        20+
+      </div>
+      <div class='content'>
+        успешно реализованных проектов
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid py-5 appear-down">
-  <div class="container-lg">
-    <p class="fs-title text-wrap mb-5">
-    <a class="anchor" name="solutions"></a>
-    <b>Отраслевые решения</b>
-    </p>
-    <div class="d-flex flex-row gap-lg-5 gap-sm-2 mt-2 overflow-x-hidden w-100 position-relative" id="marquee">
-      <div class="section align-items-center">
-        <div class="icon">
-          <img src="{% static 'svg/tower.svg' %}" alt=""/>
+  <div class='container-lg'>
+    <h1 class='title'>
+      <a class='anchor' name='solutions'></a>
+      <strong>Отраслевые решения</strong>
+    </h1>
+
+    <div class='container-lg d-flex flex-row justify-content-between pb-0' id='solutions-block'>
+
+      <div class='section solutions' style='border-color: #BFB6A8'>
+        <img src="{% static '/svg/driller.svg' %}" alt='driller icon'>
+        <div class='content'>
+          Нефтегазовое машиностроение
         </div>
-        <div class="subtitle text-wrap">Нефтегазовое машиностроение</div>
       </div>
-      <div class="section align-items-center">
-        <div class="icon">
-          <img src="{% static 'svg/oil.svg' %}" alt=""/>
+
+      <div class='section solutions' style='border-color: #BFB6A8'>
+        <img src="{% static '/svg/oilbarrel.svg' %}" alt='oilbarrel icon'>
+        <div class='content'>
+          Нефтесервис
         </div>
-        <div class="subtitle">Нефтесервис</div>
       </div>
-      <div class="section align-items-center">
-        <div class="icon">
-          <img src="{% static 'svg/mine.svg' %}" alt=""/>
+
+      <div class='section solutions' style='border-color: #BFB6A8'>
+        <img src="{% static '/svg/minemachine.svg' %}" alt='minemachine icon'>
+        <div class='content'>
+          Горнорудная отрасль
         </div>
-        <div class="subtitle">Горнорудная отрасль</div>
       </div>
-      <div class="section align-items-center">
-        <div class="icon">
-          <img src="{% static 'svg/pipe.svg' %}" alt=""/>
+
+      <div class='section solutions' style='border-color: #BFB6A8'>
+        <img src="{% static '/svg/pipe.svg' %}" alt='pipe icon'>
+        <div class='content'>
+          Трубная отрасль
         </div>
-        <div class="subtitle">Трубная отрасль</div>
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid bg-white py-5 appear-down">
-  <div class="container-lg">
-    <p class="fs-title text-wrap mb-5">
-    <a class="anchor" name="services"></a>
-    <b>Услуги</b>
-    </p>
-    <div class="d-flex align-items-center flex-xl-row flex-column">
-      <div class="d-flex flex-wrap flex-row flex-xl-column nav-pills me-xl-3 align-items-start mb-5 col-md-12 col-xl-4"
-           id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <button class="btn active fs-4 text-start text-wrap mb-1" id="v-pills-home-tab"
-                                                                  data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab"
-                                                                                                                                     aria-controls="v-pills-home" aria-selected="true">Автоматизация производства
+<div class='container-fluid'>
+  <div class='container-lg'>
+    <h1 class='title'>
+      <a class='anchor' name='services'></a>
+      <strong>Услуги</strong>
+    </h1>
+    <div class='d-flex align-items-center flex-xl-row flex-column' id='services-block'>
+      <div class='d-flex flex-wrap flex-row flex-xl-column nav-pills align-items-start col-md-12 col-xl-4'
+      id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+        <button id='v-pills-1-tab' class='active' data-bs-toggle='pill' data-bs-target='#v-pills-1' type='button' role='tab' aria-controls='v-pills-1' aria-selected='true'>
+          Автоматизация производства
         </button>
-        <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
-                                                                                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                                                                                                                                               aria-selected="false">Бухгалтерия и кадры
+
+        <button id='v-pills-2-tab' data-bs-toggle='pill' data-bs-target='#v-pills-2' type='button' role='tab' aria-controls='v-pills-2' aria-selected='false'>
+          Бухгалтерия и кадры
         </button>
-        <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
-                                                                                     data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                                                                                                                                                 aria-selected="false">Документооборот
+        
+        <button id='v-pills-3-tab' data-bs-toggle='pill' data-bs-target='#v-pills-3' type='button' role='tab' aria-controls='v-pills-3' aria-selected='false'>
+          Документооборот
         </button>
-        <button class="btn fs-4 text-start text-wrap mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
-                                                                                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                                                                                                                                                 aria-selected="false">Компьютеры и сети
+        
+        <button id='v-pills-settings-tab' data-bs-toggle='pill' data-bs-target='#v-pills-settings' type='button' role='tab' aria-controls='v-pills-settings' aria-selected='false'>
+          Компьютеры и сети
         </button>
       </div>
-      <div class="tab-content fs-5" id="v-pills-tabContent">
-        <div class="tab-pane fade show active text-wrap" id="v-pills-home" role="tabpanel"
-                                                                           aria-labelledby="v-pills-home-tab">
+      <div class='tab-content' id='v-pills-tabContent'>
+        <div class='tab-pane fade show active text-wrap' id='v-pills-1' role='tabpanel' aria-labelledby='v-pills-1-tab'>
           <ul>
-            <li>Внедрение систем управления производством (ERP и планирование)</li>
+            <li>Внедрение систем управления производством <light>(ERP и планирование)</light></li>
             <li>Внедрение систем управления складом и запасами</li>
             <li>Внедрение систем управления затратами и учетом себестоимости</li>
             <li>Проектные работы</li>
           </ul>
         </div>
-        <div class="tab-pane fade text-wrap" id="v-pills-profile" role="tabpanel"
-                                                                  aria-labelledby="v-pills-profile-tab">
+        <div class='tab-pane fade text-wrap' id='v-pills-2' role='tabpanel' aria-labelledby='v-pills-2-tab'>
           <ul>
             <li>Автоматизация управленческих и учетных задач в сфере бухгалтерского учета</li>
             <li>Автоматизация управленческих и учетных задач в сфере кадрового делопроизводства</li>
@@ -236,16 +205,14 @@
             <li>Проектные работы</li>
           </ul>
         </div>
-        <div class="tab-pane fade text-wrap" id="v-pills-messages" role="tabpanel"
-                                                                   aria-labelledby="v-pills-messages-tab">
+        <div class='tab-pane fade text-wrap' id='v-pills-3' role='tabpanel' aria-labelledby='v-pills-3-tab'>
           <ul>
             <li>Автоматизация документооборота и архива документов</li>
             <li>Автоматизация управленческих процессов</li>
             <li>Проектные работы</li>
           </ul>
         </div>
-        <div class="tab-pane fade text-wrap" id="v-pills-settings" role="tabpanel"
-                                                                   aria-labelledby="v-pills-settings-tab">
+        <div class='tab-pane fade text-wrap' id='v-pills-settings' role='tabpanel' aria-labelledby='v-pills-settings-tab'>
           <ul>
             <li>Проектирование инфраструктуры и каналов связи</li>
             <li>Интеграция инфраструктурных решений с учетными системами</li>
@@ -256,268 +223,191 @@
       </div>
     </div>
   </div>
-  <div class="container-lg separator"></div>
-  <div class="container-lg ">
-    <p class="fs-title text-wrap mb-5 pt-5">
-    <b>Цены</b>
-    </p>
-    <div id="price-wrapper">
-      <div class="row px-2 col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 ps-3 fw-400">
-          <p>Проектные работы, консалтинг и корпоративное сопровождение</p>
-        </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-          <p>1600₽/час</p>
-        </div>
-      </div>
-      <div class="row px-2 col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 ps-3 fw-400">
-          <p>Внедрение и модификация программных продуктов «1С Предприятие»</p>
-        </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-          <p>1600₽/час</p>
-        </div>
-      </div>
-      <div class="row px-2 col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 ps-3 fw-400">
-          <p>Внедрение и модификация программных продуктов «ERP система Олимп»</p>
-        </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-          <p>1600₽/час</p>
-        </div>
-      </div>
-      <div class="row px-2 col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 ps-3 fw-400">
-          <p>Проектирование инфраструктуры и каналов связи</p>
-        </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-          <p>по запросу</p>
-        </div>
-      </div>
-      <div class="row px-2 col-md mb-2 text-wrap">
-        <div class="col-md-10 fs-5 ps-3 fw-400">
-          <p>Индивидуальное обучение пользователей, корпоративных групп</p>
-        </div>
-        <div class="col-sm-12 col-md-2 pb-md-2 ps-4 ps-md-0 fs-5 fw-500 md-fs-4">
-          <p>по запросу</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-lg separator d-none d-lg-block ">
-    <p class="text-muted text-wrap col-8 mt-3 ps-3">Мы работаем на базе программных продуктов «1С Предприятие» и
-    «ERP система Олимп», которые включены в единый реестр российских программ для электронных вычислительных
-    машин и баз данных.</p>
-  </div>  
-  <div class="container-lg">
-    <a class="btn btn-fill callbackModalbtn">
-      Подробнее
-    </a>
-    <dialog id="callbackModal">
-      <div id="closeBtn">
-        <i class="bi bi-x-lg callbackModalbtn"></i>
-      </div>
-      <form>
-        {% csrf_token %}
-        <div class="title">
-          Запросить консультацию
-        </div>
-        <div class="field">
-          {{ form.name }}
-        </div>
-        <div class="field">
-          {{ form.phone }}
-        </div>
-        <div class="field text-small form-check">
-          {{ form.agreement }}
-          <label class="form-check-label" for="{{ form.agreement.id_for_label}}">
-            Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
-          </label>
-        </div>
-        <div class="w-100 w-md-75">
-          <div class="mx-auto" style="w-75">
-            <button class="w-100 btn btn-fill" type="submit"> 
-              Отправить
-            </button>
-          </div>
-        </div>
-      </form>
-    </dialog>
-  </div>
 </div>
-{% comment %}Ждёт своего часа<div class="container-lg separator"></div>
-<div class="container-lg">
-  <p class="fs-title text-wrap mb-5 pt-5">
-  <b>Расчёт стоимости</b>
-  <small class="text-muted">(wip)</small>
-  </p>
-  <div class="d-flex flex-wrap justify-content-between gap-3">
-    <div class="section2">
-      <div class="title">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" checked id="switch1" />
-          <label for="switch1">Проектирование инфраструктуры и каналов связи</label>
+
+<div class='container-fluid bg-white'>
+  <div class='container-lg'>
+    <h1 class='title p-0'>
+      <a class='anchor' name='prices'></a>
+      <strong>Стоимость</strong>
+    </h1>
+
+    <div id='price'>
+      <div class='row'>
+        <div class='col-12 col-md-9'>
+          Проектные работы, консалтинг и корпоративное сопровождение
+        </div>
+        <div class='col-12 col-md-3 text-end'>
+          от 1600 &#8381; в час
         </div>
       </div>
-      <div class="content">
-        <input name="range1" onchange="rangevalue1.value = range1.value" type="range" class="form-range" min="1" max="48" step="1" id="range1" />
-        <output name="rangevalue1" class="float-end m-2" for="range1">
-          24
-          <small>часов</small>
-        </output>
-        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-      </div>
-    </div>
-    <div class="section2">
-      <div class="title">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" checked id="switch2" />
-          <label for="switch2">Внедрение и модификация программных продуктов «ERP система Олимп»</label>
+
+      <div class='row'>
+        <div class='col-12 col-md-9'>
+          Внедрение и модификация программных продуктов «1С Предприятие»
+        </div>
+        <div class='col-12 col-md-3 text-end'>
+          от 1600 &#8381; в час
         </div>
       </div>
-      <div class="content">
-        <input name="range2" onchange="rangevalue2.value = range2.value" type="range" class="form-range" min="1" max="48" step="1" id="range2" />
-        <output name="rangevalue2" class="float-end m-2" for="range2">
-          24
-          <small>часов</small>
-        </output>
-        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-      </div>
-    </div>
-    <div class="section2">
-      <div class="title">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" checked id="switch3" />
-          <label for="switch3">Внедрение и модификация программных продуктов «ERP система Олимп»</label>
+
+      <div class='row'>
+        <div class='col-12 col-md-9'>
+          Внедрение и модификация программных продуктов «ERP система Олимп»
+        </div>
+        <div class='col-12 col-md-3 text-end'>
+          от 1600 &#8381; в час
         </div>
       </div>
-      <div class="content">
-        <input name="range3" onchange="rangevalue3.value = range3.value" type="range" class="form-range" min="1" max="48" step="1" id="range3" />
-        <output name="rangevalue3" class="float-end m-2" for="range3">
-          24
-          <small>часов</small>
-        </output>
-        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-      </div>
-    </div>
-    <div class="section2">
-      <div class="title">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" checked id="switch4" />
-          <label for="switch4">Проектирование инфраструктуры и каналов связи</label>
+
+      <div class='row'>
+        <div class='col-12 col-md-9'>
+          Проектирование инфраструктуры и каналов связи
+        </div>
+        <div class='col-12 col-md-3 text-end'>
+          по запросу
         </div>
       </div>
-      <div class="content">
-        <input name="range4" onchange="rangevalue4.value = range4.value" type="range" class="form-range" min="1" max="48" step="1" id="range4" />
-        <output name="rangevalue4" class="float-end m-2" for="range4">
-          24
-          <small>часов</small>
-        </output>
-        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-      </div>
-    </div>
-    <div class="section2">
-      <div class="title">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" checked id="switch5" />
-          <label for="switch5">Индивидуальное обучение пользователей, корпоративных групп</label>
+
+      <div class='row'>
+        <div class='col-12 col-md-9'>
+          Индивидуальное обучение пользователей, корпоративных групп
+        </div>
+        <div class='col-12 col-md-3 text-end'>
+          по запросу
         </div>
       </div>
-      <div class="content">
-        <input name="range5" onchange="rangevalue5.value = range5.value" type="range" class="form-range" min="1" max="48" step="1" id="range5" />
-        <output name="rangevalue5" class="float-end m-2" for="range5">
-          24
-          <small>часов</small>
-        </output>
-        <a class="float-start">Итог: 84.000₽ <small class="text-muted">24×3.500</small></a>
-      </div>
     </div>
+    
+    <button onclick="location.href='#callback'" class='btn btn-lg'>
+      <strong>Подробнее</strong>
+    </button>
+  </div>  
+</div>
+
+<div class='container-fluid'>
+  <div class='container-lg'>
+    <h1 class='title p-0'>
+      <a class='anchor' name='customers'></a>
+      <strong>Заказчики</strong>
+    </h1>
   </div>
-  <div class="container-lg separator"></div>
-  <p class="fs-1 my-3 bold">Итог: 336.000₽</p>
-  <div class="container-lg">
-    <button class="btn btn-fill position-relative translate-middle-x start-50 fs-4 col-12 col-sm-3">Заказать</button>
+  
+  <div class='container-lg'>
+    <div class='customers'>
+      <div class='field field-md'>
+        <img src="{% static '/img/jiu3AQz.png' %}">
+      </div>
+      <div class='field field-md'>
+        <img src="{% static '/img/JjvK1bZ.png' %}">
+      </div>
+      <div class='field field-md'>
+        <img src="{% static '/img/kjLJ31b.png' %}">
+      </div>
+      <div class='field field-lg'>
+        <img src="{% static '/img/rtbKJ73d.png' %}">
+      </div>
+      <div class='field field-lg'>
+        <img src="{% static '/img/nQggP2T.png' %}">
+      </div>
+      <div class='field field-md'>
+        <img src="{% static '/img/eA1FcU9.png' %}">
+      </div>
+      <div class='field field-md'>
+        <img src="{% static '/img/Wmo23Qv.png' %}">
+      </div>
+    </div>
   </div>
 </div>
 
-{% endcomment %}
-<div class="container-fluid appear-down">
-  <div class="container-lg">
-    <p class="fs-title text-wrap mb-5 py-5">
-    <a class="anchor" name="customers"></a>
-    <b>Наши заказчики</b>
-    </p>
-    <div class="container-lg mx-auto d-flex flex-wrap justify-content-center" id="customers">
-      <a><img src="{% static 'img/jiu3AQz.png' %}" alt="Customer logo"/></a>
-      <a><img src="{% static 'img/JjvK1bZ.png' %}" alt="Customer logo"/></a>
-      <a><img src="{% static 'img/kjLJ31b.png' %}" alt="Customer logo"/></a>
-      <a><img src="{% static 'img/nQggP2T.png' %}" alt="Customer logo"/></a>
-      <a><img src="{% static 'img/Wmo23Qv.png' %}" alt="Customer logo"/></a>
-      <a><img src="{% static 'img/eA1FcU9.png' %}" alt="Customer logo"/></a>
-      <a><img src="{% static 'img/rtbKJ73d.png' %}" alt="Customer logo"/></a>
-    </div>
+<div class='container-fluid bg-white'>
+  <div class='container-lg'>
+    <h1 class='title p-0'>
+      <a class='anchor' name='contacts'></a>
+      <strong>Контакты</strong>
+    </h1>
   </div>
-</div>
-<div class="container-fluid appear-down bg-white pb-5">
-  <div class="container-lg">
-    <p class="fs-title text-wrap py-3">
-    <a class="anchor" name="contacts"></a>
-    <b>Контакты</b>
-    </p>
-    <p class="">
-    <a class="row fs-3 text-decoration-none text-color-main hover-opacity" href="tel:+7 987 291-19-19">
-      <i class="bi bi-telephone w-auto"></i>
+
+  <div class='container-lg' id='contacts'>
+    <a class='text-decoration-none mt-0' href='tel:+7 987 291-19-19'>
       +7 987 291-19-19
     </a>
-    <a class="row fs-3 text-decoration-none text-color-main hover-opacity"
-       href="mailto:customer@api-factory.tech">
-      <i class="bi bi-envelope-at w-auto"></i>
+    <a class='text-decoration-none' href='mailto:customer@api-factory.tech'>
       customer@api-factory.tech
     </a>
-    </p>
-    <form class="d-flex bg-gray w-75 lg-w-75 md-w-100 p-2 rounded gap-3 mt-5">
-      <select class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
-        <option selected value="1">Россия</option>
+  </div>
+  <div class='container-lg'>
+    <form id='address'>
+      <select id='country'>
+        <option selected value='1'>Россия</option>
       </select>
-      <select id="city" class="bg-gray form-select btn-none fs-3 fw-500 w-auto hover-opacity">
-        <option value="Moscow" selected>Москва</option>
-        <option value="Perm">Пермь</option>
-        <option value="Izhevsk">Ижевск</option>
-        <option value="Almetyevsk">Альметьевск</option>
+      <select id='city'>
+        <option value='Moscow' selected>Москва</option>
+        <option value='Perm'>Пермь</option>
+        <option value='Izhevsk'>Ижевск</option>
+        <option value='Almetyevsk'>Альметьевск</option>
       </select>
     </form>
-
-    <div id="results"></div>
-
-  </div>
-</div>
-<div class="container-fluid m-0 text-white bg-dark my-0 py-3 appear-down">
-  <div class="container-lg">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
-      <p class="col-12 col-lg-3 mb-3 mb-lg-0 text-white">© 2024 ApiFactory</p>
-      <ul class="col-12 col-lg nav justify-content-end">
-        <li class="nav-item mx-2 my-0">
-          <a class="text-decoration-none hover-white hover-opacity" href="#about">О компании</a>
-        </li>
-        <li class="nav-item mx-2 my-0">
-          <a class="text-decoration-none hover-white hover-opacity" href="#solutions">Отраслевые
-            решения</a>
-        </li>
-        <li class="nav-item mx-2 my-0">
-          <a class="text-decoration-none hover-white hover-opacity" href="#services">Услуги и цены</a>
-        </li>
-        <li class="nav-item mx-2 my-0">
-          <a class="text-decoration-none hover-white hover-opacity" href="#customers">Заказчики</a>
-        </li>
-        <li class="nav-item mx-2 my-0">
-          <a class="text-decoration-none hover-white hover-opacity" href="#contacts">Контакты</a>
-        </li>
-      </ul>
-    </footer>
+      <div id='results'></div>
   </div>
 </div>
 
-<div id='alert' role="alert">Уведомление</div>
+<footer class='container-fluid'>
+  <a class='anchor' name='callback'></a>
+  <div class='container-lg' id='footer-form-wrapper'>
+    <p id='footer-form-title'>
+      Отправьте заявление, и с Вами обязательно свяжутся
+    </p>
+    <form>
+      {% csrf_token %}
+      <div class='field'>
+        {{ form.name }}
+      </div>
+      <div class='field'>
+        {{ form.phone }}
+      </div>
+      <div class='field form-check'>
+        {{ form.agreement }}
+        <label class='form-check-label' for='{{ form.agreement.id_for_label}}'>
+          Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+        </label>
+      </div>
+      <div class='btn-wrapper'>
+        <button class='btn btn-md' type='submit'> 
+          Отправить
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class='container-lg' id='footer-nav'>
+    <a class='navbar-brand nav-link' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo2.svg' %})"></a>
+    <ul class='navbar-nav' id='nav-items'>
+      <li class='nav-item'>
+        <a class='nav-link' aria-current='page' href='#about'>О компании</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#solutions'>Отраслевые решения</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#services'>Услуги</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#prices'>Стоимость</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#customers'>Заказчики</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#contacts'>Контакты</a>
+      </li>
+    </ul>
+    <div id='copyright'>
+      © 2024 АПИ-ФАКТОРИ
+    </div>
+  </div>
+</footer>
+
+<div id='alert' role='alert'>Уведомление</div>
 {% endblock %}
 
 

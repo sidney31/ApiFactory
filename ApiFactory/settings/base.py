@@ -49,7 +49,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
     "rest_framework",
+    'mozilla_django_oidc',
 ]
 
 MIDDLEWARE = [
@@ -172,7 +174,27 @@ WAGTAILADMIN_BASE_URL = "http://example.com"
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-    )
+    ),
+    
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
 PHONENUMBER_DEFAULT_REGION = 'RU'
+
+AUTHENTICATION_BACKENDS = (
+    'mozilla_django_oidc.auth.OIDCAuthenticationBackend',
+)
+
+OIDC_RP_CLIENT_ID = 'web'
+OIDC_RP_CLIENT_SECRET = 'F5fWCQAvCVkBbucLM2MZXw5z4DdewmL8'
+OIDC_OP_AUTHORIZATION_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/auth'
+OIDC_OP_TOKEN_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/token'
+OIDC_OP_USER_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/userinfo'
+OIDC_OP_JWKS_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/certs'
+OIDC_RP_SIGN_ALGO = 'RS256'
+
+LOGIN_URL = 'oidc_authentication_init'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'user:profile'
