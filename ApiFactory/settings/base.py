@@ -92,11 +92,15 @@ WSGI_APPLICATION = "ApiFactory.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'apifactory',
+        'USER': 'postgres',
+        'PASSWORD': 'QWEasdZXC',
+        'HOST': 'localhost',
+        'PORT': '',
+    }}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -172,13 +176,14 @@ WAGTAILSEARCH_BACKENDS = {
 WAGTAILADMIN_BASE_URL = "http://example.com"
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    
-    'DEFAULT_PERMISSION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'mozilla_django_oidc.contrib.drf.OIDCAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        # other authentication classes, if needed
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ),
+    ],
 }
 
 PHONENUMBER_DEFAULT_REGION = 'RU'
@@ -194,7 +199,8 @@ OIDC_OP_TOKEN_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/prot
 OIDC_OP_USER_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/userinfo'
 OIDC_OP_JWKS_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/certs'
 OIDC_RP_SIGN_ALGO = 'RS256'
+OIDC_VERIFY_SSL = False
 
 LOGIN_URL = 'oidc_authentication_init'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'main:home'
 LOGIN_REDIRECT_URL = 'user:profile'
