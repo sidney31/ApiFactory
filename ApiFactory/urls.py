@@ -16,7 +16,6 @@ urlpatterns = [
     path('api/v1/callback/', CallbackAPI.as_view()),
     path("admin/", include(wagtailadmin_urls)),
     path("search/", search_views.search, name="search"),
-    path('oidc/', include('mozilla_django_oidc.urls')),
 ]
 
 if settings.DEBUG:

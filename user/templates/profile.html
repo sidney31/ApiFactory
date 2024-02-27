@@ -30,7 +30,7 @@
                     <ul>
                         <li><a href="#">Оплата</a></li>
                         <li><a href="#">Помощь</a></li>
-                        <form id="logout" action="{% url 'oidc_logout'%}"
+                        <form id="logout" action="{% url 'user:custom_oidc_logout_unit'%}"
                             method="POST">
                             {% csrf_token %}
                             <li>
