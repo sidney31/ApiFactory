@@ -54,7 +54,7 @@
         </ul>
         <div class='navbar-nav align-items-center'>
           <form action="{% url 'user:profile' %}">
-            {% comment %} <form action="{% url 'main:custom_oidc_auth_unit' %}"> {% endcomment %}
+            {% comment %} <form action="{% url 'oidc_authentication_init' %}"> {% endcomment %}
             <button type='submit' class='btn btn-md'>
               Aутентификация
             </button>

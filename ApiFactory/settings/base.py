@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "user",
     
     "phonenumber_field",
+    "transliterate",
     
     "search",
     "wagtail.contrib.forms",

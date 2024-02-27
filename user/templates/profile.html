@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags user_tags %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/user.css' %}">
@@ -25,8 +25,8 @@
                 </a>
                 <ul class="dropdown-menu" id="profile-menu"
                     aria-labelledby="navbarDropdown">
-                    <p class="title">{{ user.email }}</p>
-                    <p class="subtitle">Компания</p>
+                    <p class="title">{{ user.email|getNameByEmail }}</p>
+                    <p class="subtitle">{{ user.email|getCompanyByEmail }}</p>
                     <ul>
                         <li><a href="#">Оплата</a></li>
                         <li><a href="#">Помощь</a></li>
