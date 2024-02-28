@@ -95,12 +95,13 @@ WSGI_APPLICATION = "ApiFactory.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'apifactory',
+        'NAME': 'web',
         'USER': 'postgres',
         'PASSWORD': 'QWEasdZXC',
         'HOST': 'localhost',
         'PORT': '',
-    }}
+    }
+}
 
 
 # Password validation
@@ -205,3 +206,5 @@ OIDC_VERIFY_SSL = False
 LOGIN_URL = 'oidc_authentication_init'
 LOGOUT_REDIRECT_URL = 'main:home'
 LOGIN_REDIRECT_URL = 'user:profile'
+
+CSRF_TRUSTED_ORIGINS = ['https://web.api-factory.ru']

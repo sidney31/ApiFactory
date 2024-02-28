@@ -96,15 +96,13 @@ button {
   line-height: normal !important;
 }
 
-.btn:hover,
-.btn:hover {
+.btn:hover:not(.btn-clean) {
   background-color: var(--main-dark-color) !important;
   border-color: var(--main-light-color) !important;
   color: var(--main-light-color) !important;
 }
 
-.btn:hover *,
-.btn:hover * {
+.btn:hover:not(.btn-clean) {
   color: var(--main-light-color) !important;
 }
 
@@ -114,6 +112,15 @@ button {
 
 .btn-md {
   padding: 10px 25px !important;
+}
+
+.btn-clean {
+  border: none !important;
+  background-color: none !important;
+}
+
+.btn-clean:hover {
+  color: black;
 }
 
 strong {
@@ -523,7 +530,7 @@ footer form .btn-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px !important;
 }
 
 #footer-nav * {

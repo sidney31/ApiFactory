@@ -5,7 +5,7 @@ $(document).ready(function () {
   $(window).scroll(calculateNavbarBackground);
 
   function calculateNavbarBackground() {
-    if ($(window).scrollTop() > $('#main-block').height() / 2)
+    if ($(window).scrollTop() > $('#hero-block').height())
       $(".navbar").attr('style', 'background-color: #fffffff6!important')
     else
       $(".navbar").attr('style', 'background-color: none!important')
@@ -94,7 +94,7 @@ $(document).ready(function () {
 
   $('input[type=tel]').mask('+7 (999) 999-99-99');
 
-  $('#callbackModal form').submit(function (e) {
+  $('footer #footer-form-wrapper form').submit(function (e) {
     e.preventDefault()
 
     $.ajax({
@@ -121,7 +121,9 @@ $(document).ready(function () {
     setTimeout(() => {
       $alert.removeClass(`show ${type}`)
     }, ms)
-
   }
+
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 })

@@ -15,6 +15,7 @@ class CallbackApplication(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     name = models.CharField(blank=False, null=False, max_length=100)
     phone = PhoneNumberField(blank=False, null=False)
+    question = models.CharField(blank=False, null=False, max_length=100)
     agreement = models.BooleanField(blank=False, null=False)
     
     def __str__(self):

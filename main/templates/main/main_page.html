@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static user_tags %}
 
 {% block head %}
 <link rel='stylesheet' href="{% static 'css/main.css' %}">
@@ -18,9 +18,13 @@
 {% block header %}
 <nav class='navbar navbar-expand-xl fixed-top'>
   <div class='w-100 z-3'>
-    <div id='collapsed-header' class='container-lg d-flex flex-row justify-content-between align-items-center'>
-      <a class='navbar-brand nav-link d-xl-none' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
-      <i class='menu-toggler navbar-toggler' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvas' aria-controls='offcanvas' aria-label='Toggle navigation'>
+    <div id='collapsed-header'
+      class='container-lg d-flex flex-row justify-content-between align-items-center'>
+      <a class='navbar-brand nav-link d-xl-none' href="{% url 'main:home' %}"
+        style="background-image: url({% static 'svg/logo.svg' %})"></a>
+      <i class='menu-toggler navbar-toggler' type='button'
+        data-bs-toggle='offcanvas' data-bs-target='#offcanvas'
+        aria-controls='offcanvas' aria-label='Toggle navigation'>
         <span></span>
         <span></span>
         <span></span>
@@ -29,9 +33,12 @@
   </div>
 
   <div class='container-lg w-100'>
-    <div class='offcanvas offcanvas-top z-2' tabindex='-1' data-bs-backdrop='false' id='offcanvas' aria-labelledby='offcanvasLabel'>
+    <div class='offcanvas offcanvas-top z-2' tabindex='-1'
+      data-bs-backdrop='false' id='offcanvas' aria-labelledby='offcanvasLabel'>
       <div class='offcanvas-body justify-content-between w-100 z-2'>
-        <a class='navbar-brand nav-link hover-none d-none d-xl-block' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo.svg' %})"></a>
+        <a class='navbar-brand nav-link hover-none d-none d-xl-block'
+          href="{% url 'main:home' %}"
+          style="background-image: url({% static 'svg/logo.svg' %})"></a>
         <ul class='navbar-nav' id='nav-items'>
           <li class='nav-item'>
             <a class='nav-link' aria-current='page' href='#about'>О компании</a>
@@ -54,10 +61,16 @@
         </ul>
         <div class='navbar-nav align-items-center'>
           <form action="{% url 'user:profile' %}">
-            {% comment %} <form action="{% url 'oidc_authentication_init' %}"> {% endcomment %}
+            {% if user.is_authenticated %}
+              <button type='submit' class="btn btn-clean">
+                <i class="bi bi-person"></i>
+                {{ user.email|getNameByEmail }}
+              </button>
+            {% else %}
             <button type='submit' class='btn btn-md'>
               Aутентификация
             </button>
+            {% endif %}
           </form>
         </div>
       </div>
@@ -84,11 +97,13 @@
     <a class='anchor' name='about'></a>
     <div id='description'>
       <h1>АПИ-ФАКТОРИ</h1>
-      <h3>— команда профессионалов, способная реализовать самые сложные проекты корпоративного уровня.</h3>
+      <h3>— команда профессионалов, способная реализовать самые сложные проекты
+        корпоративного уровня.</h3>
     </div>
   </div>
 
-  <div class='container-lg d-flex flex-row justify-content-between' id='achievements-block'>
+  <div class='container-lg d-flex flex-row justify-content-between'
+    id='achievements-block'>
     <div class='section achievement' style='border-color: #8FC5D9'>
       <div class='title'>
         40+
@@ -97,7 +112,7 @@
         высококвалифицированных специалистов
       </div>
     </div>
-    
+
     <div class='section achievement' style='border-color: #BFB4D5'>
       <div class='title'>
         2
@@ -131,7 +146,8 @@
       <strong>Отраслевые решения</strong>
     </h1>
 
-    <div class='container-lg d-flex flex-row justify-content-between pb-0' id='solutions-block'>
+    <div class='container-lg d-flex flex-row justify-content-between pb-0'
+      id='solutions-block'>
 
       <div class='section solutions' style='border-color: #BFB6A8'>
         <img src="{% static '/svg/driller.svg' %}" alt='driller icon'>
@@ -169,50 +185,69 @@
       <a class='anchor' name='services'></a>
       <strong>Услуги</strong>
     </h1>
-    <div class='d-flex align-items-center flex-xl-row flex-column' id='services-block'>
-      <div class='d-flex flex-wrap flex-row flex-xl-column nav-pills align-items-start col-md-12 col-xl-4'
-      id='v-pills-tab' role='tablist' aria-orientation='vertical'>
-        <button id='v-pills-1-tab' class='active' data-bs-toggle='pill' data-bs-target='#v-pills-1' type='button' role='tab' aria-controls='v-pills-1' aria-selected='true'>
+    <div class='d-flex align-items-center flex-xl-row flex-column'
+      id='services-block'>
+      <div
+        class='d-flex flex-wrap flex-row flex-xl-column nav-pills align-items-start col-md-12 col-xl-4'
+        id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+        <button id='v-pills-1-tab' class='active' data-bs-toggle='pill'
+          data-bs-target='#v-pills-1' type='button' role='tab'
+          aria-controls='v-pills-1' aria-selected='true'>
           Автоматизация производства
         </button>
 
-        <button id='v-pills-2-tab' data-bs-toggle='pill' data-bs-target='#v-pills-2' type='button' role='tab' aria-controls='v-pills-2' aria-selected='false'>
+        <button id='v-pills-2-tab' data-bs-toggle='pill'
+          data-bs-target='#v-pills-2' type='button' role='tab'
+          aria-controls='v-pills-2' aria-selected='false'>
           Бухгалтерия и кадры
         </button>
-        
-        <button id='v-pills-3-tab' data-bs-toggle='pill' data-bs-target='#v-pills-3' type='button' role='tab' aria-controls='v-pills-3' aria-selected='false'>
+
+        <button id='v-pills-3-tab' data-bs-toggle='pill'
+          data-bs-target='#v-pills-3' type='button' role='tab'
+          aria-controls='v-pills-3' aria-selected='false'>
           Документооборот
         </button>
-        
-        <button id='v-pills-settings-tab' data-bs-toggle='pill' data-bs-target='#v-pills-settings' type='button' role='tab' aria-controls='v-pills-settings' aria-selected='false'>
+
+        <button id='v-pills-settings-tab' data-bs-toggle='pill'
+          data-bs-target='#v-pills-settings' type='button' role='tab'
+          aria-controls='v-pills-settings' aria-selected='false'>
           Компьютеры и сети
         </button>
       </div>
       <div class='tab-content' id='v-pills-tabContent'>
-        <div class='tab-pane fade show active text-wrap' id='v-pills-1' role='tabpanel' aria-labelledby='v-pills-1-tab'>
+        <div class='tab-pane fade show active text-wrap' id='v-pills-1'
+          role='tabpanel' aria-labelledby='v-pills-1-tab'>
           <ul>
-            <li>Внедрение систем управления производством <light>(ERP и планирование)</light></li>
+            <li>Внедрение систем управления производством <light>(ERP и
+                планирование)</light></li>
             <li>Внедрение систем управления складом и запасами</li>
-            <li>Внедрение систем управления затратами и учетом себестоимости</li>
+            <li>Внедрение систем управления затратами и учетом
+              себестоимости</li>
             <li>Проектные работы</li>
           </ul>
         </div>
-        <div class='tab-pane fade text-wrap' id='v-pills-2' role='tabpanel' aria-labelledby='v-pills-2-tab'>
+        <div class='tab-pane fade text-wrap' id='v-pills-2' role='tabpanel'
+          aria-labelledby='v-pills-2-tab'>
           <ul>
-            <li>Автоматизация управленческих и учетных задач в сфере бухгалтерского учета</li>
-            <li>Автоматизация управленческих и учетных задач в сфере кадрового делопроизводства</li>
-            <li>Консалтинг в сфере бухгалтерского и налогового учета, кадрового делопроизводства</li>
+            <li>Автоматизация управленческих и учетных задач в сфере
+              бухгалтерского учета</li>
+            <li>Автоматизация управленческих и учетных задач в сфере кадрового
+              делопроизводства</li>
+            <li>Консалтинг в сфере бухгалтерского и налогового учета, кадрового
+              делопроизводства</li>
             <li>Проектные работы</li>
           </ul>
         </div>
-        <div class='tab-pane fade text-wrap' id='v-pills-3' role='tabpanel' aria-labelledby='v-pills-3-tab'>
+        <div class='tab-pane fade text-wrap' id='v-pills-3' role='tabpanel'
+          aria-labelledby='v-pills-3-tab'>
           <ul>
             <li>Автоматизация документооборота и архива документов</li>
             <li>Автоматизация управленческих процессов</li>
             <li>Проектные работы</li>
           </ul>
         </div>
-        <div class='tab-pane fade text-wrap' id='v-pills-settings' role='tabpanel' aria-labelledby='v-pills-settings-tab'>
+        <div class='tab-pane fade text-wrap' id='v-pills-settings'
+          role='tabpanel' aria-labelledby='v-pills-settings-tab'>
           <ul>
             <li>Проектирование инфраструктуры и каналов связи</li>
             <li>Интеграция инфраструктурных решений с учетными системами</li>
@@ -278,11 +313,11 @@
         </div>
       </div>
     </div>
-    
+
     <button onclick="location.href='#callback'" class='btn btn-lg'>
       <strong>Подробнее</strong>
     </button>
-  </div>  
+  </div>
 </div>
 
 <div class='container-fluid'>
@@ -292,7 +327,7 @@
       <strong>Заказчики</strong>
     </h1>
   </div>
-  
+
   <div class='container-lg'>
     <div class='customers'>
       <div class='field field-md'>
@@ -348,7 +383,7 @@
         <option value='Almetyevsk'>Альметьевск</option>
       </select>
     </form>
-      <div id='results'></div>
+    <div id='results'></div>
   </div>
 </div>
 
@@ -366,21 +401,28 @@
       <div class='field'>
         {{ form.phone }}
       </div>
+      <div class='field'>
+        {{ form.question }}
+      </div>
       <div class='field form-check'>
         {{ form.agreement }}
         <label class='form-check-label' for='{{ form.agreement.id_for_label}}'>
-          Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+          Нажимая кнопку «Отправить», я даю свое согласие на обработку моих
+          персональных данных, в соответствии с Федеральным законом от
+          27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для
+          целей, определенных в Согласии на обработку персональных данных
         </label>
       </div>
       <div class='btn-wrapper'>
-        <button class='btn btn-md' type='submit'> 
+        <button class='btn btn-md' type='submit'>
           Отправить
         </button>
       </div>
     </form>
   </div>
   <div class='container-lg' id='footer-nav'>
-    <a class='navbar-brand nav-link' href="{% url 'main:home' %}" style="background-image: url({% static 'svg/logo2.svg' %})"></a>
+    <a class='navbar-brand nav-link' href="{% url 'main:home' %}"
+      style="background-image: url({% static 'svg/logo2.svg' %})"></a>
     <ul class='navbar-nav' id='nav-items'>
       <li class='nav-item'>
         <a class='nav-link' aria-current='page' href='#about'>О компании</a>
@@ -409,5 +451,3 @@
 
 <div id='alert' role='alert'>Уведомление</div>
 {% endblock %}
-
-
