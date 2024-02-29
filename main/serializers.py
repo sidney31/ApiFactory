@@ -4,4 +4,4 @@ from .models import CallbackApplication
 class CallbackSerializer(serializers.ModelSerializer):
   class Meta:
     model = CallbackApplication
-    fields = ('created', 'name', 'phone', 'agreement')
+    fields = ('created', 'name', 'phone', 'question', 'agreement',)

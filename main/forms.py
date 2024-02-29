@@ -13,6 +13,11 @@ class CallbackForm(forms.Form):
         'id': 'phoneInput',
         'placeholder': '+7 (___) ___-__-__',
     }))
+    question = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'id': 'questionInput',
+        'placeholder': 'Вопрос',
+    }))
     agreement = forms.BooleanField(widget=forms.CheckboxInput(attrs={
         'class': 'form-check-input',
         'id': 'personalDataCheck',

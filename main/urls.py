@@ -1,9 +1,9 @@
 from django.urls import path
-from . import views
+from .views import index, send_callback
 
 app_name = 'main'
 
 urlpatterns = [
-    path("", views.index, name="home"),
-    path("send_callback/", views.send_callback, name="send_callback"),
+    path("", index, name="home"),
+    path("send_callback/", send_callback, name="send_callback"),
 ]

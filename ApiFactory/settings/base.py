@@ -72,7 +72,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(PROJECT_DIR, "templates"),
+            os.path.join(BASE_DIR, "frontend/templates"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -95,12 +95,13 @@ WSGI_APPLICATION = "ApiFactory.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'apifactory',
+        'NAME': 'web',
         'USER': 'postgres',
         'PASSWORD': 'QWEasdZXC',
         'HOST': 'localhost',
         'PORT': '',
-    }}
+    }
+}
 
 
 # Password validation
@@ -145,7 +146,8 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
+    # os.path.join(PROJECT_DIR, "static"),
+    os.path.join(BASE_DIR, "frontend/static"),
 ]
 
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated
@@ -205,3 +207,5 @@ OIDC_VERIFY_SSL = False
 LOGIN_URL = 'oidc_authentication_init'
 LOGOUT_REDIRECT_URL = 'main:home'
 LOGIN_REDIRECT_URL = 'user:profile'
+
+CSRF_TRUSTED_ORIGINS = ['https://web.api-factory.ru']
