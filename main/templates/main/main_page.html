@@ -1,20 +1,6 @@
 {% extends 'base.html' %}
 {% load static user_tags %}
 
-{% block head %}
-<link rel='stylesheet' href="{% static 'css/main.css' %}">
-
-<script type='module' src="{% static 'js/webgl.js' %}"></script>
-<script>
-  $.ajaxSetup({
-    headers: {
-      'X-CSRFToken': '{{ csrf_token }}'
-    }
-  });
-</script>
-<script type='module' src="{% static 'js/main.js' %}"></script>
-{% endblock %}
-
 {% block header %}
 <nav class='navbar navbar-expand-xl fixed-top'>
   <div class='w-100 z-3'>
@@ -181,15 +167,19 @@
 </div>
 <div class='container-fluid'>
   <div class='container-lg'>
-    <h1 class='title'>
-      <a class='anchor' name='services'></a>
-      <strong>Услуги</strong>
-    </h1>
+      <h1 class='title d-flex flex-row'>
+        <a class='anchor' name='services'></a>
+        <strong>Услуги</strong>
+      </h1>
+      <div id="category-tabs">
+        <button class='active'>Информационные технологии</button>
+        <button>Информационная безопасность</button>
+      </div>
+
     <div class='d-flex align-items-center flex-xl-row flex-column'
       id='services-block'>
-      <div
-        class='d-flex flex-wrap flex-row flex-xl-column nav-pills align-items-start col-md-12 col-xl-4'
-        id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+      <div class='d-flex flex-wrap flex-row flex-xl-column nav-pills align-items-start col-md-12 col-xl-4' 
+      id='v-pills-tab' role='tablist' aria-orientation='vertical'>
         <button id='v-pills-1-tab' class='active' data-bs-toggle='pill'
           data-bs-target='#v-pills-1' type='button' role='tab'
           aria-controls='v-pills-1' aria-selected='true'>
