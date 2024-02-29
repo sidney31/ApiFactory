@@ -8,7 +8,7 @@ let t;
 let perlin;
 
 function init() {
-	target = document.querySelector("#wave");
+
 	width = target.offsetWidth;
 	height = target.offsetHeight;
 	size = (width + height) / 2;
@@ -62,18 +62,22 @@ function animate() {
 	renderer.render(scene, camera);
 }
 
-init();
-createGeometry();
-animate();
+target = document.querySelector("#wave");
+if (target) {
+	init();
+	createGeometry();
+	animate();
 
-document.addEventListener('DOMContentLoaded', () => {
-	window.addEventListener("scroll", () => {
-		waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 1.5;
+	document.addEventListener('DOMContentLoaded', () => {
+		window.addEventListener("scroll", () => {
+			waveHeight = window.scrollY <= 60 ? 30 : window.scrollY / 1.5;
+		});
+
+		window.addEventListener('resize', () => {
+			init();
+			createGeometry();
+		})
 	});
 
-	window.addEventListener('resize', () => {
-		init();
-		createGeometry();
-	})
+}
 
-});

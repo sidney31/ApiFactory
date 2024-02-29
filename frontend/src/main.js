@@ -1,5 +1,6 @@
 import * as bootstrap from 'bootstrap'
 import Inputmask from 'inputmask';
+import Tab from './tab.js';
 
 $.ajaxSetup({
   headers: {
@@ -131,4 +132,7 @@ $(document).ready(function ($) {
       $alert.removeClass(`show ${type}`)
     }, ms)
   }
+
+  let tab = new Tab("pety")
+  console.log(tab.name)
 })
