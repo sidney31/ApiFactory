@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
-  
+
   {% block head %} {% endblock %}
   <title>
     {% if self.title %}
@@ -20,9 +20,51 @@
     {% endif %}
   </title>
   {% load static %}
+
+    <script>
+      window.addEventListener('load', () => {
+        document.querySelector('#cover').style.opacity = 0;
+        document.querySelector('body').style.overflow = 'visible';
+        setInterval(() => {
+          document.querySelector('#cover').style.visibility = 'hidden';
+        }, 500)
+      })
+    </script>
+    
+    <style>
+      #cover {
+        position: fixed;
+        height: 100svh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: whitesmoke;
+        z-index: 9999;
+        opacity: 100%;
+        transition: opacity .3s ease;
+      }
+
+      .loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(300px / cos(45deg));
+        height: 14px;
+        background: repeating-linear-gradient(-45deg,#000 0 15px,#0000 0 20px) left/200% 100%;
+        animation: loader 4s infinite linear;
+      }
+
+      @keyframes loader {
+          100% {background-position:right}
+      }
+    </style>
 </head>
 
-<body>
+<body style="overflow: hidden;">
+  <div id="cover">
+    <div class="loader"></div>
+  </div>
   {% block header %} {% endblock %}
 
   <div id="content">
