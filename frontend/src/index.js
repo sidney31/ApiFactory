@@ -1,8 +1,9 @@
+import * as bootstrap from 'bootstrap'
+import './styles.scss'
+import css from './styles.css'
+
 import 'jquery'
-
-import '../static/scss/styles.scss'
-
-import css from '../static/css/styles.css'
+import Inputmask from 'inputmask';
 
 import * as webgl from './webgl.js'
 import * as main from './main.js'
