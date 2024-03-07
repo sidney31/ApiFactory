@@ -16,15 +16,31 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.s[ac]ss$/,
           use: [
             "style-loader", "css-loader", "sass-loader"],
         },
         {
-          test: /\.css$/i,
+          test: /\.css$/,
           use: ["style-loader", "css-loader"],
         },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },
+        {
+          test: /\.js$/,
+          exclude: path.resolve(__dirname, '/node_modules/'),
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+            query: {compact: false},
+          },
+        },
       ],
+
     },
 
     plugins: [
