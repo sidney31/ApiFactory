@@ -9,9 +9,10 @@ $navbar_breakpoints: (1280px, 1700px);
 	background: #00000000;
 	z-index: 999;
 	backdrop-filter: blur(3px);
+	transition: background-color 0.1s 0.15s linear;
 }
 
-.navbar_nav__container {
+.navbar_nav {
 	display: flex;
 	flex-direction: row;
 
@@ -19,12 +20,6 @@ $navbar_breakpoints: (1280px, 1700px);
 	padding: 0 10px;
 
 	height: 100%;
-
-	@each $navbar_breakpoint in $navbar_breakpoints {
-		@media (min-width: #{$navbar_breakpoint}) {
-			width: #{$navbar_breakpoint} !important;
-		}
-	}
 }
 
 .navbar_logo {
@@ -38,56 +33,93 @@ $navbar_breakpoints: (1280px, 1700px);
 	& > * {
 		height: 100px;
 		width: auto;
+		float: right;
 	}
 }
 
 .navbar_menu {
 	height: inherit;
 	width: 100%;
+}
 
-	& > .navbar_menuList {
-		margin: 0;
-		padding: 0;
-		height: inherit;
-		list-style: none;
+.navbar_menuList {
+	margin: 0;
+	padding: 0;
+	height: inherit;
+	list-style: none;
 
-		display: flex;
-		flex-direction: row;
-		gap: 20px;
-		justify-content: center;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+}
 
-		& > .navbar_menuListItem {
-			height: inherit;
-			display: flex;
-			align-items: center;
-			flex-shrink: 0;
+.navbar_menuListItem {
+	height: inherit;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
 
-			& > .navbar_menuLink {
-				text-decoration: none;
-			}
+.navbar_menuLink {
+	text-decoration: none;
+}
 
-			& > .navbar_menuLink:after {
-				display: block;
-				content: '';
-				position: relative;
-				width: 100%;
-				transform: scaleX(0);
-				height: 2px;
-				background-color: $mainDarkColor;
-				transform-origin: bottom right;
-				transition: transform 0.3s;
-			}
+.navbar_menuLink:after {
+	display: block;
+	content: '';
+	position: relative;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	background-color: $mainDarkColor;
+	transform-origin: bottom right;
+	transition: transform 0.3s;
+}
 
-			& > .navbar_menuLink:hover:after {
-				transform: scaleX(1);
-				transform-origin: bottom left;
-			}
-		}
-	}
+.navbar_menuLink:hover:after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
 
 	@media (max-width: 768px) {
 		display: none;
 	}
+}
+
+.navbar_menuItemDropdown {
+	position: absolute;
+	top: 0;
+	background: rgb(255, 255, 255);
+	transition: all 0.2s 0.15s linear;
+	visibility: hidden;
+	opacity: 0;
+	left: 0;
+	width: 1000vw;
+	z-index: -1;
+	padding-top: 70px;
+}
+
+.navbar_menuDropdownItems {
+	position: relative;
+	max-height: 280px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: center;
+	gap: 10px;
+	padding: 25px 10px 45px;
+	margin: 0 auto;
+	max-width: 50%;
+}
+
+.navbar_menuDropdownItems > a:hover {
+	color: color-mix(in srgb, $mainDarkColor, $mainWhiteColor);
+}
+
+.navbar_menuListItem:hover .navbar_menuItemDropdown,
+.navbar_menuItemDropdown:hover {
+	visibility: visible;
+	opacity: 100;
 }
 
 .rightSide {
@@ -104,5 +136,5 @@ $navbar_breakpoints: (1280px, 1700px);
 	transform: translateY(-50%);
 	position: relative;
 	top: 50%;
-	float: right;
+	float: left;
 }

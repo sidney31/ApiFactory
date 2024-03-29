@@ -14,7 +14,6 @@ import * as db from './db.js'
 import UserService from '../../services/UserService.js'
 
 function Home() {
-
 	return (
 		<>
 			<Navbar
@@ -23,15 +22,15 @@ function Home() {
 				logo_path='/svg/logo.svg'
 				right_side={
 					<>
-						{!!UserService.isLoggedIn
-						? 
-							<button onClick={()=>UserService.doLogin()}>Вход для клиентов</button>
-						:
+						{!!UserService.isLoggedIn ? (
+							<button onClick={() => UserService.doLogin()}>
+								Вход для клиентов
+							</button>
+						) : (
 							<button>{UserService.getUsername()}</button>
-						}
+						)}
 					</>
 				}
-			
 			/>
 			<main>
 				<div className={app.hero}>
