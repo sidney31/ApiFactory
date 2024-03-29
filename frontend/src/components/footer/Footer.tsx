@@ -6,11 +6,11 @@ import styles from './Footer.module.scss'
 
 export const Footer = () => {
 	const NAV_LINKS = [
-		{ text: 'О компании', url: '/about' },
-		{ text: 'Отраслевые решения', url: '/solutions' },
-		{ text: 'Услуги и цены', url: '/services_and_prices' },
-		{ text: 'Заказчики', url: '/customers' },
-		{ text: 'Контакты', url: '/contacts' },
+		{ title: 'О компании', url: '/about' },
+		{ title: 'Отраслевые решения', url: '/solutions' },
+		{ title: 'Услуги и цены', url: '/services_and_prices' },
+		{ title: 'Заказчики', url: '/customers' },
+		{ title: 'Контакты', url: '/contacts' },
 	]
 	return (
 		<footer className={styles.footer}>
