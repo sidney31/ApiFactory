@@ -1,0 +1,44 @@
+@import '../common.scss';
+
+section {
+	height: auto;
+	width: 100vw;
+	background: white;
+	padding: 100px 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	gap: 50px;
+}
+
+.text {
+	width: 50%;
+	height: 100%;
+	margin: 0;
+}
+
+.text_small {
+	font-size: 14px;
+	font-weight: 500;
+	margin: 0;
+	margin-bottom: 22px;
+}
+
+.text_title {
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.text_subtitle {
+	margin: 0;
+	margin-bottom: 27px;
+	margin-right: 10px;
+}
+
+.image {
+	width: 50%;
+	aspect-ratio: 1;
+	background: #7d7d7d;
+}

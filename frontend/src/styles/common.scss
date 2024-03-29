@@ -1,0 +1,56 @@
+@import 'fonts.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$mainDarkColor: #36332f;
+$mainWhiteColor: #f5f5f5;
+$breakpoints: 1050px;
+
+* {
+	font-size: 16px;
+	font-family: 'Montserrat';
+	max-width: 100%;
+}
+
+button {
+	height: min-content;
+	width: max-content;
+	line-height: normal;
+
+	padding: 8px 9px;
+
+	background: #00000000;
+	border: 1px solid $mainDarkColor;
+	border-radius: 9px;
+	text-wrap: nowrap;
+	transition: all 0.3s ease;
+	@media (hover) {
+		&:hover {
+			background: $mainDarkColor;
+			color: white;
+		}
+	}
+}
+
+[class*='container'] {
+	@each $breakpoint in $breakpoints {
+		@media (min-width: #{$breakpoint}) {
+			width: #{$breakpoint};
+		}
+	}
+	margin: 0 auto;
+}
+
+::selection {
+	background-color: $mainDarkColor;
+	color: $mainWhiteColor;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background-color: $mainDarkColor;
+	color: $mainWhiteColor;
+	text-shadow: none;
+}

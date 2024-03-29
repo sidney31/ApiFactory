@@ -1,0 +1,125 @@
+@import '/src/styles/common.scss';
+
+footer {
+	background-color: $mainDarkColor;
+	color: $mainWhiteColor;
+	width: 100vw;
+}
+
+.footer_formWrapper {
+	border-bottom: color-mix(in srgb, var(--gray-color), #ffffff00) 1px solid;
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer_formTitle {
+	font-size: 40px;
+	width: 500px;
+	white-space: normal;
+	color: $mainWhiteColor;
+	margin: 0;
+	font-weight: 700;
+}
+
+form {
+	width: 440px;
+}
+
+.footer_form_field {
+	margin-bottom: 40px;
+	font-size: 16px;
+	line-height: 1em;
+	text-wrap: wrap;
+	overflow-wrap: break-word;
+	white-space: normal;
+
+	& > * {
+		letter-spacing: 1px;
+	}
+}
+
+.footer_form_label {
+	color: $mainWhiteColor;
+	font-weight: 200;
+	font-size: 12px;
+}
+
+.footer_phoneInput {
+	width: 100%;
+	background: none;
+	border: none;
+	border-bottom: $mainWhiteColor 1px solid;
+	border-radius: 0;
+	padding: 0;
+	color: $mainWhiteColor;
+	font-weight: 300;
+	height: 40px;
+	& > * {
+		background: none;
+		outline: none;
+	}
+	& option {
+		color: $mainDarkColor;
+	}
+}
+
+form {
+	input::placeholder {
+		color: $mainWhiteColor;
+	}
+	input[type='checkbox'] {
+		border: $mainWhiteColor 1px solid;
+		appearance: none;
+		color: $mainDarkColor;
+		width: 1em;
+		height: 1em;
+		border-radius: 0.15em;
+		transform: translateY(-0.075em);
+		place-content: center;
+		display: grid;
+		flex-shrink: 0;
+	}
+
+	input[type='checkbox']::before {
+		content: '';
+		width: 0.65em;
+		height: 0.65em;
+		transform: scale(0);
+		transition: 0.1s transform ease;
+		box-shadow: inset 1em 1em $mainWhiteColor;
+		transform-origin: zoom;
+		clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+	}
+
+	input[type='checkbox']:checked::before {
+		transform: scale(1);
+	}
+
+	input:not([type='checkbox']):not([type='tel']) {
+		outline: none;
+		width: 100%;
+		background: none;
+		border: none;
+		border-bottom: $mainWhiteColor 1px solid;
+		border-radius: 0;
+		padding: 0;
+		color: $mainWhiteColor;
+		font-weight: 300;
+		height: 40px;
+	}
+
+	button {
+		background: #00000000;
+		color: $mainWhiteColor;
+		border-color: $mainWhiteColor;
+		font-size: 18px;
+		padding: 10px 20px;
+		&:hover {
+			background: $mainWhiteColor;
+			color: $mainDarkColor;
+		}
+	}
+}

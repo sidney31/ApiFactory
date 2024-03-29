@@ -1,0 +1,40 @@
+upstream django {
+	server unix:///home/user/ApiFactory/ApiFactory.sock;
+}
+
+server {
+
+	listen 80 default_server;
+	listen 443 ssl;
+
+	server_name web.api-factory.ru;
+	
+	if ($scheme = 'http') {
+		  return 301 https://$host$request_uri;
+	}
+
+	ssl_certificate /home/user/web.api-factory.ru.crt;
+	ssl_certificate_key /home/user/device.key;
+ 
+	location / {
+		uwsgi_pass django;
+		include /home/user/ApiFactory/uwsgi_params;
+	}
+
+	access_log /etc/nginx/acc.log;
+	error_log /etc/nginx/err.log;
+
+	location /build{
+		alias /home/user/ApiFactory/frontend/build;
+	}	
+	
+	location /static {
+		alias /home/user/ApiFactory/frontend/static;
+	}
+
+	location /media { 
+		alias /home/user/ApiFactory/media;	
+	}
+
+}
+

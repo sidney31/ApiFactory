@@ -1,0 +1,108 @@
+@import '/src/styles/common.scss';
+
+$navbar_breakpoints: (1280px, 1700px);
+
+.navbar {
+	height: 100px;
+	width: 100vw;
+
+	background: #00000000;
+	z-index: 999;
+	backdrop-filter: blur(3px);
+}
+
+.navbar_nav__container {
+	display: flex;
+	flex-direction: row;
+
+	margin: 0 auto;
+	padding: 0 10px;
+
+	height: 100%;
+
+	@each $navbar_breakpoint in $navbar_breakpoints {
+		@media (min-width: #{$navbar_breakpoint}) {
+			width: #{$navbar_breakpoint} !important;
+		}
+	}
+}
+
+.navbar_logo {
+	height: 100px;
+	width: 200px;
+	object-fit: contain;
+	object-position: center;
+	flex-grow: 1;
+	flex-shrink: 0;
+
+	& > * {
+		height: 100px;
+		width: auto;
+	}
+}
+
+.navbar_menu {
+	height: inherit;
+	width: 100%;
+
+	& > .navbar_menuList {
+		margin: 0;
+		padding: 0;
+		height: inherit;
+		list-style: none;
+
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		justify-content: center;
+
+		& > .navbar_menuListItem {
+			height: inherit;
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+
+			& > .navbar_menuLink {
+				text-decoration: none;
+			}
+
+			& > .navbar_menuLink:after {
+				display: block;
+				content: '';
+				position: relative;
+				width: 100%;
+				transform: scaleX(0);
+				height: 2px;
+				background-color: $mainDarkColor;
+				transform-origin: bottom right;
+				transition: transform 0.3s;
+			}
+
+			& > .navbar_menuLink:hover:after {
+				transform: scaleX(1);
+				transform-origin: bottom left;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.rightSide {
+	width: 200px;
+	flex-grow: 1;
+	flex-shrink: 0;
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.rightSide > * {
+	transform: translateY(-50%);
+	position: relative;
+	top: 50%;
+	float: right;
+}

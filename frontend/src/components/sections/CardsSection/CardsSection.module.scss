@@ -1,0 +1,33 @@
+@import '../common.scss';
+
+section {
+	height: 100svh;
+	padding: 100px 0;
+}
+
+.container {
+	gap: 50px;
+}
+
+.text {
+	display: flex;
+	flex-direction: row;
+	height: 180px;
+	margin-bottom: 50px;
+	justify-content: center;
+}
+
+.text_title {
+	width: 50%;
+}
+
+.text_subtitle {
+	width: 50%;
+}
+
+.cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 100px;
+}
