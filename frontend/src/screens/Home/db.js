@@ -15,16 +15,37 @@ export const NAV_LINKS = [
 		title: 'Услуги',
 		url: '/services',
 		childs: [
-			{ title: 'Управление инцидентами', url: '/example' },
-			{ title: 'Управление уязвимостями', url: '/example' },
-			{ title: 'Обмен конфиденциальной информацией', url: '/example' },
-			{ title: 'Противодействие утечкам информации', url: '/example' },
-			{ title: 'Цифровая криминалистика', url: '/example' },
-			{ title: 'Создание систем защиты информации', url: '/example' },
-			{ title: 'Техническая поддержка', url: '/example' },
-			{ title: 'Системное администрирование', url: '/example' },
-			{ title: 'Управление сетями передачи данных', url: '/example' },
-			{ title: 'Управление серверным оборудованием', url: '/example' },
+			{ title: 'Управление инцидентами', url: '/service/incident-management' },
+			{
+				title: 'Управление уязвимостями',
+				url: '/service/vulnerability_management',
+			},
+			{
+				title: 'Обмен конфиденциальной информацией',
+				url: '/service/exchange_of_confidential information',
+			},
+			{
+				title: 'Противодействие утечкам информации',
+				url: '/service/countering_information_leaks',
+			},
+			{ title: 'Цифровая криминалистика', url: '/service/digital_forensics' },
+			{
+				title: 'Создание систем защиты информации',
+				url: '/service/creation_of_information_security_systems',
+			},
+			{ title: 'Техническая поддержка', url: '/service/technical_support' },
+			{
+				title: 'Системное администрирование',
+				url: '/service/system_administration',
+			},
+			{
+				title: 'Управление сетями передачи данных',
+				url: '/service/management_of_data_transmission-networks',
+			},
+			{
+				title: 'Управление серверным оборудованием',
+				url: '/service/server_hardware_management',
+			},
 		],
 	},
 	{ title: 'Цены', url: '/prices' },

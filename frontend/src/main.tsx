@@ -18,22 +18,26 @@ const router = createBrowserRouter([
 	},
 	{
 		path: 'account/',
-		element: <Account />
+		element: <Account />,
+	},
+	{
+		path: 'service/:serviceName',
+		element: <Home />,
 	},
 ])
 
-const _axios = axios.create();
-_axios.interceptors.request.use((config) => {
-  if (UserService.isLoggedIn()) {
-    const cb = () => {
-      config.headers.Authorization = `Bearer ${UserService.getToken()}`;
-      return Promise.resolve(config);
-    };
-    return UserService.updateToken(cb);
-  }
-});
+const _axios = axios.create()
+_axios.interceptors.request.use(config => {
+	if (UserService.isLoggedIn()) {
+		const cb = () => {
+			config.headers.Authorization = `Bearer ${UserService.getToken()}`
+			return Promise.resolve(config)
+		}
+		return UserService.updateToken(cb)
+	}
+})
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<RouterProvider router={router} />
 )
-UserService.initKeycloak();
+UserService.initKeycloak()

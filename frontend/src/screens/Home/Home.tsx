@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom'
 import { Contact } from '../../components/Contact.tsx'
 import { QuestionBox } from '../../components/QuestionBox.tsx'
 import { Footer } from '../../components/footer/Footer.tsx'
@@ -12,8 +13,10 @@ import '../../styles/common.scss'
 import * as db from './db.js'
 
 import UserService from '../../services/UserService.js'
+import { services_db } from './services_db.ts'
 
 function Home() {
+	const { serviceName } = useParams()
 	return (
 		<>
 			<Navbar
@@ -36,26 +39,43 @@ function Home() {
 				<div className={app.hero}>
 					<Wave />
 					<div className={app.hero_text__container}>
-						<h1 className={app.hero_textTitle}>
-							Cоздаем пространство эффективности вашего бизнеса
-						</h1>
-						<p className={app.hero_textSubtitle}>
-							Мы ведущая компания по аутсорсингу IT, специализирующаяся на
-							предоставлении индивидуальных решений, помогающих бизнесу
-							процветать в цифровую эпоху.
-							<button className={app.hero_textSubtitle_button}>
-								Заказать обратный звонок
-							</button>
-						</p>
+						{!!serviceName ? (
+							<h1 className={`${app.hero_textTitle} w-[100%]`}>
+								{services_db[serviceName].hero_title}
+							</h1>
+						) : (
+							<>
+								<h1 className={app.hero_textTitle}>
+									Cоздаем пространство эффективности вашего бизнеса
+								</h1>
+								<p className={app.hero_textSubtitle}>
+									Мы ведущая компания по аутсорсингу IT, специализирующаяся на
+									предоставлении индивидуальных решений, помогающих бизнесу
+									процветать в цифровую эпоху.
+									<button className={app.hero_textSubtitle_button}>
+										Заказать обратный звонок
+									</button>
+								</p>
+							</>
+						)}
 					</div>
 				</div>
-				<TwiceSection
-					text_small={db.OUTSOURCING_BLOCK.text_small}
-					text_title={db.OUTSOURCING_BLOCK.text_title}
-					text_subtitle={db.OUTSOURCING_BLOCK.text_subtitle}
-					text_subtitle_button={db.OUTSOURCING_BLOCK.text_subtitle_button}
-					image_path={db.OUTSOURCING_BLOCK.image_path}
-				/>
+				{!!serviceName ? (
+					<TwiceSection
+						text_title={services_db[serviceName].section_title}
+						text_subtitle_large={services_db[serviceName].section_subtitle}
+						text_extra={services_db[serviceName].section_text}
+						image_path={services_db[serviceName].section_imagePath}
+					/>
+				) : (
+					<TwiceSection
+						text_small={db.OUTSOURCING_BLOCK.text_small}
+						text_title={db.OUTSOURCING_BLOCK.text_title}
+						text_subtitle={db.OUTSOURCING_BLOCK.text_subtitle}
+						text_subtitle_button={db.OUTSOURCING_BLOCK.text_subtitle_button}
+						image_path={db.OUTSOURCING_BLOCK.image_path}
+					/>
+				)}
 				<CardsSection
 					className='bg-[#f5f5f5]'
 					titleClassName='me-[50px]'

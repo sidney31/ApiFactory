@@ -7,7 +7,7 @@ section {
 	padding: 100px 0;
 }
 
-.container {
+.wrapper {
 	display: flex;
 	flex-direction: row;
 	gap: 50px;
@@ -37,8 +37,29 @@ section {
 	margin-right: 10px;
 }
 
+.text_subtitle_large {
+	font-size: 20px;
+	letter-spacing: 0.03em;
+	line-height: 32px;
+	font-weight: normal;
+}
+
 .image {
 	width: 50%;
 	aspect-ratio: 1;
 	background: #7d7d7d;
+}
+
+.text_extra {
+	& * {
+		font-size: 24px;
+	}
+	& p,
+	& ul {
+		margin-top: 40px;
+	}
+	& li {
+		list-style: disc;
+		margin-left: 25px;
+	}
 }

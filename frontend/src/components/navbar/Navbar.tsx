@@ -1,4 +1,5 @@
 import { ReactNode, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Navbar.module.scss'
 import { NavbarMenuItem } from './NavbarMenuItem'
 export interface Props {
@@ -41,9 +42,9 @@ export const Navbar = (props: Props) => {
 			className={`${styles.navbar} ${props.position} ${props.className}`}
 		>
 			<div className={styles.navbar_nav}>
-				<a href='#' className={styles.navbar_logo}>
+				<Link to='/' className={styles.navbar_logo}>
 					<img className='py-[10px]' src={props.logo_path} alt='logo' />
-				</a>
+				</Link>
 				<ul
 					className={`${styles.navbar_menuList} container`}
 					onMouseEnter={() => {
