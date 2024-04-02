@@ -7,22 +7,31 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Account } from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
+import ScrollToTop from './ScrollToTop.jsx'
 import UserService from './services/UserService.js'
 import './styles/common.scss'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Home />,
+		element: (
+			<ScrollToTop>
+				<Home />
+			</ScrollToTop>
+		),
 		errorElement: <ErrorPage />,
+	},
+	{
+		path: 'service/:serviceName',
+		element: (
+			<ScrollToTop>
+				<Home />
+			</ScrollToTop>
+		),
 	},
 	{
 		path: 'account/',
 		element: <Account />,
-	},
-	{
-		path: 'service/:serviceName',
-		element: <Home />,
 	},
 ])
 
