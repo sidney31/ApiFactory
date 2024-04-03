@@ -2,6 +2,7 @@ import { ReactNode, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.scss'
 import { NavbarMenuItem } from './NavbarMenuItem'
+
 export interface Props {
 	className?: string
 	nav_links: Array<{

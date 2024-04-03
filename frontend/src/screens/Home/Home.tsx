@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom'
+import { useKeycloak } from '@react-keycloak/web'
+import { Link, useParams } from 'react-router-dom'
 import { Contact } from '../../components/Contact.tsx'
 import { QuestionBox } from '../../components/QuestionBox.tsx'
 import { Footer } from '../../components/footer/Footer.tsx'
@@ -11,12 +12,12 @@ import '../../scripts/scrollHandler.js'
 import app from '../../styles/app.module.scss'
 import '../../styles/common.scss'
 import * as db from './db.js'
-
-import UserService from '../../services/UserService.js'
 import { services_db } from './services_db.ts'
+
 
 function Home() {
 	const { serviceName } = useParams()
+	const { keycloak } = useKeycloak()
 	return (
 		<>
 			<Navbar
@@ -25,12 +26,16 @@ function Home() {
 				logo_path='/svg/logo.svg'
 				right_side={
 					<>
-						{!!UserService.isLoggedIn ? (
-							<button onClick={() => UserService.doLogin()}>
+						{!!keycloak.authenticated && (
+							<Link to='/account'>
+								<button>
+									Личный кабинет
+								</button>
+							</Link>
+						) || (
+							<button onClick={() => keycloak.login()}>
 								Вход для клиентов
 							</button>
-						) : (
-							<button>{UserService.getUsername()}</button>
 						)}
 					</>
 				}
