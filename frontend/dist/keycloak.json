@@ -1,6 +1,0 @@
-{
-  "realm": "API-FACTORY",
-  "auth-server-url": "https://id.api-factory.ru:8443/",
-  "resource": "web",
-	"enable-cors" : true
-}
