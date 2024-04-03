@@ -15,14 +15,14 @@ export const NAV_LINKS = [
 		title: 'Услуги',
 		url: '/services',
 		childs: [
-			{ title: 'Управление инцидентами', url: '/service/incident-management' },
+			{ title: 'Управление инцидентами', url: '/service/incident_management' },
 			{
 				title: 'Управление уязвимостями',
 				url: '/service/vulnerability_management',
 			},
 			{
 				title: 'Обмен конфиденциальной информацией',
-				url: '/service/exchange_of_confidential information',
+				url: '/service/exchange_of_confidential_information',
 			},
 			{
 				title: 'Противодействие утечкам информации',

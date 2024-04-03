@@ -14,7 +14,6 @@ import '../../styles/common.scss'
 import * as db from './db.js'
 import { services_db } from './services_db.ts'
 
-
 function Home() {
 	const { serviceName } = useParams()
 	const { keycloak } = useKeycloak()
@@ -26,13 +25,11 @@ function Home() {
 				logo_path='/svg/logo.svg'
 				right_side={
 					<>
-						{!!keycloak.authenticated && (
+						{(!!keycloak.authenticated && (
 							<Link to='/account'>
-								<button>
-									Личный кабинет
-								</button>
+								<button>Личный кабинет</button>
 							</Link>
-						) || (
+						)) || (
 							<button onClick={() => keycloak.login()}>
 								Вход для клиентов
 							</button>
