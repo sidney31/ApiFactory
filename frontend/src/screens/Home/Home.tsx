@@ -30,7 +30,7 @@ function Home() {
 								<button>Личный кабинет</button>
 							</Link>
 						)) || (
-							<button onClick={() => keycloak.login()}>
+							<button onClick={() => keycloak.login({redirectUri: `${location.href}/account`})}>
 								Вход для клиентов
 							</button>
 						)}

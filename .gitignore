@@ -3,6 +3,7 @@ venv/
 .vscode/
 node_modules/
 build
+dist
 .DS_Store
 *.tgz
 template/src/__tests__/__snapshots__/

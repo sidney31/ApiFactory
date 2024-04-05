@@ -40,7 +40,7 @@ export const NAV_LINKS = [
 			},
 			{
 				title: 'Управление сетями передачи данных',
-				url: '/service/management_of_data_transmission-networks',
+				url: '/service/management_of_data_transmission_networks',
 			},
 			{
 				title: 'Управление серверным оборудованием',
