@@ -125,3 +125,5 @@ CSRF_TRUSTED_ORIGINS = ['https://web.api-factory.ru']
 # CORS_ALLOWED_ORIGINS = ['https://web.api-factory.ru']
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

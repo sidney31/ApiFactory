@@ -3,10 +3,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
+from feedback.views import feedbackView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('oidc/', include('mozilla_django_oidc.urls')),
+    path('api/v1/feedback', feedbackView.as_view())),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
