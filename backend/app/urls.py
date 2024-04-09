@@ -8,7 +8,7 @@ from feedback.views import feedbackView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('oidc/', include('mozilla_django_oidc.urls')),
-    path('api/v1/feedback', feedbackView.as_view())),
+    path('api/v1/feedback/', feedbackView.as_view()),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

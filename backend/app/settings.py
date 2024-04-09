@@ -17,6 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'feedback',
+    
     'corsheaders',
     'rest_framework',
     'mozilla_django_oidc',

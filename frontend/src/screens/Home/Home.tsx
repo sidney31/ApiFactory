@@ -2,6 +2,7 @@ import { useKeycloak } from '@react-keycloak/web'
 import { Link, useParams } from 'react-router-dom'
 import { Contact } from '../../components/Contact.tsx'
 import { QuestionBox } from '../../components/QuestionBox.tsx'
+// import { VideoCard } from '../../components/VideoCard.jsx'
 import { Footer } from '../../components/footer/Footer.tsx'
 import { Navbar, Position } from '../../components/navbar/Navbar.tsx'
 import { CardsSection } from '../../components/sections/CardsSection/CardsSection.tsx'
@@ -131,11 +132,13 @@ function Home() {
 						</h1>
 						<div className='flex justify-between'>
 							{db.CUSTOMERS_CARDS.map(card => (
-								<img
-									key={card.image_path}
-									src={card.image_path}
-									alt={card.title}
-								/>
+								<>
+										<img
+									  key={card.image_path}
+									  src={card.image_path}
+									  alt={card.title}
+									  />
+								</>
 							))}
 						</div>
 					</div>
