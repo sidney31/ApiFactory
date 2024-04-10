@@ -134,10 +134,10 @@ function Home() {
 							{db.CUSTOMERS_CARDS.map(card => (
 								<>
 										<img
-									  key={card.image_path}
-									  src={card.image_path}
-									  alt={card.title}
-									  />
+											key={card.image_path}
+											src={card.image_path}
+											alt={card.title}
+										/>
 								</>
 							))}
 						</div>

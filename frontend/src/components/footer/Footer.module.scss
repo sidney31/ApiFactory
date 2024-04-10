@@ -118,8 +118,10 @@ form {
 		font-size: 18px;
 		padding: 10px 20px;
 		&:hover {
-			background: $mainWhiteColor;
-			color: $mainDarkColor;
+			@media (hover) {
+				background: $mainWhiteColor;
+				color: $mainDarkColor;
+			}
 		}
 	}
 }

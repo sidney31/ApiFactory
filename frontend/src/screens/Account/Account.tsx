@@ -1,10 +1,10 @@
-// import { useKeycloak } from '@react-keycloak/web'
+import { useKeycloak } from '@react-keycloak/web'
 import { Link } from 'react-router-dom'
 import { Navbar, Position } from '../../components/navbar/Navbar.tsx'
 import '../../styles/common.scss'
 
 export const Account = () => {
-  // const { keycloak } = useKeycloak()
+  const { keycloak } = useKeycloak()
 	return(	
     <>
       <Navbar
@@ -23,8 +23,8 @@ export const Account = () => {
         <div className="container">
           <h1 className='font-semibold text-[36px] mb-[36px]'>
 							Сервисы
-						</h1>
-          {/* <p>{keycloak.tokenParsed?.name}</p>
+          </h1>
+          <p>{keycloak.tokenParsed?.name}</p>
           <p>{keycloak.tokenParsed?.email}</p>
           {!!keycloak.authenticated && (
             <button 
@@ -33,7 +33,7 @@ export const Account = () => {
             >
               Выйти
             </button>
-          )} */}
+          )}
         </div>
       </main>
     </>

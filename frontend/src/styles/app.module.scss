@@ -28,7 +28,7 @@ section *,
 
 .hero_textTitle {
 	margin: 0;
-	font-size: 46px;
+	font-size: clamp(30px, 2.2vw, 46px);
 	width: 50%;
 	font-weight: 600;
 	line-height: 1.3em;
