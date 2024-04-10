@@ -78,11 +78,13 @@ $navbar_breakpoints: (1280px, 1700px);
 }
 
 .navbar_menuLink:hover:after {
-	transform: scaleX(1);
-	transform-origin: bottom left;
+	@media (hover) {
+		transform: scaleX(1);
+		transform-origin: bottom left;
 
-	@media (max-width: 768px) {
-		display: none;
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 }
 
@@ -113,7 +115,9 @@ $navbar_breakpoints: (1280px, 1700px);
 }
 
 .navbar_menuDropdownItems > a:hover {
-	color: color-mix(in srgb, $mainDarkColor, $mainWhiteColor);
+	@media (hover) {
+		color: color-mix(in srgb, $mainDarkColor, $mainWhiteColor);
+	}
 }
 
 .navbar_menuListItem:hover .navbar_menuItemDropdown,
