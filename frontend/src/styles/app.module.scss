@@ -22,22 +22,35 @@ section *,
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	gap: 150px;
+	gap: clamp(10px, 5vw, 150px);
 	align-items: center;
+
+	@media (max-width: 992px) {
+		flex-direction: column;
+		gap: 30px;
+	}
 }
 
 .hero_textTitle {
 	margin: 0;
-	font-size: clamp(30px, 2.2vw, 46px);
+	font-size: 46px;
 	width: 50%;
 	font-weight: 600;
 	line-height: 1.3em;
+
+	@media (max-width: 993px) {
+		width: 100%;
+	}
 }
 
 .hero_textSubtitle {
 	font-size: 20px;
 	line-height: 30px;
 	width: 50%;
+
+	@media (max-width: 993px) {
+		width: 100%;
+	}
 }
 
 .hero_textSubtitle_button {
@@ -51,4 +64,29 @@ section *,
 	height: 100svh;
 	width: 100%;
 	background: white;
+}
+
+.card_wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 200px);
+	grid-template-rows: 150px;
+
+	justify-content: space-around;
+	justify-items: center;
+	align-content: center;
+	align-items: center;
+
+	@media (max-width: 817px) {
+		grid-template-columns: repeat(2, 200px);
+		grid-template-rows: repeat(2, 150px);
+	}
+}
+
+.contact_wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
 }

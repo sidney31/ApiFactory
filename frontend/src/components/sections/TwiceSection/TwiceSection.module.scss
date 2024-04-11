@@ -46,8 +46,16 @@ section {
 
 .image {
 	width: 50%;
-	aspect-ratio: 1;
+	aspect-ratio: 1 / 1;
 	background: #7d7d7d;
+	@media (max-width: 1024px) {
+		width: auto;
+		height: 40vw;
+	}
+
+	@media (max-width: 768px) {
+		order: 0;
+	}
 }
 
 .text_extra {

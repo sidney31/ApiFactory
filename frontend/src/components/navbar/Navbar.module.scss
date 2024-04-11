@@ -1,6 +1,6 @@
 @import '/src/styles/common.scss';
 
-$navbar_breakpoints: (1280px, 1700px);
+$navbar_breakpoints: (1624px);
 
 .navbar {
 	height: 100px;
@@ -10,6 +10,14 @@ $navbar_breakpoints: (1280px, 1700px);
 	z-index: 999;
 	backdrop-filter: blur(3px);
 	transition: background-color 0.1s 0.15s linear;
+}
+
+.footer_navbar {
+	@media (max-width: 1100px) {
+		& .navbar_menuList {
+			flex-wrap: wrap;
+		}
+	}
 }
 
 .navbar_nav {
@@ -34,6 +42,10 @@ $navbar_breakpoints: (1280px, 1700px);
 		height: 100px;
 		width: auto;
 		float: right;
+
+		@media (max-width: 1024px) {
+			float: left;
+		}
 	}
 }
 
@@ -45,8 +57,8 @@ $navbar_breakpoints: (1280px, 1700px);
 .navbar_menuList {
 	margin: 0;
 	padding: 0;
-	height: inherit;
 	list-style: none;
+	align-items: center;
 
 	display: flex;
 	flex-direction: row;
@@ -141,4 +153,8 @@ $navbar_breakpoints: (1280px, 1700px);
 	position: relative;
 	top: 50%;
 	float: left;
+
+	@media (max-width: 1024px) {
+		float: right;
+	}
 }

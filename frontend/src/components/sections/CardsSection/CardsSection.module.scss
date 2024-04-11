@@ -29,5 +29,9 @@ section {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	gap: 100px;
+	gap: clamp(0px, 5vw, 100px);
+
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
 }

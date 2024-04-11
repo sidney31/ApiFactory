@@ -1,6 +1,5 @@
 import { ReactKeycloakProvider } from '@react-keycloak/web'
 import 'normalize.css'
-import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import kc from './clients/UserClient.ts'
@@ -34,11 +33,8 @@ const router = createBrowserRouter([
 	},
 ])
 
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<StrictMode>
-		<ReactKeycloakProvider authClient={kc}>
-			<RouterProvider router={router} />
-		</ReactKeycloakProvider>
-	</StrictMode>
+	<ReactKeycloakProvider authClient={kc}>
+		<RouterProvider router={router} />
+	</ReactKeycloakProvider>
 )

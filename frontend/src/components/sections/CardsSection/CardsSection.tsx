@@ -1,4 +1,4 @@
-import { Card } from '../../Card'
+import { Card } from './Card'
 import styles from './CardsSection.module.scss'
 
 export interface Props {
@@ -20,7 +20,9 @@ export const CardsSection = (props: Props) => {
 		<section className={props.className}>
 			<div className='container'>
 				<div className={styles.text}>
-					<p className={`${styles.text_title} ${props.titleClassName}`}>{props.text_title}</p>
+					<p className={`${styles.text_title} ${props.titleClassName}`}>
+						{props.text_title}
+					</p>
 					<p className={styles.text_subtitle}>{props.text_subtitle}</p>
 				</div>
 				<div className={styles.cards}>

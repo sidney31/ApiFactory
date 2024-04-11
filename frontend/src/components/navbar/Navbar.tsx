@@ -40,14 +40,18 @@ export const Navbar = (props: Props) => {
 	return (
 		<nav
 			ref={props.position == Position.top ? header : null}
-			className={`${styles.navbar} ${props.position} ${props.className}`}
+			className={`${styles.navbar} ${
+				props.position == Position.top
+					? `${styles.header_navbar}`
+					: `${styles.footer_navbar}`
+			} ${props.position} ${props.className}`}
 		>
 			<div className={styles.navbar_nav}>
 				<Link to='/' className={styles.navbar_logo}>
 					<img className='py-[10px]' src={props.logo_path} alt='logo' />
 				</Link>
 				<ul
-					className={`${styles.navbar_menuList} container`}
+					className={`${styles.navbar_menuList} container collapsed`}
 					onMouseEnter={() => {
 						if (!header.current) return false
 						setOpacity(header.current, 100)
@@ -61,7 +65,9 @@ export const Navbar = (props: Props) => {
 						<NavbarMenuItem key={iterator} data={link} />
 					))}
 				</ul>
-				<div className={styles.rightSide}>{props.right_side}</div>
+				<div className={`${styles.rightSide} collapsed`}>
+					{props.right_side}
+				</div>
 			</div>
 		</nav>
 	)

@@ -1,6 +1,6 @@
 import { useKeycloak } from '@react-keycloak/web'
 import { Link, useParams } from 'react-router-dom'
-import { Contact } from '../../components/Contact.tsx'
+import { Contact } from '../../components/contact/Contact.tsx'
 import { QuestionBox } from '../../components/QuestionBox.tsx'
 // import { VideoCard } from '../../components/VideoCard.jsx'
 import { Footer } from '../../components/footer/Footer.tsx'
@@ -31,7 +31,11 @@ function Home() {
 								<button>Личный кабинет</button>
 							</Link>
 						)) || (
-							<button onClick={() => keycloak.login({redirectUri: `${location.href}/account`})}>
+							<button
+								onClick={() =>
+									keycloak.login({ redirectUri: `${location.href}/account` })
+								}
+							>
 								Вход для клиентов
 							</button>
 						)}
@@ -55,6 +59,7 @@ function Home() {
 									Мы ведущая компания по аутсорсингу IT, специализирующаяся на
 									предоставлении индивидуальных решений, помогающих бизнесу
 									процветать в цифровую эпоху.
+									<br />
 									<button className={app.hero_textSubtitle_button}>
 										Заказать обратный звонок
 									</button>
@@ -113,7 +118,7 @@ function Home() {
 						<h1 className='text-center font-semibold text-[36px] mb-[44px]'>
 							Различные отраслевые решения
 						</h1>
-						<div className='flex justify-between'>
+						<div className={app.card_wrapper}>
 							{db.SOLUTIONS_CARDS.map(card => (
 								<div key={card.image_path} className='w-[200px] flex flex-col'>
 									<img
@@ -130,15 +135,13 @@ function Home() {
 						<h1 className='mt-[60px] text-center font-medium text-[24px] mb-[44px]'>
 							Нам доверяют ведущие компании отрасли по всему миру
 						</h1>
-						<div className='flex justify-between'>
+						<div className={app.card_wrapper}>
 							{db.CUSTOMERS_CARDS.map(card => (
-								<>
-										<img
-											key={card.image_path}
-											src={card.image_path}
-											alt={card.title}
-										/>
-								</>
+								<img
+									key={card.image_path}
+									src={card.image_path}
+									alt={card.title}
+								/>
 							))}
 						</div>
 					</div>
@@ -168,7 +171,7 @@ function Home() {
 				</section>
 				<section>
 					<div className='container'>
-						<div className='flex flex-row justify-between'>
+						<div className={app.contact_wrapper}>
 							{db.CONTACTS_CARDS.map(contact => (
 								<Contact
 									key={contact.data}

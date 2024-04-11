@@ -13,6 +13,7 @@ footer {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .footer_formTitle {
@@ -22,10 +23,19 @@ footer {
 	color: $mainWhiteColor;
 	margin: 0;
 	font-weight: 700;
+
+	@media (max-width: 993px) {
+		width: 100%;
+		margin-bottom: 48px;
+	}
 }
 
 form {
 	width: 440px;
+	@media (max-width: 993px) {
+		margin: 0 auto;
+		width: 70%;
+	}
 }
 
 .footer_form_field {
