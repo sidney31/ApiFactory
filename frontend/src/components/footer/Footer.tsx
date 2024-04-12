@@ -16,10 +16,10 @@ export const Footer = () => {
 		<footer className={styles.footer}>
 			<div className='container'>
 				<div className={`${styles.footer_formWrapper} py-[40px]`}>
-					<p className={styles.footer_formTitle}>
+					<h2 className={styles.footer_formTitle}>
 						Отправьте заявление, и с Вами обязательно свяжутся
-					</p>
-					<form>
+					</h2>
+					<form id='feedback_form'>
 						<div className={styles.footer_form_field}>
 							<input type='text' placeholder='Имя' />
 						</div>

@@ -30,12 +30,10 @@
 }
 
 .contact_data {
-	// font-light text-[20px] text-[#36332f] hover:underline
 	font-weight: 300;
-	font-size: 20px;
 	color: #36332f;
 
-	@media (hover) {
+	@media (hover: hover) {
 		&:hover {
 			text-decoration: underline;
 		}

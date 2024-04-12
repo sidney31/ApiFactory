@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.scss'
 import { NavbarMenuItem } from './NavbarMenuItem'
@@ -26,6 +26,7 @@ const setOpacity = (element: HTMLDivElement, opacity: number) => {
 
 export const Navbar = (props: Props) => {
 	const header = useRef<HTMLDivElement>(null)
+	const [burgerState, setBurgerState] = useState(false)
 
 	const headerOpacityHandler = () => {
 		if (!header.current) return false
@@ -50,8 +51,20 @@ export const Navbar = (props: Props) => {
 				<Link to='/' className={styles.navbar_logo}>
 					<img className='py-[10px]' src={props.logo_path} alt='logo' />
 				</Link>
+				<div
+					onClick={() => {
+						setBurgerState(!burgerState)
+					}}
+					className={`${styles.navbar_burger} ${
+						(!!burgerState && `${styles.open}`) || `${styles.close}`
+					}`}
+				>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 				<ul
-					className={`${styles.navbar_menuList} container collapsed`}
+					className={`${styles.navbar_menuList} container`}
 					onMouseEnter={() => {
 						if (!header.current) return false
 						setOpacity(header.current, 100)
@@ -65,9 +78,7 @@ export const Navbar = (props: Props) => {
 						<NavbarMenuItem key={iterator} data={link} />
 					))}
 				</ul>
-				<div className={`${styles.rightSide} collapsed`}>
-					{props.right_side}
-				</div>
+				<div className={`${styles.rightSide}`}>{props.right_side}</div>
 			</div>
 		</nav>
 	)

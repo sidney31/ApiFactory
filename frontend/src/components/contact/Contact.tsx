@@ -21,7 +21,7 @@ export const Contact = (props: Props) => {
 				<p className={styles.contact_subtitle}>{props.subtitle}</p>
 			</div>
 			<a href={`${props.type}:${props.data}`} className={styles.contact_data}>
-				{props.data}
+				<h4>{props.data}</h4>
 			</a>
 		</div>
 	)

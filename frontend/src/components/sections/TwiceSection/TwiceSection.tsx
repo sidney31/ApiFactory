@@ -18,14 +18,12 @@ export const TwiceSection = (props: Props) => {
 	return (
 		<section className={props.className}>
 			<div className='container'>
+				{props.text_small && <p className='text_small'>{props.text_small}</p>}
 				<div className={styles.wrapper}>
 					<div className={styles.text}>
-						{props.text_small && (
-							<p className='text_small'>{props.text_small}</p>
-						)}
-						<p className={`text_title ${props.titleClassName}`}>
+						<h2 className={`text_title ${props.titleClassName}`}>
 							{props.text_title}
-						</p>
+						</h2>
 						{!!props.text_subtitle_large && (
 							<p className={styles.text_subtitle_large}>
 								{props.text_subtitle_large}

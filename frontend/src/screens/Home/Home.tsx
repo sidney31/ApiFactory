@@ -1,7 +1,7 @@
 import { useKeycloak } from '@react-keycloak/web'
 import { Link, useParams } from 'react-router-dom'
 import { Contact } from '../../components/contact/Contact.tsx'
-import { QuestionBox } from '../../components/QuestionBox.tsx'
+import { QuestionBox } from '../../components/questions/QuestionBox.tsx'
 // import { VideoCard } from '../../components/VideoCard.jsx'
 import { Footer } from '../../components/footer/Footer.tsx'
 import { Navbar, Position } from '../../components/navbar/Navbar.tsx'
@@ -18,6 +18,9 @@ import { services_db } from './services_db.ts'
 function Home() {
 	const { serviceName } = useParams()
 	const { keycloak } = useKeycloak()
+
+	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
+
 	return (
 		<>
 			<Navbar
@@ -44,26 +47,34 @@ function Home() {
 			/>
 			<main>
 				<div className={app.hero}>
-					<Wave />
+					{(!!isDesktop && <Wave />) || (
+						<video autoPlay muted loop>
+							<source src='/heroBackground.webm' type='video/webm' />
+							<source src='/heroBackground.mp4' type='video/mp4' />
+						</video>
+					)}
 					<div className={app.hero_text__container}>
 						{!!serviceName ? (
-							<h1 className={`${app.hero_textTitle} w-[100%]`}>
+							<h2 className={`${app.hero_textTitle} w-[100%]`}>
 								{services_db[serviceName].hero_title}
-							</h1>
+							</h2>
 						) : (
 							<>
 								<h1 className={app.hero_textTitle}>
 									Cоздаем пространство эффективности вашего бизнеса
 								</h1>
-								<p className={app.hero_textSubtitle}>
+								<h4 className={app.hero_textSubtitle}>
 									Мы ведущая компания по аутсорсингу IT, специализирующаяся на
 									предоставлении индивидуальных решений, помогающих бизнесу
 									процветать в цифровую эпоху.
 									<br />
-									<button className={app.hero_textSubtitle_button}>
+									<button
+										onClick={() => (location.href = '#feedback_form')}
+										className={app.hero_textSubtitle_button}
+									>
 										Заказать обратный звонок
 									</button>
-								</p>
+								</h4>
 							</>
 						)}
 					</div>
@@ -115,9 +126,9 @@ function Home() {
 				/>
 				<section>
 					<div className='container'>
-						<h1 className='text-center font-semibold text-[36px] mb-[44px]'>
+						<h2 className='text-center font-semibold text-[36px] mb-[44px]'>
 							Различные отраслевые решения
-						</h1>
+						</h2>
 						<div className={app.card_wrapper}>
 							{db.SOLUTIONS_CARDS.map(card => (
 								<div key={card.image_path} className='w-[200px] flex flex-col'>
@@ -126,15 +137,15 @@ function Home() {
 										src={card.image_path}
 										alt={card.title}
 									/>
-									<p className='font-semibold text-[20px] text-center'>
+									<h5 className='font-semibold text-[20px] text-center'>
 										{card.title}
-									</p>
+									</h5>
 								</div>
 							))}
 						</div>
-						<h1 className='mt-[60px] text-center font-medium text-[24px] mb-[44px]'>
+						<h2 className='mt-[60px] text-center font-medium text-[24px] mb-[44px]'>
 							Нам доверяют ведущие компании отрасли по всему миру
-						</h1>
+						</h2>
 						<div className={app.card_wrapper}>
 							{db.CUSTOMERS_CARDS.map(card => (
 								<img
@@ -148,9 +159,9 @@ function Home() {
 				</section>
 				<section className='bg-[#f5f5f5]'>
 					<div className='container'>
-						<h1 className='text-center font-semibold text-[36px] mb-[36px]'>
+						<h2 className='text-center font-semibold text-[36px] mb-[36px]'>
 							Часто задаваемые вопросы
-						</h1>
+						</h2>
 						{db.FAQ.map(iterator => (
 							<QuestionBox
 								key={iterator.question}
@@ -159,13 +170,18 @@ function Home() {
 							/>
 						))}
 						<div className='text-center'>
-							<h1 className='font-semibold text-[32px] mt-[38px]'>
+							<h2 className='font-semibold text-[32px] mt-[38px]'>
 								Остались вопросы?
-							</h1>
+							</h2>
 							<p className='text-[16px] mt-[12px]'>
 								Свяжитесь с нами и получите больше информации
 							</p>
-							<button className='mt-[38px]'>Заказать обратный звонок</button>
+							<button
+								onClick={() => (location.href = '#feedback_form')}
+								className='mt-[38px]'
+							>
+								Заказать обратный звонок
+							</button>
 						</div>
 					</div>
 				</section>

@@ -25,7 +25,8 @@ footer {
 	font-weight: 700;
 
 	@media (max-width: 993px) {
-		width: 100%;
+		margin: 0 auto;
+		width: 90%;
 		margin-bottom: 48px;
 	}
 }
@@ -35,6 +36,9 @@ form {
 	@media (max-width: 993px) {
 		margin: 0 auto;
 		width: 70%;
+	}
+	@media (max-width: 556px) {
+		width: 90%;
 	}
 }
 
@@ -127,8 +131,8 @@ form {
 		border-color: $mainWhiteColor;
 		font-size: 18px;
 		padding: 10px 20px;
-		&:hover {
-			@media (hover) {
+		@media (hover: hover) {
+			&:hover {
 				background: $mainWhiteColor;
 				color: $mainDarkColor;
 			}

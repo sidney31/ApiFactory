@@ -7,6 +7,11 @@
 		flex-direction: row;
 		gap: clamp(20px, 10vw, 50px);
 	}
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		gap: 0;
+	}
 }
 
 .card_image {
@@ -14,6 +19,11 @@
 	width: 280px;
 	height: 170px;
 	margin-bottom: 20px;
+	@media (max-width: 768px) {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 2 / 1;
+	}
 }
 
 .card_title {
@@ -26,7 +36,6 @@
 
 .card_subtitle {
 	font-weight: 300;
-	margin-right: 15px;
 
 	@media (max-width: 1024px) {
 		font-size: clamp(14px, 1.7vw, 18px);

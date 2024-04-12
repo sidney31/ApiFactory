@@ -1,0 +1,18 @@
+.text_content {
+	font-weight: 300;
+	margin: 0;
+	margin: auto 15%;
+	margin-bottom: 22px;
+	font-size: 24px;
+
+	@media (max-width: 1000px) {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	@media (max-width: 768px) {
+		margin-left: 0;
+		margin-right: 0;
+		font-size: 18px;
+	}
+}

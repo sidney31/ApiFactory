@@ -7,12 +7,32 @@
 
 $mainDarkColor: #36332f;
 $mainWhiteColor: #f5f5f5;
-$breakpoints: (556px, 768px, 993px, 1024px, 1100px);
+$breakpoints: (375px, 480px, 556px, 768px, 993px, 1024px, 1100px);
 
 * {
 	font-size: 16px;
 	font-family: 'Montserrat';
 	max-width: 100%;
+}
+
+h1 {
+	font-size: clamp(36px, 3.5vw, 46px) !important;
+}
+
+h2 {
+	font-size: clamp(28px, 3vw, 36px) !important;
+}
+
+h3 {
+	font-size: clamp(22px, 2.5vw, 32px) !important;
+}
+
+h4 {
+	font-size: clamp(18px, 2vw, 20px) !important;
+}
+
+h5 {
+	font-size: clamp(16px, 1vw, 20px) !important;
 }
 
 button {
@@ -28,7 +48,7 @@ button {
 	text-wrap: nowrap;
 	transition: all 0.3s ease;
 
-	@media (hover) {
+	@media (hover: hover) {
 		&:hover {
 			background: $mainDarkColor;
 			color: white;
@@ -40,10 +60,16 @@ button {
 	width: 100%;
 	@each $breakpoint in $breakpoints {
 		@media (min-width: #{$breakpoint}) {
-			max-width: calc(#{$breakpoint} - 20px);
+			max-width: calc(#{$breakpoint} - 16px);
 		}
 	}
 	margin: 0 auto;
+}
+
+section {
+	height: auto;
+	width: 100vw;
+	padding: clamp(25px, 7vw, 100px) 5px;
 }
 
 ::selection {
@@ -58,18 +84,11 @@ button {
 	text-shadow: none;
 }
 
-@function translate-px-to-vw($px, $width) {
-	@return calc(strip-units($px) * 100vw / $width);
+::-webkit-scrollbar {
+	width: 5px;
 }
 
-@function strip-units($number) {
-	@return math.div($number, ($number * 0 + 1));
-}
-
-@mixin clamp-font-size($fhd-fs) {
-	font-size: clamp(
-		$fhd-fs / 1.3,
-		translate-px-to-vw($fhd-fs, 1920),
-		$fhd-fs * 1.2
-	);
+::-webkit-scrollbar-thumb {
+	background-color: $mainDarkColor;
+	border-radius: 9px;
 }

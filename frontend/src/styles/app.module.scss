@@ -8,14 +8,26 @@ section *,
 .hero {
 	height: 100svh;
 	width: 100vw;
+	overflow: hidden;
 }
 
 .hero canvas {
 	filter: blur(1px);
 }
 
+.hero video {
+	height: 100svh;
+	width: 100vw;
+	object-fit: cover;
+}
+
+.hero_background_wrapper * {
+	height: 100svh;
+}
+
 .hero_text__container {
 	position: absolute;
+	padding: 0 5px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -79,6 +91,12 @@ section *,
 	@media (max-width: 817px) {
 		grid-template-columns: repeat(2, 200px);
 		grid-template-rows: repeat(2, 150px);
+	}
+
+	@media (max-width: 375px) {
+		grid-template-columns: repeat(1, 200px);
+		grid-template-row: repeat(1, 200px);
+		row-gap: 20px;
 	}
 }
 

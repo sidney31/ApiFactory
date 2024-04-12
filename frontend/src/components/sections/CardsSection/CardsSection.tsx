@@ -19,10 +19,10 @@ export const CardsSection = (props: Props) => {
 	return (
 		<section className={props.className}>
 			<div className='container'>
-				<div className={styles.text}>
-					<p className={`${styles.text_title} ${props.titleClassName}`}>
+				<div className={styles.text_wrapper}>
+					<h2 className={`${styles.text_title} ${props.titleClassName}`}>
 						{props.text_title}
-					</p>
+					</h2>
 					<p className={styles.text_subtitle}>{props.text_subtitle}</p>
 				</div>
 				<div className={styles.cards}>
