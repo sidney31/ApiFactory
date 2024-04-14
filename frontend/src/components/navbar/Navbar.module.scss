@@ -21,12 +21,16 @@
 .navbar_nav {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 
 	margin: 0 auto;
 	padding: 0 10px;
 
 	height: 100%;
+
+	@media (max-width: 1000px) {
+		justify-content: space-between;
+	}
 }
 
 .navbar_logo {
@@ -112,6 +116,9 @@
 	@media (hover: hover) {
 		background-color: color-mix(in srgb, $mainDarkColor 75%, #ffffff 25%);
 	}
+}
+
+.navbar_burger.open {
 }
 
 .navbar_menuList {

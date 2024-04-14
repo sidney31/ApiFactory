@@ -54,6 +54,9 @@ export const Navbar = (props: Props) => {
 				<div
 					onClick={() => {
 						setBurgerState(!burgerState)
+
+						if (!header.current) return false
+						setOpacity(header.current, burgerState ? 0 : 255)
 					}}
 					className={`${styles.navbar_burger} ${
 						(!!burgerState && `${styles.open}`) || `${styles.close}`
