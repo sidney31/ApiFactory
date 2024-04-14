@@ -4,7 +4,11 @@ import 'react-phone-number-input/style.css'
 import { Navbar, Position } from '../navbar/Navbar'
 import styles from './Footer.module.scss'
 
-export const Footer = () => {
+interface Props {
+	reference?: React.MutableRefObject<null>
+}
+
+export const Footer = (props: Props) => {
 	const NAV_LINKS = [
 		{ title: 'О компании', url: '/about' },
 		{ title: 'Отраслевые решения', url: '/solutions' },
@@ -13,7 +17,7 @@ export const Footer = () => {
 		{ title: 'Контакты', url: '/contacts' },
 	]
 	return (
-		<footer className={styles.footer}>
+		<footer ref={props.reference} className={styles.footer}>
 			<div className='container'>
 				<div className={`${styles.footer_formWrapper} py-[40px]`}>
 					<h2 className={styles.footer_formTitle}>

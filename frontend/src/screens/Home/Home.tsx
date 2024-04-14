@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Contact } from '../../components/contact/Contact.tsx'
 import { QuestionBox } from '../../components/questions/QuestionBox.tsx'
 // import { VideoCard } from '../../components/VideoCard.jsx'
+import { useRef } from 'react'
 import { Footer } from '../../components/footer/Footer.tsx'
 import { Navbar, Position } from '../../components/navbar/Navbar.tsx'
 import { CardsSection } from '../../components/sections/CardsSection/CardsSection.tsx'
@@ -18,6 +19,8 @@ import { services_db } from './services_db.ts'
 function Home() {
 	const { serviceName } = useParams()
 	const { keycloak } = useKeycloak()
+
+	const feedbackRef = useRef(null)
 
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
 
@@ -69,7 +72,13 @@ function Home() {
 									процветать в цифровую эпоху.
 									<br />
 									<button
-										onClick={() => (location.href = '#feedback_form')}
+										onClick={() =>
+											scrollTo({
+												top: feedbackRef.current.getBoundingClientRect().top,
+												left: 0,
+												behavior: 'smooth',
+											})
+										}
 										className={app.hero_textSubtitle_button}
 									>
 										Заказать обратный звонок
@@ -201,7 +210,7 @@ function Home() {
 					</div>
 				</section>
 			</main>
-			<Footer />
+			<Footer reference={feedbackRef} />
 		</>
 	)
 }
