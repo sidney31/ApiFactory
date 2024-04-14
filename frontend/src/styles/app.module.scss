@@ -95,7 +95,7 @@ section *,
 
 	@media (max-width: 375px) {
 		grid-template-columns: repeat(1, 200px);
-		grid-template-row: repeat(1, 200px);
+		grid-template-rows: repeat(1, 200px);
 		row-gap: 20px;
 	}
 }

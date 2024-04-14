@@ -8,13 +8,13 @@ interface Props {
 }
 
 export const Footer = (props: Props) => {
-	const NAV_LINKS = [
-		{ title: 'О компании', url: '/about' },
-		{ title: 'Отраслевые решения', url: '/solutions' },
-		{ title: 'Услуги и цены', url: '/services_and_prices' },
-		{ title: 'Заказчики', url: '/customers' },
-		{ title: 'Контакты', url: '/contacts' },
-	]
+	// const NAV_LINKS = [
+	// 	{ title: 'О компании', url: '/about' },
+	// 	{ title: 'Отраслевые решения', url: '/solutions' },
+	// 	{ title: 'Услуги и цены', url: '/services_and_prices' },
+	// 	{ title: 'Заказчики', url: '/customers' },
+	// 	{ title: 'Контакты', url: '/contacts' },
+	// ]
 	return (
 		<footer ref={props.reference} className={styles.footer}>
 			<div className='container'>
@@ -67,6 +67,8 @@ export const Footer = (props: Props) => {
 					</div>
 				}
 			/> */}
+
+			{/* TODO: create footer_nav */}
 		</footer>
 	)
 }

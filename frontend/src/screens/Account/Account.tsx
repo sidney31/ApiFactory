@@ -10,7 +10,7 @@ export const Account = () => {
 			<Navbar
 				nav_links={new Array()}
 				logo_path='/svg/logo.svg'
-				right_side={
+				header_action={
 					<>
 						<Link to='/profile'>
 							<button>Профиль</button>
