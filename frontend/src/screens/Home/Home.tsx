@@ -1,11 +1,11 @@
-import { useKeycloak } from '@react-keycloak/web'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Contact } from '../../components/contact/Contact.tsx'
 import { QuestionBox } from '../../components/questions/QuestionBox.tsx'
 // import { VideoCard } from '../../components/VideoCard.jsx'
+import { useKeycloak } from '@react-keycloak/web'
 import { useRef } from 'react'
 import { Footer } from '../../components/footer/Footer.tsx'
-import { Navbar, Position } from '../../components/navbar/Navbar.tsx'
+import { Navbar } from '../../components/navbar/Navbar.tsx'
 import { CardsSection } from '../../components/sections/CardsSection/CardsSection.tsx'
 import { TextSection } from '../../components/sections/TextSection/TextSection.tsx'
 import { TwiceSection } from '../../components/sections/TwiceSection/TwiceSection.tsx'
@@ -18,9 +18,10 @@ import { services_db } from './services_db.ts'
 
 function Home() {
 	const { serviceName } = useParams()
-	const { keycloak } = useKeycloak()
 
 	const feedbackRef = useRef<HTMLDivElement>(null)
+
+	const { keycloak } = useKeycloak()
 
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
 
@@ -28,9 +29,8 @@ function Home() {
 		<>
 			<Navbar
 				nav_links={db.NAV_LINKS}
-				position={Position.top}
 				logo_path='/svg/logo.svg'
-				right_side={
+				header_action={
 					<>
 						{(!!keycloak.authenticated && (
 							<Link to='/account'>
@@ -186,7 +186,13 @@ function Home() {
 								Свяжитесь с нами и получите больше информации
 							</p>
 							<button
-								onClick={() => (location.href = '#feedback_form')}
+								onClick={() =>
+									scrollTo({
+										top: feedbackRef.current?.getBoundingClientRect().bottom,
+										left: 0,
+										behavior: 'smooth',
+									})
+								}
 								className='mt-[38px]'
 							>
 								Заказать обратный звонок

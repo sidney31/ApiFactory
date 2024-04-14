@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactNode, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.scss'
 import { NavbarMenuItem } from './NavbarMenuItem'
@@ -10,14 +10,8 @@ export interface Props {
 		url: string
 		childs?: Array<{ title: string; url: string }>
 	}>
-	position: Position
 	logo_path: string
-	right_side: ReactNode
-}
-
-export enum Position {
-	top = 'fixed',
-	bottom = 'relative',
+	header_action?: ReactNode
 }
 
 const setOpacity = (element: HTMLDivElement, opacity: number) => {
@@ -25,55 +19,52 @@ const setOpacity = (element: HTMLDivElement, opacity: number) => {
 }
 
 export const Navbar = (props: Props) => {
-	const header = useRef<HTMLDivElement>(null)
+	const headerRef = useRef<HTMLDivElement>(null)
+	const menuRef = useRef<HTMLUListElement>(null)
+
 	const [burgerState, setBurgerState] = useState(false)
+	const [menuState, setMenuState] = useState(
+		window.matchMedia('(min-width: 1000px)').matches
+	)
 
 	const headerOpacityHandler = () => {
-		if (!header.current) return false
+		if (!headerRef.current) return false
 		const smooth = 5
-		setOpacity(header.current, window.scrollY / smooth)
+		setOpacity(headerRef.current, window.scrollY / smooth)
 	}
 
-	useEffect(() => {
-		document.addEventListener('scroll', headerOpacityHandler)
+	const resizeHandler = () => {
+		setBurgerState(false)
+		setMenuState(window.matchMedia('(min-width: 1000px)').matches)
+	}
+
+	useLayoutEffect(() => {
+		window.addEventListener('scroll', headerOpacityHandler)
+		window.addEventListener('resize', resizeHandler)
+
+		return () => {
+			window.removeEventListener('scroll', headerOpacityHandler)
+			window.removeEventListener('resize', resizeHandler)
+		}
 	})
 
 	return (
-		<nav
-			ref={props.position == Position.top ? header : null}
-			className={`${styles.navbar} ${
-				props.position == Position.top
-					? `${styles.header_navbar}`
-					: `${styles.footer_navbar}`
-			} ${props.position} ${props.className}`}
-		>
+		<nav ref={headerRef} className={`${styles.navbar} ${props.className}`}>
 			<div className={styles.navbar_nav}>
 				<Link to='/' className={styles.navbar_logo}>
 					<img className='py-[10px]' src={props.logo_path} alt='logo' />
 				</Link>
-				<div
-					onClick={() => {
-						setBurgerState(!burgerState)
-
-						if (!header.current) return false
-						setOpacity(header.current, burgerState ? 0 : 255)
-					}}
-					className={`${styles.navbar_burger} ${
-						(!!burgerState && `${styles.open}`) || `${styles.close}`
-					}`}
-				>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
 				<ul
-					className={`${styles.navbar_menuList} container`}
+					ref={menuRef}
+					className={`${styles.navbar_menuList} container ${
+						(menuState && 'flex') || 'hidden'
+					}`}
 					onMouseEnter={() => {
-						if (!header.current) return false
-						setOpacity(header.current, 100)
+						if (!headerRef.current) return false
+						setOpacity(headerRef.current, 100)
 					}}
 					onMouseLeave={() => {
-						if (!header.current) return false
+						if (!headerRef.current) return false
 						headerOpacityHandler()
 					}}
 				>
@@ -81,7 +72,26 @@ export const Navbar = (props: Props) => {
 						<NavbarMenuItem key={iterator} data={link} />
 					))}
 				</ul>
-				<div className={`${styles.rightSide}`}>{props.right_side}</div>
+				<div className={`${styles.navbar_action}`}>
+					{props.header_action}
+					<div
+						onClick={() => {
+							setBurgerState(!burgerState)
+
+							if (!headerRef.current) return false
+							setOpacity(headerRef.current, burgerState ? 0 : 255)
+
+							setMenuState(!menuState)
+						}}
+						className={`${styles.navbar_burger} ${
+							(!!burgerState && `${styles.open}`) || `${styles.close}`
+						}`}
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
 			</div>
 		</nav>
 	)

@@ -1,3 +1,5 @@
+@import '/src/styles/common.scss';
+
 .text_content {
 	font-weight: 300;
 	margin: 0;
@@ -14,5 +16,18 @@
 		margin-left: 0;
 		margin-right: 0;
 		font-size: 18px;
+	}
+}
+
+.button {
+	background-color: $mainDarkColor;
+	color: $mainWhiteColor;
+	padding: 10px 36px;
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: #00000000;
+			color: $mainDarkColor;
+		}
 	}
 }

@@ -16,7 +16,7 @@ interface navbarMenuLink {
 
 export const NavbarMenuItem = (props: Props) => {
 	return (
-		<div
+		<li
 			onMouseEnter={props.onMouseEnter}
 			onMouseLeave={props.onMouseLeave}
 			className={styles.navbar_menuListItem}
@@ -39,6 +39,6 @@ export const NavbarMenuItem = (props: Props) => {
 					<Link to={props.data.url}>{props.data.title}</Link>
 				)}
 			</div>
-		</div>
+		</li>
 	)
 }

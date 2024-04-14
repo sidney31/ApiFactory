@@ -1,6 +1,6 @@
 import { useKeycloak } from '@react-keycloak/web'
 import { Link } from 'react-router-dom'
-import { Navbar, Position } from '../../components/navbar/Navbar.tsx'
+import { Navbar } from '../../components/navbar/Navbar.tsx'
 import '../../styles/common.scss'
 
 export const Account = () => {
@@ -9,7 +9,6 @@ export const Account = () => {
 		<>
 			<Navbar
 				nav_links={new Array()}
-				position={Position.top}
 				logo_path='/svg/logo.svg'
 				right_side={
 					<>

@@ -15,9 +15,7 @@ export const TextSection = (props: Props) => {
 					<p className='text_small'>{props.text_small}</p>
 					<h2 className='text_title'>{props.text_title}</h2>
 					<p className={`${styles.text_content}`}>{props.text_content}</p>
-					<button className='bg-[#36332f] text-[#f5f5f5] hover:bg-[#00000000] hover:text-[#36332f] px-[36px] py-[10px]'>
-						{props.button_text}
-					</button>
+					<button className={styles.button}>{props.button_text}</button>
 				</div>
 			</div>
 		</section>
