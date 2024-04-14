@@ -20,7 +20,7 @@ function Home() {
 	const { serviceName } = useParams()
 	const { keycloak } = useKeycloak()
 
-	const feedbackRef = useRef(null)
+	const feedbackRef = useRef<HTMLDivElement>(null)
 
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
 
@@ -74,7 +74,7 @@ function Home() {
 									<button
 										onClick={() =>
 											scrollTo({
-												top: feedbackRef.current.getBoundingClientRect().top,
+												top: feedbackRef.current?.getBoundingClientRect().top,
 												left: 0,
 												behavior: 'smooth',
 											})

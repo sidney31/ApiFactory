@@ -5,7 +5,7 @@ import { Navbar, Position } from '../navbar/Navbar'
 import styles from './Footer.module.scss'
 
 interface Props {
-	reference?: React.MutableRefObject<null>
+	reference?: React.RefObject<HTMLDivElement>
 }
 
 export const Footer = (props: Props) => {
