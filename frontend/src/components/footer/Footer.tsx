@@ -1,6 +1,7 @@
 import PhoneInput from 'react-phone-number-input'
 import ru from 'react-phone-number-input/locale/ru'
 import 'react-phone-number-input/style.css'
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.scss'
 
 interface Props {
@@ -57,18 +58,12 @@ export const Footer = (props: Props) => {
 					</form>
 				</div>
 			</div>
-			{/* <Navbar
-				nav_links={NAV_LINKS}
-				position={Position.bottom}
-				logo_path='/svg/logo2.svg'
-				right_side={
-					<div className='text-[16px] whitespace-nowrap'>
-						© 2024 АПИ-ФАКТОРИ
-					</div>
-				}
-			/> */}
-
-			{/* TODO: create footer_nav */}
+			<div className={styles.footer_nav}>
+				<Link to='/' className={styles.footer_nav_logo}>
+					<img className='py-[10px]' src='/svg/logo2.svg' alt='logo' />
+				</Link>
+				<div className='text-[16px] whitespace-nowrap'>© 2024 АПИ-ФАКТОРИ</div>
+			</div>
 		</footer>
 	)
 }
