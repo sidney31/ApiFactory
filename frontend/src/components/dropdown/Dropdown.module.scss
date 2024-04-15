@@ -9,10 +9,40 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+
+	@media (hover: hover) and (min-width: 1000px) {
+		&:after {
+			display: block;
+			content: '';
+			position: relative;
+			width: 100%;
+			transform: scaleX(0);
+			height: 2px;
+			background-color: $mainDarkColor;
+			transform-origin: bottom right;
+			transition: transform 0.3s;
+		}
+	}
+	&:hover {
+		@media (hover: hover) and (max-width: 1000px) {
+			color: color-mix(in srgb, $mainDarkColor, $mainWhiteColor);
+		}
+	}
+	&:hover::after {
+		@media (hover: hover) {
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+	}
 }
 
 .dropdown_items {
 	flex-direction: column;
+
+	@media (max-width: 1000px) {
+		align-items: center;
+	}
 
 	@media (min-width: 1000px) {
 		position: absolute;
@@ -27,12 +57,17 @@
 		padding: 0 20%;
 		padding-bottom: 48px;
 		align-content: center;
+		align-items: start;
 	}
 }
 
 .dropdown_item {
+	text-align: center;
 	@media (min-width: 1000px) {
 		width: fit-content;
+	}
+	@media (max-width: 1000px) {
+		font-size: 16px;
 	}
 }
 

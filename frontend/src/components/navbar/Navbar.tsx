@@ -20,7 +20,7 @@ const setOpacity = (element: HTMLDivElement, opacity: number) => {
 
 export const Navbar = (props: Props) => {
 	const headerRef = useRef<HTMLDivElement>(null)
-	const menuRef = useRef<HTMLUListElement>(null)
+	const menuRef = useRef<HTMLDivElement>(null)
 
 	const [burgerState, setBurgerState] = useState(false)
 	const [menuState, setMenuState] = useState(
@@ -54,7 +54,7 @@ export const Navbar = (props: Props) => {
 				<Link to='/' className={styles.navbar_logo}>
 					<img className='py-[10px]' src={props.logo_path} alt='logo' />
 				</Link>
-				<ul
+				<div
 					ref={menuRef}
 					className={`${styles.navbar_menuList} container ${
 						(menuState && 'flex') || 'hidden'
@@ -76,12 +76,16 @@ export const Navbar = (props: Props) => {
 								items={nav_item.dropdown_items}
 							/>
 						) : (
-							<Link to={nav_item.url} key={iterator}>
+							<Link
+								to={nav_item.url}
+								key={iterator}
+								className={styles.navbar_menuLink}
+							>
 								{nav_item.title}
 							</Link>
 						)
 					)}
-				</ul>
+				</div>
 				<div className={`${styles.navbar_action}`}>
 					{props.header_action}
 					<div
