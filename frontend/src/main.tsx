@@ -6,6 +6,7 @@ import kc from './clients/UserClient.ts'
 import { Account } from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
+import Test from './screens/Test/Test.tsx'
 import ScrollToTop from './ScrollToTop.jsx'
 import './styles/common.scss'
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
 	{
 		path: 'account/',
 		element: <Account />,
+	},
+	{
+		path: 'test/',
+		element: <Test />,
 	},
 ])
 

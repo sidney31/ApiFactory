@@ -1,15 +1,15 @@
 import { ReactNode, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Dropdown from '../dropdown/Dropdown'
 import styles from './Navbar.module.scss'
-import { NavbarMenuItem } from './NavbarMenuItem'
 
 export interface Props {
 	className?: string
-	nav_links: Array<{
+	nav_links: {
 		title: string
 		url: string
-		childs?: Array<{ title: string; url: string }>
-	}>
+		dropdown_items?: { text: string; link: string }[]
+	}[]
 	logo_path: string
 	header_action?: ReactNode
 }
@@ -68,9 +68,19 @@ export const Navbar = (props: Props) => {
 						headerOpacityHandler()
 					}}
 				>
-					{props.nav_links.map((link, iterator) => (
-						<NavbarMenuItem key={iterator} data={link} />
-					))}
+					{props.nav_links.map((nav_item, iterator) =>
+						nav_item.dropdown_items ? (
+							<Dropdown
+								key={iterator}
+								title={nav_item.title}
+								items={nav_item.dropdown_items}
+							/>
+						) : (
+							<Link to={nav_item.url} key={iterator}>
+								{nav_item.title}
+							</Link>
+						)
+					)}
 				</ul>
 				<div className={`${styles.navbar_action}`}>
 					{props.header_action}

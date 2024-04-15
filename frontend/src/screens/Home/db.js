@@ -4,47 +4,47 @@ export const NAV_LINKS = [
 	{
 		title: 'О компании',
 		url: '/about',
-		childs: [
-			{ title: 'О нас', url: '/example' },
-			{ title: 'Реквизиты', url: '/example' },
-			{ title: 'Вакансии', url: '/example' },
-			{ title: 'Стажировка', url: '/example' },
+		dropdown_items: [
+			{ text: 'О нас', link: '/example' },
+			{ text: 'Реквизиты', link: '/example' },
+			{ text: 'Вакансии', link: '/example' },
+			{ text: 'Стажировка', link: '/example' },
 		],
 	},
 	{
 		title: 'Услуги',
 		url: '/services',
-		childs: [
-			{ title: 'Управление инцидентами', url: '/service/incident_management' },
+		dropdown_items: [
+			{ text: 'Управление инцидентами', link: '/service/incident_management' },
 			{
-				title: 'Управление уязвимостями',
-				url: '/service/vulnerability_management',
+				text: 'Управление уязвимостями',
+				link: '/service/vulnerability_management',
 			},
 			{
-				title: 'Обмен конфиденциальной информацией',
-				url: '/service/exchange_of_confidential_information',
+				text: 'Обмен конфиденциальной информацией',
+				link: '/service/exchange_of_confidential_information',
 			},
 			{
-				title: 'Противодействие утечкам информации',
-				url: '/service/countering_information_leaks',
+				text: 'Противодействие утечкам информации',
+				link: '/service/countering_information_leaks',
 			},
-			{ title: 'Цифровая криминалистика', url: '/service/digital_forensics' },
+			{ text: 'Цифровая криминалистика', link: '/service/digital_forensics' },
 			{
-				title: 'Создание систем защиты информации',
-				url: '/service/creation_of_information_security_systems',
+				text: 'Создание систем защиты информации',
+				link: '/service/creation_of_information_security_systems',
 			},
-			{ title: 'Техническая поддержка', url: '/service/technical_support' },
+			{ text: 'Техническая поддержка', link: '/service/technical_support' },
 			{
-				title: 'Системное администрирование',
-				url: '/service/system_administration',
-			},
-			{
-				title: 'Управление сетями передачи данных',
-				url: '/service/management_of_data_transmission_networks',
+				text: 'Системное администрирование',
+				link: '/service/system_administration',
 			},
 			{
-				title: 'Управление серверным оборудованием',
-				url: '/service/server_hardware_management',
+				text: 'Управление сетями передачи данных',
+				link: '/service/management_of_data_transmission_networks',
+			},
+			{
+				text: 'Управление серверным оборудованием',
+				link: '/service/server_hardware_management',
 			},
 		],
 	},
