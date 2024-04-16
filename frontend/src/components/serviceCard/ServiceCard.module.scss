@@ -1,8 +1,8 @@
 @import '/src/styles/common.scss';
 
 .card {
-	height: 270px;
-	width: 332px;
+	min-height: 270px;
+	min-width: 300px;
 	background-color: $mainWhiteColor;
 }
 
@@ -12,9 +12,8 @@
 }
 
 .card_hero_title {
-	position: absolute;
-	top: 0;
-
+	position: relative;
+	top: -100%;
 	line-height: 30px;
 
 	padding: 12px;
@@ -55,6 +54,7 @@
 .card_caption_name {
 	font-weight: 600;
 	font-size: 16px;
+	line-height: 12px;
 }
 
 .card_caption_state {
