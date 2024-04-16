@@ -1,6 +1,14 @@
-import VideoBlock from '../../components/VideoBlock/VideoBlock'
+import ServiceCard from '../../components/serviceCard/ServiceCard'
+
 const Test = () => {
-	return <VideoBlock className='h-[100px]' src='/cybersteel.mp4' />
+	return (
+		<ServiceCard
+			title='Мониторинг статистика уведомления сети'
+			titleBackground='/serviceBackground.png'
+			name='EyeFactory'
+			logo='/'
+		/>
+	)
 }
 
 export default Test
