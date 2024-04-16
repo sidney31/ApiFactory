@@ -9,6 +9,7 @@ import { Navbar } from '../../components/navbar/Navbar.tsx'
 import { CardsSection } from '../../components/sections/CardsSection/CardsSection.tsx'
 import { TextSection } from '../../components/sections/TextSection/TextSection.tsx'
 import { TwiceSection } from '../../components/sections/TwiceSection/TwiceSection.tsx'
+import VideoBlock from '../../components/VideoBlock/VideoBlock.tsx'
 import { Wave } from '../../components/wave/Wave.jsx'
 import '../../scripts/scrollHandler.js'
 import app from '../../styles/app.module.scss'
@@ -156,12 +157,13 @@ function Home() {
 							Нам доверяют ведущие компании отрасли по всему миру
 						</h2>
 						<div className={app.card_wrapper}>
-							{db.CUSTOMERS_CARDS.map(card => (
-								<img
-									key={card.image_path}
-									src={card.image_path}
-									alt={card.title}
-								/>
+							{db.CUSTOMERS_CARDS.map((card, index) => (
+								<div key={index}>
+									{(card.image_path && (
+										<img src={card.image_path} alt={card.title} />
+									)) ||
+										(card.video_path && <VideoBlock src={card.video_path} />)}
+								</div>
 							))}
 						</div>
 					</div>

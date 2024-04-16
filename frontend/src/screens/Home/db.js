@@ -183,7 +183,7 @@ export const CUSTOMERS_CARDS = [
 	},
 	{ image_path: '/svg/Bistrickinskaya.svg', title: 'Bistrickinskaya' },
 	{
-		image_path: '/svg/Cybersteel.svg',
+		video_path: '/cybersteel.webm',
 		title: 'Cybersteel',
 	},
 	{ image_path: '/svg/Pressman.svg', title: 'Pressman' },
