@@ -12,10 +12,18 @@ export const TextSection = (props: Props) => {
 		<section>
 			<div className='container'>
 				<div className='text text-center'>
-					<p className='text_small'>{props.text_small}</p>
-					<h2 className='text_title'>{props.text_title}</h2>
-					<p className={`${styles.text_content}`}>{props.text_content}</p>
-					<button className={styles.button}>{props.button_text}</button>
+					<p data-aos='fade-down' className='text_small'>
+						{props.text_small}
+					</p>
+					<h2 data-aos='fade-up' className='text_title'>
+						{props.text_title}
+					</h2>
+					<p data-aos='fade-up' className={`${styles.text_content}`}>
+						{props.text_content}
+					</p>
+					<button data-aos='fade-up' className={styles.button}>
+						{props.button_text}
+					</button>
 				</div>
 			</div>
 		</section>

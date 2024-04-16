@@ -90,6 +90,10 @@ section {
 	background-color: #00000000;
 }
 
+::-webkit-scrollbar:horizontal {
+	display: none;
+}
+
 ::-webkit-scrollbar-thumb {
 	background-color: $mainDarkColor;
 	border-radius: 9px;

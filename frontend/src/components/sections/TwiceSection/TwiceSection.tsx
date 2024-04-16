@@ -18,9 +18,13 @@ export const TwiceSection = (props: Props) => {
 	return (
 		<section className={props.className}>
 			<div className='container'>
-				{props.text_small && <p className='text_small'>{props.text_small}</p>}
+				{props.text_small && (
+					<p data-aos='fade-down' className='text_small'>
+						{props.text_small}
+					</p>
+				)}
 				<div className={styles.wrapper}>
-					<div className={styles.text}>
+					<div data-aos='fade-right' className={styles.text}>
 						<h2 className={`text_title ${props.titleClassName}`}>
 							{props.text_title}
 						</h2>
@@ -36,7 +40,7 @@ export const TwiceSection = (props: Props) => {
 							<button>{props.text_subtitle_button}</button>
 						)}
 					</div>
-					<div className={styles.image}></div>
+					<div data-aos='fade-left' className={styles.image}></div>
 				</div>
 				{props.text_extra && (
 					<div

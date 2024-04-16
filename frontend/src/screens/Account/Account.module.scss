@@ -1,5 +1,15 @@
-.cards_wrapper{
+.container {
+	padding: 0 5px;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 36px;
+	margin-bottom: 36px;
+}
+
+.cards_wrapper {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 22px
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 22px;
 }

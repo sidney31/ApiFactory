@@ -20,12 +20,17 @@ export const CardsSection = (props: Props) => {
 		<section className={props.className}>
 			<div className='container'>
 				<div className={styles.text_wrapper}>
-					<h2 className={`${styles.text_title} ${props.titleClassName}`}>
+					<h2
+						data-aos='fade-right'
+						className={`${styles.text_title} ${props.titleClassName}`}
+					>
 						{props.text_title}
 					</h2>
-					<p className={styles.text_subtitle}>{props.text_subtitle}</p>
+					<p data-aos='fade-left' className={styles.text_subtitle}>
+						{props.text_subtitle}
+					</p>
 				</div>
-				<div className={styles.cards}>
+				<div data-aos='fade-up' className={styles.cards}>
 					{props.cards.map(card => (
 						<Card
 							key={card.title}

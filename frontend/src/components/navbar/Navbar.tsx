@@ -49,7 +49,12 @@ export const Navbar = (props: Props) => {
 	})
 
 	return (
-		<nav ref={headerRef} className={`${styles.navbar} ${props.className}`}>
+		<nav
+			ref={headerRef}
+			className={`${styles.navbar} ${props.className}`}
+			data-aos='fade-down'
+			data-aos-delay='500'
+		>
 			<div className={styles.navbar_nav}>
 				<Link to='/' className={styles.navbar_logo}>
 					<img className='py-[10px]' src={props.logo_path} alt='logo' />
@@ -88,23 +93,25 @@ export const Navbar = (props: Props) => {
 				</div>
 				<div className={`${styles.navbar_action}`}>
 					{props.header_action}
-					<div
-						onClick={() => {
-							setBurgerState(!burgerState)
+					{props.nav_links.length != 0 && (
+						<div
+							onClick={() => {
+								setBurgerState(!burgerState)
 
-							if (!headerRef.current) return false
-							setOpacity(headerRef.current, burgerState ? 0 : 255)
+								if (!headerRef.current) return false
+								setOpacity(headerRef.current, burgerState ? 0 : 255)
 
-							setMenuState(!menuState)
-						}}
-						className={`${styles.navbar_burger} ${
-							(!!burgerState && `${styles.open}`) || `${styles.close}`
-						}`}
-					>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
+								setMenuState(!menuState)
+							}}
+							className={`${styles.navbar_burger} ${
+								(!!burgerState && `${styles.open}`) || `${styles.close}`
+							}`}
+						>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					)}
 				</div>
 			</div>
 		</nav>

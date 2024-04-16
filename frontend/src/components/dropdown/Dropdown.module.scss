@@ -37,8 +37,21 @@
 	}
 }
 
+@keyframes fade-down {
+	from {
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(100%);
+	}
+}
+
 .dropdown_items {
+	transform-origin: 0 0;
+	z-index: -1;
 	flex-direction: column;
+	animation: fade-down 0.3s ease;
+	transition: all 0.3s ease;
 
 	@media (max-width: 1000px) {
 		align-items: center;

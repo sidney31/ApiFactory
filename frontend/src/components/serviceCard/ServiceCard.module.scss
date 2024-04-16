@@ -2,8 +2,12 @@
 
 .card {
 	min-height: 270px;
-	min-width: 300px;
+	min-width: 320px;
 	background-color: $mainWhiteColor;
+
+	@media (max-width: 576px) {
+		min-width: 280px;
+	}
 }
 
 .card_hero {

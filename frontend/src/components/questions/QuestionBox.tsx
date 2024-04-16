@@ -12,7 +12,7 @@ export const QuestionBox = (props: Props) => {
 	const [state, setState] = useState(isDesktop)
 
 	return (
-		<div className={styles.question_block_wrapper}>
+		<div data-aos='zoom-in' className={styles.question_block_wrapper}>
 			<div className={styles.question_wrapper}>
 				<p className={styles.question}>{props.question}</p>
 				<a

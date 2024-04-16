@@ -1,5 +1,9 @@
 @import './common.scss';
 
+section {
+	overflow: hidden;
+}
+
 section *,
 .hero * {
 	color: $mainDarkColor;

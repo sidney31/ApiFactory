@@ -17,13 +17,13 @@ export const Footer = (props: Props) => {
 	// 	{ title: 'Контакты', url: '/contacts' },
 	// ]
 	return (
-		<footer ref={props.reference} className={styles.footer}>
+		<footer ref={props.reference} className={`${styles.footer}`}>
 			<div className='container'>
 				<div className={`${styles.footer_formWrapper} py-[40px]`}>
-					<h2 className={styles.footer_formTitle}>
+					<h2 data-aos='fade-up-right' className={styles.footer_formTitle}>
 						Отправьте заявление, и с Вами обязательно свяжутся
 					</h2>
-					<form id='feedback_form'>
+					<form data-aos='fade-up-left' id='feedback_form'>
 						<div className={styles.footer_form_field}>
 							<input type='text' placeholder='Имя' />
 						</div>
@@ -58,7 +58,7 @@ export const Footer = (props: Props) => {
 					</form>
 				</div>
 			</div>
-			<div className={styles.footer_nav}>
+			<div data-aos='fade-down' className={styles.footer_nav}>
 				<Link to='/' className={styles.footer_nav_logo}>
 					<img className='py-[10px]' src='/svg/logo2.svg' alt='logo' />
 				</Link>

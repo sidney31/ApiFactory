@@ -3,7 +3,9 @@ import { Contact } from '../../components/contact/Contact.tsx'
 import { QuestionBox } from '../../components/questions/QuestionBox.tsx'
 // import { VideoCard } from '../../components/VideoCard.jsx'
 import { useKeycloak } from '@react-keycloak/web'
-import { useRef } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect, useRef } from 'react'
 import { Footer } from '../../components/footer/Footer.tsx'
 import { Navbar } from '../../components/navbar/Navbar.tsx'
 import { CardsSection } from '../../components/sections/CardsSection/CardsSection.tsx'
@@ -19,12 +21,14 @@ import { services_db } from './services_db.ts'
 
 function Home() {
 	const { serviceName } = useParams()
-
+	const { keycloak, initialized } = useKeycloak()
 	const feedbackRef = useRef<HTMLDivElement>(null)
 
-	const { keycloak } = useKeycloak()
-
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
+
+	useEffect(() => {
+		Aos.init({ duration: 1000, delay: 100 })
+	}, [])
 
 	return (
 		<>
@@ -33,7 +37,7 @@ function Home() {
 				logo_path='/svg/logo.svg'
 				header_action={
 					<>
-						{(!!keycloak.authenticated && (
+						{(!!initialized && (
 							<Link to='/account'>
 								<button>Личный кабинет</button>
 							</Link>
@@ -64,10 +68,18 @@ function Home() {
 							</h2>
 						) : (
 							<>
-								<h1 className={app.hero_textTitle}>
+								<h1
+									data-aos='fade-right'
+									data-aos-delay='300'
+									className={app.hero_textTitle}
+								>
 									Cоздаем пространство эффективности вашего бизнеса
 								</h1>
-								<h4 className={app.hero_textSubtitle}>
+								<h4
+									data-aos='fade-left'
+									data-aos-delay='300'
+									className={app.hero_textSubtitle}
+								>
 									Мы ведущая компания по аутсорсингу IT, специализирующаяся на
 									предоставлении индивидуальных решений, помогающих бизнесу
 									процветать в цифровую эпоху.
@@ -136,10 +148,13 @@ function Home() {
 				/>
 				<section>
 					<div className='container'>
-						<h2 className='text-center font-semibold text-[36px] mb-[44px]'>
+						<h2
+							data-aos='fade-up'
+							className='text-center font-semibold text-[36px] mb-[44px]'
+						>
 							Различные отраслевые решения
 						</h2>
-						<div className={app.card_wrapper}>
+						<div data-aos='fade-up' className={app.card_wrapper}>
 							{db.SOLUTIONS_CARDS.map(card => (
 								<div key={card.image_path} className='w-[200px] flex flex-col'>
 									<img
@@ -153,10 +168,13 @@ function Home() {
 								</div>
 							))}
 						</div>
-						<h2 className='mt-[60px] text-center font-medium text-[24px] mb-[44px]'>
+						<h2
+							data-aos='fade-up'
+							className='mt-[60px] text-center font-medium text-[24px] mb-[44px]'
+						>
 							Нам доверяют ведущие компании отрасли по всему миру
 						</h2>
-						<div className={app.card_wrapper}>
+						<div data-aos='fade-up' className={app.card_wrapper}>
 							{db.CUSTOMERS_CARDS.map((card, index) => (
 								<div key={index}>
 									{(card.image_path && (
@@ -170,7 +188,10 @@ function Home() {
 				</section>
 				<section className='bg-[#f5f5f5]'>
 					<div className='container'>
-						<h2 className='text-center font-semibold text-[36px] mb-[36px]'>
+						<h2
+							data-aos='fade-down'
+							className='text-center font-semibold text-[36px] mb-[36px]'
+						>
 							Часто задаваемые вопросы
 						</h2>
 						{db.FAQ.map(iterator => (
@@ -181,13 +202,22 @@ function Home() {
 							/>
 						))}
 						<div className='text-center'>
-							<h2 className='font-semibold text-[32px] mt-[38px]'>
+							<h2
+								data-aos='fade-down'
+								className='font-semibold text-[32px] mt-[38px]'
+							>
 								Остались вопросы?
 							</h2>
-							<p className='text-[16px] mt-[12px]'>
+							<p
+								data-aos='fade-up'
+								data-aos-delay='200'
+								className='text-[16px] mt-[12px]'
+							>
 								Свяжитесь с нами и получите больше информации
 							</p>
 							<button
+								data-aos='fade-up'
+								data-aos-delay='200'
 								onClick={() =>
 									scrollTo({
 										top: feedbackRef.current?.getBoundingClientRect().bottom,
