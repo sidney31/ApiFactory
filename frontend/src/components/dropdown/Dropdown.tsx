@@ -9,10 +9,11 @@ interface Props {
 	items: { text: string; link: string }[]
 }
 
+// todo: доработать состояние множеств элементов
 const Dropdown = (props: Props) => {
 	const [dropdownState, setDropdownState] = useState(false)
 	return (
-		<a
+		<div
 			onClick={() => {
 				setDropdownState(!dropdownState)
 			}}
@@ -33,7 +34,7 @@ const Dropdown = (props: Props) => {
 					</Link>
 				))}
 			</div>
-		</a>
+		</div>
 	)
 }
 
