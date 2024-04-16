@@ -92,7 +92,7 @@
 			height: min-content;
 		}
 
-		& > a:not(:last-child):after {
+		& > *:not(:last-child):after {
 			position: absolute;
 			display: block;
 			content: '';
