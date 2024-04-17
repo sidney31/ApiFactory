@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useFormik } from 'formik'
 import PhoneInput from 'react-phone-number-input'
 import ru from 'react-phone-number-input/locale/ru'
@@ -19,13 +20,15 @@ export const Footer = (props: Props) => {
 			agreement: false,
 		},
 		validationSchema: Yup.object({
-			name: Yup.string().required(),
-			phone: Yup.string().required(),
-			question: Yup.string().required(),
+			name: Yup.string().min(3, 'Минимум 3 символа'),
+			phone: Yup.string().min(12, 'Введите корректный номер').max(12),
+			question: Yup.string().min(10, 'Минимум 10 символов'),
 			agreement: Yup.boolean().required(),
 		}),
 		onSubmit: values => {
-			console.log(values)
+			axios
+				.post('https://web.api-factory.ru/api/v1/feedback', values)
+				.then(() => console.log('success'))
 		},
 	})
 
