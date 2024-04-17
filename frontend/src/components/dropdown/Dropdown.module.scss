@@ -50,8 +50,9 @@
 	transform-origin: 0 0;
 	z-index: -1;
 	flex-direction: column;
-	animation: fade-down 0.3s ease;
-	transition: all 0.3s ease;
+	transition: all 0.2s ease;
+
+	display: flex;
 
 	@media (max-width: 1000px) {
 		align-items: center;
@@ -72,6 +73,15 @@
 		align-content: center;
 		align-items: start;
 	}
+}
+
+.dropdown_items.open {
+	animation: fade-down 0.3s ease;
+	opacity: 100;
+}
+.dropdown_items.hide {
+	animation: fade-down 0.3s ease reverse;
+	opacity: 0;
 }
 
 .dropdown_item {

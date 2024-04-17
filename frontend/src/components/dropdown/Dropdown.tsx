@@ -25,8 +25,9 @@ const Dropdown = (props: Props) => {
 			</p>
 			<div
 				className={`${styles.dropdown_items} ${
-					(dropdownState && 'flex') || 'hidden'
+					(dropdownState && `${styles.open}` || `${styles.hide}`)
 				}`}
+				onMouseLeave={()=>{setDropdownState(false)}}
 			>
 				{props.items.map(item => (
 					<Link to={item.link} key={item.text} className={styles.dropdown_item}>
