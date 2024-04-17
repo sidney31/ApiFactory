@@ -1,18 +1,34 @@
 @import '/src/styles/common.scss';
 
 .card {
-	min-height: 270px;
+	min-height: 240px;
 	min-width: 320px;
 	background-color: $mainWhiteColor;
+	border-radius: 9px;
+	overflow: hidden;
+
+	transition: all 0.3s ease-in-out;
 
 	@media (max-width: 576px) {
 		min-width: 280px;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			cursor: pointer;
+			scale: 102%;
+
+			& .card_hero_image {
+				scale: 105%;
+			}
+		}
 	}
 }
 
 .card_hero {
 	width: 100%;
-	height: 212px;
+	height: 180px;
+	overflow: hidden;
 }
 
 .card_hero_title {
@@ -24,7 +40,7 @@
 
 	color: white;
 	font-size: 28px;
-	font-weight: 800;
+	font-weight: 600;
 
 	text-transform: uppercase;
 	width: 50px;
@@ -39,25 +55,31 @@
 
 	user-select: none;
 	pointer-events: none;
+
+	transition: all 0.3s ease-in-out;
 }
 
 .card_caption {
 	display: flex;
 	align-items: center;
 	padding: 0 12px;
-	height: 60px;
+	height: 70px;
 	gap: 12px;
 }
 
 .card_caption_logo {
-	height: 30px;
-	width: 30px;
+	height: 70px;
+	width: 70px;
+
+	translate: (0 -50%);
+
 	background: #d9d9d9;
+	border-radius: 9px;
 }
 
 .card_caption_name {
 	font-weight: 600;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 12px;
 }
 

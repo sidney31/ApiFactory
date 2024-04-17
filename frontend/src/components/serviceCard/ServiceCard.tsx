@@ -9,11 +9,16 @@ interface Props {
 
 const ServiceCard = (props: Props) => {
 	return (
-		<div className={styles.card}>
+		<div
+			className={styles.card}
+			onClick={() => {
+				location.href += '/test'
+			}}
+		>
 			<div className={styles.card_hero}>
 				<img
 					className={styles.card_hero_image}
-					loading="lazy"
+					loading='lazy'
 					src={props.titleBackground}
 					alt={props.title}
 				/>

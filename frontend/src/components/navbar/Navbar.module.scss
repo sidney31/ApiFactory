@@ -82,12 +82,14 @@
 		min-width: 100svw;
 		max-width: 100svw;
 		width: 100svw;
-		height: 100svh;
+		min-height: 100svh;
 
 		background-color: white;
 
+		overflow-y: scroll;
+
 		& > a,
-		& > a > p {
+		& > div > p {
 			font-size: 18px;
 			height: min-content;
 		}
