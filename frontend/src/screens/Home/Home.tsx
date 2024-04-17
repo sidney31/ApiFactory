@@ -1,13 +1,12 @@
-import { Link, useParams } from 'react-router-dom'
-import { Contact } from '../../components/contact/Contact.tsx'
-import { QuestionBox } from '../../components/questions/QuestionBox.tsx'
-// import { VideoCard } from '../../components/VideoCard.jsx'
 import { useKeycloak } from '@react-keycloak/web'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect, useRef } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { Contact } from '../../components/contact/Contact.tsx'
 import { Footer } from '../../components/footer/Footer.tsx'
 import { Navbar } from '../../components/navbar/Navbar.tsx'
+import { QuestionBox } from '../../components/questions/QuestionBox.tsx'
 import { CardsSection } from '../../components/sections/CardsSection/CardsSection.tsx'
 import { TextSection } from '../../components/sections/TextSection/TextSection.tsx'
 import { TwiceSection } from '../../components/sections/TwiceSection/TwiceSection.tsx'
@@ -29,7 +28,7 @@ function Home() {
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
-
+	
 	return (
 		<>
 			<Navbar

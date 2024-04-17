@@ -13,6 +13,7 @@ const ServiceCard = (props: Props) => {
 			<div className={styles.card_hero}>
 				<img
 					className={styles.card_hero_image}
+					loading="lazy"
 					src={props.titleBackground}
 					alt={props.title}
 				/>

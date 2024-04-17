@@ -1,4 +1,6 @@
 import { ReactKeycloakProvider } from '@react-keycloak/web'
+import 'aos/dist/aos.css'
+import axios from 'axios'
 import 'normalize.css'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
 		path: 'service/:serviceName',
 		element: (
 			<ScrollToTop>
-				<Home />
+					<Home />
 			</ScrollToTop>
 		),
 	},
@@ -38,8 +40,29 @@ const router = createBrowserRouter([
 	},
 ])
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<ReactKeycloakProvider authClient={kc}>
-		<RouterProvider router={router} />
-	</ReactKeycloakProvider>
+		<ReactKeycloakProvider authClient={kc}>
+			<RouterProvider router={router} />
+		</ReactKeycloakProvider>
 )
+
+const instance = axios.create({
+  baseURL: "https://web.api-factory.ru/",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+instance.interceptors.request.use((config) => {
+	const token = kc.token;
+	console.log('done')
+	if (token) {
+		console.log(token)
+		// config.headers["Authorization"] = 'Bearer ' + token;
+		config.headers["x-access-token"] = token;
+	}
+	return config;   
+}, (error) => {
+	return Promise.reject(error);
+})	

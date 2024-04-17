@@ -58,7 +58,7 @@ export const Footer = (props: Props) => {
 					</form>
 				</div>
 			</div>
-			<div data-aos='fade-down' className={styles.footer_nav}>
+			<div className={styles.footer_nav}>
 				<Link to='/' className={styles.footer_nav_logo}>
 					<img className='py-[10px]' src='/svg/logo2.svg' alt='logo' />
 				</Link>
