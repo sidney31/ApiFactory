@@ -8,4 +8,5 @@ const initOptions: KeycloakConfig = {
 
 const kc = new Keycloak(initOptions)
 
-export default kc
+export { kc }
+

@@ -27,6 +27,8 @@ function Home() {
 
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
+		if (!initialized)
+			return;
 	}, [])
 	
 	return (
@@ -36,7 +38,7 @@ function Home() {
 				logo_path='/svg/logo.svg'
 				header_action={
 					<>
-						{(!!initialized && (
+						{(!!keycloak.token && (
 							<Link to='/account'>
 								<button>Личный кабинет</button>
 							</Link>

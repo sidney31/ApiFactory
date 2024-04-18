@@ -58,8 +58,13 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'apifactory',
+        'USER': 'postgres',
+        'PASSWORD': 'QWEasdZXC',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+
     }
 }
 
@@ -95,31 +100,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'mozilla_django_oidc.contrib.drf.OIDCAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': [],
 }
-
-AUTHENTICATION_BACKENDS = (
-    'mozilla_django_oidc.auth.OIDCAuthenticationBackend',
-)
-
-OIDC_RP_CLIENT_ID = 'web'
-OIDC_RP_CLIENT_SECRET = 'F5fWCQAvCVkBbucLM2MZXw5z4DdewmL8'
-OIDC_OP_AUTHORIZATION_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/auth'
-OIDC_OP_TOKEN_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/token'
-OIDC_OP_USER_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/userinfo'
-OIDC_OP_JWKS_ENDPOINT = 'https://id.api-factory.ru:8443/realms/API-FACTORY/protocol/openid-connect/certs'
-OIDC_RP_SIGN_ALGO = 'RS256'
-OIDC_VERIFY_SSL = False
-
-LOGIN_URL = 'oidc_authentication_init'
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/account'
 
 CSRF_TRUSTED_ORIGINS = ['https://web.api-factory.ru']
 

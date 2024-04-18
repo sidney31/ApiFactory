@@ -1,10 +1,15 @@
 from django.db import models
 
+class CustomDateTimeField(models.DateTimeField):
+  def value_to_string(self, obj):
+      val = self.value_from_object(obj)
+      return "" if val is None else val.isoformat("|", "minutes")
+
 class Feedback(models.Model):
-  date = models.DateTimeField(auto_now_add=True)
+  date = CustomDateTimeField(auto_now_add=True)
   name = models.CharField(max_length=100)
-  phone = models.IntegerField()
-  answer = models.CharField(max_length=100)
+  phone = models.CharField(max_length=100)
+  question = models.CharField(max_length=100)
   agreement = models.BooleanField()
   
   def __str__(self):

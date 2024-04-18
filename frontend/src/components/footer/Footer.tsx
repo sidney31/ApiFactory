@@ -12,6 +12,7 @@ interface Props {
 }
 
 export const Footer = (props: Props) => {
+
 	const { handleSubmit, setValues, values, handleChange } = useFormik({
 		initialValues: {
 			name: '',
@@ -27,8 +28,13 @@ export const Footer = (props: Props) => {
 		}),
 		onSubmit: values => {
 			axios
-				.post('https://web.api-factory.ru/api/v1/feedback', values)
-				.then(() => console.log('success'))
+				.post('https://web.api-factory.ru/api/v1/feedback/', values)   
+				.then(function (response) {
+					console.log(response)
+				})
+				.catch(function (error) {
+					console.log(error)
+				})
 		},
 	})
 
@@ -45,6 +51,7 @@ export const Footer = (props: Props) => {
 						data-aos='fade-up-left'
 						id='feedback_form'
 					>
+						{/* <p></p> */}
 						<div className={styles.footer_form_field}>
 							<input
 								id='name'

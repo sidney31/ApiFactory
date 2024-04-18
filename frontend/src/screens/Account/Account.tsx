@@ -9,20 +9,18 @@ import '../../styles/common.scss'
 import styles from './Account.module.scss'
 import { services_db } from './services_db.js'
 
+
 export const Account = () => {
-	
 	const { keycloak, initialized } = useKeycloak()
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
 
 	useEffect(() => {
-    if (initialized) {
-      if (!keycloak.authenticated) {
-        keycloak.login();
-      }
-    }
-  }, [initialized]);
+		if (initialized && !keycloak.authenticated) {
+			keycloak.login();
+		}
+  }, []);
 
 	return (
 		<>
