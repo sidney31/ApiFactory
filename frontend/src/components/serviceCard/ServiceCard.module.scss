@@ -17,6 +17,7 @@
 		&:hover {
 			cursor: pointer;
 			scale: 102%;
+			transition-delay: .1s;
 
 			& .card_hero_image {
 				scale: 105%;

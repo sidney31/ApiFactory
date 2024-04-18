@@ -9,14 +9,7 @@
 	backdrop-filter: blur(3px);
 	transition: background-color 0.1s 0.15s linear;
 	position: fixed;
-}
-
-.footer_navbar {
-	@media (max-width: 1100px) {
-		& .navbar_menuList {
-			flex-wrap: wrap;
-		}
-	}
+	top: 0;
 }
 
 .navbar_nav {
@@ -28,6 +21,7 @@
 	padding: 0 10px;
 
 	height: 100%;
+	gap: 10px;
 
 	@media (max-width: 1000px) {
 		justify-content: space-between;
@@ -39,7 +33,6 @@
 	width: 200px;
 	object-fit: contain;
 	object-position: center;
-	flex: 0, 0;
 
 	& > * {
 		height: 100px;
@@ -207,7 +200,7 @@
 }
 
 .navbar_action {
-	width: auto;
+	min-width: 200px;
 	height: 100%;
 	flex: 0 0;
 	display: flex;

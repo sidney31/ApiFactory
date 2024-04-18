@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Contact } from '../../components/contact/Contact.tsx'
 import { Footer } from '../../components/footer/Footer.tsx'
+import FooterForm from '../../components/footer/FooterForm.tsx'
 import { Navbar } from '../../components/navbar/Navbar.tsx'
 import { QuestionBox } from '../../components/questions/QuestionBox.tsx'
 import { CardsSection } from '../../components/sections/CardsSection/CardsSection.tsx'
@@ -15,7 +16,7 @@ import { Wave } from '../../components/wave/Wave.jsx'
 import '../../scripts/scrollHandler.js'
 import app from '../../styles/app.module.scss'
 import '../../styles/common.scss'
-import * as db from './db.js'
+import * as db from '../Account/db.js'
 import { services_db } from './services_db.ts'
 
 function Home() {
@@ -249,7 +250,7 @@ function Home() {
 					</div>
 				</section>
 			</main>
-			<Footer reference={feedbackRef} />
+			<Footer children={<FooterForm/>} reference={feedbackRef} />
 		</>
 	)
 }

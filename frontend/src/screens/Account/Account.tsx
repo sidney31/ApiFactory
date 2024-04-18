@@ -3,6 +3,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Footer } from '../../components/footer/Footer.tsx'
 import { Navbar } from '../../components/navbar/Navbar.tsx'
 import ServiceCard from '../../components/serviceCard/ServiceCard.tsx'
 import '../../styles/common.scss'
@@ -35,7 +36,7 @@ export const Account = () => {
 					</>
 				}
 			/>
-			<main className='relative top-[100px]'>
+			<main>
 				{/* <div className='container'>
 					<h2 className='font-semibold text-[36px] mb-[36px]'>Сервисы</h2>
 					<p>{keycloak.tokenParsed?.name}</p>
@@ -69,6 +70,8 @@ export const Account = () => {
 					</div>
 				</div>
 			</main>
+
+			<Footer/>
 		</>
 	)
 }
