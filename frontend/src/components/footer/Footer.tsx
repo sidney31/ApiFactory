@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useFormik } from 'formik'
+import { GoAlertFill } from "react-icons/go"
 import PhoneInput from 'react-phone-number-input'
 import ru from 'react-phone-number-input/locale/ru'
 import 'react-phone-number-input/style.css'
@@ -7,13 +8,14 @@ import { Link } from 'react-router-dom'
 import * as Yup from 'yup'
 import styles from './Footer.module.scss'
 
+
 interface Props {
 	reference?: React.RefObject<HTMLDivElement>
 }
 
 export const Footer = (props: Props) => {
 
-	const { handleSubmit, setValues, values, handleChange } = useFormik({
+	const { handleSubmit, setValues, values, handleChange, errors, resetForm, setSubmitting } = useFormik({
 		initialValues: {
 			name: '',
 			phone: '',
@@ -21,18 +23,20 @@ export const Footer = (props: Props) => {
 			agreement: false,
 		},
 		validationSchema: Yup.object({
-			name: Yup.string().min(3, 'Минимум 3 символа'),
-			phone: Yup.string().min(12, 'Введите корректный номер').max(12),
-			question: Yup.string().min(10, 'Минимум 10 символов'),
-			agreement: Yup.boolean().required(),
+			phone: Yup.string()
+			.max(12, 'Введите корректный номер')
+			.min(12, 'Введите корректный номер'),
+			agreement: Yup.bool().oneOf([true], 'Обязательно')
 		}),
 		onSubmit: values => {
 			axios
 				.post('https://web.api-factory.ru/api/v1/feedback/', values)   
-				.then(function (response) {
+				.then(response => {
 					console.log(response)
+					resetForm()
+					setSubmitting(false)
 				})
-				.catch(function (error) {
+				.catch(error => {
 					console.log(error)
 				})
 		},
@@ -51,8 +55,8 @@ export const Footer = (props: Props) => {
 						data-aos='fade-up-left'
 						id='feedback_form'
 					>
-						{/* <p></p> */}
 						<div className={styles.footer_form_field}>
+						<p className={styles.error}></p>
 							<input
 								id='name'
 								onChange={handleChange}
@@ -62,6 +66,9 @@ export const Footer = (props: Props) => {
 							/>
 						</div>
 						<div className={styles.footer_form_field}>
+							<p className={`mt-[10px] ${styles.error}`}>
+								{!!errors.phone && <GoAlertFill />}
+							</p>
 							<PhoneInput
 								id='phone'
 								value={values.phone}
@@ -88,6 +95,9 @@ export const Footer = (props: Props) => {
 						<div
 							className={`${styles.footer_form_field} flex flex-row gap-[1em]`}
 						>
+							<p className={`mt-[-1px] ${styles.error}`}>
+								{!!errors.agreement && <GoAlertFill />}
+							</p>
 							<input id='agreement' onChange={handleChange} type='checkbox' />
 							<label className={styles.footer_form_label} htmlFor='agreement'>
 								Нажимая кнопку «Отправить», я даю свое согласие на обработку
