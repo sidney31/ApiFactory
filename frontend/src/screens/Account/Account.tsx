@@ -1,4 +1,3 @@
-import { useKeycloak } from '@react-keycloak/web'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
@@ -12,16 +11,10 @@ import { services_db } from './services_db.js'
 
 
 export const Account = () => {
-	const { keycloak, initialized } = useKeycloak()
+	// const { keycloak, initialized } = useKeycloak()
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
-
-	useEffect(() => {
-		if (initialized && !keycloak.authenticated) {
-			keycloak.login();
-		}
-  }, []);
 
 	return (
 		<>

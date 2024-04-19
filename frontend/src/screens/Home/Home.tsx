@@ -1,4 +1,3 @@
-import { useKeycloak } from '@react-keycloak/web'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect, useRef } from 'react'
@@ -19,17 +18,16 @@ import '../../styles/common.scss'
 import * as db from '../Account/db.js'
 import { services_db } from './services_db.ts'
 
+import UserClient from '../../clients/UserClient.ts'
+
 function Home() {
 	const { serviceName } = useParams()
-	const { keycloak, initialized } = useKeycloak()
 	const feedbackRef = useRef<HTMLDivElement>(null)
 
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
 
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
-		if (!initialized)
-			return;
 	}, [])
 	
 	return (
@@ -38,20 +36,14 @@ function Home() {
 				nav_links={db.NAV_LINKS}
 				logo_path='/svg/logo.svg'
 				header_action={
-					<>
-						{(!!keycloak.token && (
+					<>	
 							<Link to='/account'>
-								<button>Личный кабинет</button>
+								<button>
+									{UserClient.isAuthorization &&
+										'Личный кабинет' || 'Вход для клиентов'
+									}
+								</button>
 							</Link>
-						)) || (
-							<button
-								onClick={() =>
-									keycloak.login({ redirectUri: `${location.href}/account` })
-								}
-							>
-								Вход для клиентов
-							</button>
-						)}
 					</>
 				}
 			/>

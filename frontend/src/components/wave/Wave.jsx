@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import Perlin from './perlin.js'
 
-export const Wave = () => {
+export const Wave = ({className = ''}) => {
 	const waveRef = useRef(null)
 
 	let width
@@ -83,5 +83,5 @@ export const Wave = () => {
 		})
 	}, [])
 
-	return <div ref={waveRef}></div>
+	return <div className={className} ref={waveRef}></div>
 }

@@ -4,17 +4,15 @@ import 'normalize.css'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'react-tooltip/dist/react-tooltip.css'
-import { kc } from './clients/UserClient.ts'
+import UserClient from './clients/UserClient.ts'
+import LoginRequire from './LoginRequire.jsx'
 import { Account } from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
+import Login from './screens/Login/Login.tsx'
 import Test from './screens/Test/Test.tsx'
 import ScrollToTop from './ScrollToTop.jsx'
 import './styles/common.scss'
-
-const initOptions = { 
-	onLoad: 'check-sso', 
-	silentCheckSsoRedirectUri: `${location.origin}/silent-check-sso.html`}
 
 const router = createBrowserRouter([
 	{
@@ -36,8 +34,15 @@ const router = createBrowserRouter([
 	},
 	{
 		path: 'account/',
-		element: <Account />,
+		element: 
+		<LoginRequire>
+			<Account />
+		</LoginRequire>
 	},	
+	{
+		path: '/login/',
+		element: <Login />,
+	},
 	{
 		path: 'test/',
 		element: <Test />,
@@ -45,7 +50,10 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-		<ReactKeycloakProvider authClient={kc} initOptions={initOptions}>
+		<ReactKeycloakProvider 
+			authClient={UserClient.instance} 
+			initOptions={UserClient.options}	
+		>
 			<RouterProvider router={router} />
 		</ReactKeycloakProvider>
 )

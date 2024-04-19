@@ -47,6 +47,7 @@ const FooterForm = () =>{
 					onSubmit={handleSubmit}
 					data-aos='fade-up-left'
 					id='feedback_form'
+					className={styles.form}
 				>
 					<div className={styles.footer_form_field}>
 					<p className={styles.error}></p>
