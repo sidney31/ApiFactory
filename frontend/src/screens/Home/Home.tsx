@@ -13,12 +13,12 @@ import { TwiceSection } from '../../components/sections/TwiceSection/TwiceSectio
 import VideoBlock from '../../components/videoBlock/VideoBlock.tsx'
 import { Wave } from '../../components/wave/Wave.jsx'
 import '../../scripts/scrollHandler.js'
+import UserService from '../../services/UserService.ts'
 import app from '../../styles/app.module.scss'
 import '../../styles/common.scss'
 import * as db from '../Account/db.js'
 import { services_db } from './services_db.ts'
 
-import UserClient from '../../clients/UserClient.ts'
 
 function Home() {
 	const { serviceName } = useParams()
@@ -37,13 +37,13 @@ function Home() {
 				logo_path='/svg/logo.svg'
 				header_action={
 					<>	
-							<Link to='/account'>
-								<button>
-									{UserClient.isAuthorization &&
-										'Личный кабинет' || 'Вход для клиентов'
-									}
-								</button>
-							</Link>
+						<Link to='/account'>
+							<button>
+								{UserService.isAuth() &&
+									'Личный кабинет' || 'Вход для клиентов'
+								}
+							</button>
+						</Link>
 					</>
 				}
 			/>

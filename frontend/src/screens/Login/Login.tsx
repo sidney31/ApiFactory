@@ -1,16 +1,34 @@
 import Aos from 'aos'
+import { useFormik } from 'formik'
 import { useEffect, useState } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { useNavigate } from 'react-router-dom'
 import { Wave } from '../../components/wave/Wave'
+import UserService from '../../services/UserService'
 import styles from './Login.module.scss'
-
 
 const Login = () => {
 	const [passwordState, setPasswordState] = useState(false)
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
+
+	const { handleSubmit, values, handleChange } = useFormik({
+		initialValues: {
+			email: '',
+			password: '',
+		},
+		onSubmit: values => {
+			const accessToken = UserService.getAccessToken(values.email, values.password)
+
+			accessToken.then(token => {
+				!!token && navigate('/account')
+			})
+		},
+	})
+	
 	return (
 		<>
 			<Wave className={'blur-[1px]'}/>
@@ -27,11 +45,18 @@ const Login = () => {
 				</div>
 				<div className={styles.loginForm_formWrapper}>
 					<form
+						noValidate
 						className={styles.loginForm_form}
-						action=""
+						onSubmit={handleSubmit}
 					>
 						<div className={styles.loginForm_inputWrapper}>
-							<input type="email" placeholder='Электронная почта' />
+							<input 
+								type="email" 
+								id='email'
+								placeholder='Электронная почта' 
+								onChange={handleChange}
+								value={values.email}
+							/>
 						</div>
 						<div 
 							className={
@@ -40,7 +65,10 @@ const Login = () => {
 						>
 							<input 
 								type={passwordState && 'text' || 'password'} 
+								id='password'
 								placeholder='Пароль'
+								onChange={handleChange}
+								value={values.password}
 							/>
 							<button 
 								id={styles.passwordHandlerButton}

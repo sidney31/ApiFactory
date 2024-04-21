@@ -1,9 +1,9 @@
 import { Navigate, useLocation } from 'react-router-dom'
-import UserClient from './clients/UserClient'
+import UserService from './services/UserService'
 
 const LoginRequire = ({ children }) => {
 	let location = useLocation();
-  if (!UserClient.isAuthorization)
+  if (!UserService.isAuth())
 		return <Navigate to="/login" state={{ from: location }} replace />;
 
 	return children

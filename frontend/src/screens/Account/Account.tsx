@@ -9,9 +9,7 @@ import '../../styles/common.scss'
 import styles from './Account.module.scss'
 import { services_db } from './services_db.js'
 
-
 export const Account = () => {
-	// const { keycloak, initialized } = useKeycloak()
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
@@ -29,25 +27,7 @@ export const Account = () => {
 					</>
 				}
 			/>
-			<main>
-				{/* <div className='container'>
-					<h2 className='font-semibold text-[36px] mb-[36px]'>Сервисы</h2>
-					<p>{keycloak.tokenParsed?.name}</p>
-					<p>{keycloak.tokenParsed?.email}</p>
-					{!!keycloak.authenticated && (
-						<button
-							type='button'
-							onClick={() =>
-								keycloak.logout({
-									redirectUri: 'https://web.api-factory.ru/',
-								})
-							}
-						>
-							Выйти
-						</button>
-					)}
-				</div> */}
-
+			<main className='pt-[100px]'>
 				<div data-aos='fade-up' className={styles.container}>
 					<h2 className={styles.title}>Сервисы</h2>
 					<div className={styles.cards_wrapper}>
