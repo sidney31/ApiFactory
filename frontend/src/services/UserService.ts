@@ -67,6 +67,14 @@ const saveToken = (access_token: string) => {
 	document.cookie = `access_token=${access_token}; samesite`
 }
 
+// возрат имени в формате `Фамилия И.`
+const getName = () => {
+	const given_name = getDecodedToken().given_name
+	const split_name = given_name.split(' ')
+	
+	return `${split_name[0]} ${split_name[1][0]}.`
+}
+
 const UserService = {
 	instance,
 	options,
@@ -76,6 +84,7 @@ const UserService = {
 	isAuth,
 	doLogin,
 	authorization,
+	getName,
 }
 
 export default UserService

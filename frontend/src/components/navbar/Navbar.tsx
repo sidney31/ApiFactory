@@ -1,6 +1,6 @@
 import { ReactNode, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Dropdown from '../dropdown/Dropdown'
+import Dropdown from '../dropdown/full-width/Dropdown'
 import styles from './Navbar.module.scss'
 
 export interface Props {

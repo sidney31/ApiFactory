@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import styles from './Dropdown.module.scss'
-
+import { ReactNode } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom' 
 
-interface Props {
-	title: string
+interface IDropdownProps {
+	title: ReactNode
 	items: { text: string; link: string }[]
 }
 
-// todo: доработать состояние множеств элементов
-const Dropdown = (props: Props) => {
+// ! todo: доработать состояние множеств элементов
+const Dropdown = ({title, items}: IDropdownProps) => {
 	const [dropdownState, setDropdownState] = useState(false)
 	return (
 		<div
@@ -20,7 +20,7 @@ const Dropdown = (props: Props) => {
 			className={styles.dropdown}
 		>
 			<p className={styles.dropdown_title}>
-				{props.title}
+				{title}
 				{(dropdownState && <IoIosArrowUp />) || <IoIosArrowDown />}
 			</p>
 			<div
@@ -28,10 +28,10 @@ const Dropdown = (props: Props) => {
 					(dropdownState && `${styles.open}`) || `${styles.hide}`
 				}`}
 			>
-				{props.items.map(item => (
-					<Link to={item.link} key={item.text} className={styles.dropdown_item}>
-						{item.text}
-					</Link>
+				{items.map(item => (
+				  <Link to={item.link} key={item.text} className={styles.dropdown_item}>
+					  {item.text}
+				  </Link>
 				))}
 			</div>
 		</div>

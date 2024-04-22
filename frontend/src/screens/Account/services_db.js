@@ -1,4 +1,4 @@
-export const services_db = [
+const services_db = [
 	{
 		hero_title: 'МОНИТОРИНГ СТАТИСТИКА УВЕДОМЛЕНИЯ СЕТИ',
 		hero_image: '/serviceBackground.png',
@@ -36,3 +36,5 @@ export const services_db = [
 		logo: '/',
 	},
 ]
+
+export default services_db

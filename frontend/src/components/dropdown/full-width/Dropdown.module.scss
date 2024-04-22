@@ -21,7 +21,7 @@
 			height: 2px;
 			background-color: $mainDarkColor;
 			transform-origin: bottom right;
-			transition: transform 0.3s;
+			transition: transform 0.3s ease;
 		}
 	}
 	&:hover {
@@ -41,6 +41,7 @@
 	transform-origin: 0 0;
 	z-index: -1;
 	flex-direction: column;
+	transition: opacity 0.3s ease;
 
 	display: flex;
 
@@ -54,6 +55,7 @@
 		left: 0;
 		background-color: white;
 		width: 100vw;
+		max-height: 260px;
 		justify-content: center;
 		gap: 10px;
 		flex-wrap: wrap;
@@ -67,11 +69,9 @@
 .dropdown_items.open {
 	opacity: 1;
 	visibility: visible;
-	max-height: 260px;
 }
 
 .dropdown_items.hide {
-	max-height: 0;
 	opacity: 0;
 	visibility: hidden;
 }
