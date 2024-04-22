@@ -23,9 +23,9 @@ import { services_db } from './services_db.ts'
 function Home() {
 	const { serviceName } = useParams()
 	const feedbackRef = useRef<HTMLDivElement>(null)
-
+	
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
-
+	
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])

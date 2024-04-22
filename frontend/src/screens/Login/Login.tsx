@@ -21,9 +21,8 @@ const Login = () => {
 			password: '',
 		},
 		onSubmit: values => {
-			const accessToken = UserService.getAccessToken(values.email, values.password)
+			const accessToken = UserService.authorization(values.email, values.password)
 			accessToken.then(token => {
-				console.log(token);
 				!!token && navigate('/account')
 			})
 		},

@@ -13,7 +13,7 @@ export const Account = () => {
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
-
+	
 	return (
 		<>
 			<Navbar
