@@ -2,8 +2,6 @@ import axios from 'axios'
 import Keycloak, { KeycloakConfig } from 'keycloak-js'
 import { redirect } from 'react-router-dom'
 
-let token: string | null
-
 const initOptions: KeycloakConfig = {
 	url: 'https://id.api-factory.ru:8443/',
 	realm: 'API-FACTORY',
@@ -17,17 +15,15 @@ const options = {
 	silentCheckSsoRedirectUri: `${location.origin}/silent-check-sso.html`
 }
 
-const getToken = () => token
+const getToken = () => parseCookies().get('access_token')
 
 const getUsername = () => instance.tokenParsed?.preffererd_username
 
-const isAuth = () => !!token
+const isAuth = () => !!getToken
 
 const doLogin = (redirectUri: string) => redirect(`/login?next=/${redirectUri}`)
 
 const getAccessToken = async (username: string, password: string ) => {
-	let access_token: string | undefined
-
 	await axios.post(
 		`${initOptions.url}realms/${initOptions.realm}/protocol/openid-connect/token`,
 		{
@@ -45,13 +41,26 @@ const getAccessToken = async (username: string, password: string ) => {
 	)
 	.then((response) => {
 		console.log('Успешная авторизация')
-		access_token = response.data.access_token
-		token = response.data.access_token
+		saveToken(response.data.access_token)
 	})
 	.catch((error) => {
 		console.log(`Ошибка получения токена: ${error}`)
 	})
-	return access_token
+	return getToken()
+}
+
+const saveToken = (access_token: string) => {
+	document.cookie = `access_token=${access_token}; samesite`
+}
+
+const parseCookies = () => {
+	const cookies = document.cookie.split('; ')
+	const parsedCookies = new Map()
+	for (let i = 0; i < cookies.length; i++){
+		let cookie = cookies[i].split('=')
+		parsedCookies.set(cookie[0], cookie[1])
+	}
+	return parsedCookies
 }
 
 const UserService = {

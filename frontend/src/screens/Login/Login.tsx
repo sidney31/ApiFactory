@@ -22,8 +22,8 @@ const Login = () => {
 		},
 		onSubmit: values => {
 			const accessToken = UserService.getAccessToken(values.email, values.password)
-
 			accessToken.then(token => {
+				console.log(token);
 				!!token && navigate('/account')
 			})
 		},
@@ -36,7 +36,7 @@ const Login = () => {
 				<div className={styles.loginForm_header}>
 					<img 
 						className={styles.loginForm_header_logo} 
-						src="/svg/logo3.svg"
+						src="/tehnocat.svg"
 						alt="apifactory-logo"
 					/>
 					<h4 className={styles.loginForm_header_title}>

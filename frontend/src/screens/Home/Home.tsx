@@ -34,7 +34,7 @@ function Home() {
 		<>
 			<Navbar
 				nav_links={db.NAV_LINKS}
-				logo_path='/svg/logo.svg'
+				logo_path='/tehnocat.svg'
 				header_action={
 					<>	
 						<Link to='/account'>
