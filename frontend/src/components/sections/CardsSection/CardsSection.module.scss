@@ -1,0 +1,44 @@
+@import '../common.scss';
+
+.container {
+	gap: 50px;
+}
+
+.text_wrapper {
+	display: flex;
+	flex-direction: row;
+	height: auto;
+	margin-bottom: 50px;
+	gap: clamp(10px, 1vw, 50px);
+	justify-content: center;
+	flex-direction: row;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
+}
+
+.text_title {
+	width: 50%;
+	@media (max-width: 768px) {
+		width: 100%;
+	}
+}
+
+.text_subtitle {
+	width: 50%;
+	@media (max-width: 768px) {
+		width: 100%;
+	}
+}
+
+.cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: clamp(0px, 5vw, 100px);
+
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
+}

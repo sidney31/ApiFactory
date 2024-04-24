@@ -1,0 +1,37 @@
+.question_block_wrapper {
+	margin: 0 auto;
+	width: clamp(80%, 85vw, 100%);
+	padding: clamp(8px, 1vw, 18px) clamp(16px, 2vw, 32px);
+	border: 1px #302e2c solid;
+	position: relative;
+	margin-bottom: 14px;
+	transition: all 0.3s ease;
+}
+
+.icon_button {
+	font-size: 24px;
+	height: 35px;
+	width: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.question_wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.answer {
+	margin-top: 28px;
+}
+
+.question {
+	font-size: 16px;
+	font-weight: 600;
+}

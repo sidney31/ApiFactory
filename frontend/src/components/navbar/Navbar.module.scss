@@ -1,0 +1,280 @@
+@import '/src/styles/common.scss';
+
+.navbar {
+	height: 100px;
+	width: 100vw;
+
+	background: #00000000;
+	z-index: 999;
+	backdrop-filter: blur(3px);
+	transition: background-color 0.1s 0.15s linear;
+	position: fixed;
+	top: 0;
+}
+
+.navbar_nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	margin: 0 auto;
+	padding: 0 10px;
+
+	height: 100%;
+	gap: 10px;
+
+	@media (max-width: 1000px) {
+		justify-content: space-between;
+	}
+}
+
+.navbar_logo {
+	height: 100px;
+	width: 200px;
+	object-fit: contain;
+	object-position: center;
+
+	& > * {
+		height: 100px;
+		width: auto;
+		float: right;
+
+		@media (max-width: 1024px) {
+			float: left;
+		}
+	}
+}
+
+.navbar_menu {
+	height: inherit;
+	width: 100%;
+}
+
+.navbar_menuList {
+	margin: 0 !important;
+	padding: 0;
+	list-style: none;
+	align-items: center;
+
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+
+	@media (max-width: 1000px) {
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		padding-top: 100px;
+
+		display: none;
+		flex-direction: column;
+		justify-content: start;
+
+		min-width: 100svw;
+		max-width: 100svw;
+		width: 100svw;
+		min-height: 100svh;
+
+		background-color: white;
+
+		overflow-y: scroll;
+
+		& > a,
+		& > div > p {
+			font-size: 18px;
+			height: min-content;
+		}
+
+		& > *:not(:last-child):after {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 90vw;
+			height: 2px;
+			background-color: color-mix(in srgb, $mainDarkColor, $mainWhiteColor);
+			left: 50%;
+			translate: -50% 0;
+			margin-top: 10px;
+		}
+	}
+}
+
+.navbar_menuListItem {
+	height: 100px;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+
+	@media (max-width: 1000px) {
+		text-align: center;
+	}
+}
+
+.navbar_menuLink {
+	text-decoration: none;
+	max-height: 100px;
+
+	@media (max-width: 1000px) {
+		height: 25px;
+	}
+	&:hover {
+		@media (hover: hover) {
+			color: color-mix(in srgb, $mainDarkColor, $mainWhiteColor);
+		}
+	}
+}
+
+.navbar_menuLink:after {
+	@media (min-width: 1000px) {
+		display: block;
+		content: '';
+		position: relative;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		background-color: $mainDarkColor;
+		transform-origin: bottom right;
+		transition: transform 0.3s;
+	}
+}
+
+.navbar_menuLink:hover:after {
+	@media (hover: hover) {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+}
+
+.navbar_menuItemDropdown {
+	position: absolute;
+	top: 0;
+	background: rgb(255, 255, 255);
+	transition: all 0.2s 0.5s linear;
+	visibility: hidden;
+	opacity: 0;
+	left: 0;
+	z-index: -1;
+	padding-top: 70px;
+	width: 100%;
+
+	@media (max-width: 1000px) {
+		position: relative;
+	}
+}
+
+.navbar_menuDropdownItems {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: center;
+	gap: 10px;
+
+	padding: 25px 10px 45px;
+	margin: 0 auto;
+	max-height: 280px;
+	max-width: 50%;
+
+	@media (max-width: 1000px) {
+		flex-wrap: nowrap;
+		padding: 0;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.navbar_menuDropdownItems > a:hover {
+	@media (hover: hover) {
+		color: color-mix(in srgb, $mainDarkColor, $mainWhiteColor);
+	}
+}
+
+.navbar_menuListItem:hover .navbar_menuItemDropdown,
+.navbar_menuItemDropdown:hover,
+.navbar_menuDropdownItems:hover {
+	visibility: visible;
+	opacity: 100;
+}
+
+.navbar_action {
+	min-width: 200px;
+	height: 100%;
+	flex: 0 0;
+	display: flex;
+	align-items: center;
+	gap: clamp(5px, 1vw, 25px);
+}
+
+.navbar_action > * {
+	float: left;
+
+	@media (max-width: 1024px) {
+		float: right;
+	}
+}
+
+.navbar_burger {
+	display: flex;
+	align-self: center;
+	border: none;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 32px;
+	width: 37px;
+	padding: 5px;
+
+	@media (min-width: 1000px) {
+		display: none;
+	}
+}
+
+.navbar_burger:hover {
+	background: none;
+	cursor: pointer;
+}
+
+.navbar_burger > span {
+	width: 100%;
+	height: 4px;
+
+	display: block;
+	border-radius: 10px;
+	background: $mainDarkColor;
+	transition: all 0.15s ease;
+	flex: 0 0 auto;
+}
+
+.navbar_burger > span:last-child {
+	margin-bottom: 0;
+}
+
+.navbar_burger.open > span:nth-child(1) {
+	@media (max-width: 1024px) {
+		float: right;
+	}
+	transform-origin: 0% 0%;
+	transform: rotate(45deg);
+}
+
+.navbar_burger.open > span:nth-child(2) {
+	transform: scale(0);
+}
+
+.navbar_burger.open > span:nth-child(3) {
+	transform-origin: 0% 100%;
+	transform: rotate(-45deg);
+}
+
+.navbar_burger.close > span {
+	transform: rotateZ(0);
+}
+
+.navbar_burger:hover > span {
+	@media (hover: hover) {
+		background-color: color-mix(in srgb, $mainDarkColor 75%, #ffffff 25%);
+	}
+}

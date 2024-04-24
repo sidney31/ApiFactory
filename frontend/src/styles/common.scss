@@ -1,0 +1,106 @@
+@use 'sass:math';
+@import 'fonts.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$mainDarkColor: #36332f;
+$mainWhiteColor: #f5f5f5;
+$breakpoints: (375px, 480px, 556px, 768px, 993px, 1024px, 1100px);
+
+body {
+	padding-top: 100px;
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+	font-family: 'Montserrat';
+	user-select: none;
+}
+
+h1 {
+	font-size: clamp(36px, 3.5vw, 46px) !important;
+}
+
+h2 {
+	font-size: clamp(28px, 3vw, 36px) !important;
+}
+
+h3 {
+	font-size: clamp(22px, 2.5vw, 32px) !important;
+}
+
+h4 {
+	font-size: clamp(18px, 2vw, 20px) !important;
+}
+
+h5 {
+	font-size: clamp(16px, 1vw, 20px) !important;
+}
+
+button {
+	height: min-content;
+	width: max-content;
+	line-height: normal;
+
+	padding: 8px 9px;
+
+	background: #00000000;
+	border: 1px solid $mainDarkColor;
+	border-radius: 9px;
+	text-wrap: nowrap;
+	transition: all 0.3s ease;
+
+	@media (hover: hover) {
+		&:hover {
+			background: $mainDarkColor;
+			color: white;
+		}
+	}
+}
+
+[class*='container'] {
+	width: 100%;
+	@each $breakpoint in $breakpoints {
+		@media (min-width: #{$breakpoint}) {
+			max-width: calc(#{$breakpoint} - 16px);
+		}
+	}
+	margin: 0 auto;
+}
+
+section {
+	height: auto;
+	width: 100vw;
+	padding: clamp(25px, 7vw, 100px) 5px;
+}
+
+::selection {
+	background-color: $mainDarkColor;
+	color: $mainWhiteColor;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background-color: $mainDarkColor;
+	color: $mainWhiteColor;
+	text-shadow: none;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: #00000000;
+}
+
+::-webkit-scrollbar:horizontal {
+	display: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $mainDarkColor;
+	border-radius: 9px;
+}
