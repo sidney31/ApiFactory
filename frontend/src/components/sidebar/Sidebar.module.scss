@@ -1,5 +1,18 @@
 @import '/src/styles/common.scss';
 
+aside {
+	animation: fade-left 1s ease;
+}
+
+@keyframes fade-left {
+	from {
+		translate: -100% 0;
+	}
+	to {
+		translate: 0 0;
+	}
+}
+
 .sidebar {
 	width: 350px;
 	height: calc(100svh - 100px);

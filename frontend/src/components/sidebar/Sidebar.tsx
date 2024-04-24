@@ -6,11 +6,11 @@ import { useState } from 'react'
 import styles from './Sidebar.module.scss'
 
 const Sidebar = () => {
-	const [minimize, setMinimize] = useState(false)
+	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
+	const [minimize, setMinimize] = useState(isDesktop)
 
 	return (
-		<aside data-aos='fade-right'
-			className={`${styles.sidebar} ${
+		<aside className={`${styles.sidebar} ${
 				minimize ? styles.open : styles.minimize
 			}`}
 		>
