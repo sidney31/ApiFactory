@@ -3,9 +3,11 @@
 .card {
 	min-height: 240px;
 	min-width: 320px;
-	background-color: $mainWhiteColor;
+	background-color: #f9f9f990;
 	border-radius: 9px;
 	overflow: hidden;
+
+	border: #dddddd50 1px solid;
 
 	transition: all 0.3s ease-in-out;
 
@@ -17,7 +19,7 @@
 		&:hover {
 			cursor: pointer;
 			scale: 102%;
-			transition-delay: .1s;
+			transition-delay: 0.1s;
 
 			& .card_hero_image {
 				scale: 105%;

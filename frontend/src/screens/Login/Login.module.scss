@@ -1,10 +1,10 @@
 @import '/src/styles/common.scss';
 
-body{
+body {
 	padding-top: 0;
 }
 
-.loginFormWrapper{
+.loginFormWrapper {
 	height: 460px;
 	width: 370px;
 
@@ -22,7 +22,7 @@ body{
 	padding: 55px 40px 30px;
 }
 
-.loginForm_header{
+.loginForm_header {
 	height: 30%;
 
 	display: flex;
@@ -30,67 +30,67 @@ body{
 	align-items: center;
 }
 
-.loginForm_header_logo{
+.loginForm_header_logo {
 	object-fit: contain;
 	object-position: center;
 	height: 60px;
 	width: 110px;
 }
 
-.loginForm_header_title{
+.loginForm_header_title {
 	font-weight: 400;
 	letter-spacing: 2px;
 	margin: 10px 0;
 }
 
-.loginForm_formWrapper{
+.loginForm_formWrapper {
 	height: 70%;
 }
 
-.loginForm_form{
+.loginForm_form {
 	height: 100%;
 	width: 100%;
 }
 
-.loginForm_inputWrapper{
+.loginForm_inputWrapper {
 	margin-top: 20px;
 	border-bottom: 2px solid #8a8d90;
 	width: 100%;
 	height: 36px;
-	
-	& > input{
+
+	& > input {
 		width: 100%;
 		height: 100%;
-		
+
 		padding-left: 10px;
 
 		font-size: 15px;
 		font-weight: 400;
 
-		color: $mainDarkColor
+		color: $mainDarkColor;
 	}
 
-	& > input::placeholder{
+	& > input::placeholder {
 		color: #6a6e73;
 		font-size: 15px;
 		font-weight: 400;
 	}
 
-	& > input:focus{
+	& > input:focus {
 		outline: none;
 	}
 }
 
-.loginForm_inputWrapper.loginForm_passwordInputWrapper{
+.loginForm_inputWrapper.loginForm_passwordInputWrapper {
 	display: flex;
 	flex-direction: row;
 
-	& > input{
+	& > input {
 		width: 100%;
 	}
 }
 
-#passwordHandlerButton{
+#passwordHandlerButton {
 	all: revert;
 	border: none;
 	background: none;
@@ -102,15 +102,12 @@ body{
 	justify-content: center;
 	align-items: center;
 
-	&:hover{
+	&:hover {
 		cursor: pointer;
 	}
 }
 
-.loginForm_submitButton{
-	background-color: $mainDarkColor;
-	color: $mainWhiteColor;
-
+.loginForm_submitButton {
 	border: 1px solid $mainDarkColor;
 
 	width: 100%;
@@ -126,19 +123,19 @@ body{
 	margin-top: 30px;
 
 	@media (hover: hover) {
-		&:hover{
+		&:hover {
 			background-color: $mainWhiteColor;
 			color: $mainDarkColor;
 		}
 	}
 }
 
-.loginForm_form_forgotPassword_wrapper{
+.loginForm_form_forgotPassword_wrapper {
 	width: 100%;
 	margin-top: 10px;
 }
 
-.loginForm_form_forgotPassword{
+.loginForm_form_forgotPassword {
 	font-size: 12px;
 	text-align: center;
 	margin: 0 auto;
@@ -146,7 +143,7 @@ body{
 	text-decoration: none;
 
 	@media (hover: hover) {
-		&:hover{
+		&:hover {
 			text-decoration: underline;
 		}
 	}

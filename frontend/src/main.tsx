@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'react-tooltip/dist/react-tooltip.css'
 import LoginRequire from './LoginRequire.jsx'
-import { Account } from './screens/Account/Account.tsx'
+import Account from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
 import Login from './screens/Login/Login.tsx'
@@ -28,17 +28,18 @@ const router = createBrowserRouter([
 		path: 'service/:serviceName',
 		element: (
 			<ScrollToTop>
-					<Home />
+				<Home />
 			</ScrollToTop>
 		),
 	},
 	{
 		path: 'account/',
-		element: 
-		<LoginRequire>
-			<Account />
-		</LoginRequire>
-	},	
+		element: (
+			<LoginRequire>
+				<Account />
+			</LoginRequire>
+		),
+	},
 	{
 		path: '/login/',
 		element: <Login />,
@@ -50,10 +51,10 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-		<ReactKeycloakProvider 
-			authClient={UserClient.instance} 
-			initOptions={UserClient.options}	
-		>
-			<RouterProvider router={router} />
-		</ReactKeycloakProvider>
+	<ReactKeycloakProvider
+		authClient={UserClient.instance}
+		initOptions={UserClient.options}
+	>
+		<RouterProvider router={router} />
+	</ReactKeycloakProvider>
 )

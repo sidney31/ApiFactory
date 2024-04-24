@@ -1,49 +1,28 @@
-import Aos from 'aos'
-import 'aos/dist/aos.css'
-import { useEffect } from 'react'
-// import { Footer } from '../../components/footer/Footer.tsx'
-import { Navbar } from '../../components/navbar/Navbar.tsx'
-import ServiceCard from '../../components/serviceCard/ServiceCard.tsx'
-import '../../styles/common.scss'
+import { CgProfile } from 'react-icons/cg'
+import { Link } from 'react-router-dom'
 import styles from './Account.module.scss'
-import services_db from './services_db.js'
-import UserService from '../../services/UserService'
-import { CgProfile } from "react-icons/cg";
-import Dropdown from '../../components/dropdown/small/Dropdown.tsx'
 
-const dropdown_items = [
-	{ text: 'Оплата', link: '/account/payment' },
-	{ text: 'Помощь', link: '/account/help' },
-	{ text: 'Выход из аккаунта', link: '/account/logout' },
-]
+import ServiceCard from '../../components/serviceCard/ServiceCard'
+import Sidebar from '../../components/sidebar/Sidebar'
+import services_db from './services_db'
 
-export const Account = () => {
-	useEffect(() => {
-		Aos.init({ duration: 1000, delay: 100 })
-	}, [])
-
+const Account = () => {
 	return (
 		<>
-			<Navbar
-				nav_links={new Array()}
-				logo_path='/tehnocat.svg'
-				header_action={
-					<>
-					  <Dropdown 
-						  title={
-								<div className='flex row items-center gap-[5px]'>
-									<CgProfile/>
-								  <p>{UserService.getName()}</p>
-								</div>
-							}
-						  items={dropdown_items}
-						/>
-					</>
-				}
-			/>
-			<main className='pt-[100px]'>
-				<div data-aos='fade-up' className={styles.container}>
-					<h2 className={styles.title}>Сервисы</h2>
+			<nav className={styles.header}>
+				<Link to='/' className={styles.navbar_logo}>
+					<img className='py-[10px]' src='/svg/logo.svg' alt='logo' />
+				</Link>
+				<div className={styles.navbar_account}>
+					<CgProfile />
+					{/* <p>{UserService.getName()}</p> */}
+					<p>Иванов И.</p>
+				</div>
+			</nav>
+			<main>
+				<Sidebar />
+				<div className={styles.content}>
+					<h3 className={styles.page_title}>Доступные сервисы</h3>
 					<div className={styles.cards_wrapper}>
 						{services_db.map((service, index) => (
 							<ServiceCard
@@ -57,7 +36,8 @@ export const Account = () => {
 					</div>
 				</div>
 			</main>
-			{/* <Footer/> */}
 		</>
 	)
 }
+
+export default Account

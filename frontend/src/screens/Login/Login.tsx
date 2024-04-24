@@ -1,7 +1,7 @@
 import Aos from 'aos'
 import { useFormik } from 'formik'
 import { useEffect, useState } from 'react'
-import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { Wave } from '../../components/wave/Wave'
 import UserService from '../../services/UserService'
@@ -9,7 +9,7 @@ import styles from './Login.module.scss'
 
 const Login = () => {
 	const [passwordState, setPasswordState] = useState(false)
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
@@ -21,22 +21,25 @@ const Login = () => {
 			password: '',
 		},
 		onSubmit: values => {
-			const accessToken = UserService.authorization(values.email, values.password)
+			const accessToken = UserService.authorization(
+				values.email,
+				values.password
+			)
 			accessToken.then(token => {
 				!!token && navigate('/account')
 			})
 		},
 	})
-	
+
 	return (
 		<>
-			<Wave className={'blur-[1px]'}/>
+			<Wave className={'blur-[1px]'} />
 			<div data-aos='zoom-in' className={styles.loginFormWrapper}>
 				<div className={styles.loginForm_header}>
-					<img 
-						className={styles.loginForm_header_logo} 
-						src="/tehnocat.svg"
-						alt="apifactory-logo"
+					<img
+						className={styles.loginForm_header_logo}
+						src='/svg/logo.svg'
+						alt='apifactory-logo'
 					/>
 					<h4 className={styles.loginForm_header_title}>
 						Войдите в Ваш аккаунт
@@ -49,32 +52,30 @@ const Login = () => {
 						onSubmit={handleSubmit}
 					>
 						<div className={styles.loginForm_inputWrapper}>
-							<input 
-								type="email" 
+							<input
+								type='email'
 								id='email'
-								placeholder='Электронная почта' 
+								placeholder='Электронная почта'
 								onChange={handleChange}
 								value={values.email}
 							/>
 						</div>
-						<div 
-							className={
-								`${styles.loginForm_inputWrapper} ${styles.loginForm_passwordInputWrapper}`
-							}
+						<div
+							className={`${styles.loginForm_inputWrapper} ${styles.loginForm_passwordInputWrapper}`}
 						>
-							<input 
-								type={passwordState && 'text' || 'password'} 
+							<input
+								type={(passwordState && 'text') || 'password'}
 								id='password'
 								placeholder='Пароль'
 								onChange={handleChange}
 								value={values.password}
 							/>
-							<button 
+							<button
 								id={styles.passwordHandlerButton}
-								type="button"
+								type='button'
 								onClick={() => setPasswordState(!passwordState)}
 							>
-								{passwordState && <FaEyeSlash /> || <FaEye/>}
+								{(passwordState && <FaEyeSlash />) || <FaEye />}
 							</button>
 						</div>
 						<button className={styles.loginForm_submitButton} type='submit'>
@@ -82,9 +83,7 @@ const Login = () => {
 						</button>
 						<div className={styles.loginForm_form_forgotPassword_wrapper}>
 							<div className={styles.loginForm_form_forgotPassword}>
-								<a href="/password_reset">
-									Забыли пароль?
-								</a>
+								<a href='/password_reset'>Забыли пароль?</a>
 							</div>
 						</div>
 					</form>
