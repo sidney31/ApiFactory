@@ -1,5 +1,6 @@
 import '../common.scss'
 import styles from './TextSection.module.scss'
+
 export interface Props {
 	text_small: string
 	text_title: string

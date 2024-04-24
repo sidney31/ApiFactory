@@ -19,7 +19,6 @@ import '../../styles/common.scss'
 import * as db from '../Account/db.js'
 import { services_db } from './services_db.ts'
 
-
 function Home() {
 	const { serviceName } = useParams()
 	const feedbackRef = useRef<HTMLDivElement>(null)
@@ -34,7 +33,7 @@ function Home() {
 		<>
 			<Navbar
 				nav_links={db.NAV_LINKS}
-				logo_path='/tehnocat.svg'
+				logo_path='/svg/logo.svg'
 				header_action={
 					<>	
 						<Link to='/account'>

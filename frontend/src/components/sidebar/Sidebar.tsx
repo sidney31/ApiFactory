@@ -9,7 +9,7 @@ const Sidebar = () => {
 	const [minimize, setMinimize] = useState(false)
 
 	return (
-		<aside
+		<aside data-aos='fade-right'
 			className={`${styles.sidebar} ${
 				minimize ? styles.open : styles.minimize
 			}`}
