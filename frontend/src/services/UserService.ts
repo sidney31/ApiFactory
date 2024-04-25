@@ -1,7 +1,7 @@
 import axios from 'axios'
+import { jwtDecode } from 'jwt-decode'
 import Keycloak, { KeycloakConfig } from 'keycloak-js'
 import { redirect } from 'react-router-dom'
-import { jwtDecode } from 'jwt-decode'
 
 
 const initOptions: KeycloakConfig = {
@@ -43,7 +43,6 @@ const authorization = async (username: string, password: string ) => {
 		{
 			client_id: initOptions.clientId,
 			grant_type: 'password',
-			client_secret: 'XBqkDl76yQbnApivK6YpwYOyjpf3Akcl',
 			username: username,
 			password: password,
 		},

@@ -68,12 +68,12 @@
 
 .dropdown_items.open {
 	opacity: 1;
-	visibility: visible;
+	display: flex;
 }
 
 .dropdown_items.hide {
 	opacity: 0;
-	visibility: hidden;
+	display: none;
 }
 
 .dropdown_item {
