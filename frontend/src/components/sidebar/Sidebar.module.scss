@@ -20,6 +20,7 @@ aside {
 	position: sticky;
 	top: 100px;
 	left: 0;
+	z-index: 100;
 
 	background-color: #fafafa;
 
@@ -30,11 +31,17 @@ aside {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	
+	flex: 0 0 auto;
 }
 
 .sidebar.open {
 	width: 350px;
 	translate: 0 0;
+
+	@media (max-width: 769px) {
+		width: 100vw;
+	}
 }
 
 .sidebar.minimize {
@@ -42,8 +49,6 @@ aside {
 	padding-right: 10px;
 	align-items: flex-end;
 	overflow: hidden;
-
-	// translate: -290px;
 	width: 60px;
 
 	& .sidebar_item_name {
