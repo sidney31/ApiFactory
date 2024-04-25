@@ -28,6 +28,13 @@ function Home() {
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
+
+	const scrollToFeedback = () => {
+		scrollTo({
+			behavior: 'smooth',
+			top: feedbackRef.current?.offsetTop,
+		})
+	}
 	
 	return (
 		<>
@@ -78,13 +85,7 @@ function Home() {
 									процветать в цифровую эпоху.
 									<br />
 									<button
-										onClick={() =>
-											scrollTo({
-												top: feedbackRef.current?.getBoundingClientRect().top,
-												left: 0,
-												behavior: 'smooth',
-											})
-										}
+										onClick={scrollToFeedback}
 										className={app.hero_textSubtitle_button}
 									>
 										Заказать обратный звонок
@@ -211,13 +212,7 @@ function Home() {
 							<button
 								data-aos='fade-up'
 								data-aos-delay='200'
-								onClick={() =>
-									scrollTo({
-										top: feedbackRef.current?.getBoundingClientRect().bottom,
-										left: 0,
-										behavior: 'smooth',
-									})
-								}
+								onClick={scrollToFeedback}
 								className='mt-[38px]'
 							>
 								Заказать обратный звонок

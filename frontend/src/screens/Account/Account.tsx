@@ -8,11 +8,12 @@ import UserService from '../../services/UserService'
 import styles from './Account.module.scss'
 import services_db from './services_db'
 
-
 const Account = () => {
+
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
+
 	return (
 		<>
 			<nav data-aos='fade-down'  className={styles.header}>

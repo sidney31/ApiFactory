@@ -37,7 +37,12 @@ export const TwiceSection = (props: Props) => {
 							<p className={styles.text_subtitle}>{props.text_subtitle}</p>
 						)}
 						{props.text_subtitle_button && (
-							<button>{props.text_subtitle_button}</button>
+							<button onClick={() => {
+								scrollTo({
+									'behavior': 'smooth',
+									'top': document.body.clientHeight
+								})
+							}}>{props.text_subtitle_button}</button>
 						)}
 					</div>
 					<div data-aos='fade-left' className={styles.image}></div>

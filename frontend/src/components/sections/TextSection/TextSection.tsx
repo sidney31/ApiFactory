@@ -22,7 +22,16 @@ export const TextSection = (props: Props) => {
 					<p data-aos='fade-up' className={`${styles.text_content}`}>
 						{props.text_content}
 					</p>
-					<button data-aos='fade-up' className={styles.button}>
+					<button 
+						data-aos='fade-up' 
+						className={styles.button}
+						onClick={() => {
+							scrollTo({
+								'behavior': 'smooth',
+								'top': document.body.clientHeight
+							})
+						}}
+						>
 						{props.button_text}
 					</button>
 				</div>
