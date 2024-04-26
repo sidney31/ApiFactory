@@ -1,0 +1,57 @@
+@import '/src/styles/common.scss';
+
+$fail: #ff786e;
+$info: #ffdf6e;
+$success: #f0ff6e;
+
+.alert {
+	position: relative;
+	outline: 1px solid #6b6b6b40;
+	border-radius: 9px;
+	width: 450px;
+	height: auto;
+	padding: 10px;
+	font-weight: 600;
+	color: color-mix(in srgb, $mainDarkColor 50%, #000000);
+	overflow: hidden;
+	
+	&::before {
+		content: '';
+
+		display: block;
+		position: absolute; 
+		bottom: 0;
+		left: 0;
+
+		height: 4px;
+		width: 0%;
+		
+		background-color: $mainWhiteColor;
+
+		animation-name: fill;
+		animation-duration: var(--alert-life-time);
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+	}
+	
+	&.fail{
+		background-color: $fail;
+	}
+
+	&.info{
+		background-color: $info;
+	}
+
+	&.success{
+		background-color: $success;
+	}
+}
+
+@keyframes fill {
+	from{
+		width: 0%;
+	}
+	to{
+		width: 100%;
+	}
+}

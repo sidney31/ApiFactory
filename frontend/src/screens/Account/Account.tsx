@@ -1,4 +1,3 @@
-import Aos from 'aos'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AccountHelp from './AccountHelp/AccountHelp'
@@ -30,8 +29,7 @@ const Account = () => {
 	const [slug, setSlug] = useState('')
 
 	useEffect(() => {
-		Aos.init({ duration: 1000, delay: 100 })
-		setSlug(tabName as string)
+		setSlug(tabName as string || 'services')
 	}, [tabName])
 
 	return (
