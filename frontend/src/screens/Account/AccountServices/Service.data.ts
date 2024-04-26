@@ -1,4 +1,6 @@
-const services_db = [
+import { Service } from './Service.interface.ts'
+
+const services: Service[] = [
 	{
 		hero_title: 'МОНИТОРИНГ СТАТИСТИКА УВЕДОМЛЕНИЯ СЕТИ',
 		hero_image: '/serviceBackground.png',
@@ -37,4 +39,4 @@ const services_db = [
 	},
 ]
 
-export default services_db
+export default services

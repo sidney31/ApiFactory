@@ -1,4 +1,4 @@
-import styles from './Account.module.scss'
+import styles from './AccountManagement.module.scss'
 
 const AccountManagement = () => {
 	return (

@@ -1,13 +1,13 @@
-import ServiceCard from '../../components/serviceCard/ServiceCard'
-import styles from './Account.module.scss'
-import services_db from './services_db'
+import ServiceCard from '../../../components/serviceCard/ServiceCard'
+import styles from './AccountServices.module.scss'
+import services from './Service.data.ts'
 
 const AccountServices = () => {
 	return (
 		<>
 			<h3 className={styles.page_title}>Доступные сервисы</h3>
 			<div className={styles.cards_wrapper}>
-				{services_db.map((service, index) => (
+				{services.map((service, index) => (
 					<ServiceCard
 					key={index}
 					title={service.hero_title}
