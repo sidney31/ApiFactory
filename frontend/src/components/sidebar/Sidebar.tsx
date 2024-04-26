@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { LuArrowLeftFromLine, LuArrowRightFromLine } from 'react-icons/lu'
 import { Link, useParams } from 'react-router-dom'
 import styles from './Sidebar.module.scss'
@@ -7,8 +7,13 @@ import { tabs } from './menu.data.ts'
 const Sidebar = () => {
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
 	const [minimize, setMinimize] = useState(isDesktop)
-
+	
 	const { tabName } = useParams();
+	let [activeTab, setActiveTab] = useState<string>('')
+
+	useEffect(() => {
+		setActiveTab(tabName as string || 'services')
+	}, [tabName])
 
 	return (
 		<aside className={`${styles.sidebar} ${
@@ -20,7 +25,7 @@ const Sidebar = () => {
 					<Link 
 					to={tab.link} 
 					key={index}
-					className={`${styles.sidebar_item} ${tabName == tab.name && styles.active} `}
+					className={`${styles.sidebar_item} ${activeTab == tab.name && styles.active} `}
 					>
 						{<tab.icon/>}
 						<p className={styles.sidebar_item_name}>{tab.title}</p>

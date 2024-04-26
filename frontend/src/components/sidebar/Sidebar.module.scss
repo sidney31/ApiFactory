@@ -81,9 +81,11 @@ aside {
 
 	transition: all 0.3s ease;
 
-	&:hover {
-		background-color: #e5e9ee50;
-		color: color-mix(in srgb, $mainDarkColor 80%, #00000000);
+	@media (hover: hover) {
+		&:hover {
+			background-color: #e5e9ee50;
+			color: color-mix(in srgb, $mainDarkColor 80%, #00000000);
+		}
 	}
 
 	& > * {
