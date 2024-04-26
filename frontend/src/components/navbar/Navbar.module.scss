@@ -30,9 +30,9 @@
 
 .navbar_logo {
 	height: 100px;
-	width: 200px;
 	object-fit: contain;
 	object-position: center;
+	flex: 1 1 200px;
 
 	& > * {
 		height: 100px;
@@ -201,10 +201,10 @@
 
 .navbar_action {
 	height: 100%;
-	flex: 0 0;
 	display: flex;
 	align-items: center;
 	gap: clamp(5px, 1vw, 25px);
+	flex: 1 1 200px;
 }
 
 .navbar_action > * {

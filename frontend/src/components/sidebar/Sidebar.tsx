@@ -1,13 +1,14 @@
-import { BsCashCoin, BsGrid, BsQuestionCircle } from 'react-icons/bs'
-import { LuArrowLeftFromLine, LuArrowRightFromLine } from 'react-icons/lu'
-import { RiListSettingsLine } from 'react-icons/ri'
-
 import { useState } from 'react'
+import { LuArrowLeftFromLine, LuArrowRightFromLine } from 'react-icons/lu'
+import { Link, useParams } from 'react-router-dom'
 import styles from './Sidebar.module.scss'
+import { tabs } from './menu.data.ts'
 
 const Sidebar = () => {
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
 	const [minimize, setMinimize] = useState(isDesktop)
+
+	const { tabName } = useParams();
 
 	return (
 		<aside className={`${styles.sidebar} ${
@@ -15,22 +16,16 @@ const Sidebar = () => {
 			}`}
 		>
 			<div className={styles.sidebar_items}>
-				<div className={`${styles.sidebar_item} ${styles.active}`}>
-					<BsGrid />
-					<p className={styles.sidebar_item_name}>Сервисы</p>
-				</div>
-				<div className={styles.sidebar_item}>
-					<RiListSettingsLine />
-					<p className={styles.sidebar_item_name}>Управление</p>
-				</div>
-				<div className={styles.sidebar_item}>
-					<BsCashCoin />
-					<p className={styles.sidebar_item_name}>Платежи</p>
-				</div>
-				<div className={styles.sidebar_item}>
-					<BsQuestionCircle />
-					<p className={styles.sidebar_item_name}>Помощь</p>
-				</div>
+				{tabs.map((tab, index) => (
+					<Link 
+					to={tab.link} 
+					key={index}
+					className={`${styles.sidebar_item} ${tabName == tab.name && styles.active} `}
+					>
+						{<tab.icon/>}
+						<p className={styles.sidebar_item_name}>{tab.title}</p>
+					</Link>
+				))}
 			</div>
 
 			<a

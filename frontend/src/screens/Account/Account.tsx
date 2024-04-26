@@ -1,50 +1,36 @@
 import Aos from 'aos'
-import { useEffect } from 'react'
-import { CgProfile } from 'react-icons/cg'
-import { Link } from 'react-router-dom'
-import ServiceCard from '../../components/serviceCard/ServiceCard'
-import Sidebar from '../../components/sidebar/Sidebar'
-import UserService from '../../services/UserService'
-import styles from './Account.module.scss'
-import services_db from './services_db'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import AccountHelp from './AccountHelp'
+import AccountLayout from './AccountLayout/AccountLayout'
+import AccountManagement from './AccountManagement'
+import AccountPayments from './AccountPayments'
+import AccountServices from './AccountServices'
 
 const Account = () => {
+	const { tabName } = useParams();
+	const [slug, setSlug] = useState('')
 
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
-	}, [])
+		setSlug(tabName as string)
+	}, [tabName])
 
 	return (
-		<>
-			<nav data-aos='fade-down'  className={styles.header}>
-				<Link to='/' className={styles.navbar_logo}>
-					<img className='py-[10px]' src='/svg/logo.svg' alt='logo' />
-				</Link>
-				<div className={styles.navbar_account}>
-					<CgProfile />
-					<p>{UserService.getName()}</p>
-				</div>
-			</nav>
-			<main>
-				<div className={styles.main_wrapper}>
-					<Sidebar />
-					<div data-aos='fade-up' data-aos-delay='700' className={styles.content}>
-						<h3 className={styles.page_title}>Доступные сервисы</h3>
-						<div className={styles.cards_wrapper}>
-							{services_db.map((service, index) => (
-								<ServiceCard
-									key={index}
-									title={service.hero_title}
-									titleBackground={service.hero_image}
-									name={service.name}
-									logo={service.logo}
-								/>
-							))}
-						</div>
-					</div>
-				</div>
-			</main>
-		</>
+		<AccountLayout>
+			{(!slug || slug === 'services') &&
+				<AccountServices/>
+			}
+			{slug === 'management' &&
+				<AccountManagement/>
+			}
+			{slug === 'payments' &&
+				<AccountPayments/>
+			}
+			{slug === 'help' &&
+				<AccountHelp/>
+			}
+		</AccountLayout>
 	)
 }
 

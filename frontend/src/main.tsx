@@ -33,7 +33,7 @@ const router = createBrowserRouter([
 		),
 	},
 	{
-		path: 'account/',
+		path: 'account/:tabName?',
 		element: (
 			<LoginRequire>
 				<Account />
