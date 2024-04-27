@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom'
-import UserService from './services/UserService'
+import UserService from '../services/UserService'
 
-const LoginRequire = ({ children }) => {
+const LoginProvider = ({ children }) => {
 	let location = useLocation();
   if (!UserService.isAuth())
 		return <Navigate to="/login" state={{ from: location }} replace />;
@@ -9,4 +9,4 @@ const LoginRequire = ({ children }) => {
 	return children
 }
 
-export default LoginRequire
+export default LoginProvider

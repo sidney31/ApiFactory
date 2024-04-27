@@ -1,57 +1,53 @@
 @import '/src/styles/common.scss';
 
-$fail: #ff786e;
-$info: #ffdf6e;
-$success: #f0ff6e;
+$fail: #ff2600;
+$info: #fbff00;
+$success: #99ff00;
+
+@mixin getColorScheme($type) {
+	background-color: color-mix(in srgb, $mainWhiteColor 50%, $type);
+	& .alert_icon {
+		fill: color-mix(in srgb, $mainDarkColor 40%, $type);
+	}
+	& > .alert_content {
+		color: color-mix(in srgb, $mainDarkColor 60%, $type);
+	}
+}
 
 .alert {
 	position: relative;
-	outline: 1px solid #6b6b6b40;
 	border-radius: 9px;
 	width: 450px;
 	height: auto;
 	padding: 10px;
-	font-weight: 600;
-	color: color-mix(in srgb, $mainDarkColor 50%, #000000);
 	overflow: hidden;
-	
-	&::before {
-		content: '';
 
-		display: block;
-		position: absolute; 
-		bottom: 0;
-		left: 0;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
 
-		height: 4px;
-		width: 0%;
-		
-		background-color: $mainWhiteColor;
-
-		animation-name: fill;
-		animation-duration: var(--alert-life-time);
-		animation-timing-function: linear;
-		animation-fill-mode: forwards;
-	}
+	border: #dddddd50 1px solid;
+	box-shadow: 0px 1px 5px 3px #00000005;
 	
 	&.fail{
-		background-color: $fail;
+		@include getColorScheme($fail)
 	}
 
 	&.info{
-		background-color: $info;
+		@include getColorScheme($info)
 	}
 
 	&.success{
-		background-color: $success;
+		@include getColorScheme($success)
 	}
 }
 
-@keyframes fill {
-	from{
-		width: 0%;
-	}
-	to{
-		width: 100%;
-	}
+.alert_icon {
+	height: 20px;
+	width: 20px;
+}
+
+.alert_content {
+	font-weight: 500;
 }

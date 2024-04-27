@@ -4,40 +4,41 @@ import 'normalize.css'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'react-tooltip/dist/react-tooltip.css'
-import LoginRequire from './LoginRequire.jsx'
 import Account from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
 import Login from './screens/Login/Login.tsx'
 import Test from './screens/Test/Test.tsx'
-import ScrollToTop from './ScrollToTop.jsx'
 import UserClient from './services/UserService.ts'
 import './styles/common.scss'
+
+import LoginProvider from './providers/LoginProvider.jsx'
+import ScrollTopProvider from './providers/ScrollTopProvider.jsx'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: (
-			<ScrollToTop>
+			<ScrollTopProvider>
 				<Home />
-			</ScrollToTop>
+			</ScrollTopProvider>
 		),
 		errorElement: <ErrorPage />,
 	},
 	{
 		path: 'service/:serviceName',
 		element: (
-			<ScrollToTop>
+			<ScrollTopProvider>
 				<Home />
-			</ScrollToTop>
+			</ScrollTopProvider>
 		),
 	},
 	{
 		path: 'account/:tabName?',
 		element: (
-			<LoginRequire>
+			<LoginProvider>
 				<Account />
-			</LoginRequire>
+			</LoginProvider>
 		),
 	},
 	{
@@ -54,7 +55,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 	<ReactKeycloakProvider
 		authClient={UserClient.instance}
 		initOptions={UserClient.options}
-	>
+		>
 		<RouterProvider router={router} />
 	</ReactKeycloakProvider>
 )

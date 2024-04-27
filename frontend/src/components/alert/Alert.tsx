@@ -1,9 +1,11 @@
 import Aos from 'aos'
 import { useEffect, useRef } from 'react'
-import { AlertProps } from './Alert.interface'
+import { MdCheckCircleOutline, MdErrorOutline, MdOutlineInfo } from "react-icons/md"
 import styles from './Alert.module.scss'
 
-const Alert: React.FC<AlertProps> = ({type, children, lifeTime='5000ms'}: AlertProps) => {
+
+const Alert: React.FC<TAlert> = ({type, children, lifeTime=5000}: TAlert) => {
+	
 	const getTypeStyle = (type: AlertType) => ({
 		'fail': styles.fail, 
 		'info': styles.info, 
@@ -12,9 +14,9 @@ const Alert: React.FC<AlertProps> = ({type, children, lifeTime='5000ms'}: AlertP
 
 	const alertRef = useRef<HTMLDivElement>(null)
 
-	useEffect(() => {
+	useEffect(() => {			
 		Aos.init({ duration: 1000, delay: 100 })
-		alertRef.current?.style.setProperty('--alert-life-time', lifeTime)
+		alertRef.current?.style.setProperty('--alert-life-time', `${lifeTime}ms`)
 	}, [])
 
 	// TODO: pool of alerts
@@ -24,7 +26,14 @@ const Alert: React.FC<AlertProps> = ({type, children, lifeTime='5000ms'}: AlertP
 			data-aos='fade-up'
 			className={`${styles.alert} ${getTypeStyle(type)}`}
 		>
-			{children}
+			<div>
+				{type === 'fail' && <MdErrorOutline className={styles.alert_icon}/>}
+				{type === 'info' && <MdOutlineInfo className={styles.alert_icon}/>}
+				{type === 'success' && <MdCheckCircleOutline className={styles.alert_icon}/>}
+			</div>
+			<div className={styles.alert_content}>
+				{children}
+			</div>
 		</div>
 	)
 }

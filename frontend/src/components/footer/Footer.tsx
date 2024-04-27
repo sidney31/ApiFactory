@@ -17,7 +17,7 @@ export const Footer = (props: Props) => {
 					<img className='py-[10px] fill-white' src='/svg/logo2.svg' alt='logo' />
 				</Link>
 				<div className={`${styles.footer_menu} ${styles.container}`}></div>
-				<div className='text-[16px] whitespace-nowrap'>© 2024 Апи-Фактори</div>
+				<div className='text-[16px] whitespace-nowrap text-[#f5f5f5]'>© 2024 Апи-Фактори</div>
 			</div>
 		</footer>
 	)
