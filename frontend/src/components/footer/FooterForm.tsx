@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-number-input'
 import ru from 'react-phone-number-input/locale/ru'
 import 'react-phone-number-input/style.css'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import styles from './FooterForm.module.scss'
 
@@ -102,12 +102,6 @@ const FooterForm = () => {
 					</div>
 				</form>
 			</div>
-			<ToastContainer
-				position='bottom-right'
-				autoClose={5000}
-				theme='dark'
-				className={styles.toastContainer}
-			/>
 		</div>
 	)
 }

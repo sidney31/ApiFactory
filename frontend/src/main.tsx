@@ -4,6 +4,7 @@ import 'normalize.css'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import 'react-tooltip/dist/react-tooltip.css'
+import AlertProvider from './providers/AlertProvider.jsx'
 import LoginProvider from './providers/LoginProvider.jsx'
 import ScrollTopProvider from './providers/ScrollTopProvider.jsx'
 import Account from './screens/Account/Account.tsx'
@@ -55,6 +56,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 		authClient={UserClient.instance}
 		initOptions={UserClient.options}
 	>
-		<RouterProvider router={router} />
+		<AlertProvider>
+			<RouterProvider router={router} />
+		</AlertProvider>
 	</ReactKeycloakProvider>
 )

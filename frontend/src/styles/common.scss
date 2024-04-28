@@ -109,3 +109,19 @@ section {
 	background-color: $mainDarkColor;
 	border-radius: 9px;
 }
+
+.toastContainer{
+	width: 400px!important;
+	
+	& > * {
+		background-color: color-mix( in srgb, $mainDarkColor 70%, #000000)!important;
+	}
+	
+	& * {
+		color: $mainWhiteColor!important;
+	}	
+
+	@media (max-width: 425px) {
+		width: 100%!important;
+	}
+}

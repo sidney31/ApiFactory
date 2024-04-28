@@ -1,8 +1,9 @@
 import Aos from 'aos'
-import { useFormik } from 'formik'
 import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { Wave } from '../../components/wave/Wave'
 import UserService from '../../services/UserService'
 import styles from './Login.module.scss'
@@ -15,21 +16,46 @@ const Login = () => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
 
-	const { handleSubmit, values, handleChange } = useFormik({
-		initialValues: {
-			email: '',
-			password: '',
-		},
-		onSubmit: values => {
-			const accessToken = UserService.authorization(
-				values.email,
-				values.password
-			)
-			accessToken.then(token => {
-				!!token && navigate('/account')
-			})
-		},
-	})
+	// const { handleSubmit, values, handleChange } = useFormik({
+	// 	initialValues: {
+	// 		email: '',
+	// 		password: '',
+	// 	},
+	// 	onSubmit: values => {
+	// 		const accessToken = UserService.authorization(
+	// 			values.email,
+	// 			values.password
+	// 		)
+	// 		accessToken.then(token => {
+	// 			!!token && navigate('/account')
+	// 		})
+	// 	},
+	// })
+
+	const {
+		register,
+		handleSubmit,
+	} = useForm()
+
+	const onSubmit = (data: any) => {
+		const accessToken = UserService.authorization(
+			data.email,
+			data.password
+		)
+		accessToken.then(token => {
+			if (!!token) {
+				navigate('/account')
+				toast('Успешная авторизация!', {
+					type: 'success'
+				})
+			}else{
+				toast('Ошибка авторизации', {
+					type: 'error'
+				})
+			}
+		})
+	}
+
 
 	return (
 		<>
@@ -49,15 +75,14 @@ const Login = () => {
 					<form
 						noValidate
 						className={styles.loginForm_form}
-						onSubmit={handleSubmit}
+						onSubmit={handleSubmit(onSubmit)}
 					>
 						<div className={styles.loginForm_inputWrapper}>
 							<input
 								type='email'
 								id='email'
 								placeholder='Электронная почта'
-								onChange={handleChange}
-								value={values.email}
+								{...register('email')}
 							/>
 						</div>
 						<div
@@ -67,8 +92,7 @@ const Login = () => {
 								type={(passwordState && 'text') || 'password'}
 								id='password'
 								placeholder='Пароль'
-								onChange={handleChange}
-								value={values.password}
+								{...register('password')}
 							/>
 							<button
 								id={styles.passwordHandlerButton}

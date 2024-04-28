@@ -58,6 +58,7 @@ const authorization = async (username: string, password: string ) => {
 	})
 	.catch((error) => {
 		console.log(`Ошибка получения токена: ${error}`)
+		return error
 	})
 	return getToken()
 }
