@@ -1,40 +1,38 @@
 import axios from 'axios'
-import { useFormik } from 'formik'
-import { GoAlertFill } from "react-icons/go"
+import { useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-number-input'
 import ru from 'react-phone-number-input/locale/ru'
 import 'react-phone-number-input/style.css'
-import { Tooltip } from 'react-tooltip'
-import * as Yup from 'yup'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import styles from './FooterForm.module.scss'
 
-const FooterForm = () =>{
-	const { handleSubmit, setValues, values, handleChange, errors, resetForm, setSubmitting } = useFormik({
-		initialValues: {
-			name: '',
-			phone: '',
-			question: '',
-			agreement: false,
+const FooterForm = () => {
+	const {
+		register,
+		formState: {
+			errors,
 		},
-		validationSchema: Yup.object({
-			phone: Yup.string()
-			.max(12, 'Введите корректный номер')
-			.min(12, 'Введите корректный номер'),
-			agreement: Yup.bool().oneOf([true], 'Обязательно')
-		}),
-		onSubmit: values => {
-			axios
-				.post('https://web.api-factory.ru/api/v1/feedback/', values)   
-				.then(response => {
-					console.log(response)
-					resetForm()
-					setSubmitting(false)
-				})
-				.catch(error => {
-					console.log(error)
-				})
-		},
+		handleSubmit,
+		reset,
+	} = useForm({
+		mode: "onBlur"
 	})
+
+	const onSubmit = (data: any) => {
+		axios
+			.post('https://web.api-factory.ru/api/v1/feedback/', data)   
+			.then(response => {
+				console.log(response)
+			})
+			.catch(error => {
+				console.log(error)
+			})
+		reset()
+		toast('Заявление успешно отправлено!', {
+			type: 'info'
+		})
+	}
 
 	return (
 		<div className='container'>
@@ -43,72 +41,53 @@ const FooterForm = () =>{
 					Отправьте заявление, и с Вами обязательно свяжутся
 				</h2>
 				<form
-					noValidate
-					onSubmit={handleSubmit}
 					data-aos='fade-up-left'
 					id='feedback_form'
 					className={styles.form}
+					onSubmit={handleSubmit(onSubmit)}
 				>
 					<div className={styles.footer_form_field}>
-					<p className={styles.error}></p>
 						<input
-							id='name'
-							onChange={handleChange}
-							value={values.name}
-							type='text'
+							{...register('name', {
+								required: 'Имя обязательно к заполнению!',
+							})}
 							placeholder='Имя'
 						/>
+						{errors?.name && toast(errors?.name?.message as string || 'Ошибка!', {type: 'error'})}
 					</div>
 					<div className={styles.footer_form_field}>
-						{!!errors.phone &&
-							<div 
-								className={`mt-[10px] ${styles.error}`} 
-								data-tooltip-id="tooltip" 
-								data-tooltip-content={errors.phone}
-								data-tooltip-place="top"
-							>
-								<GoAlertFill />
-								<Tooltip id="tooltip" />
-							</div>
-						}
 						<PhoneInput
-							id='phone'
-							value={values.phone}
-							onChange={(phone: string) =>
-								setValues({
-									...values,
-									phone: phone,
-								})
-							}
+							{...register('phone', {
+								required: 'Номер телефона обязателен!',
+							})}
+							onChange={()=>{}}
 							className={styles.footer_phoneInput}
 							labels={ru}
 							international
 							defaultCountry='RU'
+							placeholder='+7 000 000 00 00'
 						/>
+						{errors?.phone && toast(errors?.phone?.message as string || 'Ошибка!', {type: 'error'})}
 					</div>
 					<div className={styles.footer_form_field}>
 						<input
-							id='question'
-							onChange={handleChange}
-							value={values.question}
+							{...register('question', {
+								required: 'Вопрос обязателен к заполнению!',
+							})}
 							placeholder='Вопрос'
 						/>
+						{errors?.question && toast(errors?.question?.message as string || 'Ошибка!', {type: 'error'})}
 					</div>
 					<div
 						className={`${styles.footer_form_field} flex flex-row gap-[1em]`}
 					>
-						{!!errors.agreement && 
-							<div
-								className={`mt-[-1px] ${styles.error}`}
-								data-tooltip-id="tooltip" 
-								data-tooltip-content={errors.agreement}
-								data-tooltip-place="top"
-							>
-								<GoAlertFill />
-								<Tooltip id="tooltip" />
-							</div>
-						}
-						<input id='agreement' onChange={handleChange} type='checkbox' />
+						<input
+							{...register('agreement', {
+								required: 'Согласие обязательно!',
+							})}
+							type='checkbox' 
+							id='agreement'
+						/>
 						<label className={styles.footer_form_label} htmlFor='agreement'>
 							Нажимая кнопку «Отправить», я даю свое согласие на обработку
 							моих персональных данных, в соответствии с Федеральным законом
@@ -116,12 +95,19 @@ const FooterForm = () =>{
 							и для целей, определенных в Согласии на обработку персональных
 							данных
 						</label>
+						{errors?.agreement && toast(errors?.agreement?.message as string || 'Ошибка!', {type: 'error'})}
 					</div>
 					<div className='text-center'>
 						<button type='submit'>Отправить</button>
 					</div>
 				</form>
 			</div>
+			<ToastContainer
+				position='bottom-right'
+				autoClose={5000}
+				theme='dark'
+				className={styles.toastContainer}
+			/>
 		</div>
 	)
 }

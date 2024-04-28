@@ -134,10 +134,18 @@ form {
 	}
 }
 
-.error{
-	position: absolute;
-	left: -25px;
-	color: rgb(255, 0, 0);
-	font-size: 14px;
-	font-weight: 600;
+.toastContainer{
+	width: 400px!important;
+	
+	& > * {
+		background-color: color-mix( in srgb, $mainDarkColor 70%, #000000)!important;
+	}
+	
+	& * {
+		color: $mainWhiteColor!important;
+	}	
+
+	@media (max-width: 425px) {
+		width: 100%!important;
+	}
 }
