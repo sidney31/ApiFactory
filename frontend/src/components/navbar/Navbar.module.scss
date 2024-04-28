@@ -205,13 +205,10 @@
 	align-items: center;
 	gap: clamp(5px, 1vw, 25px);
 	flex: 1 1 200px;
-}
-
-.navbar_action > * {
-	float: left;
-
-	@media (max-width: 1024px) {
-		float: right;
+	justify-content: flex-start;
+	
+	@media (max-width: 1000px) {
+		justify-content: flex-end;
 	}
 }
 

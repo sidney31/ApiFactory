@@ -85,17 +85,17 @@ export const Navbar = (props: Props) => {
 					{props.header_action}
 					{props.nav_links.length != 0 && (
 						<div
-							onClick={() => {
-								setBurgerState(!burgerState)
-
-								if (!headerRef.current) return false
-								setOpacity(headerRef.current, burgerState ? 0 : 255)
-
-								setMenuState(!menuState)
-							}}
-							className={`${styles.navbar_burger} ${
-								(!!burgerState && `${styles.open}`) || `${styles.close}`
-							}`}
+						onClick={() => {
+							setBurgerState(!burgerState)
+							
+							if (!headerRef.current) return false
+							setOpacity(headerRef.current, burgerState ? 0 : 255)
+							
+							setMenuState(!menuState)
+						}}
+						className={`${styles.navbar_burger} ${
+							(!!burgerState && `${styles.open}`) || `${styles.close}`
+						}`}
 						>
 							<span></span>
 							<span></span>
