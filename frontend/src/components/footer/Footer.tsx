@@ -1,12 +1,7 @@
-import { ReactNode } from 'react'
 import 'react-phone-number-input/style.css'
 import { Link } from 'react-router-dom'
+import { Props } from './Footer.interface'
 import styles from './Footer.module.scss'
-
-interface Props {
-	reference?: React.RefObject<HTMLDivElement>
-	children?: ReactNode
-}
 
 export const Footer = (props: Props) => {
 	return (

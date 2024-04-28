@@ -1,17 +1,5 @@
-import styles from './contact.module.scss'
-
-export interface Props {
-	title: string
-	subtitle: string
-	data: string
-	type: ContactType
-}
-
-export enum ContactType {
-	email = 'mailto',
-	phone = 'tel',
-	address = '',
-}
+import { Props } from './Contact.interface'
+import styles from './Contact.module.scss'
 
 export const Contact = (props: Props) => {
 	return (

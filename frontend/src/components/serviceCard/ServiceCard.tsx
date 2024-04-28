@@ -1,11 +1,5 @@
+import { Props } from './ServiceCard.interface'
 import styles from './ServiceCard.module.scss'
-
-interface Props {
-	title: string
-	titleBackground: string
-	name: string
-	logo: string
-}
 
 const ServiceCard = (props: Props) => {
 	return (

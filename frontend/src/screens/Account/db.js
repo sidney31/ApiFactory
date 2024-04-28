@@ -1,4 +1,4 @@
-import { ContactType } from '../../components/contact/Contact'
+import { ContactType } from '../../components/contact/Contact.interface'
 
 export const NAV_LINKS = [
 	{

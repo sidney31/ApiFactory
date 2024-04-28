@@ -1,16 +1,5 @@
+import { Props } from './OutlineInput.interface'
 import styles from './OutlineInput.module.scss'
-type Props = {
-	className?: string,
-	type?: string,
-	maxlength?: number,
-	min?: number,
-	name?: string,
-	id?: string,
-	placeholder?: string,
-	value?: string,
-	disabled?: boolean,
-	onChange?: () => {},
-}
 
 const OutlineInput = ({className, type, maxlength, min, name, id, placeholder, value, disabled}: Props) => {
 	return (

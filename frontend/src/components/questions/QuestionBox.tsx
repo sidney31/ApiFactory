@@ -1,11 +1,7 @@
 import { useState } from 'react'
 import { VscAdd, VscRemove } from 'react-icons/vsc'
+import { Props } from './QuestionBox.interface'
 import styles from './QuestionBox.module.scss'
-
-export interface Props {
-	question: string
-	answer: string
-}
 
 export const QuestionBox = (props: Props) => {
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches

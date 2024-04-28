@@ -1,18 +1,8 @@
-import { ReactNode, useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Dropdown from '../dropdown/full-width/Dropdown'
+import { Props } from './Navbar.interface'
 import styles from './Navbar.module.scss'
-
-export interface Props {
-	className?: string
-	nav_links: {
-		title: string
-		url: string
-		dropdown_items?: { text: string; link: string }[]
-	}[]
-	logo_path: string
-	header_action?: ReactNode
-}
 
 const setOpacity = (element: HTMLDivElement, opacity: number) => {
 	element.style.backgroundColor = `rgba(255, 255, 255, ${opacity}%`
