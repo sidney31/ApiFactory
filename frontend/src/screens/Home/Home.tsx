@@ -16,7 +16,7 @@ import '../../scripts/scrollHandler.js'
 import UserService from '../../services/UserService.ts'
 import app from '../../styles/app.module.scss'
 import '../../styles/common.scss'
-import * as db from '../Account/db.js'
+import * as db from './db.js'
 import { services_db } from './services_db.ts'
 
 function Home() {

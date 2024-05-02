@@ -1,19 +1,6 @@
 import { Card } from './Card'
+import { Props } from './CardsSection.interface'
 import styles from './CardsSection.module.scss'
-
-export interface Props {
-	className?: string
-	titleClassName?: string
-	text_title: string
-	text_subtitle: string
-	cards: Array<Card>
-}
-
-export interface Card {
-	image_path: string
-	title: string
-	subtitle: string
-}
 
 export const CardsSection = (props: Props) => {
 	return (
@@ -34,7 +21,7 @@ export const CardsSection = (props: Props) => {
 					{props.cards.map(card => (
 						<Card
 							key={card.title}
-							image_path={card.title}
+							image_path={card.image_path}
 							title={card.title}
 							subtitle={card.subtitle}
 						/>

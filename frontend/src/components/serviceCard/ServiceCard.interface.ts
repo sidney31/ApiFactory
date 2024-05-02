@@ -3,4 +3,5 @@ export interface Props {
 	titleBackground: string
 	name: string
 	logo: string
+	link: string
 }

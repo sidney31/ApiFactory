@@ -53,6 +53,8 @@
 	height: inherit;
 	width: inherit;
 
+	overflow: hidden;
+
 	object-fit: cover;
 	object-position: center;
 
@@ -60,6 +62,10 @@
 	pointer-events: none;
 
 	transition: all 0.3s ease-in-out;
+}
+
+.card_hero_image_skeleton {
+	background-color: black;
 }
 
 .card_caption {

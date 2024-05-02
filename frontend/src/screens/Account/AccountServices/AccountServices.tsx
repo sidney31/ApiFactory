@@ -14,6 +14,7 @@ const AccountServices = () => {
 					titleBackground={service.hero_image}
 					name={service.name}
 					logo={service.logo}
+					link={service.link}
 					/>
 				))}
 			</div>

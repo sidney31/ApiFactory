@@ -56,6 +56,13 @@ section {
 	aspect-ratio: 1 / 1;
 	background: #7d7d7d;
 
+	& > * {
+		object-fit: cover;
+		object-position: center;
+		height: 100%;
+		width: 100%;
+	}
+
 	@media (max-width: 1024px) {
 		width: auto;
 		height: 40vw;

@@ -3,4 +3,5 @@ export interface Service {
 	hero_image: string,
 	name: string,
 	logo: string,
+	link: string,
 }

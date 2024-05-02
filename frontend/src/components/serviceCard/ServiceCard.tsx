@@ -1,18 +1,17 @@
+import { Link } from 'react-router-dom'
+import { Image } from 'react-skeleton-image'
 import { Props } from './ServiceCard.interface'
 import styles from './ServiceCard.module.scss'
 
 const ServiceCard = (props: Props) => {
 	return (
-		<div
+		<Link to={props.link}
 			className={styles.card}
-			onClick={() => {
-				location.href += '/test'
-			}}
 		>
 			<div className={styles.card_hero}>
-				<img
+				<Image
 					className={styles.card_hero_image}
-					loading='lazy'
+					skeletonClassName={styles.card_hero_image_skeleton}
 					src={props.titleBackground}
 					alt={props.title}
 				/>
@@ -27,7 +26,7 @@ const ServiceCard = (props: Props) => {
 					<p className={styles.card_caption_state}>Активировано</p>
 				</div>
 			</div>
-		</div>
+		</Link>
 	)
 }
 

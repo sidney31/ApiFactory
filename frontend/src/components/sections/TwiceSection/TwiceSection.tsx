@@ -1,18 +1,6 @@
-import { ReactNode } from 'react'
 import '../common.scss'
+import { Props } from './TwiceSection.interface'
 import styles from './TwiceSection.module.scss'
-
-export interface Props {
-	className?: string
-	titleClassName?: string
-	text_small?: string
-	text_title: string
-	text_subtitle?: string
-	text_subtitle_large?: string
-	text_subtitle_button?: string
-	text_extra?: ReactNode | string
-	image_path: string
-}
 
 export const TwiceSection = (props: Props) => {
 	return (
@@ -45,7 +33,9 @@ export const TwiceSection = (props: Props) => {
 							}}>{props.text_subtitle_button}</button>
 						)}
 					</div>
-					<div data-aos='fade-left' className={styles.image}></div>
+					<div data-aos='fade-left' className={styles.image}>
+						<img src={props.image_path} alt={props.text_title} />
+					</div>
 				</div>
 				{props.text_extra && (
 					<div
