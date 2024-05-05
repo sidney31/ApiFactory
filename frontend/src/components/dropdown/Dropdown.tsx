@@ -38,9 +38,9 @@ const Dropdown = ({title, items}: IDropdownProps) => {
 				}`}
 			>
 				{items.map(item => (
-				  <Link to={item.link} key={item.text} className={styles.dropdown_item}>
-					  {item.text}
-				  </Link>
+					<Link to={item.link} key={item.text} className={styles.dropdown_item}>
+						{item.text}
+					</Link>
 				))}
 			</div>
 		</div>

@@ -15,7 +15,8 @@ aside {
 
 .sidebar {
 	width: 350px;
-	height: calc(100svh - 100px);
+	min-height: calc(100svh - 100px);
+	height: 100%;
 
 	position: sticky;
 	top: 100px;

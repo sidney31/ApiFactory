@@ -9,7 +9,7 @@ const Sidebar = () => {
 	const [minimize, setMinimize] = useState(isDesktop)
 	
 	const { tabName } = useParams();
-	let [activeTab, setActiveTab] = useState<string>('')
+	const [activeTab, setActiveTab] = useState<string>('')
 
 	useEffect(() => {
 		setActiveTab(tabName as string || 'services')

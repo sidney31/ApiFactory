@@ -21,7 +21,7 @@ const parseCookies = () => {
 	const cookies = document.cookie.split('; ')
 	const parsedCookies = new Map()
 	for (let i = 0; i < cookies.length; i++){
-		let cookie = cookies[i].split('=')
+		const cookie = cookies[i].split('=')
 		parsedCookies.set(cookie[0], cookie[1])
 	}
 	return parsedCookies

@@ -1,6 +1,6 @@
 import Aos from 'aos'
 import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { FieldValues, useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -16,39 +16,24 @@ const Login = () => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
 
-	// const { handleSubmit, values, handleChange } = useFormik({
-	// 	initialValues: {
-	// 		email: '',
-	// 		password: '',
-	// 	},
-	// 	onSubmit: values => {
-	// 		const accessToken = UserService.authorization(
-	// 			values.email,
-	// 			values.password
-	// 		)
-	// 		accessToken.then(token => {
-	// 			!!token && navigate('/account')
-	// 		})
-	// 	},
-	// })
-
 	const {
 		register,
 		handleSubmit,
 	} = useForm()
 
-	const onSubmit = (data: any) => {
+	const onSubmit = (data: FieldValues) => {
 		const accessToken = UserService.authorization(
 			data.email,
 			data.password
 		)
+
 		accessToken.then(token => {
-			if (!!token) {
+			if (token) {
 				navigate('/account')
 				toast('Успешная авторизация!', {
 					type: 'success'
-				})
-			}else{
+				})																												
+			} else {
 				toast('Ошибка авторизации', {
 					type: 'error'
 				})

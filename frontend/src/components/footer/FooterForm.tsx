@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useForm } from 'react-hook-form'
+import { FieldValues, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-number-input'
 import ru from 'react-phone-number-input/locale/ru'
 import 'react-phone-number-input/style.css'
@@ -19,7 +19,7 @@ const FooterForm = () => {
 		mode: "onBlur"
 	})
 
-	const onSubmit = (data: any) => {
+	const onSubmit = (data: FieldValues) => {
 		axios
 			.post('https://web.api-factory.ru/api/v1/feedback/', data)   
 			.then(response => {

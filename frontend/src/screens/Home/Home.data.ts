@@ -1,6 +1,4 @@
-interface IDictionary {
-	[key: string]: any
-}
+import { IDictionary } from './Home.interface'
 
 export const services_db: IDictionary = {
 	countering_information_leaks: {

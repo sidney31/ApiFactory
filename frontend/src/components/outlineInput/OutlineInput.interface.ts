@@ -8,5 +8,5 @@ export interface Props {
 	placeholder?: string,
 	value?: string,
 	disabled?: boolean,
-	onChange?: () => {},
+	onChange?: () => unknown,
 }

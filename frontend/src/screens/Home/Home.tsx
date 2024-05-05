@@ -16,8 +16,8 @@ import '../../scripts/scrollHandler.js'
 import UserService from '../../services/UserService.ts'
 import app from '../../styles/app.module.scss'
 import '../../styles/common.scss'
+import { services_db } from './Home.data'
 import * as db from './db.js'
-import { services_db } from './services_db.ts'
 
 function Home() {
 	const { serviceName } = useParams()
@@ -57,12 +57,12 @@ function Home() {
 				<div className={app.hero}>
 					{(!!isDesktop && <Wave />) || (
 						<video autoPlay muted loop>
-							<source src='/heroBackground.webm' type='video/webm' />
+							{/* <source src='/heroBackground.webm' type='video/webm' /> */}
 							<source src='/heroBackground.mp4' type='video/mp4' />
 						</video>
 					)}
 					<div className={app.hero_text__container}>
-						{!!serviceName ? (
+						{serviceName ? (
 							<h2 className={`${app.hero_textTitle} w-[100%]`}>
 								{services_db[serviceName].hero_title}
 							</h2>
@@ -95,7 +95,7 @@ function Home() {
 						)}
 					</div>
 				</div>
-				{!!serviceName ? (
+				{serviceName ? (
 					<TwiceSection
 						text_title={services_db[serviceName].section_title}
 						text_subtitle_large={services_db[serviceName].section_subtitle}
