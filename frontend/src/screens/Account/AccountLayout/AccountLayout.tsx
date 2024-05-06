@@ -16,7 +16,7 @@ const AccountLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
 		<>
 			<nav data-aos='fade-down'  className={styles.header}>
 				<Link to='/' className={styles.navbar_logo}>
-					<img className='py-[10px]' src='/svg/logo.svg' alt='logo' />
+					<img className='py-[10px]' src='/tehnocat.svg' alt='logo' />
 				</Link>
 				<div className={styles.navbar_account}>
 					<CgProfile />
