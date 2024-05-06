@@ -19,6 +19,18 @@
 	height: 50px;
 }
 
+.footer_nav_logo {
+	height: 50px;
+	width: auto;
+
+	& > * {
+		fill: $mainWhiteColor!important;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
 .footer_menu{
 	height: 100%;
 }
