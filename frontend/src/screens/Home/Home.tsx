@@ -2,7 +2,6 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Contact } from '../../components/contact/Contact.tsx'
 import { Footer } from '../../components/footer/Footer.tsx'
 import FooterForm from '../../components/footer/FooterForm.tsx'
 import { Navbar } from '../../components/navbar/Navbar.tsx'
@@ -217,21 +216,6 @@ function Home() {
 							>
 								Заказать обратный звонок
 							</button>
-						</div>
-					</div>
-				</section>
-				<section>
-					<div className='container'>
-						<div className={app.contact_wrapper}>
-							{db.CONTACTS_CARDS.map(contact => (
-								<Contact
-									key={contact.data}
-									title={contact.title}
-									subtitle={contact.subtitle}
-									data={contact.data}
-									type={contact.type}
-								/>
-							))}
 						</div>
 					</div>
 				</section>
