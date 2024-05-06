@@ -7,8 +7,6 @@ SECRET_KEY = 'django-insecure-rgi=s4p$3ti3g(+&aas5%)4e1!v^6(b0_#lmrp+omkao&8^zlk
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,15 +23,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -104,6 +101,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [],
 }
 
-CORS_ALLOWED_ORIGINS = ['https://technocat.team/']
+
+CORS_ALLOWED_ORIGINS = ['https://technocat.team']
+
+CSRF_TRUSTED_ORIGINS = ["https://technocat.team"]
+
+ALLOWED_HOSTS = ["technocat.team"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

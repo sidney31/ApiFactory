@@ -21,7 +21,10 @@ const FooterForm = () => {
 
 	const onSubmit = (data: FieldValues) => {
 		axios
-			.post('https://web.api-factory.ru/api/v1/feedback/', data)   
+			.post('https://technocat.team/api/v1/feedback/', 
+				data,
+				{ withCredentials: false }
+			)   
 			.then(response => {
 				console.log(response)
 			})
@@ -38,7 +41,7 @@ const FooterForm = () => {
 		<div className='container'>
 			<div className={`${styles.footer_formWrapper} py-[40px]`}>
 				<h2 data-aos='fade-up-right' className={styles.footer_formTitle}>
-					Отправьте заявление, и с Вами обязательно свяжутся
+					Отправьте заявку и с Вами обязательно свяжутся
 				</h2>
 				<form
 					data-aos='fade-up-left'
