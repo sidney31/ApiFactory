@@ -21,12 +21,7 @@ const FooterForm = () => {
 
 	const onSubmit = (data: FieldValues) => {
 		axios
-			.post('https://web.api-factory.ru/api/v1/feedback/', 
-				data, 
-				{
-					headers: {"Access-Control-Allow-Origin": "*"}
-				}
-			)   
+			.post('https://web.api-factory.ru/api/v1/feedback/', data)   
 			.then(response => {
 				console.log(response)
 			})
