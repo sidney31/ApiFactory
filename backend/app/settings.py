@@ -104,11 +104,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [],
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://web.api-factory.ru']
-
-# CORS_ALLOW_CREDENTIALS = True
-# CORS_ALLOWED_ORIGINS = ['https://web.api-factory.ru']
-
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = ['https://technocat.team/']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
