@@ -49,7 +49,7 @@ const Login = () => {
 				<div className={styles.loginForm_header}>
 					<img
 						className={styles.loginForm_header_logo}
-						src='/tehnocat.svg'
+						src='/svg/logo2.svg'
 						alt='apifactory-logo'
 					/>
 					<h4 className={styles.loginForm_header_title}>

@@ -1,3 +1,7 @@
+export interface ServiceProps {
+	serviceName: string
+}
+
 interface IServicePage {
 	hero_title: string,
 	section_title: string,

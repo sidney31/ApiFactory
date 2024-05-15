@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Image } from 'react-skeleton-image'
+// import { Image } from 'react-skeleton-image'
 import { Props } from './ServiceCard.interface'
 import styles from './ServiceCard.module.scss'
 
@@ -9,9 +9,9 @@ const ServiceCard = (props: Props) => {
 			className={styles.card}
 		>
 			<div className={styles.card_hero}>
-				<Image
+				<img
 					className={styles.card_hero_image}
-					skeletonClassName={styles.card_hero_image_skeleton}
+					// skeletonClassName={styles.card_hero_image_skeleton}
 					src={props.titleBackground}
 					alt={props.title}
 				/>

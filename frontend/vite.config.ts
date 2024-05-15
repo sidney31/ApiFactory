@@ -1,9 +1,16 @@
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
+import { imagetools } from 'vite-imagetools'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react()],
+	plugins: [
+		react(),
+		imagetools({
+			maxWidth: 100,
+			maxHeight: 100,
+		})
+	],
+
 	optimizeDeps: {
 		exclude: ['js-big-decimal'],
 	},

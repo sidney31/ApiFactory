@@ -21,7 +21,7 @@ const FooterForm = () => {
 
 	const onSubmit = (data: FieldValues) => {
 		axios
-			.post('https://technocat.team/api/v1/feedback/', 
+			.post('https:/web.api-factory.ru/api/v1/feedback/', 
 				data,
 				{ withCredentials: false }
 			)   
