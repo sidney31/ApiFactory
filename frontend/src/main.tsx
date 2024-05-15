@@ -10,7 +10,10 @@ import ScrollTopProvider from './providers/ScrollTopProvider.jsx'
 import Account from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
+import Requisites from './screens/Home/Pages/Requisites/Requisites.tsx'
+import Vacancy from './screens/Home/Pages/Vacancy/Vacancy.tsx'
 import Login from './screens/Login/Login.tsx'
+import Services from './screens/Services/Services.tsx'
 import Test from './screens/Test/Test.tsx'
 import UserClient from './services/UserService.ts'
 import './styles/common.scss'
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
 		path: 'service/:serviceName',
 		element: (
 			<ScrollTopProvider>
-				<Home />
+				<Services/>
 			</ScrollTopProvider>
 		),
 	},
@@ -39,6 +42,18 @@ const router = createBrowserRouter([
 			<LoginProvider>
 				<Account />
 			</LoginProvider>
+		),
+	},
+	{
+		path: 'requisites/',
+		element: (
+			<Requisites />
+		),
+	},
+	{
+		path: 'vacancy/',
+		element: (
+			<Vacancy />
 		),
 	},
 	{

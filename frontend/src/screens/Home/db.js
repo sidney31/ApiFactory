@@ -5,51 +5,30 @@ export const NAV_LINKS = [
 		title: 'О компании',
 		url: '/about',
 		dropdown_items: [
-			{ text: 'О нас', link: '/example' },
-			{ text: 'Реквизиты', link: '/example' },
-			{ text: 'Вакансии', link: '/example' },
-			{ text: 'Стажировка', link: '/example' },
+			{ text: 'О нас', link: '/about' },
+			{ text: 'Реквизиты', link: '/requisites' },
+			{ text: 'Вакансии', link: '/vacancy' },
+			{ text: 'Стажировка', link: '/internship' },
 		],
 	},
 	{
 		title: 'Услуги',
 		url: '/services',
 		dropdown_items: [
-			{ text: 'Управление инцидентами', link: '/service/incident_management' },
 			{
-				text: 'Управление уязвимостями',
-				link: '/service/vulnerability_management',
+				text: 'Управление информационной безопасностью',
+				link: '/service/information_security_management',
 			},
 			{
-				text: 'Обмен конфиденциальной информацией',
-				link: '/service/exchange_of_confidential_information',
+				text: 'Управление ИТ-инфраструктурой',
+				link: '/service/it_infrastructure_management',
 			},
 			{
-				text: 'Противодействие утечкам информации',
-				link: '/service/countering_information_leaks',
-			},
-			{ text: 'Цифровая криминалистика', link: '/service/digital_forensics' },
-			{
-				text: 'Создание систем защиты информации',
-				link: '/service/creation_of_information_security_systems',
-			},
-			{ text: 'Техническая поддержка', link: '/service/technical_support' },
-			{
-				text: 'Системное администрирование',
-				link: '/service/system_administration',
-			},
-			{
-				text: 'Управление сетями передачи данных',
-				link: '/service/management_of_data_transmission_networks',
-			},
-			{
-				text: 'Управление серверным оборудованием',
-				link: '/service/server_hardware_management',
+				text: 'Инжиниринг сетей связи',
+				link: '/service/communication_network_engineering',
 			},
 		],
 	},
-	{ title: 'Цены', url: '/prices' },
-	{ title: 'Демо', url: '/demo' },
 	{ title: 'Контакты', url: '/contacts' },
 ]
 export const OUTSOURCING_BLOCK = {

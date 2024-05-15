@@ -33,6 +33,7 @@
 		"react-phone-number-input": "^3.3.9",
 		"react-router-dom": "^6.22.3",
 		"react-skeleton-image": "^0.0.10",
+		"react-smooth-image": "^1.1.0",
 		"react-toastify": "^10.0.5",
 		"react-tooltip": "^5.26.3",
 		"three": "^0.162.0",
@@ -53,6 +54,7 @@
 		"sass": "^1.75.0",
 		"tailwindcss": "^3.4.1",
 		"typescript": "^5.2.2",
-		"vite": "^5.1.6"
+		"vite": "^5.1.6",
+		"vite-imagetools": "^7.0.2"
 	}
 }

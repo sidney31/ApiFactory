@@ -6,17 +6,6 @@ import AccountManagement from './AccountManagement/AccountManagement'
 import AccountPayments from './AccountPayments/AccountPayments'
 import AccountServices from './AccountServices/AccountServices'
 
-// interface IComparison{
-// 	[slug: string]: React.ReactNode
-// }
-
-// const comparison: IComparison[] = {
-// 	'services': <AccountServices/>,
-// 	'management': <AccountManagement/>,
-// 	'payments': <AccountPayments/>,
-// 	'help': <AccountHelp/>,
-// }
-
 const comparison = new Map<string, React.ReactNode>([
 		['services', <AccountServices/>],
 		['management', <AccountManagement/>],

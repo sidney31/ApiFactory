@@ -1,0 +1,36 @@
+@import '/src/styles/common.scss';
+@import '/src/styles/outlineInput.mixin.scss';
+
+.form_wrapper {
+	width: 400px;
+	flex-shrink: 0;
+	
+	height: auto;
+	
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	& > form {
+		@include OutlineInput;
+
+		button{
+			width: 100%;
+		}
+	}
+}
+
+.input_wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.input_wrapper:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.input_wrapper > [type*='file'] {
+	height: 128px;
+}
