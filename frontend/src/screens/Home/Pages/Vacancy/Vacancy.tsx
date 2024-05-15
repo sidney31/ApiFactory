@@ -2,8 +2,9 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import OutlineBlock from '../../../../components/outlineBlock/OutlineBlock'
+import ResumeForm from '../../../../components/resumeForm/ResumeForm'
 import HomeLayout from '../../HomeLayout'
-import styles from './Requisites.module.scss'
+import styles from './Vacancy.module.scss'
 
 const Vacancy = () => {
 	useEffect(() => {
@@ -11,10 +12,34 @@ const Vacancy = () => {
 	}, [])
 	return (
 		<HomeLayout>
-			<div data-aos='fade-up' className={`container ${styles.content_wrapper}`}>
-				<h3 className={styles.page_title}>Реквизиты</h3>
-				<OutlineBlock className={styles.requisites_block}>
-				</OutlineBlock>
+			<div data-aos='fade-up' className={`container-lg ${styles.content_wrapper}`}>
+				<h3 className={styles.page_title}>Вакансии</h3>
+				<div className={styles.blocks_wrapper}>
+					<OutlineBlock className={styles.block}>
+						<p>
+							<strong>Присоединяйтесь к нашей команде!</strong>
+							<br />
+							Мы постоянно ищем талантливых специалистов в области информационной безопасности, информационных технологий и разработки.
+						</p>
+					</OutlineBlock>
+					<OutlineBlock className={styles.block}>
+						<p>
+							Если Вы готовы к вызовам в динамичной индустрии и стремитесь к профессиональному росту, мы ждем именно Вас. Просмотрите наши вакансии ниже и отправьте нам свое резюме, чтобы присоединиться к нашей космической команде!
+						</p>
+					</OutlineBlock>
+					<div className="flex flex-row gap-[20px]">
+						<ResumeForm/>
+						<OutlineBlock className={styles.block}>
+							<p>
+								Чтобы подать заявку на вакансию, пожалуйста, <strong>заполните форму</strong>, предоставив нам контактную информацию и краткое описание Вашего опыта и квалификаций. Также, прикрепите ваше резюме, чтобы мы могли более детально оценить вашу кандидатуру. 
+							</p>
+							<br />
+							<p>
+								Мы рассмотрим Ваше резюме с большим вниманием и свяжемся с вами в ближайшее время для обсуждения возможностей сотрудничества.
+							</p>
+					</OutlineBlock>
+					</div>
+				</div>
 			</div>
 		</HomeLayout>
 	)

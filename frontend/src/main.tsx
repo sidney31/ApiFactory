@@ -11,6 +11,7 @@ import Account from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
 import Requisites from './screens/Home/Pages/Requisites/Requisites.tsx'
+import Vacancy from './screens/Home/Pages/Vacancy/Vacancy.tsx'
 import Login from './screens/Login/Login.tsx'
 import Services from './screens/Services/Services.tsx'
 import Test from './screens/Test/Test.tsx'
@@ -47,6 +48,12 @@ const router = createBrowserRouter([
 		path: 'requisites/',
 		element: (
 			<Requisites />
+		),
+	},
+	{
+		path: 'vacancy/',
+		element: (
+			<Vacancy />
 		),
 	},
 	{

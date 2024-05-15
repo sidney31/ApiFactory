@@ -12,7 +12,7 @@ const Requisites = () => {
 	}, [])
 	return (
 		<HomeLayout>
-			<div data-aos='fade-up' className={`container ${styles.content_wrapper}`}>
+			<div data-aos='fade-up' className={`container-lg ${styles.content_wrapper}`}>
 				<h3 className={styles.page_title}>Реквизиты</h3>
 				<OutlineBlock className={styles.requisites_block}>
 					<h4 className={styles.block_title}>{RequisitesData.title}</h4>

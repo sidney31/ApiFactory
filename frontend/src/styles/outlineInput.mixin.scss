@@ -1,0 +1,39 @@
+@mixin OutlineInput {
+	input, textarea {
+		border-radius: 9px;
+		border: 1px solid #dddddd50;
+		background-color: #f9f9f980;
+		padding: 10px;
+		padding-top: 22px;
+		font-size: 20px;
+		font-weight: 500;
+		width: 100%;
+	}
+
+	input {
+		height: 56px;
+	}
+
+	textarea {
+		resize: none;
+	}
+	
+	.placeholder {
+		position: absolute;
+		top: 12px;
+    left: 10px;
+		font-size: 20px;
+		font-weight: 500;
+		transition: all .3s ease;
+		color: #36332F70;
+		pointer-events: none;
+	}
+	
+	input:focus + .placeholder, 
+	input:not(:placeholder-shown) + .placeholder,
+	textarea:focus + .placeholder, 
+	textarea:not(:placeholder-shown) + .placeholder {
+		font-size: 14px;
+		transform: translateY(-12px);
+	}
+}

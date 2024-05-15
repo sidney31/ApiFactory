@@ -8,6 +8,7 @@
 $mainDarkColor: #36332f;
 $mainWhiteColor: #f5f5f5;
 $breakpoints: (375px, 480px, 556px, 768px, 993px, 1024px, 1100px);
+$breakpoints-lg: (300px, 500px, 605px, 781px, 893px, 1118px, 1149px, 1225px);
 
 * {
 	color: $mainDarkColor
@@ -78,6 +79,16 @@ button {
 	margin: 0 auto;
 }
 
+[class*='container-lg'] {
+	width: 100%;
+	@each $breakpoint-lg in $breakpoints-lg {
+		@media (min-width: #{$breakpoint-lg}) {
+			max-width: calc(#{$breakpoint-lg});
+		}
+	}
+	margin: 0 auto;
+}
+
 section {
 	height: auto;
 	width: 100vw;
@@ -124,4 +135,8 @@ section {
 	@media (max-width: 425px) {
 		width: 100%!important;
 	}
+}
+
+strong {
+	font-weight: 500;
 }
