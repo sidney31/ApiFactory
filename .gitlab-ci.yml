@@ -16,8 +16,8 @@ build:
 test:
   stage: test
   image: node
-    tags:
-    - frontend
+  tags:
+  - frontend
   script:
     - cd frontend
     - npm i
