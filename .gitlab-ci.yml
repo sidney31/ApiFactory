@@ -1,0 +1,21 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  image: node
+  script: 
+    - cd frontend
+    - npm i
+    - npm run build
+    -  echo 'success build'
+
+test:
+  stage: test
+  image: node
+  script:
+    - cd frontend
+    - npm i
+    - npm run lint
+    - echo 'success lint'
