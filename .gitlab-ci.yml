@@ -8,10 +8,10 @@ build:
   tags:
     - frontend
   script: 
-    - cd frontend
+    - cd ./frontend
     - npm i
     - npm run build
-    -  echo 'success build'
+    - echo 'success build'
 
 test:
   stage: test
@@ -19,7 +19,7 @@ test:
   tags:
   - frontend
   script:
-    - cd frontend
+    - cd ./frontend
     - npm i
     - npm run lint
     - echo 'success lint'
