@@ -10,6 +10,7 @@ import ScrollTopProvider from './providers/ScrollTopProvider.jsx'
 import Account from './screens/Account/Account.tsx'
 import { ErrorPage } from './screens/ErrorPage.tsx'
 import Home from './screens/Home/Home.tsx'
+import About from './screens/Home/Pages/About/About.tsx'
 import Internship from './screens/Home/Pages/Internship/Internship.tsx'
 import Requisites from './screens/Home/Pages/Requisites/Requisites.tsx'
 import Vacancy from './screens/Home/Pages/Vacancy/Vacancy.tsx'
@@ -61,6 +62,12 @@ const router = createBrowserRouter([
 		path: 'internship/',
 		element: (
 			<Internship />
+		),
+	},
+	{
+		path: 'about/',
+		element: (
+			<About />
 		),
 	},
 	{

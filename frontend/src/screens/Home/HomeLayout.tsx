@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { Navbar } from '../../components/navbar/Navbar'
-import UserService from '../../services/UserService'
+// import UserService from '../../services/UserService'
 import * as db from './db.js'
 
 const HomeLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
@@ -11,13 +11,13 @@ const HomeLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
 						logo_path='/logos/technocat.svg'
 						header_action={
 							<>	
-								<Link to='/account'>
+								{/* <Link to='/account'>
 									<button>
 										{UserService.isAuth() &&
 											'Личный кабинет' || 'Вход для клиентов'
 										}
 									</button>
-								</Link>
+								</Link> */}
 							</>
 						}
 					/>
