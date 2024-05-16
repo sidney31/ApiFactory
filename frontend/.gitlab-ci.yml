@@ -1,9 +1,0 @@
-default:
-        image: node:lts
-        before_script:
-                - npm -v
-                - npm i
-
-stages:
-        - linter_job
-        - 

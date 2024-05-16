@@ -5,7 +5,7 @@ export interface Props {
 	text_small: string
 	text_title: string
 	text_content: string
-	button_text: string
+	button_text?: string
 }
 
 export const TextSection = (props: Props) => {
@@ -22,7 +22,7 @@ export const TextSection = (props: Props) => {
 					<p data-aos='fade-up' className={`${styles.text_content}`}>
 						{props.text_content}
 					</p>
-					<button 
+					{ props.button_text && <button 
 						data-aos='fade-up' 
 						className={styles.button}
 						onClick={() => {
@@ -34,6 +34,7 @@ export const TextSection = (props: Props) => {
 						>
 						{props.button_text}
 					</button>
+					}
 				</div>
 			</div>
 		</section>

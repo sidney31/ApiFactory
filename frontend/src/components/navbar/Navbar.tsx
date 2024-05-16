@@ -63,7 +63,7 @@ export const Navbar = (props: Props) => {
 						headerOpacityHandler()
 					}}
 				>
-					{props.nav_links.map((nav_item, iterator) =>
+					{props.nav_links?.map((nav_item, iterator) =>
 						nav_item.dropdown_items ? (
 							<Dropdown
 								key={iterator}
@@ -83,7 +83,7 @@ export const Navbar = (props: Props) => {
 				</div>
 				<div className={`${styles.navbar_action}`}>
 					{props.header_action}
-					{props.nav_links.length != 0 && (
+					{props.nav_links?.length != 0 && (
 						<div
 						onClick={() => {
 							setBurgerState(!burgerState)
