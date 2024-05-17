@@ -11,11 +11,10 @@ const setOpacity = (element: HTMLDivElement, opacity: number) => {
 export const Navbar = (props: Props) => {
 	const headerRef = useRef<HTMLDivElement>(null)
 	const menuRef = useRef<HTMLDivElement>(null)
+	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
 
 	const [burgerState, setBurgerState] = useState(false)
-	const [menuState, setMenuState] = useState(
-		window.matchMedia('(min-width: 1000px)').matches
-	)
+	const [menuState, setMenuState] = useState(isDesktop)
 
 	const headerOpacityHandler = () => {
 		if (!headerRef.current) return false
@@ -70,6 +69,7 @@ export const Navbar = (props: Props) => {
 								title={nav_item.title}
 								items={nav_item.dropdown_items}
 								onItemClick={() => {
+									if (isDesktop) return false
 									setBurgerState(false)
 									setMenuState(false)
 								}}
