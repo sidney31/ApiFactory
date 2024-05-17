@@ -38,7 +38,7 @@ const FooterForm = () => {
 	}
 
 	return (
-		<div className='container'>
+		<div className='container' id="feedback">
 			<div className={`${styles.footer_formWrapper} py-[40px]`}>
 				<h2 data-aos='fade-up-right' className={styles.footer_formTitle}>
 					Отправьте заявку и с Вами обязательно свяжутся

@@ -29,7 +29,7 @@ export const NAV_LINKS = [
 			},
 		],
 	},
-	{ title: 'Контакты', url: '/contacts' },
+	{ title: 'Контакты', url: '/#feedback' },
 ]
 export const OUTSOURCING_BLOCK = {
 	text_small: 'Аутсорсинг',

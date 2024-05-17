@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import Dropdown from '../dropdown/Dropdown'
 import { Props } from './Navbar.interface'
 import styles from './Navbar.module.scss'
@@ -69,6 +69,10 @@ export const Navbar = (props: Props) => {
 								key={iterator}
 								title={nav_item.title}
 								items={nav_item.dropdown_items}
+								onItemClick={() => {
+									setBurgerState(false)
+									setMenuState(false)
+								}}
 							/>
 						) : (
 							<Link
