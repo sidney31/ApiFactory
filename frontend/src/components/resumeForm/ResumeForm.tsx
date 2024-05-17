@@ -8,7 +8,7 @@ const ResumeForm = () => {
 				<div className={styles.input_wrapper}>
 					<input placeholder=' ' id="name"/>
 					<p className={styles.placeholder}>ФИО</p>
-				</div>
+				</div> 
 				<div className={styles.input_wrapper}>
 					<textarea maxLength={100} placeholder=' ' rows={4} id="about"/>
 					<p className={styles.placeholder}>О себе</p>

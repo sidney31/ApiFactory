@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import OutlineBlock from '../../../../components/outlineBlock/OutlineBlock'
 import ResumeForm from '../../../../components/resumeForm/ResumeForm'
 import HomeLayout from '../../HomeLayout'
+import common from '../common.module.scss'
 import styles from './Vacancy.module.scss'
 
 const Vacancy = () => {
@@ -12,22 +13,22 @@ const Vacancy = () => {
 	}, [])
 	return (
 		<HomeLayout>
-			<div data-aos='fade-up' className={`container-lg ${styles.content_wrapper}`}>
-				<h3 className={styles.page_title}>Вакансии</h3>
-				<div className={styles.blocks_wrapper}>
-					<OutlineBlock className={styles.block}>
+			<div data-aos='fade-up' className={`container-lg ${common.content_wrapper}`}>
+				<h3 className={common.page_title}>Вакансии</h3>
+				<div className={common.blocks_wrapper}>
+					<OutlineBlock className={common.block}>
 						<p>
 							<strong>Присоединяйтесь к нашей команде!</strong>
 							<br />
 							Мы постоянно ищем талантливых специалистов в области информационной безопасности, информационных технологий и разработки.
 						</p>
 					</OutlineBlock>
-					<OutlineBlock className={styles.block}>
+					<OutlineBlock className={common.block}>
 						<p>
 							Если Вы готовы к вызовам в динамичной индустрии и стремитесь к профессиональному росту, мы ждем именно Вас. Просмотрите наши вакансии ниже и отправьте нам свое резюме, чтобы присоединиться к нашей космической команде!
 						</p>
 					</OutlineBlock>
-					<div className={`${styles.block} flex flex-row gap-[20px]`}>
+					<div className={`${common.block} ${styles.block}`}>
 						<ResumeForm/>
 						<OutlineBlock>
 							<p>
