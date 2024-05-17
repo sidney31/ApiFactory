@@ -6,9 +6,10 @@ import styles from './Dropdown.module.scss'
 interface IDropdownProps {
 	title: ReactNode
 	items: { text: string; link: string }[]
+	onItemClick?: () => void
 }
 
-const Dropdown = ({title, items}: IDropdownProps) => {
+const Dropdown = ({title, items, onItemClick}: IDropdownProps) => {
 	const [dropdownState, setDropdownState] = useState(false)
 
 	const dropdownRef = useRef(null)
@@ -38,7 +39,7 @@ const Dropdown = ({title, items}: IDropdownProps) => {
 				}`}
 			>
 				{items.map(item => (
-					<Link to={item.link} key={item.text} className={styles.dropdown_item}>
+					<Link to={item.link} key={item.text} className={styles.dropdown_item} onClick={onItemClick}>
 						{item.text}
 					</Link>
 				))}

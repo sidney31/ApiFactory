@@ -9,7 +9,7 @@ export const Footer = (props: Props) => {
 			{props.children}
 			<div className={styles.footer_nav}>
 				<Link to='/' className={styles.footer_nav_logo}>
-					<img src='/logos/technocat.svg' alt='logo' />
+					<img src='/logos/technocat.svg' />
 				</Link>
 				<div className={`${styles.footer_menu} ${styles.container}`}></div>
 				<div className='text-[16px] whitespace-nowrap text-[#f5f5f5]'>© 2024 ТЕХНОКОТ</div>

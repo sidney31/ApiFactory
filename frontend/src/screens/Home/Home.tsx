@@ -1,14 +1,12 @@
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect, useRef } from 'react'
-import { TwiceSection } from '../../components/sections/TwiceSection/TwiceSection'
 import { Wave } from '../../components/wave/Wave'
 import '../../scripts/scrollHandler.js'
 import app from '../../styles/app.module.scss'
 import '../../styles/common.scss'
-import HomeContent from './HomeContent.js'
+import HomeContent from './HomeContent/HomeContent.js'
 import HomeLayout from './HomeLayout.js'
-import * as db from './db.js'
 
 const Home = () => {
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
@@ -60,13 +58,6 @@ const Home = () => {
 					</h4>
 				</div>
 			</div>
-			<TwiceSection
-				text_small={db.OUTSOURCING_BLOCK.text_small}
-				text_title={db.OUTSOURCING_BLOCK.text_title}
-				text_subtitle={db.OUTSOURCING_BLOCK.text_subtitle}
-				text_subtitle_button={db.OUTSOURCING_BLOCK.text_subtitle_button}
-				image_path={db.OUTSOURCING_BLOCK.image_path}
-			/>
 			<HomeContent/>
 		</HomeLayout>
 	)

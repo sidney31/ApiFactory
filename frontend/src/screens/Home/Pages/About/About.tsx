@@ -3,7 +3,7 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import OutlineBlock from '../../../../components/outlineBlock/OutlineBlock'
 import HomeLayout from '../../HomeLayout'
-import styles from './About.module.scss'
+import common from '../common.module.scss'
 
 const About = () => {
 	useEffect(() => {
@@ -11,9 +11,9 @@ const About = () => {
 	}, [])
 	return (
 		<HomeLayout>
-			<div data-aos='fade-up' className={`container-lg ${styles.content_wrapper}`}>
-				<h3 className={styles.page_title}>О нас</h3>
-				<OutlineBlock className={styles.about_block}>
+			<div data-aos='fade-up' className={`container-lg ${common.content_wrapper}`}>
+				<h3 className={common.page_title}>О нас</h3>
+				<OutlineBlock className={`text-[24px] ${common.content_block}`}>
 					<p>
 						<strong>
 							Компания «ТехноКот» 

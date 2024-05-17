@@ -6,7 +6,6 @@ import { Wave } from '../../components/wave/Wave.jsx'
 import '../../scripts/scrollHandler.js'
 import app from '../../styles/app.module.scss'
 import '../../styles/common.scss'
-import HomeContent from '../Home/HomeContent.tsx'
 import HomeLayout from '../Home/HomeLayout.tsx'
 import { services_db } from './Services.data.ts'
 
@@ -39,7 +38,6 @@ const ServicesLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
 				</div>
 				{ children }
 		</HomeLayout>
-		<HomeContent/>
 		</>
 	)
 }
