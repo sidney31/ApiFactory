@@ -21,19 +21,22 @@ const FooterForm = () => {
 
 	const onSubmit = (data: FieldValues) => {
 		axios
-			.post('https://technocat.team/api/v1/feedback/', 
-				data,
-				{ withCredentials: false }
-			)   
-			.then(response => {
-				console.log(response)
+		.post('https://technocat.team/api/v1/feedback/', 
+			data,
+			{ withCredentials: false }
+		)   
+		.then(response => {
+			console.log(response)
+			toast('Заявление успешно отправлено!', {
+				type: 'info'
 			})
-			.catch(error => {
-				console.log(error)
+			reset()
+		})
+		.catch(error => {
+			console.log(error)
+			toast('Произошла ошибка, попробуйте позже!', {
+				type: 'error'
 			})
-		reset()
-		toast('Заявление успешно отправлено!', {
-			type: 'info'
 		})
 	}
 

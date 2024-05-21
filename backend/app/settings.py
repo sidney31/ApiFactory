@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'feedback',
+    'resume',
     
     'corsheaders',
     'rest_framework',

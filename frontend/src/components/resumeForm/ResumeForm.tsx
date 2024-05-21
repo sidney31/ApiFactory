@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-number-input'
@@ -23,12 +24,26 @@ const ResumeForm = () => {
 	})
 
 	const onSubmit = (data: FieldValues) => {
-		alert(data)
+		axios
+		.post('https://technocat.team/api/v1/resume/', 
+			data,
+			{ withCredentials: false }
+		)   
+		.then(response => {
+			console.log(response)
+			toast('Заявление успешно отправлено!', {
+				type: 'info'
+			})
+			reset()
+		})
+		.catch(error => {
+			console.log(error)
+			toast('Произошла ошибка, попробуйте позже!', {
+				type: 'error'
+			})
+		})
 		reset()
 		setFileName('')
-		toast('Заявление успешно отправлено!', {
-			type: 'info'
-		})
 	}
 
 	return (
