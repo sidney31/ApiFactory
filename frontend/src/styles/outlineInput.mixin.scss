@@ -1,5 +1,5 @@
 @mixin OutlineInput {
-	input, textarea {
+	input, textarea, .input_area {
 		border-radius: 9px;
 		border: 1px solid #dddddd50;
 		background-color: #f9f9f980;

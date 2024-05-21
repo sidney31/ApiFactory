@@ -1,6 +1,6 @@
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { Wave } from '../../components/wave/Wave'
 import '../../scripts/scrollHandler.js'
 import app from '../../styles/app.module.scss'
@@ -10,17 +10,17 @@ import HomeLayout from './HomeLayout.js'
 
 const Home = () => {
 	const isDesktop = window.matchMedia('(min-width: 1000px)').matches
-	const feedbackRef = useRef<HTMLDivElement>(null)
 	
 	useEffect(() => {
 		Aos.init({ duration: 1000, delay: 100 })
 	}, [])
 
 	const scrollToFeedback = () => {
-		scrollTo({
-			behavior: 'smooth',
-			top: feedbackRef.current?.offsetTop,
-		})
+		window.scroll({
+			top: document.body.scrollHeight,
+			left: 0,
+			behavior: 'smooth'
+		});
 	}
 
 	return (

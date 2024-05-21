@@ -21,7 +21,7 @@ const FooterForm = () => {
 
 	const onSubmit = (data: FieldValues) => {
 		axios
-			.post('https:/web.api-factory.ru/api/v1/feedback/', 
+			.post('https://technocat.team/api/v1/feedback/', 
 				data,
 				{ withCredentials: false }
 			)   
@@ -56,7 +56,9 @@ const FooterForm = () => {
 							})}
 							placeholder='Имя'
 						/>
-						{errors?.name && toast(errors?.name?.message as string || 'Ошибка!', {type: 'error'})}
+						<span className='hidden'>
+							{errors?.name && toast(errors?.name?.message as string || 'Ошибка!', {type: 'error'})}
+						</span>
 					</div>
 					<div className={styles.footer_form_field}>
 						<PhoneInput
@@ -70,7 +72,9 @@ const FooterForm = () => {
 							defaultCountry='RU'
 							placeholder='+7 000 000 00 00'
 						/>
-						{errors?.phone && toast(errors?.phone?.message as string || 'Ошибка!', {type: 'error'})}
+						<span className='hidden'>
+							{errors?.phone && toast(errors?.phone?.message as string || 'Ошибка!', {type: 'error'})}
+						</span>
 					</div>
 					<div className={styles.footer_form_field}>
 						<input
@@ -79,7 +83,9 @@ const FooterForm = () => {
 							})}
 							placeholder='Вопрос'
 						/>
-						{errors?.question && toast(errors?.question?.message as string || 'Ошибка!', {type: 'error'})}
+						<span className='hidden'>
+							{errors?.question && toast(errors?.question?.message as string ||	 'Ошибка!', {type: 'error'})}
+						</span>
 					</div>
 					<div
 						className={`${styles.footer_form_field} flex flex-row gap-[1em]`}
@@ -98,7 +104,9 @@ const FooterForm = () => {
 							и для целей, определенных в Согласии на обработку персональных
 							данных
 						</label>
-						{errors?.agreement && toast(errors?.agreement?.message as string || 'Ошибка!', {type: 'error'})}
+						<span className='hidden'>
+							{errors?.agreement && toast(errors?.agreement?.message as string ||	 'Ошибка!', {type: 'error'})}
+						</span>
 					</div>
 					<div className='text-center'>
 						<button type='submit'>Отправить</button>
